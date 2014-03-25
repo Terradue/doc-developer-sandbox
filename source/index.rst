@@ -1,15 +1,20 @@
-========================
-OpenNebula Documentation
-========================
+.. dcs documentation master file, created by
+   sphinx-quickstart on Tue Mar 25 20:10:20 2014.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-.. _entry_point:
+Welcome to dcs's documentation!
+===============================
+
+Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   Release Notes 4.6 <release_notes_46beta/index>
-   Design and Installation Guide <design_and_installation/index>
-   Administration Guide <administration/index>
-   User Guide <user/index>
-   Advanced Administration Guide <advanced_administration/index>
-   Integration Guide <integration/index>
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
