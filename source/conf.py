@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# dcs documentation build configuration file, created by
-# sphinx-quickstart on Tue Mar 25 20:10:20 2014.
+# Developer Cloud Sandbox documentation build configuration file, created by
+# sphinx-quickstart on Tue Mar 25 20:23:11 2014.
 #
 # This file is execfile()d with the current directory set to its containing dir.
 #
@@ -22,7 +22,7 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx.ext.coverage', 'sphinx.ext.pngmath', 'sphinx.ext.jsmath']
+extensions = ['sphinx.ext.todo']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -37,7 +37,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'dcs'
+project = u'Developer Cloud Sandbox'
 copyright = u'2014, Fabrice Brito'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -158,7 +158,7 @@ html_static_path = ['_static']
 #html_file_suffix = ''
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'dcsdoc'
+htmlhelp_basename = 'DeveloperCloudSandboxdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -172,7 +172,7 @@ htmlhelp_basename = 'dcsdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'dcs.tex', u'dcs Documentation',
+  ('index', 'DeveloperCloudSandbox.tex', u'Developer Cloud Sandbox Documentation',
    u'Fabrice Brito', 'manual'),
 ]
 
@@ -192,7 +192,3 @@ latex_documents = [
 
 # If false, no module index is generated.
 #latex_use_modindex = True
-
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'http://docs.python.org/': None}
