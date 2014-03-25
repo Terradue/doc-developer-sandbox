@@ -1,3 +1,0 @@
-h1. I'm a big header
-
-h2. I'm a smaller header
