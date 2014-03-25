@@ -1,2 +1,3 @@
-Designing the application
-=
+Design Guide
+============
+
