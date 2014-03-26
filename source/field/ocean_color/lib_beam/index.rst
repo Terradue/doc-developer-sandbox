@@ -10,7 +10,7 @@ Contents:
    :maxdepth: 2
    
    What you will learn <learn>
-   Addressing a scientific / processing goal <goal>
+   Addressing a scientific and processing goal <goal>
    Rationales for the  processing chain <rational>
    Data preparation <data>
    Workflow design <workflow>
