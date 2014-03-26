@@ -12,7 +12,7 @@ Contents:
    :maxdepth: 2
    
    Design Guide <design/index>
-   User Guide <user/index>
+   Reference Guide <reference/index>
    Field Guide <field/index>
 
 Indices and tables
