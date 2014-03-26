@@ -14,7 +14,7 @@ Contents:
    Rationales for the processing chain <rational>
    Data preparation <data>
    Workflow design <workflow>
-   Processing nodes design <nodes>
+   Processing nodes design <nodes/index>
    Application integration and testing <testing>
    Application exploitation <exploitation>
    Going further <further>
