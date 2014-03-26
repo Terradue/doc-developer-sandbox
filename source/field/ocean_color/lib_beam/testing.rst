@@ -17,10 +17,11 @@ h4. The node_expression node
 
 The first node of the workflow instantiates the expression job template.
 
-<pre>
+.. code-block:: xml
+    :linenos:
   <node id="node_expression">
     <job id="expression"></job>
-</pre>
+
 
 As source, this node uses the sandbox catalogue:
 
