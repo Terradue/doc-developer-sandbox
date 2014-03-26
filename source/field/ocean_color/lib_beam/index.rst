@@ -7,7 +7,7 @@ The application will produce global daily composites of the MERIS MCI signal to 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    What you will learn <learn>
    Addressing a scientific and processing goal <goal>
