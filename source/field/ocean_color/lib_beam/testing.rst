@@ -24,10 +24,10 @@ The first node of the workflow instantiates the expression job template.
 
        <h1>code block example</h1>
 
-.. code-block:: html
-    :linenos:
-    <node id="node_expression">
-        <job id="expression"></job>
+    .. code-block:: xml
+        :linenos:
+        <node id="node_expression">
+         <job id="expression"></job>
 
 
 As source, this node uses the sandbox catalogue:
