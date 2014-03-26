@@ -5,7 +5,9 @@ Data
 ****
 
 You will use Envisat MERIS Level 1 Reduced Resolution, a few orbit passes acquired in April 2012.
+
 The list of products used as test data is:
+
 MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1
 MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1
 MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1
@@ -47,7 +49,8 @@ The term binning refers to the process of distributing the contributions of Leve
 As long as the area of an input pixel is small compared to the area of a bin, a simple binning is sufficient.
 In this case, the geodetic center coordinate of the Level 2 pixel is used to find the bin in the Level 3 grid whose area is intersected by this point. If the area of the contributing pixel is equal or even larger than the bin area, this simple binning will produce composites with insufficient accuracy and visual artefacts such as Moiré effects will dominate the resulting datasets.
 
-h4. R implementation of the DBSCAN algorithm 
+R implementation of the DBSCAN algorithm 
+----------------------------------------
 
 R is a language and environment for statistical computing and graphics.
 R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, ...) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity.
