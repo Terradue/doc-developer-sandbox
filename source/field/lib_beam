@@ -1,0 +1,23 @@
+Algal bloom detection with Envisat MERIS
+########################################
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+   
+   What you will learn <learn>
+   Addressing a scientific / processing goal <goal>
+   Rationales for the processing chain <rational>
+   Design the workflow <workflow>
+   Design the processing steps
+   Testing the application
+   Exploiting the application
+   Going further
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
