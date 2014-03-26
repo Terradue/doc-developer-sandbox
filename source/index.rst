@@ -13,6 +13,7 @@ Contents:
    
    Design Guide <design/index>
    User Guide <user/index>
+   Field Guide <field/index>
 
 Indices and tables
 ==================
