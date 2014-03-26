@@ -62,7 +62,7 @@ The node_arrange node
 
 The node_arrange instantiates the arrange job template and uses the default value for the period. The node inputs are not a reference to a catalogue as for the expression node, but the results of the expression node:
 
-<pre>
+.. code-block:: xml
   <node id="node_arrange">
     <job id="arrange"></job>
     <sources>
@@ -71,11 +71,13 @@ The node_arrange instantiates the arrange job template and uses the default valu
     <parameters>
     </parameters>
   </node>
-</pre>
 
-h4. The node_binning node
 
-<pre>
+The node_binning node
+---------------------
+
+.. code-block:: xml
+
   <node id="node_binning">
     <job id="binning"></job>
     <sources>
@@ -84,11 +86,12 @@ h4. The node_binning node
     <parameters>
     </parameters>
   </node>
-</pre>
 
-h4. The node_clustering node
+The node_clustering node
+------------------------
 
-<pre>
+.. code-block:: xml
+
   <node id="node_clustering">
     <job id="clustering"></job>
     <sources>
@@ -97,24 +100,26 @@ h4. The node_clustering node
     <parameters>
     </parameters>
   </node>
-</pre>
 
 The complete workflow is attached.
 
-h3. Putting the pieces together
+Putting the pieces together
+***************************
 
 You have defined the job template and the workflow. The Application Descriptor file is now complete. 
 At this stage, you will create the job folder under /application, the streaming executables and create the application files.
 
-h4. The expression job
+The expression job
+------------------
 
 The expression job application invokes a Bash script, named beam_expr.sh that takes one or more MERIS products (available in the filesystem), the expression, the output band name and an folder to sotre the results.  
 The beam_expr.sh is an executable that can be invoked manually. 
 Create the file in the folder /application/expression/bin/ and make executable with
 
-<pre>
-$> chmod 755 /application/expression/bin/beam_expr.sh
-</pre> 
+.. code-block:: bash
+
+  chmod 755 /application/expression/bin/beam_expr.sh
+ 
 
 You will test the script to understand how it works.
 
