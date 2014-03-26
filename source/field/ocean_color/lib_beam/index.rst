@@ -16,5 +16,5 @@ Contents:
    Workflow design <workflow>
    Processing nodes design <nodes>
    Application integration and testing <testing>
-   Application exploitation <exploitation <exploitation>
+   Application exploitation <exploitation>
    Going further <further>
