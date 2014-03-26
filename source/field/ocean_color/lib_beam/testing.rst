@@ -21,31 +21,32 @@ The node_expression node
 The first node of the workflow instantiates the expression job template.
 
 .. code-block:: xml
-<node id="node_expression">
-<job id="expression"></job>
-
+  
+  <node id="node_expression">
+  <job id="expression"></job>
 
 As source, this node uses the sandbox catalogue:
 
-    .. code-block:: xml
-        :linenos:
-        <sources>
-        <source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>
-        </sources>
+.. code-block:: xml
+        
+  <sources>
+  <source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>
+  </sources>
 
 As parameters, it defines the values for the start and enddate and leave the expression default value.
 
-<pre>
+.. code-block:: xml
+  
   <parameters>
     <parameter type="opensearch" target="time:start" id="startdate">2012-04-02</parameter>
     <parameter type="opensearch" target="time:end" id="enddate">2012-04-06</parameter>
   </parameters>
-</pre>
 
 The complete node definition is:
 
-<pre>
-<node id="node_expression">
+.. code-block:: xml
+
+  <node id="node_expression">
       <job id="expression" />
       <sources>
         <source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>
@@ -54,8 +55,7 @@ The complete node definition is:
         <parameter type="opensearch" target="time:start" id="startdate">2012-04-02</parameter>
         <parameter type="opensearch" target="time:end" id="enddate">2012-04-06</parameter>
         </parameters>
-    </node>
-</pre>
+  </node>
 
 The node_arrange node
 ---------------------
