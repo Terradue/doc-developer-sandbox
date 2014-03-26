@@ -1,5 +1,5 @@
-With this comprehensive tutorial, you will learn:
-=================================================
+What you will learn:
+====================
 
 1. To manage test data in a sandbox - you will copy Envisat MERIS Level 1 Reduced Resolution data to the sandbox. This data will be referenced in the sandbox local catalogue
 2. To create a simple application - you will implement an algal bloom detection application in four processing steps
