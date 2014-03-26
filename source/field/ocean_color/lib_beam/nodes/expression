@@ -1,7 +1,0 @@
-Node expression
-===============
-
-As the first job in this workflow, the expression processing step:
-* defines the parameters to query the catalogue which, in this case is the start and end time (time of interest) of the MERIS Level 1 products.
-* invokes the ESA BEAM Toolbox BandMaths Operator to apply the provided band arithmetic expression to all products covering the time of interest 
-* publishes the results in a distributed file system
