@@ -38,7 +38,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Developer Cloud Sandbox'
-copyright = u'2014, Fabrice Brito'
+copyright = u'2014, Terradue'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
