@@ -125,19 +125,19 @@ You will test the script to understand how it works.
 
 First, copy one MERIS product available in the sandbox catalogue to your home:
 
-<pre>
-$> ciop-copy -o ~ "http://localhost/catalogue/sandbox/MER_RR__1P/rdf?count=1"
-</pre>
+.. code-block:: bash
+
+  ciop-copy -o ~ "http://localhost/catalogue/sandbox/MER_RR__1P/rdf?count=1"
 
 Notice the output of the ciop-copy utility, it is the local path of the copied file. It is often usefull to store this value in a variable to access the copied product.
 
 Invoke the beam_expr.sh script:
 
-<pre>
-$> export BEAM_HOME=$_CIOP_APPLICATION_PATH/share/beam-4.11
-$> export PATH=$BEAM_HOME/bin:$PATH
-$> $_CIOP_APPLICATION_PATH/expression/bin/beam_expr.sh -b out -e "l1_flags.INVALID?0:radiance_13>17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)" -o ~ ~/MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1
-</pre>
+.. code-block:: bash
+
+  export BEAM_HOME=$_CIOP_APPLICATION_PATH/share/beam-4.11
+  export PATH=$BEAM_HOME/bin:$PATH
+  $_CIOP_APPLICATION_PATH/expression/bin/beam_expr.sh -b out -e "l1_flags.INVALID?0:radiance_13>17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)" -o ~ ~/MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1
 
 You'll find in your home the result: MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1.dim.tgz
 
@@ -145,104 +145,109 @@ You will now create the streaming executable (run) using the Bash scripting lang
 
 The beam_expr.sh needs the arithmetic expression value. To do so, you will use the ciop-getparam function (part of the ciop_job_include that needs to be sourced):
 
-<pre>
-#!/bin/bash
-source ${ciop_job_include}
-expression="`ciop-getparam expression`"
-</pre>
+.. code-block:: bash
+
+  #!/bin/bash
+  source ${ciop_job_include}
+  expression="`ciop-getparam expression`"
 
 Ok, you have the variable expression with the value "l1_flags.INVALID?0:radiance_13>17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)"
 
 You'll proceed with the copy of the MERIS products whose RDF URLs are passed as the result of the OpenSearch query:
 
-<pre>
-$> opensearch-client -p time:start=2012-04-05 -p time:end=2012-04-06 http://localhost/catalogue/sandbox/MER_RR__1P/description
-</pre>
+.. code-block:: bash
+
+  opensearch-client -p time:start=2012-04-05 -p time:end=2012-04-06 http://localhost/catalogue/sandbox/MER_RR__1P/description
+
 
 which returns:
 
-<pre>
-http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1/rdf
-http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1/rdf
-http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120405_142147_000026243113_00226_52826_0090.N1/rdf
-http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120405_092107_000026213113_00223_52823_0052.N1/rdf
-http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120404_231946_000026213113_00217_52817_9862.N1/rdf
-</pre>
+.. code-block:: bash
+
+  http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1/rdf
+  http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1/rdf
+  http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120405_142147_000026243113_00226_52826_0090.N1/rdf
+  http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120405_092107_000026213113_00223_52823_0052.N1/rdf 
+  http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120404_231946_000026213113_00217_52817_9862.N1/rdf
 
 So, behind the scenes, the streaming executable is invoked with a command similar to:
 
-opensearch-client -p time:start=2012-04-05 -p time:end=2012-04-06 http://localhost/catalogue/sandbox/MER_RR__1P/description | /application/expression/run
+.. code-block:: bash
+
+  opensearch-client -p time:start=2012-04-05 -p time:end=2012-04-06 http://localhost/catalogue/sandbox/MER_RR__1P/description | /application/expression/run
 
 You'll edit the streaming executable (/application/expression/run) to add the copy of the MERIS products:
 
-<pre>
-#!/bin/bash
-source ${ciop_job_include}
-expression="`ciop-getparam expression`"
-
-while read inputfile 
-do
-  retrieved=`ciop-copy -o $TMPDIR "$inputfile"`
-done
-</pre>
+.. code-block:: bash
+  
+  #!/bin/bash
+  source ${ciop_job_include}
+  expression="`ciop-getparam expression`"
+  
+  while read inputfile 
+  do
+    retrieved=`ciop-copy -o $TMPDIR "$inputfile"`
+  done
 
 The ciop-copy utility is invoked with the option -o set to $TMPDIR. This variable contains the path to a unique temporary folder that only one instance of the streaming executable will use (concurrency in parallel tasks is thus avoided).
 
 You have the expression value and the MERIS file copied to the temporary folder. You will now add the creation of the output folder for the results and invoke beam_expr.sh
 
-<pre>
-#!/bin/bash
-source ${ciop_job_include}
-expression="`ciop-getparam expression`"
+.. code-block:: bash
+  #!/bin/bash
+  source ${ciop_job_include}
+  expression="`ciop-getparam expression`"
+  
+  mkdir -p $TMPDIR/output
+  export OUTPUTDIR=$TMPDIR/output
+  
+  while read inputfile 
+  do
+    retrieved=`ciop-copy -o $TMPDIR "$inputfile"`
+    $_CIOP_APPLICATION_PATH/expression/bin/beam_expr.sh -o $OUTPUTDIR -e "$expression" -b out $retrieved 1>&2 	
+  done
 
-mkdir -p $TMPDIR/output
-export OUTPUTDIR=$TMPDIR/output
-
-while read inputfile 
-do
-  retrieved=`ciop-copy -o $TMPDIR "$inputfile"`
-  $_CIOP_APPLICATION_PATH/expression/bin/beam_expr.sh -o $OUTPUTDIR -e "$expression" -b out $retrieved 1>&2 	
-done
-</pre>
 
 If this streaming executable is run, the $OUTPUTDIR folder will contain all the beam_expr.sh results, in order to make these available in the distributed file system, these have to be published with the ciop-publish utility.
 After the publication to the distributed filesystem, the input and output are no longer needed, so you will free the space and leave the environment clean for the next MERIS product to be processed.
 ciop-publish plays another important role: it tells the framework what has been produced (in practical terms, the inputs of the next node: node_arrange).
 
-<pre>
-#!/bin/bash
-source ${ciop_job_include}
-expression="`ciop-getparam expression`"
+.. code-block:: bash
 
-mkdir -p $TMPDIR/output
-export OUTPUTDIR=$TMPDIR/output
-
-while read inputfile 
-do
-  retrieved=`ciop-copy -o $TMPDIR "$inputfile"`
-  $_CIOP_APPLICATION_PATH/expression/bin/beam_expr.sh -o $OUTPUTDIR -e "$expression" -b out $retrieved 1>&2 	
-  ciop-publish $OUTPUTDIR/*.tgz
-  rm -fr $retrieved $OUTPUTDIR/*.tgz
-done
-</pre>
+  #!/bin/bash
+  source ${ciop_job_include}
+  expression="`ciop-getparam expression`"
+  
+  mkdir -p $TMPDIR/output
+  export OUTPUTDIR=$TMPDIR/output
+  
+  while read inputfile 
+  do
+    retrieved=`ciop-copy -o $TMPDIR "$inputfile"`
+    $_CIOP_APPLICATION_PATH/expression/bin/beam_expr.sh -o $OUTPUTDIR -e "$expression" -b out $retrieved 1>&2 	
+    ciop-publish $OUTPUTDIR/*.tgz
+    rm -fr $retrieved $OUTPUTDIR/*.tgz
+  done
 
 You're done! The streaming executable of the job template expression is created.
 The streaming executable can of course be enhanced with the error handling, checks on the outcomes of the commands, etc. 
 The final expression node template streaming executable is attached and includes extended comments. 
 
-h3. Simulating and testing
+Simulating and testing
+**********************
 
-
-h4. node_expression simulation and testing
+node_expression simulation and testing
+--------------------------------------
 
 The node_expression will produce:
 
-<pre>
-MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1.dim.tgz
-MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1.dim.tgz
-MER_RR__1PRLRA20120405_142147_000026243113_00226_52826_0090.N1.dim.tgz
-MER_RR__1PRLRA20120405_092107_000026213113_00223_52823_0052.N1.dim.tgz
-MER_RR__1PRLRA20120404_231946_000026213113_00217_52817_9862.N1.dim.tgz
-</pre>
+.. code-block:: bash
+
+  MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1.dim.tgz
+  MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1.dim.tgz
+  MER_RR__1PRLRA20120405_142147_000026243113_00226_52826_0090.N1.dim.tgz
+  MER_RR__1PRLRA20120405_092107_000026213113_00223_52823_0052.N1.dim.tgz
+  MER_RR__1PRLRA20120404_231946_000026213113_00217_52817_9862.N1.dim.tgz
+
 
 These files are all available in the distributed filesystem.
