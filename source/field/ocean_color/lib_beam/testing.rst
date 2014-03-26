@@ -21,7 +21,6 @@ The node_expression node
 The first node of the workflow instantiates the expression job template.
 
     .. code-block:: xml
-        :linenos:
         <node id="node_expression">
         <job id="expression"></job>
 
