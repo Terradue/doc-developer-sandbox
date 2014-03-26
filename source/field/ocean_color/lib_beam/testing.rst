@@ -33,11 +33,11 @@ The first node of the workflow instantiates the expression job template.
 
 As source, this node uses the sandbox catalogue:
 
-<pre>
-  <sources>
-    <source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>
-  </sources>
-</pre>
+    .. code-block:: xml
+        :linenos:
+        <sources>
+        <source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>
+        </sources>
 
 As parameters, it defines the values for the start and enddate and leave the expression default value.
 
