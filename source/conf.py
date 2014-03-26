@@ -181,7 +181,7 @@ htmlhelp_basename = 'DeveloperCloudSandboxdoc'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'DeveloperCloudSandbox.tex', u'Developer Cloud Sandbox Documentation',
-   u'Fabrice Brito', 'manual'),
+   u'Terradue', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
