@@ -7,16 +7,22 @@ Writing the Application workflow
 ********************************
 
 In the context of the framework, the workflows are Directed Acyclic Graphs (DAG) where nodes and their relation(s), the source(s) are defined.
+
 Each node has:
-- a unique identifier
-- a job template id reference
-- one or more sources
-- one or more parameters and associated values to overide the default value (if defined in the job template).
+* a unique identifier
+* a job template id reference
+* one or more sources
+* one or more parameters and associated values to overide the default value (if defined in the job template).
 
 The node_expression node
 ------------------------
 
 The first node of the workflow instantiates the expression job template.
+
+    .. code-block:: html
+       :linenos:
+
+       <h1>code block example</h1>
 
 .. code-block:: html
     :linenos:
