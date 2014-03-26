@@ -1,5 +1,10 @@
-First Steps with Sphinx
-=======================
+User Guide
+==========
 
-This document is meant to give a tutorial-like overview of all common tasks
-while using Sphinx.
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+   
+   Developer Sandbox command reference <man/index>
+   
