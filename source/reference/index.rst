@@ -1,5 +1,5 @@
-User Guide
-==========
+Reference Guide
+===============
 
 Contents:
 
