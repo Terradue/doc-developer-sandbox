@@ -20,9 +20,9 @@ The node_expression node
 
 The first node of the workflow instantiates the expression job template.
 
-    .. code-block:: xml
-        <node id="node_expression">
-        <job id="expression"></job>
+.. code-block:: xml
+<node id="node_expression">
+<job id="expression"></job>
 
 
 As source, this node uses the sandbox catalogue:
