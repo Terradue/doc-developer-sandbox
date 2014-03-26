@@ -12,7 +12,7 @@ You are encouraged to fork this repo and send us pull requests!
 Here's the procedure to install the required packages on a CentOS 6.x
 
 ```
-sudo yum install python-sphinx
+sudo yum install python-sphinx10
 sudo yum install python-pip
 pip install sphinx_bootstrap_theme
 git clone git@github.com:Terradue/doc-developer-sandbox.git
