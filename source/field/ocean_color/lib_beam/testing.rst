@@ -13,14 +13,15 @@ Each node has:
 - one or more sources
 - one or more parameters and associated values to overide the default value (if defined in the job template).
 
-h4. The node_expression node
+The node_expression node
+------------------------
 
 The first node of the workflow instantiates the expression job template.
 
 .. code-block:: xml
     :linenos:
-  <node id="node_expression">
-    <job id="expression"></job>
+    <node id="node_expression">
+        <job id="expression"></job>
 
 
 As source, this node uses the sandbox catalogue:
