@@ -39,6 +39,7 @@ As root, do:
 cd /var/www/html
 ln -s /home/fbrito/doc-developer-sandbox/build/html/ developer-sandbox
 chown apache:ciop developer-sandbox
+chmod -R g+w developer-sandbox
 ```
 > Replace /home/fbrito with the path to the folder where you have cloned the repository
 
