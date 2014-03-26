@@ -3,7 +3,7 @@
 This is the official repository of the Developer Cloud Sandbox. 
 
 This documentation is live at:
-[http://docs.terradue.com/data-challenges](http://docs.terradue.com/data-challenges).
+[http://docs.terradue.com/developer-sandbox](http://docs.terradue.com/data-challenges).
 
 You are encouraged to fork this repo and send us pull requests!
 
