@@ -63,6 +63,7 @@ The node_arrange node
 The node_arrange instantiates the arrange job template and uses the default value for the period. The node inputs are not a reference to a catalogue as for the expression node, but the results of the expression node:
 
 .. code-block:: xml
+
   <node id="node_arrange">
     <job id="arrange"></job>
     <sources>
