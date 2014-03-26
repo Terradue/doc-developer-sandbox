@@ -87,6 +87,9 @@ pygments_style = 'sphinx'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
+# Github path
+github_repo = "https://github.com/Terradue/doc-developer-sandbox"
+github_branch = "master"
 
 # -- Options for HTML output ---------------------------------------------------
 
