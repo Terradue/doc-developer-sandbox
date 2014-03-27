@@ -16,11 +16,3 @@ Contents:
    Reference Guide <reference/index>
    Hands-on Guide <hands-on/index>
    Field Guide <field/index>
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
