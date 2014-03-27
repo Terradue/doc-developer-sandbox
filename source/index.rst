@@ -11,8 +11,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   User Guide <user/index>
+   Getting Started Guide <start/index>
+   Developer's Quick start <developer/index>
    Design Guide <design/index>
-   Reference Guide <reference/index>
-   Hands-on Guide <hands-on/index>
    Field Guide <field/index>
+   Developer's Reference Guide <reference/index>

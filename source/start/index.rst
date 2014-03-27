@@ -6,5 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
    
-   Laboratory <laboratory>
-   Sandbox <sandbox>
+   Defining the Laboratory <laboratory>
+   Access the Sandbox <sandbox>
+   Discover the Sandbox services & tools <discover>
+   Understanding the Developer Cloud Sandbox <understanding>
