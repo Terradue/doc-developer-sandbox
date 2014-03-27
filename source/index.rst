@@ -14,7 +14,7 @@ Contents:
    User Guide <user/index>
    Design Guide <design/index>
    Reference Guide <reference/index>
-   Hands-on Guide <hands-on/index
+   Hands-on Guide <hands-on/index>
    Field Guide <field/index>
 
 Indices and tables
