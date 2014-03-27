@@ -4,7 +4,11 @@ man pages
 Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    
-   ciop-copy <ciop-copy>
-   ciop-register <ciop-register>
+   Data management <data>
+   Catalogue access and management <catalogue>
+   Simulation <simulation>
+   Streaming executable scripting functions <script_functions>
+   Streaming executableR functions <r_functions>
+   Streaming executable Python functions <pi_functions>
