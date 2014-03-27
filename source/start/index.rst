@@ -1,10 +1,10 @@
-User Guide
-==========
+Getting Started Guide
+=====================
 
 Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    
    Defining the Laboratory <laboratory>
    Accessing the Sandbox <sandbox>
