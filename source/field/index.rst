@@ -8,4 +8,5 @@ Contents:
    
    Ocean colour <ocean_color/index>
    InSAR interferometry <insar/index>
+   Digital Elevation Model <dem/index>
    More <more/index>
