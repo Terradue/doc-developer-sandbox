@@ -1,3 +1,97 @@
+
+body {
+	padding-top: 0px;
+}
+
+#navbar {
+	border-radius: 0px !important;
+}
+
+#navbar .navbar-brand > img {
+	width: 150px;	
+}
+
+.navbar-brand {
+	padding: 9px;
+}
+
+#sidebar {
+	background-color: #eee;
+}
+
+header {
+  background-image: url('t2HeaderBg.png');
+  height: 110px; /*140px;*/
+}
+
+header img {
+  margin-top: 11px;
+  height: 90px;
+}
+
+header #t2-random-slogan {
+  font-size: 13px;
+  width: 190px;
+  margin-top: -24px;
+
+  font-style: normal;
+  font-weight: normal;
+  color: rgb(111, 111, 111);
+  text-align: right;
+  line-height: 14px;
+}
+
+@media (max-width: 767px) {
+  header {
+    height: 85px;
+    text-align: center;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  header img {
+    height: 70px;
+    margin-top: 7px;
+  }
+  header #t2-random-slogan {
+    font-size: 11px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 110px;
+    width: 183px;
+    margin-top: -18px;
+    line-height: 11px;
+  }
+}
+
+.bs-sidenav.affix {
+    position: fixed;
+    top: auto;
+}
+.bs-sidenav, pre {
+    background-color: #EBEBED;
+}
+
+footer {
+  background-image: url('t2FooterBlackLinen.png');
+  padding: 10px;
+  padding-top: 10px;
+  color: #DDDDDD;
+  /* font-size: 12px; */
+
+  -moz-box-shadow:    0px 1px 5px 5px #aaa;
+  -webkit-box-shadow: 0px 1px 5px 5px #aaa;
+  box-shadow:         0px 1px 5px 5px #aaa;
+  margin-top: 30px;
+}
+
+footer a { color: white }
+
+
+a {
+	color: #3b5998;
+}
+
+/*
 body {
     font-family: Verdana, Geneva, sans-serif;
     font-size: 10pt;
@@ -60,8 +154,9 @@ h3 {
 h4 {
     font-size: 14pt;
 }
-
+*/
 /* Center Images */
+/*
 .section > p > img:only-child {
     display: block;
     margin-left: auto;
@@ -114,3 +209,4 @@ code {
     color: #888888;
     background-color: #EBEBED;
 }
+*/
