@@ -6,7 +6,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   Defining the Laboratory <laboratory>
-   Accessing the Sandbox <sandbox>
-   Discovering the Sandbox services & tools <discover>
-   Understanding the Developer Cloud Sandbox <understanding>
+   Welcome ! <welcome>
+   Join your Laboratory <laboratory>
+   Access your Sandbox <sandbox>
+   Discover the Sandbox services & tools <discover>
+   Understand the Developer Cloud Sandbox key principles <principles>
