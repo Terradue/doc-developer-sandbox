@@ -1,5 +1,3 @@
-.. _welcome:
-
 Welcome !
 #########
 
