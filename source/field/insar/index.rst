@@ -12,4 +12,3 @@ Contents:
    
    Two pass processing with ROI_PAC <tp_roi_pac/index>
    Two pass processing with GMTSAR <tp_gtmsar/index>
-   More to come! <user/index>
