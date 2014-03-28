@@ -195,6 +195,7 @@ The ciop-copy utility is invoked with the option -o set to $TMPDIR. This variabl
 You have the expression value and the MERIS file copied to the temporary folder. You will now add the creation of the output folder for the results and invoke beam_expr.sh
 
 .. code-block:: bash
+
   #!/bin/bash
   source ${ciop_job_include}
   expression="`ciop-getparam expression`"
