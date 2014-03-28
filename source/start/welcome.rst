@@ -1,7 +1,7 @@
+:: _welcome:
+
 Welcome !
 #########
-
-:: _welcome:
 
 This is your Cloud.
 
