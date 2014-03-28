@@ -6,7 +6,7 @@ Getting Started Guide
    
 Contents:
 
-   Welcome ! <welcome>
+   Welcome ! :ref:`welcome`
    Join your Laboratory <laboratory>
    Access your Sandbox <sandbox>
    Discover the Sandbox services & tools <discover>
