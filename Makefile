@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = sphinx-1.0-build
+SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
 SED           = sed
