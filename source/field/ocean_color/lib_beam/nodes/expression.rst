@@ -3,10 +3,10 @@ Node expression
 
 As the first job in this workflow, the expression processing step implements a streaming executable:
 
-* defines the parameters to query the catalogue which, in this case is the start and end time (time of interest) of the MERIS Level 1 products.
-* stages-in the input Envisat MERIS Level 1 products
-* invokes the ESA BEAM Toolbox BandMaths Operator to apply the provided band arithmetic expression to all input MERIS Level 1 products covering the time of interest 
-* stages-out the results in a distributed file system as inputs to the next processing step
+* Defines the parameters to query the catalogue which, in this case is the start and end time (time of interest) of the MERIS Level 1 products.
+* Stages-in the input Envisat MERIS Level 1 products
+* Invokes the ESA BEAM Toolbox BandMaths Operator to apply the provided band arithmetic expression to all input MERIS Level 1 products covering the time of interest 
+* Stages-out the results in a distributed file system as inputs to the next processing step
 
 The job template includes the path to the streaming executable.
 
@@ -49,7 +49,7 @@ Here's the job template including the elements described above.
       <parameter type="opensearch" target="time:end" id="enddate"/>
   	</defaultParameters>
   	<defaultJobconf>
-  	  <property id="mapred.task.timeout">9900000000000</property>
+      <property id="mapred.task.timeout">9900000000000</property>
   	</defaultJobconf>
   </jobTemplate>
 
