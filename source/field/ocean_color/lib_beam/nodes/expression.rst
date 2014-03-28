@@ -14,6 +14,7 @@ The job template includes the path to the streaming executable.
 
   <streamingExecutable>/application/expression/run</streamingExecutable>
   
+The streaming executable source is available here: `/application/expression/run <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/expression/run>`_
   
 The job template defines three parameters:
 
