@@ -11,4 +11,4 @@ Contents:
    :maxdepth: 2
    
    Algal bloom detection with Envisat MERIS <lib_beam/index>
-   More to come! <more/index>
+
