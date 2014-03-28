@@ -6,7 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   Welcome <welcome>
+   Introduction <introduction>
    Join your Laboratory <laboratory>
    Access your Sandbox <sandbox>
    Discover the Sandbox services & tools <discover>
