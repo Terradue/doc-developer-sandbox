@@ -1,0 +1,15 @@
+Getting Started Guide
+=====================
+
+The Developer Cloud Sandboxes service equips users to develop, test and validate their applications within a virtualized environment, and seamlessly enables the Application's data processing chains for deployment and exploitation on high-performance distributed computing clusters.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+   
+   Welcome ! <welcome>
+   Join your Laboratory <laboratory>
+   Access your Sandbox <sandbox>
+   Discover the Sandbox services & tools <discover>
+   Understand the Developer Cloud Sandbox key principles <principles>
