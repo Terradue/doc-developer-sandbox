@@ -1,10 +1,10 @@
 Getting Started Guide
 =====================
 
+Contents:
+
 .. toctree::
    :maxdepth: 2
-
-Contents
 
    Welcome <welcome>
    Join your Laboratory <laboratory>
