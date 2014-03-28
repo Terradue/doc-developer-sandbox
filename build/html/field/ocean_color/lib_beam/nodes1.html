@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Processing nodes design &mdash; Developer Cloud Sandbox 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.1.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.1.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Developer Cloud Sandbox 1.0 documentation" href="../../../index.html" />
+    <link rel="stylesheet" href="../../../_static/terradue.css" type="text/css" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+  </head>
+  <body>
+
+<header>
+	<div class="container">
+		<a href="http://www.terradue.com" target="_blank"><img id="logo" src="../../../_static/t2Logo.png"></a>
+		<div id="t2-random-slogan">digital earth scalers</div>
+	</div>
+</header>
+<div id="navbar" class="navbar navbar-default"><!-- navbar-fixed-top-->
+    <div class="container">
+      <div class="navbar-header pull-right">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img class="navbar-brand-logo" src="../../../_static/sandboxLogo.png" alt="opennebula-logo"/></a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <b>1.0</b><b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu globaltoc">
+        <li><a href="/devel">1.2 (Devel)</a></li>
+        <li><a href="/stable">1.1 (Stable)</a></li>
+    </ul>
+</li>
+
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer&#8217;s Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../design/index.html">Design Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Field Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">Developer&#8217;s Reference Guide</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Processing nodes design</a><ul>
+<li><a class="reference internal" href="#preparing-the-templates">Preparing the templates</a><ul>
+<li><a class="reference internal" href="#the-bandmaths-operator">The BandMaths Operator</a></li>
+<li><a class="reference internal" href="#arranging-the-bandmaths-operator-results">Arranging the BandMaths Operator results</a></li>
+<li><a class="reference internal" href="#the-level-3-binning-processor">The Level 3 Binning Processor</a></li>
+<li><a class="reference internal" href="#the-clustering-step">The clustering step</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li><div id="sourcelink">
+  <a href="https://github.com/Terradue/doc-developer-sandbox/blob/master/source/field/ocean_color/lib_beam/nodes1.rst" rel="nofollow" target="_blank">Source</a>
+</div></li>
+            
+          </ul>
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+<div class="alert alert-danger alert-error alert-dismissable" style="margin-left: 15px; margin-right: 15px;">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p class="first admonition-title">
+        Warning
+    </p>
+    <p class="last">
+        This guide is under development. The material on this page needs to be reviewed for completeness and accuracy. This guide may have not been updated yet from the last release.
+    </p>
+</div>
+
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer&#8217;s Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../design/index.html">Design Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Field Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/index.html">Developer&#8217;s Reference Guide</a></li>
+</ul>
+<div id="sourcelink">
+  <a href="https://github.com/Terradue/doc-developer-sandbox/blob/master/source/field/ocean_color/lib_beam/nodes1.rst" rel="nofollow" target="_blank">Source</a>
+</div>
+<form action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+
+    <div class="col-md-9">
+      
+  <div class="section" id="processing-nodes-design">
+<h1>Processing nodes design<a class="headerlink" href="#processing-nodes-design" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="preparing-the-templates">
+<h2>Preparing the templates<a class="headerlink" href="#preparing-the-templates" title="Permalink to this headline">¶</a></h2>
+<p>Now that the test data is available and the software required to build the application is installed, you will now define the job templates.</p>
+<p>The job templates are XML blocks of the application descriptor file which, by default, is found in /application/application.xml</p>
+<p>Each job template XML block contains:
+* a streaming executable: this file is a Linux executable able to process the inputs passed via stdin
+* a set of one or more parameters, each with a type, target, an id and optionally a default value
+* the job default configuration defining, for example, the execution wall time and the maximum number of concurrent tasks</p>
+<div class="section" id="the-bandmaths-operator">
+<h3>The BandMaths Operator<a class="headerlink" href="#the-bandmaths-operator" title="Permalink to this headline">¶</a></h3>
+<p>As the first job in this workflow, the expression processing step:
+* defines the parameters to query the catalogue which, in this case is the start and end time (time of interest) of the MERIS Level 1 products.
+* invokes the ESA BEAM Toolbox BandMaths Operator to apply the provided band arithmetic expression to all products covering the time of interest
+* publishes the results in a distributed file system</p>
+<p>&lt;pre&gt;
+&lt;jobTemplate id=&#8221;expression&#8221;&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><p>&lt;streamingExecutable&gt;/application/expression/run&lt;/streamingExecutable&gt;
+&lt;defaultParameters&gt;</p>
+<blockquote>
+<div>&lt;parameter id=&#8221;expression&#8221;&gt;l1_flags.INVALID?0:radiance_13&gt;17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)&lt;/parameter&gt;
+&lt;parameter type=&#8221;opensearch&#8221; target=&#8221;time:start&#8221; id=&#8221;startdate&#8221;/&gt;
+&lt;parameter type=&#8221;opensearch&#8221; target=&#8221;time:end&#8221; id=&#8221;enddate&#8221;/&gt;
+&lt;/defaultParameters&gt;
+&lt;defaultJobconf&gt;
+&lt;property id=&#8221;mapred.task.timeout&#8221;&gt;9900000000000&lt;/property&gt;
+&lt;/defaultJobconf&gt;</div></blockquote>
+</div></blockquote>
+<p>&lt;/jobTemplate&gt;</p>
+</div></blockquote>
+<p>&lt;/pre&gt;</p>
+<p>The job template is called &#8220;expression&#8221; and it defines three parameters:
+* expression with a default defined
+* startdate of type opensearch and a target time:start
+* enddate of type opensearch and a target time:end</p>
+<p>While the first defines the default value of the BandMaths Operator arithmetic expression to be applied to the MERIS Level 1 data, the other two (of type opensearch) are used to query the OpenSearch catalogue of the sandbox.
+Each OpenSearch catalogue defines a query template via its description file accessible at <a class="reference external" href="http:/">http:/</a>/&lt;sandbox IP&gt;/catalogue/sandbox/MER_RR__1P/description</p>
+<p>Here&#8217;s a subset of this description document</p>
+<p>&lt;pre&gt;
+template=&#8221;<a class="reference external" href="http://10.16.10.70/catalogue/sandbox/MER_RR__1P/rdf/">http://10.16.10.70/catalogue/sandbox/MER_RR__1P/rdf/</a>?count={count?}&amp;amp;name={geo:name?}&amp;amp;startPage={startPage?}&amp;amp;startIndex={startIndex?}&amp;amp;q={searchTerms?}&amp;amp;start={time:start?}&amp;amp;stop={time:end?}&amp;amp;bbox={geo:box?}&amp;amp;geometry={geo:geometry?}&amp;amp;uid={geo:uid?}&#8221;
+&lt;/pre&gt;</p>
+<p>Among other parameters such as the bounding box, the OpenSearch description document template defines start={time:start?} and stop={time:end?}.
+The framework will thus map the expression job template parameters startdate and enddate to the right catalogue queryables using the type:
+* stardate of target time:start will be mapped to the template queryable start={time:start?}
+* stopdate of target time:end will be mapped to the template queryable stop={time:end?}</p>
+<p>So the resulting query to the catalogue for te job expression will be:</p>
+<p><a class="reference external" href="http:/">http:/</a>/&lt;sandbox IP&gt;/catalogue/sandbox/MER_RR__1P/rdf?start=&lt;value of parameter startdate&gt;&amp;stop=&lt;value of parameter stopdate&gt;</p>
+<p>What if you want to search the catalogue for MERIS products over a given and default bounding box? You would do:</p>
+<p>&lt;pre&gt;
+&lt;jobTemplate id=&#8221;expression&#8221;&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><p>&lt;streamingExecutable&gt;/application/expression/run&lt;/streamingExecutable&gt;
+&lt;defaultParameters&gt;</p>
+<blockquote>
+<div>&lt;parameter id=&#8221;expression&#8221;&gt;l1_flags.INVALID?0:radiance_13&gt;17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)&lt;/parameter&gt;
+&lt;parameter type=&#8221;opensearch&#8221; target=&#8221;time:start&#8221; id=&#8221;startdate&#8221;/&gt;
+&lt;parameter type=&#8221;opensearch&#8221; target=&#8221;time:end&#8221; id=&#8221;enddate&#8221;/&gt;
+&lt;parameter type=&#8221;opensearch&#8221; target=&#8221;geo:box&#8221; id=&#8221;aoi&#8221;&gt;-10,-10,20,20&lt;/parameter&gt;
+&lt;/defaultParameters&gt;
+&lt;defaultJobconf&gt;
+&lt;property id=&#8221;mapred.task.timeout&#8221;&gt;9900000000000&lt;/property&gt;
+&lt;/defaultJobconf&gt;</div></blockquote>
+</div></blockquote>
+<p>&lt;/jobTemplate&gt;</p>
+</div></blockquote>
+<p>&lt;/pre&gt;</p>
+<p>In this case, the resulting query would be:</p>
+<p><a class="reference external" href="http:/">http:/</a>/&lt;sandbox IP&gt;/catalogue/sandbox/MER_RR__1P/rdf?start=&lt;value of parameter startdate&gt;&amp;stop=&lt;value of parameter stopdate&gt;&amp;bbox=-10,-10,20,20</p>
+<p>In the defaultJobconf section, the expression job template defines the task timeout in miliseconds which is the maximum time allowed from the last ciop-log invocation before the process is killed.</p>
+</div>
+<div class="section" id="arranging-the-bandmaths-operator-results">
+<h3>Arranging the BandMaths Operator results<a class="headerlink" href="#arranging-the-bandmaths-operator-results" title="Permalink to this headline">¶</a></h3>
+<p>The application goal is to produce daily binned products so the binning processing step needs to have its inputs well organized so that it aggregates in time and space only the products of a given day.
+In terms of job template, you will define the path to the streaming executable, one parameter: the period (a day) and instruct the framework that only one task has to be run.</p>
+<dl class="docutils">
+<dt>&lt;pre&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;jobTemplate id=&#8221;arrange&#8221;&gt;</dt>
+<dd><dl class="first last docutils">
+<dt>&lt;streamingExecutable&gt;/application/arrange/run.R&lt;/streamingExecutable&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;defaultParameters&gt;</dt>
+<dd>&lt;parameter id=&#8221;period&#8221;&gt;day&lt;/parameter&gt;</dd>
+</dl>
+<p>&lt;/defaultParameters&gt;
+&lt;defaultJobconf&gt;</p>
+<blockquote>
+<div>&lt;property id=&#8221;ciop.job.max.tasks&#8221;&gt;1&lt;/property&gt;</div></blockquote>
+<p class="last">&lt;/defaultJobconf&gt;</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="last">&lt;/jobTemplate&gt;</p>
+</dd>
+</dl>
+<p>&lt;/pre&gt;</p>
+</div>
+<div class="section" id="the-level-3-binning-processor">
+<h3>The Level 3 Binning Processor<a class="headerlink" href="#the-level-3-binning-processor" title="Permalink to this headline">¶</a></h3>
+<p>The binning job template defines the streaming executable, the wall time and the parameters:
+* cellsize which is the size of the bin and it is specified in kilometers (more info about the binning algorithm <a class="reference external" href="http://www.brockmann-consult.de/beam/doc/help/index.html">http://www.brockmann-consult.de/beam/doc/help/index.html</a>)
+* bbox that defines the area of interest. Its values defaults to -180,-90,180,90.
+* algorithm defaulting to Minimum/Maximum (in this applications, we want the maximum value). The other possible values are: &#8220;Maximum Likelihood&#8221; and &#8220;Arithmetic Mean&#8221;</p>
+<dl class="docutils">
+<dt>&lt;pre&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;jobTemplate id=&#8221;binning&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;streamingExecutable&gt;/application/binning/run&lt;/streamingExecutable&gt;</dt>
+<dd><blockquote class="first">
+<div><dl class="docutils">
+<dt>&lt;defaultParameters&gt;</dt>
+<dd>&lt;parameter id=&#8221;cellsize&#8221;&gt;9.28&lt;/parameter&gt;
+&lt;parameter id=&#8221;bbox&#8221;&gt;-180,-90,180,90&lt;/parameter&gt;
+&lt;parameter id=&#8221;algorithm&#8221;&gt;Minimum/Maximum&lt;/parameter&gt;</dd>
+</dl>
+<p>&lt;/defaultParameters&gt;
+&lt;defaultJobconf&gt;</p>
+</div></blockquote>
+<p class="last">&lt;property id=&#8221;mapred.task.timeout&#8221;&gt;9900000000000&lt;/property&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/defaultJobconf&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/jobTemplate&gt;</p>
+</dd>
+</dl>
+<p>&lt;/pre&gt;</p>
+</div>
+<div class="section" id="the-clustering-step">
+<h3>The clustering step<a class="headerlink" href="#the-clustering-step" title="Permalink to this headline">¶</a></h3>
+<p>The R DBSCAN algorithm implementation allows defining several parameters, the job template is created with:
+- eps which is the reachability distance defaulting to 10
+- minpts, the rreachability minimum no. of points defaulting to 10
+Other parameters could be included if you want to experiment the clustering algorithm fine tuning (not the goal of this tutorial).</p>
+<p>Algal blooms correspond to high values of MCI, so the template allows defining a threshold defaulting to 100.5 so the DBSCAN clustering will run against thos pixels with the MCI value above the threshold value.</p>
+<dl class="docutils">
+<dt>&lt;pre&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;jobTemplate id=&#8221;clustering&#8221;&gt;</dt>
+<dd><p class="first">&lt;streamingExecutable&gt;/application/clustering/run.R&lt;/streamingExecutable&gt;
+&lt;defaultParameters&gt;</p>
+<blockquote>
+<div><blockquote>
+<div>&lt;parameter id=&#8221;eps&#8221;&gt;10&lt;/parameter&gt;
+&lt;parameter id=&#8221;minpts&#8221;&gt;10&lt;/parameter&gt;</div></blockquote>
+<p>&lt;parameter id=&#8221;threshold&#8221;&gt;100.5&lt;/parameter&gt;</p>
+</div></blockquote>
+<p>&lt;/defaultParameters&gt;
+&lt;defaultJobconf&gt;</p>
+<blockquote>
+<div>&lt;property id=&#8221;ciop.job.max.tasks&#8221;&gt;1&lt;/property&gt;</div></blockquote>
+<p class="last">&lt;/defaultJobconf&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/jobTemplate&gt;</p>
+</dd>
+</dl>
+<p>&lt;/pre&gt;</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer>
+	<div class="container">
+		<img src="../../../_static/t2LogoLittleWhite.png">
+		&nbsp;&nbsp;&nbsp;Copyright 2006-2014 &copy; Terradue. All Rights Reserved. Please send comments to <a href="mailto:info [at] terradue [dot] com">info</a>. <p class="pull-right">This site is hosted by <a href="http://www.terradue.com">Terradue</a>.</p>
+	</div>
+</footer>
+
+  </body>
+</html>
