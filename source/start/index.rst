@@ -4,6 +4,8 @@ Getting Started Guide
 .. toctree::
    :maxdepth: 2
 
+Contents
+
    `Welcome ! <welcome>`
    Join your Laboratory <laboratory>
    Access your Sandbox <sandbox>
@@ -12,3 +14,6 @@ Getting Started Guide
 
 
 
+
+:ref:`Welcome ! <welcome>`
+:ref:`Join your Laboratory <laboratory>`
