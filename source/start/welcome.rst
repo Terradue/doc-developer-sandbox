@@ -1,4 +1,4 @@
-:: _welcome:
+.. _welcome:
 
 Welcome !
 #########
