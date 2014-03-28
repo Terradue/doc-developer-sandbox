@@ -1,15 +1,14 @@
 Getting Started Guide
 =====================
 
+Contents:
 
 .. toctree::
    :maxdepth: 2
-   
-Contents:
 
-   welcome
-   laboratory
-   sandbox
+welcome
+laboratory
+sandbox
    
    Join your Laboratory <laboratory>
    Access your Sandbox <sandbox>
