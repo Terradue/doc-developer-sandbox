@@ -24,8 +24,6 @@ The job template defines a single parameter:
 
 * The period for the temporal aggregation (daily)
 
-.. code-block:: xml
-
 .. literalinclude:: ../src/application.xml
   :language: xml
   :tab-width: 1
@@ -33,12 +31,10 @@ The job template defines a single parameter:
 
 The job template sets the ciop.job.max.tasks to one instance since the streaming executable has to process all inputs at once 
 
-.. code-block:: xml
-
 .. literalinclude:: ../src/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 18-20
+  :lines: 21-23
   	
 *Note: the property mapred.task.timeout is not set and uses the default value (10 minutes).*
 
