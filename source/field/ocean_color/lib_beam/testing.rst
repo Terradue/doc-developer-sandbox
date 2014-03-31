@@ -96,10 +96,30 @@ Testing the application
 
 All the application files are available on a GitHub repository that can be downloaded at the URL `<https://github.com/Terradue/BEAM-Arithm-tutorial/archive/master.zip>`_. 
 
-The Application Descriptor file which includes the job templates and the workflow is now complete. 
+The archive content is extracted to /application:
 
-The expression job
-------------------
+.. code-block:: bash
+
+  unzip BEAM-Arithm-tutorial-master.zip
+  cd BEAM-Arithm-tutorial-master
+  cp -Rv . /application 
+  
+The Application Descriptor file can be checked with:
+
+.. code-block:: bash
+
+  ciop-appcheck
+  
+If the Application Descriptor is valid, the output is:
+
+.. code-block:: bash
+
+  /application/application.xml validates
+  
+
+  
+Testing the node_expression
+---------------------------
 
 The expression job application invokes a Bash script, named beam_expr.sh that takes one or more MERIS products (available in the filesystem), the expression, the output band name and an folder to sotre the results.  
 The beam_expr.sh is an executable that can be invoked manually. 
