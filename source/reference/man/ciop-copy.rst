@@ -71,9 +71,9 @@ Following runs of a given node (deletes the results of a previous run)
 See Also
 --------
 
-`ciop-simwf <ciop-simwf>`_
+:doc:`ciop-catcp <ciop-catcp>`
 
 Author
-======
+------
 
 Terradue
