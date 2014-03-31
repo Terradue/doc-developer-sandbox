@@ -1,20 +1,19 @@
-ciop-simjob
-7
-ciop-simjob
-runs individually a node of the sample workflow of the application
-UNIX/Linux
-ciop-simjob
-node
-option
+ciop-simjob(7)
+==============
+
+Synopsis
+--------
+
+**ciop-simjob** [<OPTIONS>] [node]
 
 Description
-===========
+-----------
 
 ``ciop-simjob`` runs individually a node of the sample workflow of the
 application. This is useful to test unitarily a job.
 
 Options
-=======
+-------
 
 ``node``
     This must be the id of the node registered in the workflow "sample"
@@ -43,12 +42,12 @@ Options
     list the node IDs of the workflow
 
 Exit Status
-===========
+-----------
 
 ``ciop-simjob`` command exits 0 on success, and >0 if an error occurs.
 
 Examples
-========
+--------
 
 ::
 
@@ -66,7 +65,7 @@ Examples
                 
 
 See Also
-========
+--------
 
 ``ciop-simwf``
 
