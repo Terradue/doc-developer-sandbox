@@ -14,9 +14,9 @@ As the second job in this workflow, the expression processing step implements a 
 
 The job template includes the path to the streaming executable.
 
-.. code-block:: xml
-
-  <streamingExecutable>/application/arrange/run.R</streamingExecutable>
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :lines: 17
   
 The streaming executable source is available here: `/application/arrange/run.R <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/arrange/run.R>`_
   
@@ -34,22 +34,14 @@ The job template sets the ciop.job.max.tasks to one instance since the streaming
 
 .. code-block:: xml
 
- <defaultJobconf>
-  <property id="ciop.job.max.tasks">1</property>
- </defaultJobconf>
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :lines: 18-20
   	
 *Note: the property mapred.task.timeout is not set and uses the default value (10 minutes).*
 
 Here's the job template including the elements described above.
 
-.. code-block:: xml
-
- <jobTemplate id="arrange">
-  <streamingExecutable>/application/arrange/run.R</streamingExecutable>
-  <defaultParameters>
-   <parameter id="period">day</parameter>
-  </defaultParameters>
-  <defaultJobconf>
-   <property id="ciop.job.max.tasks">1</property>
-  </defaultJobconf>
- </jobTemplate> 
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :lines: 16-24 
