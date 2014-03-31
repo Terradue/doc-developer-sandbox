@@ -26,7 +26,6 @@
 			<streamingExecutable>/application/binning/run</streamingExecutable>
 			<defaultParameters>						
 				<parameter id="cellsize">9.28</parameter>
-				<parameter id="bandname">out</parameter>
 				<parameter id="bbox">-180,-90,180,90</parameter>
 				<parameter id="algorithm">Minimum/Maximum</parameter>
 			</defaultParameters>
