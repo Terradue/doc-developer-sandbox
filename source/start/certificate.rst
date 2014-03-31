@@ -24,7 +24,17 @@ Import the Certificate in a Browser
 Google Chrome
 ^^^^^^^^^^^^^
 
+- Open the Google Chrome browser,
 
+- Choose **Preferences** from the **Chrome** menu,
+
+- Click the **Show advanced settings...** link,
+
+- Open the **Manage Certificates** button under the **HTTPS/SSL** section,
+
+- Open the Import window, browse to your downloaded certificate file,
+
+- Enter your certificate passphrase when prompted.
 
 Mozilla Firefox
 ^^^^^^^^^^^^^^^
@@ -51,12 +61,30 @@ Mozilla Firefox
 
 - Click the **Import** button at the bottom of the screen,
 
-- Browse to your downloaded certificate file, and enter your certificate pass phrase when prompted.
+- Browse to your downloaded certificate file, 
+
+- Enter your certificate passphrase when prompted.
 
 Internet Explorer
 ^^^^^^^^^^^^^^^^^
 
-Click Tools -> Internet Options, click the Content tab, and under Certificates, click the Certificates button.
+- Open the Internet Explorer browser,
+
+- Choose **Internet Options** from the **Tools** menu,
+
+- Click the **Content** tab,
+
+- Open the **Certificate** pane,
+
+- Click the **Certificates** (or **Personal**) button,
+
+- Browse to your downloaded certificate file,
+
+- Enter your certificate passphrase when prompted.
 
 Safari
 ^^^^^^
+
+- Double-click the downloaded certificate file to launch the Keychain Access application,
+
+- Enter your certificate passphrase when prompted.
