@@ -32,6 +32,10 @@ The job template defines three parameters:
 
 The job template set the property mapred.task.timeout, the wall time between messages in the log:
 
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :lines: 12-14
+
 .. code-block:: xml
 
   <defaultJobconf>
@@ -56,5 +60,4 @@ Here's the job template including the elements described above.
   
 .. literalinclude:: ../src/application.xml
   :language: xml
-  :emphasize-lines: 12,15-18
   :lines: 4-15
