@@ -44,10 +44,6 @@ Here's the job template including the elements described above.
 
 .. literalinclude:: ../src/application.xml
   :language: xml
+  :tab-width 2
   :lines: 16-24 
 
-
-
-.. literalinclude:: https://raw.githubusercontent.com/Terradue/doc-developer-sandbox/master/source/field/ocean_color/lib_beam/src/application.xml?token=1178901__eyJzY29wZSI6IlJhd0Jsb2I6VGVycmFkdWUvZG9jLWRldmVsb3Blci1zYW5kYm94L21hc3Rlci9zb3VyY2UvZmllbGQvb2NlYW5fY29sb3IvbGliX2JlYW0vc3JjL2FwcGxpY2F0aW9uLnhtbCIsImV4cGlyZXMiOjEzOTY4NTA3NTR9--e74cccae3beb8a5f2d08eea6501cb72cac9fb52c
-  language: xml
-  :lines: 16-24-
