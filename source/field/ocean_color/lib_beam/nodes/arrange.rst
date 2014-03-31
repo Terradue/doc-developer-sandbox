@@ -44,6 +44,6 @@ Here's the job template including the elements described above.
 
 .. literalinclude:: ../src/application.xml
   :language: xml
-  :tab-width 2
+  :tab-width: 2
   :lines: 16-24 
 
