@@ -53,5 +53,5 @@ There is now test data on the sandbox!
 
 .. rubric:: Footnotes
 
-.. [#f1] :doc:`ciop-catcp man page <../../../reference/man/ciop-copy>`
+.. [#f1] :doc:`ciop-catcp man page <../../../reference/man/ciop-catcp>`
 .. [#f2] :doc:`ciop-copy man page <../../../reference/man/ciop-copy>`
