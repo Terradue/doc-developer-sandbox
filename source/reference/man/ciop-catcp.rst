@@ -83,7 +83,7 @@ Examples
 See Also
 --------
 
-`ciop-copy <ciop-copy>`_
+:doc:`ciop-copy <ciop-copy>`
 
 Author
 ------
