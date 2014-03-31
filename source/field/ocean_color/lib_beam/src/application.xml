@@ -48,7 +48,7 @@
   <workflow id="beam_arithm" title="BEAM Arithm" abstract="This application detects algal blooms">
 		<workflowVersion>1.0</workflowVersion>
 		<node id="node_expression">
-			<job id="expression" />
+			<job id="expression"/>
 			<sources>
 				<source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>
 			</sources>
@@ -58,7 +58,7 @@
 			</parameters>
 		</node>
 		<node id="node_arrange">				
-			<job id="arrange"></job>			
+			<job id="arrange"/>			
 			<sources>
 				<source refid="wf:node">node_expression</source>				
 			</sources>
@@ -66,7 +66,7 @@
 			</parameters>
 		</node>
 		<node id="node_binning">
-			<job id="binning"></job>
+			<job id="binning"/>
 			<sources>
 				<source refid="wf:node">node_arrange</source>
 			</sources>
@@ -74,7 +74,7 @@
 			</parameters>
 		</node>
 		<node id="node_clustering">
-			<job id="clustering"></job>
+			<job id="clustering"/>
 			<sources>
 				<source refid="wf:node">node_binning</source>
 			</sources>
