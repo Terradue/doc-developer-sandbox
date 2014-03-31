@@ -17,15 +17,15 @@ The streaming executable source is available here: `/application/binning/run <ht
   
 The job template defines three parameters:
 
-+----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------+
-| Parameter name | Default value                                                                                          | Description                                     |                                                                                                                      |
-+================+========================================================================================================+=================================================+
-| expression     | l1_flags.INVALID?0:radiance_13>17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570) | Band arithmetic expression for ESA BEAM Toolbox |
-+----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------+
-| startdate      | startdate of type opensearch and a target time:start                                                   |                                                 |
-+----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------+
-| enddate        | enddate of type opensearch and a target time:end                                                       |                                                 |
-+----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------+
++----------------+-----------------+------------------------------------------------------------+
+| Parameter name | Default value   | Description                                                | 
++================+=================+============================================================+
+| cellsize       | 9.28            | Size of the bin for the Binning algorithm [#f1]_           |
++----------------+-----------------+------------------------------------------------------------+
+| bbox           | -180,-90,180,90 | Bounding box of the area of interest (Xmin,Ymin,Xmax,Ymax) |
++----------------+-----------------+------------------------------------------------------------+
+| algorithm      | Minimum/Maximum | Aggregation methog for the Binning algorithm               |
++----------------+-----------------+------------------------------------------------------------+
 
 which translates to:
 
@@ -44,3 +44,8 @@ Here's the job template including the elements described above.
 .. literalinclude:: ../src/application.xml
   :language: xml
   :lines: 25-36
+  
+
+.. rubric:: Footnotes
+
+.. [#f1] `ESA BEAM Toolbox Binning algorithm <http://www.brockmann-consult.de/beam/doc/help/binning/BinningTool.html>`_
