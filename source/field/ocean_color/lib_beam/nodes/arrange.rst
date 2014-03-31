@@ -1,7 +1,7 @@
 Node arrange
 ===============
 
-This section define the node *arrange* job template. The template is part of the application descriptor file [#f1]_.
+This section defines the node *arrange* job template. The template is part of the application descriptor file [#f1]_.
 
 The application goal is to produce daily binned products so the binning processing step needs to have its inputs well organized so that it aggregates in time and space only the products of a given day. 
 
