@@ -81,7 +81,15 @@ The node *node_clustering* definition is:
   :tab-width: 1
   :lines: 76-83
 
-The complete workflow is attached.
+Workflow
+--------
+
+The complete workflow is:
+
+.. literalinclude:: src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 48-84
 
 Putting the pieces together
 ***************************
