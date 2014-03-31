@@ -51,7 +51,7 @@ The node_arrange instantiates the arrange job template and uses the default valu
 .. literalinclude:: src/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 60-63
+  :lines: 62-64
   
 The complete node *node_arrange* definition is:
 
