@@ -3,7 +3,7 @@
 This is the official repository of the Developer Cloud Sandbox. 
 
 This documentation is live at:
-[http://docs.terradue.com/developer-sandbox](http://docs.terradue.com/data-challenges).
+[http://docs.terradue.com/developer-sandbox](http://docs.terradue.com/developer-sandbox).
 
 You are encouraged to fork this repo and send us pull requests!
 
@@ -12,9 +12,17 @@ You are encouraged to fork this repo and send us pull requests!
 Here's the procedure to install the required packages on a CentOS 6.x
 
 ```
+# Install RHEL EPEL repository
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+sudo rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
+
+# Install sphinx
 sudo yum install python-sphinx10
 sudo yum install python-pip
 pip install sphinx_bootstrap_theme
+
+# Clone the git repository
 git clone git@github.com:Terradue/doc-developer-sandbox.git
 ```
 
@@ -37,11 +45,11 @@ As root, do:
 
 ```
 cd /var/www/html
-ln -s /home/fbrito/doc-developer-sandbox/build/html/ developer-sandbox
-chown apache:ciop developer-sandbox
+ln -s $GIT_CLONE_DIR/doc-developer-sandbox/build/html/ developer-sandbox
+chown -R apache:apache developer-sandbox
 chmod -R g+w developer-sandbox
 ```
-> Replace /home/fbrito with the path to the folder where you have cloned the repository
+> Replace $GIT_CLONE_DIR with the path to the folder where you have cloned the repository
 
 Open you browser at the address http://127.0.0.1/developer-sandbox
 
