@@ -32,7 +32,7 @@ The job template defines a single parameter:
   :tab-width: 1
   :lines: 18-20
 
-The job template sets the :doc:`ciop.job.max.tasks </reference/application>` to one instance since the streaming executable has to process all inputs at once 
+The job template sets the :ref:`ciop.job.max.tasks` to one instance since the streaming executable has to process all inputs at once 
 
 .. literalinclude:: ../src/application.xml
   :language: xml
@@ -40,7 +40,7 @@ The job template sets the :doc:`ciop.job.max.tasks </reference/application>` to 
   :lines: 21-23
   	
 .. NOTE::
-  The property :ref:`my-reference-label` is not set and uses the default value (10 minutes).*
+  The property :ref:`mapred.task.timeout` is not set and uses the default value (10 minutes).*
 
 Here's the job template including the elements described above.
 
