@@ -9,7 +9,7 @@ In terms of job template, you will define the path to the streaming executable, 
 
 As the second job in this workflow, the expression processing step implements a streaming executable that:
 
-* Create an R data frame [#f2] with all references to the data produced by the node expression
+* Create an R data frame [#f2]_ with all references to the data produced by the node expression
 * Split the references by period based in the acquisition start time of the input product into groups of references
 * Write the groups to the local filesystem in Tab separated files
 * Stage-out the Tab separated files to the distributed file system
