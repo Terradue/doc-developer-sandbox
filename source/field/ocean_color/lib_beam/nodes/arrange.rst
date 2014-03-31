@@ -29,7 +29,7 @@ The job template defines a single parameter:
 | Parameter name | Default value  | Description                                     |
 +================+================+=================================================+
 | period         | day            | The period for the temporal aggregation (daily) |
-+------------------------+------------+----------+
++----------------+----------------+-------------------------------------------------+
 
 * The period for the temporal aggregation (daily)
 
