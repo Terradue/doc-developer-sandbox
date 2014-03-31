@@ -26,9 +26,10 @@ The job template defines a single parameter:
 
 .. code-block:: xml
 
- <defaultParameters>
-  <parameter id="period">day</parameter>
- </defaultParameters>
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 18-20
 
 The job template sets the ciop.job.max.tasks to one instance since the streaming executable has to process all inputs at once 
 
@@ -36,6 +37,7 @@ The job template sets the ciop.job.max.tasks to one instance since the streaming
 
 .. literalinclude:: ../src/application.xml
   :language: xml
+  :tab-width: 1
   :lines: 18-20
   	
 *Note: the property mapred.task.timeout is not set and uses the default value (10 minutes).*
@@ -44,6 +46,6 @@ Here's the job template including the elements described above.
 
 .. literalinclude:: ../src/application.xml
   :language: xml
-  :tab-width: 2
+  :tab-width: 1
   :lines: 16-24 
 
