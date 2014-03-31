@@ -53,4 +53,8 @@ Here's the job template including the elements described above.
       <property id="mapred.task.timeout">9900000000000</property>
   	</defaultJobconf>
   </jobTemplate>
+  
+.. literalinclude:: src/application.xml
+  :language: xml
+  :lines: 1,3,5-10,20-
 
