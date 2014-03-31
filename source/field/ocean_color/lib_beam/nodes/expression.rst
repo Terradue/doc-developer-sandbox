@@ -19,7 +19,7 @@ The streaming executable source is available here: `/application/expression/run 
 The job template defines three parameters:
 
 +----------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
-| Parameter name | Default value                                                                                                 | Description                                     |                                                                                                                      |
+| Parameter name | Default value                                                                                                 | Description                                     |
 +================+===============================================================================================================+=================================================+
 | expression     | l1_flags.INVALID?0:radiance_13>17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)        | Band arithmetic expression for ESA BEAM Toolbox |
 +----------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
