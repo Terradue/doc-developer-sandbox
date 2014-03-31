@@ -42,7 +42,7 @@ The job template set the property mapred.task.timeout, the wall time between mes
   :tab-width: 1
   :lines: 33-35
 
-Here's the job template including the elements described above.
+Here's the job template including the elements described above:
 
 .. literalinclude:: ../src/application.xml
   :language: xml
