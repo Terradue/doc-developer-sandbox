@@ -56,5 +56,13 @@ Here's the job template including the elements described above.
   
 .. literalinclude:: ../src/application.xml
   :language: xml
-  :lines: 1,3,5-10,20-
+  :lines: 5-10
 
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :lines: 5-10
+  
+.. literalinclude:: ../src/application.xml
+   :language: xml
+   :emphasize-lines: 12,15-18
+   :linenos:
