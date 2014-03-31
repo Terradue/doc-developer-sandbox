@@ -5,6 +5,8 @@ Application descriptor reference
 Properties
 ----------
 
+.. _my-reference-label:
+
 mapred.task.timeout
 ^^^^^^^^^^^^^^^^^^^
 
