@@ -48,5 +48,5 @@ Here's the job template including the elements described above.
 
 .. rubric:: Footnotes
 
-.. [#f1] The application file descriptor reference is found :doc:`here </reference/application>` and the entire Algal Bloom detection application descriptor file here: `/application/application.xml  <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/application.xml>`_  
-.. [#f2] `R data frames <http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html>`_ 
+.. [#f1] `Envisat MERIS  <https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/envisat/instruments/meris>`_
+.. [#f2] `ESA BEAM Toolbox BandMaths <http://www.brockmann-consult.de/beam/doc/help/gpf/org_esa_beam_gpf_operators_standard_BandMathsOp.html>`_ 
