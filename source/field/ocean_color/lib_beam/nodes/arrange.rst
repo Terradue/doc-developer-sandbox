@@ -40,7 +40,7 @@ The job template sets the ciop.job.max.tasks to one instance since the streaming
   :lines: 21-23
   	
 .. NOTE::
-  the property mapred.task.timeout is not set and uses the default value (10 minutes).*
+  The property mapred.task.timeout is not set and uses the default value (10 minutes).*
 
 Here's the job template including the elements described above.
 
