@@ -54,12 +54,14 @@ Get the workflow node IDs
 .. code-block:: bash
 
                         ciop-simjob -n
-                
+
+First run of a given node                
 
 .. code-block:: bash
 
                         ciop-simjob node_name
                 
+Following runs of a given node (deletes the results of a previous run)
 
 .. code-block:: bash
 
@@ -69,7 +71,7 @@ Get the workflow node IDs
 See Also
 --------
 
-``ciop-simwf``
+`ciop-simwf <ciop-simwf>`_.
 
 Author
 ======
