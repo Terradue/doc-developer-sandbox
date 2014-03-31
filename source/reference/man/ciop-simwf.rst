@@ -42,19 +42,19 @@ Examples
 
 Execute the workflow as defined in the application descriptor file ${_CIOP_APPLICATION_PATH}/application.xml
 
-:: code-block:: bash
+.. code-block:: bash
 
-                        ciop-simwf
+  ciop-simwf
                 
 List run ids
 
-:: code-block:: bash
+.. code-block:: bash
 
                         ciop-simwf -l
                 
 Delete the files of a given run id (as returned by ciop-simwf -l)
 
-:: code-block:: bash
+.. code-block:: bash
 
                         ciop-simwf -d run_id
                 
