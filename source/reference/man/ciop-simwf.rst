@@ -62,7 +62,7 @@ Delete the files of a given run id (as returned by ciop-simwf -l)
 See Also
 --------
 
-`ciop-simjob <ciop-simjob`_
+`ciop-simjob <ciop-simjob>`_
 
 Author
 ------
