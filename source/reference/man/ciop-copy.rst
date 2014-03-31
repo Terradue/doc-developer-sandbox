@@ -49,17 +49,19 @@ Exit Status
 Examples
 --------
 
-::
+Get the workflow node IDs
+
+.. code-block:: bash
 
                         ciop-simjob -n
                 
 
-::
+.. code-block:: bash
 
                         ciop-simjob node_name
                 
 
-::
+.. code-block:: bash
 
                         ciop-simjob -f node_name
                 
