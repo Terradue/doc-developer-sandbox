@@ -71,7 +71,7 @@ Following runs of a given node (deletes the results of a previous run)
 See Also
 --------
 
-`ciop-simwf <ciop-simwf>`_.
+`ciop-simwf <ciop-simwf>`_
 
 Author
 ======
