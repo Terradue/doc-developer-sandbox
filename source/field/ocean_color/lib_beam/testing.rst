@@ -94,6 +94,9 @@ The complete workflow is:
 Testing the application
 -----------------------
 
+Application installation
+^^^^^^^^^^^^^^^^^^^^^^^^
+
 All the application files are available on a GitHub repository that can be downloaded at the URL `<https://github.com/Terradue/BEAM-Arithm-tutorial/archive/master.zip>`_. 
 
 The archive content is extracted to /application:
@@ -103,6 +106,9 @@ The archive content is extracted to /application:
   unzip BEAM-Arithm-tutorial-master.zip
   cd BEAM-Arithm-tutorial-master
   cp -Rv . /application 
+  
+Application check
+^^^^^^^^^^^^^^^^^
   
 The Application Descriptor file can be checked with:
 
@@ -115,6 +121,27 @@ If the Application Descriptor is valid, the output is:
 .. code-block:: bash
 
   /application/application.xml validates
+  
+Installing the required packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The application requires ESA BEAM Toolbox which is available in the sandbox software repository:
+
+.. code-block:: bash
+
+  sudo yum install esa-beam-4.11
+
+R, which is also available in the software repository (it includes several packages and libraries):
+
+.. code-block:: bash
+
+  sudo yum install rciop
+  
+And finally the R fcp package for the R DBSCAN library:
+
+
+Simulating the application execution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   
 There are two approaches to test an application. 
 
