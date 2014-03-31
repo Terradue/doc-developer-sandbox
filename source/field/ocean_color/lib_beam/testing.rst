@@ -1,78 +1,65 @@
 Application integration and testing
 ===================================
 
-At this stage of the tutorial, you have defined the job templates. It is now time to organize these in a workflow.
+Now that the node templates have defined the job templates, it is now time to organize these in a workflow.
 
-Writing the Application workflow
-********************************
+The workflows are Directed Acyclic Graphs (DAG) where nodes and their relation(s), the source(s) are defined.
 
-In the context of the framework, the workflows are Directed Acyclic Graphs (DAG) where nodes and their relation(s), the source(s) are defined.
+Each node of DAG has:
 
-Each node has:
-
-* a unique identifier
+* a unique node identifier
 * a job template id reference
 * one or more sources
-* one or more parameters and associated values to overide the default value (if defined in the job template).
+* one or more parameters and associated values to overide the default values (if defined in the job template).
 
 The node_expression node
 ------------------------
 
-The first node of the workflow instantiates the expression job template.
+The first node of the DAG with the unique identifer set to *node_expression" instantiates the :doc:`expression <node/expression>` job template.
 
-.. code-block:: xml
-  
-  <node id="node_expression">
-  <job id="expression"></job>
+.. literalinclude:: src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 50-51
 
 As source, this node uses the sandbox catalogue:
 
-.. code-block:: xml
-        
-  <sources>
-  <source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>
-  </sources>
+.. literalinclude:: src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 52-54
 
-As parameters, it defines the values for the start and enddate and leave the expression default value.
+As parameters, it defines the values for the start and enddate and leaves the expression default value.
 
-.. code-block:: xml
-  
-  <parameters>
-    <parameter type="opensearch" target="time:start" id="startdate">2012-04-02</parameter>
-    <parameter type="opensearch" target="time:end" id="enddate">2012-04-06</parameter>
-  </parameters>
+.. literalinclude:: src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 55-58
 
-The complete node definition is:
+The complete node *node_expression* definition is:
 
-.. code-block:: xml
-
-  <node id="node_expression">
-      <job id="expression" />
-      <sources>
-        <source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>
-      </sources>
-      <parameters>
-        <parameter type="opensearch" target="time:start" id="startdate">2012-04-02</parameter>
-        <parameter type="opensearch" target="time:end" id="enddate">2012-04-06</parameter>
-        </parameters>
-  </node>
+.. literalinclude:: src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 50-59
 
 The node_arrange node
 ---------------------
 
-The node_arrange instantiates the arrange job template and uses the default value for the period. The node inputs are not a reference to a catalogue as for the expression node, but the results of the expression node:
+The node_arrange instantiates the arrange job template and uses the default value for the period. The node inputs are not a reference to a catalogue as for the expression node, but the references to *node_expression* results:
 
-.. code-block:: xml
+.. literalinclude:: src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 60-63
+  
+The complete node *node_arrange* definition is:
 
-  <node id="node_arrange">
-    <job id="arrange"></job>
-    <sources>
-      <source refid="wf:node">node_expression</source>
-    </sources>
-    <parameters>
-    </parameters>
-  </node>
-
+.. literalinclude:: src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 60-67
+ 
 
 The node_binning node
 ---------------------
