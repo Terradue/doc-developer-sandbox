@@ -31,7 +31,7 @@ The job template defines a single parameter:
 | period         | day            | The period for the temporal aggregation (daily) |
 +----------------+----------------+-------------------------------------------------+
 
-* The period for the temporal aggregation (daily)
+which translates to the XML code in the node arrange job template: 
 
 .. literalinclude:: ../src/application.xml
   :language: xml
@@ -48,7 +48,7 @@ The job template sets the :ref:`ciop.job.max.tasks` to one instance since the st
 .. NOTE::
   The property :ref:`mapred.task.timeout` is not set and uses the default value (10 minutes).*
 
-Here's the job template including the elements described above.
+Here's the job template including all the elements described above.
 
 .. literalinclude:: ../src/application.xml
   :language: xml
