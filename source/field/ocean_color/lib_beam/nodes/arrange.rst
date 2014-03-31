@@ -32,7 +32,7 @@ The job template defines a single parameter:
   :tab-width: 1
   :lines: 18-20
 
-The job template sets the ciop.job.max.tasks to one instance since the streaming executable has to process all inputs at once 
+The job template sets the :doc:`ciop.job.max.tasks </reference/application.rst#ciopjobmaxtasks>` to one instance since the streaming executable has to process all inputs at once 
 
 .. literalinclude:: ../src/application.xml
   :language: xml
