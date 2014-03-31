@@ -5,10 +5,12 @@ Application descriptor reference
 Properties
 ----------
 
-.. _my-reference-label:
+.. _mapred.task.timeout:
 
 mapred.task.timeout
 ^^^^^^^^^^^^^^^^^^^
+
+.. _ciop.job.max.tasks:
 
 ciop.job.max.tasks
 ^^^^^^^^^^^^^^^^^^
