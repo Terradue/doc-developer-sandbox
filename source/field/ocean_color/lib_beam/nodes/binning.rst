@@ -3,7 +3,7 @@ Node binning
 
 The binning job template defines the streaming executable, the wall time and the parameters:
 
-* cellsize which is the size of the bin and it is specified in kilometers (more info about the binning algorithm http://www.brockmann-consult.de/beam/doc/help/index.html)
+* cellsize which is the size of the bin and it is specified in kilometers
 * bbox that defines the area of interest. Its value defaults to -180,-90,180,90.
 * algorithm defaulting to Minimum/Maximum (in this application, we want the maximum value). The other possible values are: "Maximum Likelihood" and "Arithmetic Mean"
 
