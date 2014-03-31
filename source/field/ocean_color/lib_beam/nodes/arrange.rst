@@ -1,6 +1,8 @@
 Node arrange
 ===============
 
+This section define the node *arrange* job template. The template is part of the application descriptor file [#f1]_.
+
 The application goal is to produce daily binned products so the binning processing step needs to have its inputs well organized so that it aggregates in time and space only the products of a given day. 
 
 In terms of job template, you will define the path to the streaming executable, one parameter: the period (a day) and instruct the framework that only one task has to be run.
@@ -47,3 +49,6 @@ Here's the job template including the elements described above.
   :tab-width: 1
   :lines: 16-24 
 
+.. rubric:: Footnotes
+
+.. [#f1] The application file descriptor reference is found `here <reference/index>`_ and the entire Algal Bloom detection application descriptor file `/application/application.xml  <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/application.xml>`_  
