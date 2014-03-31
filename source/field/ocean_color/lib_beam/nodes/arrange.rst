@@ -40,7 +40,7 @@ The job template sets the :doc:`ciop.job.max.tasks </reference/application>` to 
   :lines: 21-23
   	
 .. NOTE::
-  The property :doc:`mapred.task.timeout </reference/application.html#mapred-task-timeout>` is not set and uses the default value (10 minutes).*
+  The property :ref:`my-reference-label` is not set and uses the default value (10 minutes).*
 
 Here's the job template including the elements described above.
 
