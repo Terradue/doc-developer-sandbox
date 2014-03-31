@@ -14,7 +14,7 @@ Copying test data on your Sandbox
 *********************************
 
 The sandbox includes a catalogue exposing the OpenSearch search engine. 
-A Web interface is available at http://<sandbox IP>/catalogue/sandbox
+A Web interface is available at http://localhost/catalogue/sandbox
 When initiated the sandbox contains no data so clicking on the Search button will not return results.
 
 You will the ciop-catcp [#f1]_ utility to copy both the data and metadata from the source catalogue. The source catalogue is the Terradue catalogue containing a subset of the Envisat MERIS mission. 
