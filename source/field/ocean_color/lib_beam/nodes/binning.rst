@@ -11,6 +11,7 @@ The job template includes the path to the streaming executable.
 
 .. literalinclude:: ../src/application.xml
   :language: xml
+  :tab-width: 1
   :lines: 26
   
 The streaming executable source is available here: `/application/binning/run <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/binning/run>`_
@@ -31,21 +32,23 @@ which translates to:
 
 .. literalinclude:: ../src/application.xml
   :language: xml
+  :tab-width: 1
   :lines: 27-32
 
 The job template set the property mapred.task.timeout, the wall time between messages in the log:
 
 .. literalinclude:: ../src/application.xml
   :language: xml
+  :tab-width: 1
   :lines: 33-35
 
 Here's the job template including the elements described above.
 
 .. literalinclude:: ../src/application.xml
   :language: xml
+  :tab-width: 1
   :lines: 25-36
   
-
 .. rubric:: Footnotes
 
 .. [#f1] `ESA BEAM Toolbox Binning algorithm <http://www.brockmann-consult.de/beam/doc/help/binning/BinningTool.html>`_
