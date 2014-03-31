@@ -91,8 +91,10 @@ The complete workflow is:
   :tab-width: 1
   :lines: 48-84
 
-Putting the pieces together
-***************************
+Testing the application
+-----------------------
+
+All the application files are available on a GitHub repository that can be downloaded at the URL `<https://github.com/Terradue/BEAM-Arithm-tutorial/archive/master.zip>`_. 
 
 The Application Descriptor file which includes the job templates and the workflow is now complete. 
 
