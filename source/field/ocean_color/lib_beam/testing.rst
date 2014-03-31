@@ -64,30 +64,22 @@ The complete node *node_arrange* definition is:
 The node_binning node
 ---------------------
 
-.. code-block:: xml
+The node *node_binning* definition is:
 
-  <node id="node_binning">
-    <job id="binning"></job>
-    <sources>
-      <source refid="wf:node">node_arrange</source>
-    </sources>
-    <parameters>
-    </parameters>
-  </node>
+.. literalinclude:: src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 68-75
 
 The node_clustering node
 ------------------------
 
-.. code-block:: xml
+The node *node_clustering* definition is:
 
-  <node id="node_clustering">
-    <job id="clustering"></job>
-    <sources>
-      <source refid="wf:node">node_binning</source>
-    </sources>
-    <parameters>
-    </parameters>
-  </node>
+.. literalinclude:: src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 76-83
 
 The complete workflow is attached.
 
