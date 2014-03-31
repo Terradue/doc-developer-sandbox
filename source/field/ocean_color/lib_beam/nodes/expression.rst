@@ -54,7 +54,7 @@ Here's the job template including the elements described above.
   	</defaultJobconf>
   </jobTemplate>
   
-.. literalinclude:: src/application.xml
+.. literalinclude:: field/ocean_color/nodes/src/application.xml
   :language: xml
   :lines: 1,3,5-10,20-
 
