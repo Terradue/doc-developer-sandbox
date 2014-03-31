@@ -4,8 +4,8 @@ Node expression
 As the first job in this workflow, the expression processing step implements a streaming executable:
 
 * Defines the parameters to query the catalogue which, in this case is the start and end time (time of interest) of the MERIS Level 1 products.
-* Stages-in the input Envisat MERIS Level 1 products
-* Invokes the ESA BEAM Toolbox BandMaths Operator to apply the provided band arithmetic expression to all input MERIS Level 1 products covering the time of interest 
+* Stages-in the input Envisat MERIS Level 1 products [#f1]_
+* Invokes the ESA BEAM Toolbox BandMaths Operator [#f2]_ to apply the provided band arithmetic expression to all input MERIS Level 1 products covering the time of interest 
 * Stages-out the results in a distributed file system as inputs to the next processing step
 
 The job template includes the path to the streaming executable.
@@ -45,3 +45,8 @@ Here's the job template including the elements described above.
 .. literalinclude:: ../src/application.xml
   :language: xml
   :lines: 4-15
+
+.. rubric:: Footnotes
+
+.. [#f1] The application file descriptor reference is found :doc:`here </reference/application>` and the entire Algal Bloom detection application descriptor file here: `/application/application.xml  <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/application.xml>`_  
+.. [#f2] `R data frames <http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html>`_ 
