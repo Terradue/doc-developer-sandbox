@@ -9,7 +9,7 @@ In terms of job template, you will define the path to the streaming executable, 
 
 As the second job in this workflow, the expression processing step implements a streaming executable that:
 
-* Create an R data frame with all references to the data produced by the node expression
+* Create an R data frame [#f2] with all references to the data produced by the node expression
 * Split the references by period based in the acquisition start time of the input product into groups of references
 * Write the groups to the local filesystem in Tab separated files
 * Stage-out the Tab separated files to the distributed file system
@@ -52,3 +52,4 @@ Here's the job template including the elements described above.
 .. rubric:: Footnotes
 
 .. [#f1] The application file descriptor reference is found :doc:`here </reference/application>` and the entire Algal Bloom detection application descriptor file here: `/application/application.xml  <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/application.xml>`_  
+.. [#f2] `R data frames <http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html>`_ 
