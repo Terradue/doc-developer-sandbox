@@ -17,15 +17,17 @@ The streaming executable source is available here: `/application/binning/run <ht
   
 The job template defines three parameters:
 
-+----------------+----------------+-------------------------------------------------+
-| Parameter name | Default value  | Description                                     |
-+================+================+=================================================+
-| expression     | l1_flags.INVALID?0:radiance_13>17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570) | The period for the temporal aggregation (daily) |
-+----------------+----------------+-------------------------------------------------+
++----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------+
+| Parameter name | Default value                                                                                          | Description                                     |                                                                                                                      |
++================+========================================================================================================+=================================================+
+| expression     | l1_flags.INVALID?0:radiance_13>17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570) | Band arithmetic expression for ESA BEAM Toolbox |
++----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------+
+| startdate      | startdate of type opensearch and a target time:start                                                   |                                                 |
++----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------+
+| enddate        | enddate of type opensearch and a target time:end                                                       |                                                 |
++----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------+
 
-* expression with a default value defined 
-* startdate of type opensearch and a target time:start
-* enddate of type opensearch and a target time:end
+which translates to:
 
 .. literalinclude:: ../src/application.xml
   :language: xml
