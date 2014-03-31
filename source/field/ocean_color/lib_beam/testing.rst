@@ -94,8 +94,7 @@ The complete workflow is:
 Putting the pieces together
 ***************************
 
-You have defined the job template and the workflow. The Application Descriptor file is now complete. 
-At this stage, you will create the job folder under /application, the streaming executables and create the application files.
+The Application Descriptor file which includes the job templates and the workflow is now complete. 
 
 The expression job
 ------------------
