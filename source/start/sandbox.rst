@@ -14,24 +14,33 @@ Download the Certificate in PEM format
 --------------------------------------
 
 - Go to https://ca.terradue.com/gpodcs/cgi/certdown.cgi?U=name@organization.com (use your registration e-mail instead of name@organization.com),
-- Choose as **Certificate Format** the PEM format,
-- Type the certificate password that you chose during the registration when prompted.
 
-Connecting from Unix / Linux
------------------------------
+- Choose as **Certificate Format** the PEM,
 
+  - *(Alternative)* Choose as **Certificate Format** the PEM (Unencrypted key). In this case you won't prompted for the passphrase each time you will use the Certificate (it is in general not recommended)
+  
+- Type the certificate passphrase that you chose during the registration, when prompted,
 
-The user downloads his X.509 certificate from the user management portal (e.g. in PEM format), either with encrypted private key (recommended) or unencrypted private key (not recommended)
-    On the command line, the user can now directly access the VM using:
+- Store securely the PEM Certificate in your filesystem, especially if you chose the PEM (Unencrypted key) format.
 
-ssh -i <username>.pem <username>@<sandboxhost>
+Connecting from Unix / Linux / Mac
+----------------------------------
 
-Depending on the downloaded format, the user has to provide his passphrase (if encrypted key was downloaded) or not (if the key was downloaded unencrypted).
+- Open a Terminal,
+
+- Type:
+
+`ssh -i /path/to/your/pem <username>@<sandboxhost>`
+
+- If you chose PEM format when you downloaded the Certificate, you have to provide the passphrase,
+
+- That's all.
 
 Connecting from Windows
 ------------------------
 
-(using putty)
+Download Putty
+^^^^^^^^^^^^^^
 
 If the user wants to login from Windows using putty (a well-known freely available ssh client), the key must be converted into a putty-compatible format first:
 
