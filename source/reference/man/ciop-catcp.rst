@@ -1,5 +1,5 @@
-ciop-catcp(7)
-=============
+ciop-catcp (7)
+==============
 
 Synopsis
 --------
@@ -55,29 +55,29 @@ Exit Status
 Examples
 --------
 
-::
+.. code-block:: bash
 
-                        echo "http://grid-eo-catalog.esrin.esa.int/catalogue/gpod/SAR_IM__0P/rdf?bbox=-90,-180,90,90&count=2" | ciop-catcp -m byval -
+    echo "http://grid-eo-catalog.esrin.esa.int/catalogue/gpod/SAR_IM__0P/rdf?bbox=-90,-180,90,90&count=2" | ciop-catcp -m byval -
                     
 
-::
+.. code-block:: bash
 
-                        ciop-catcp -m byval http://eo-virtual-archive4.esa.int/search/ER01_SAR_IMP_1P/SAR_IMP_1PXASI19950429_091508_00000017G145_00279_19806_0880.E1/rdf
+    ciop-catcp -m byval http://eo-virtual-archive4.esa.int/search/ER01_SAR_IMP_1P/SAR_IMP_1PXASI19950429_091508_00000017G145_00279_19806_0880.E1/rdf
                     
 
-::
+.. code-block:: bash
 
-                        echo "http://grid-eo-catalog.esrin.esa.int/catalogue/gpod/SAR_IM__0P/rdf?bbox=-90,-180,90,90&count=2" | ciop-catcp -m byref -
+    echo "http://grid-eo-catalog.esrin.esa.int/catalogue/gpod/SAR_IM__0P/rdf?bbox=-90,-180,90,90&count=2" | ciop-catcp -m byref -
                     
 
-::
+.. code-block:: bash
 
-                        ciop-catcp http://eo-virtual-archive4.esa.int/search/ER01_SAR_IMP_1P/rdf
+    ciop-catcp http://eo-virtual-archive4.esa.int/search/ER01_SAR_IMP_1P/rdf
                     
 
-::
+.. code-block:: bash
 
-                        ciop-catcp -l ./ER01_SAR_IMP_1P_19960518T091516_19960518T091533_IPA_25317_0000.ESA.tar.gz http://eo-virtual-archive4.esa.int/search/ER01_SAR_IMP_1P/SAR_IMP_1PXASI19960518_091516_00000017G156_00279_25317_0873.E1/rdf
+    ciop-catcp -l ./ER01_SAR_IMP_1P_19960518T091516_19960518T091533_IPA_25317_0000.ESA.tar.gz http://eo-virtual-archive4.esa.int/search/ER01_SAR_IMP_1P/SAR_IMP_1PXASI19960518_091516_00000017G156_00279_25317_0873.E1/rdf
                     
 
 See Also
