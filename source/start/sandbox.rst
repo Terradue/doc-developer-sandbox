@@ -17,7 +17,7 @@ Download the Certificate in PEM format
 
 - Choose as **Certificate Format** the PEM,
 
-  - *(Alternative)* Choose as **Certificate Format** the PEM (Unencrypted key). In this case you won't prompted for the passphrase each time you will use the Certificate (it is in general not recommended)
+  - *(Alternative)* Choose as **Certificate Format** the PEM (Unencrypted key). In this case you won't prompted for the passphrase each time you will use the Certificate
   
 - Type the certificate passphrase that you chose during the registration, when prompted,
 
@@ -30,11 +30,14 @@ Connecting from Unix / Linux / Mac
 
 - Type:
 
-`ssh -i /path/to/your/pem <username>@<sandboxhost>`
+.. code::
 
-- If you chose PEM format when you downloaded the Certificate, you have to provide the passphrase,
+  chmod 600 <yourcertificate.pem>
+  ssh -i <yourcertificate.pem> <username>@<sandboxhost>
 
-- That's all :-)
+- If you chose PEM format when you downloaded the Certificate,provide the passphrase when prompted.
+
+That's all :-)
 
 Connecting from Windows
 ------------------------
