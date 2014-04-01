@@ -8,7 +8,7 @@ Prerequisites
 
 - You completed successfully the guide *Importing the Terradue's SSL Certificate* :doc:`certificate`,
 - You receveid an email from support@terradue.com where the subject contains "First connection",
-- You have the <username> and the <sandboxhost> information, provided by the "First connection" e-mail.
+- You have the <sandbox_user> and the <sandbox_host> information, provided by the "First connection" e-mail.
 
 Download the Certificate in PEM format
 --------------------------------------
@@ -33,7 +33,7 @@ Connecting from Unix / Linux / Mac
 .. code::
 
   chmod 600 <yourcertificate.pem>
-  ssh -i <yourcertificate.pem> <username>@<sandboxhost>
+  ssh -i <yourcertificate.pem> <sandbox_user>@<sandbox_host>
 
 - If you chose PEM format when you downloaded the Certificate, provide the passphrase when prompted.
 
@@ -91,14 +91,14 @@ Use the import function in the puttygen GUI:
 
 - Store securely in your filesystem the private key generated, naming it in <yourcertificate>.ppk .
 
-Connect with Putty
+Connect with PuTTY
 ^^^^^^^^^^^^^^^^^^
 
 - Open a Command Prompt and type:
 
 .. code::
 
-  putty -i <yourcertificate>.ppk <user>@<sandboxhost>
+  putty -i <yourcertificate>.ppk <sandbox_user>@<sandbox_host>
 
 That's all :-)
 
