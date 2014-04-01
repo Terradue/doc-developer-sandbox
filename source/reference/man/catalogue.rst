@@ -4,7 +4,7 @@ Catalogue command reference
 contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    ciop-catcp <ciop-catcp>
    ciop-casmeta <ciop-casmeta>
