@@ -10,10 +10,10 @@ Prerequisites
 
 - You received an e-mail with subject "Developer Cloud Sandboxes service  -  Invitation to register",
 - You made a request for registration following the instructions in the e-mail,
-- Your request was approved and you received a subsequent e-mail with subject "Your Terradue certificate is ready to download.".
+- Your request was approved and you received an e-mail from ca@terradue.com with subject "Your Terradue certificate is ready to download.".
 
-Download the Certificate
--------------------------
+Download the Certificate in PFX format
+--------------------------------------
 
 - Go to https://ca.terradue.com/gpodcs/cgi/certdown.cgi?U=name@organization.com&F=Kpfx (*use your registration e-mail instead of name@organization.com*)
 - Type the certificate password that you chose during the registration.
