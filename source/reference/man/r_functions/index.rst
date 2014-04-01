@@ -6,6 +6,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   rciop.log <rciop.log.rst>
-   ciop-package <ciop-package>
-   ciop-report <ciop-report>
+   rciop.log <rciop.log>
+   rciop.getparam <rciop.getparam>
+   rciop.copy <rciop.copy>
+   rciop.publish <rciop.publish>
+   rciop.casmeta <rciop.casmeta>
