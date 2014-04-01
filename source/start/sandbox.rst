@@ -34,7 +34,7 @@ Connecting from Unix / Linux / Mac
 
 - If you chose PEM format when you downloaded the Certificate, you have to provide the passphrase,
 
-- That's all.
+- That's all :-)
 
 Connecting from Windows
 ------------------------
