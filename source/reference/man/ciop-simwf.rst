@@ -1,5 +1,5 @@
-ciop-simwf(7)
-=============
+ciop-simwf (7)
+==============
 
 ``ciop-simwf`` executes the complete workflow and house keeping functions to list and delete runs
 
@@ -62,7 +62,7 @@ Delete the files of a given run id (as returned by ciop-simwf -l)
 See Also
 --------
 
-`ciop-simjob <ciop-simjob>`_
+:doc:`ciop-simjob <ciop-simjob>`
 
 Author
 ------
