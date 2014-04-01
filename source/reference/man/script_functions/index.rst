@@ -4,7 +4,7 @@ Scripting functions
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    ciop-log <ciop-log>
    ciop-getparam <ciop-getparam>
