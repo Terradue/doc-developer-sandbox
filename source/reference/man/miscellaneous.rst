@@ -4,7 +4,7 @@ Miscellaneous
 contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    ciop-appcheck <ciop-appcheck>
    ciop-package <ciop-package>
