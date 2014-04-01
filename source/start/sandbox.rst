@@ -68,9 +68,8 @@ PuTTY needs a private key file (.ppk). Here the procedure to generate it from a 
 
 - Create a new empty file named <yourcertificate>.private, open it with a text editor (e.g. Notepad) and paste the part that you copied in the previous point, 
 
-Note
-
-You should paste also -----BEGIN RSA PRIVATE KEY----- and -----END RSA PRIVATE KEY----- in the file <yourcertificate>.private
+.. NOTE::
+  You should paste also -----BEGIN RSA PRIVATE KEY----- and -----END RSA PRIVATE KEY----- in the file <yourcertificate>.private
 
 - Open a Command Prompt and type:
 
@@ -99,13 +98,12 @@ Connect with Putty
 
 .. code::
 
-  putty -i <user>.ppk <user>@<sandboxhost>
+  putty -i <yourcertificate>.ppk <user>@<sandboxhost>
 
 That's all :-)
 
-Note
-
-The PEM certificate is not used to access the system with PuTTY. Only the generated <yourcertificate>.ppk file is needed.
+.. NOTE::
+  The PEM certificate is not used to access the system with PuTTY. Only the generated <yourcertificate>.ppk file is needed.
 
 Connecting from iPad
 --------------------
