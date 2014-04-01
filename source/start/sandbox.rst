@@ -1,10 +1,10 @@
-Sandbox
-=======
+Connect to your Sandbox
+========================
 
-SSH connexion
-+++++++++++++
+Prerequisites
+-------------
 
-Pre-conditions
+- You 
 
 To access your Sandbox, you need a secure connection (via ssh or putty)
 You will make use of your private keys to establish the handshake with the infrastructure.
@@ -12,16 +12,28 @@ You will make use of your private keys to establish the handshake with the infra
 Your X.509 certificate was generated during your initial Registration step.
 Your Sandbox IP, or <sandboxhost>, was provided in your "First connection" email.
 
-Connecting from Unix / Linux (using ssh)
+Download the Certificate in PEM format
+--------------------------------------
 
-    The user downloads his X.509 certificate from the user management portal (e.g. in PEM format), either with encrypted private key (recommended) or unencrypted private key (not recommended)
+- Go to https://ca.terradue.com/gpodcs/cgi/certdown.cgi?U=name@organization.com (use your registration e-mail instead of name@organization.com),
+- Choose as **Certificate Format** the PEM format,
+- Type the certificate password that you chose during the registration when prompted.
+
+Connecting from Unix / Linux
+-----------------------------
+
+
+The user downloads his X.509 certificate from the user management portal (e.g. in PEM format), either with encrypted private key (recommended) or unencrypted private key (not recommended)
     On the command line, the user can now directly access the VM using:
 
 ssh -i <username>.pem <username>@<sandboxhost>
 
 Depending on the downloaded format, the user has to provide his passphrase (if encrypted key was downloaded) or not (if the key was downloaded unencrypted).
 
-Connecting from Windows (using putty)
+Connecting from Windows
+------------------------
+
+(using putty)
 
 If the user wants to login from Windows using putty (a well-known freely available ssh client), the key must be converted into a putty-compatible format first:
 
