@@ -17,7 +17,7 @@ Download the Certificate in PEM format
 
 - Choose as **Certificate Format** the PEM,
 
-  - *(Alternative)* Choose as **Certificate Format** the PEM (Unencrypted key). In this case you won't prompted for the passphrase each time you will use the Certificate
+  - *(Alternative)* If you are using Windows (see below) or if you don't want type the passphrase each time you want to access the Sandbox, choose as **Certificate Format** the PEM (Unencrypted key), 
   
 - Type the certificate passphrase that you chose during the registration, when prompted,
 
@@ -35,63 +35,77 @@ Connecting from Unix / Linux / Mac
   chmod 600 <yourcertificate.pem>
   ssh -i <yourcertificate.pem> <username>@<sandboxhost>
 
-- If you chose PEM format when you downloaded the Certificate,provide the passphrase when prompted.
+- If you chose PEM format when you downloaded the Certificate, provide the passphrase when prompted.
 
 That's all :-)
 
 Connecting from Windows
 ------------------------
 
-Download Putty
-^^^^^^^^^^^^^^
+Download and install PuTTY
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If the user wants to login from Windows using putty (a well-known freely available ssh client), the key must be converted into a putty-compatible format first:
+PuTTY is a well-known freely available SSH client http://www.putty.org/. To download and install it:
 
-    The user must download his X.509 certificate from in PEM format [*with unencrypted key*].
+- Go to http://the.earth.li/~sgtatham/putty/latest/x86/putty.zip,
+
+- Unzip the downloaded file in a location of your filesystem that you prefer.
   
-Extract the Private Key from the PEM Certificate
+Generate a Private Key from the PEM Certificate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    From the file, the private key must be extracted manually (using a text editor): Copy the part
+PuTTY needs a private key file (.ppk). Here the procedure to generate it from a PEM Certificate:
 
------BEGIN RSA PRIVATE KEY-----
-MII....
------END RSA PRIVATE KEY-----
+- Open the PEM Certificate **Unencrypted key format** with a text editor (e.g. Notepad), 
 
-and paste it into a new file named e.g. <user>.private. Make sure this file is in a secure and safe place.
+- Copy in your clipboard the part:
+
+.. code::
+
+  -----BEGIN RSA PRIVATE KEY-----
+  MII....
+  -----END RSA PRIVATE KEY-----
+
+- Create a new empty file named <yourcertificate>.private, open it with a text editor (e.g. Notepad) and paste the part that you copied in the previous point, 
+
+Note
+
+You should paste also -----BEGIN RSA PRIVATE KEY----- and -----END RSA PRIVATE KEY----- in the file <yourcertificate>.private
+
+- Open a Command Prompt and type:
+
+.. code::
+
+  puttygen <yourcertificate>.private
+  
+- Store securely in your filesystem the private key generated, naming it in <yourcertificate>.ppk .
+
+*(Alternative)*
+
+Use the import function in the puttygen GUI:
+
+- Double-click on the puttygen executable,
+  
+- Click on the **Import** command from the **Conversions** menu,
+
+- Click on the **Save private key** button,
+
+- Store securely in your filesystem the private key generated, naming it in <yourcertificate>.ppk .
 
 Connect with Putty
 ^^^^^^^^^^^^^^^^^^
 
-    This private key must now be imported with puttygen either on the command line:
+- Open a Command Prompt and type:
 
+.. code::
 
-puttygen <user>.private
+  putty -i <user>.ppk <user>@<sandboxhost>
 
-    or using the import or load function in puttygen. The import should succeed with the following message:
+That's all :-)
 
-(image - PuTTY Key Generator)
+Note
 
-The file must now be saved as private key either with (recommended) or without (not recommended) passphrase. Preferably name the resulting key <user>.ppk by clicking the "Save private key" button in the screen below:
+The PEM certificate is not used to access the system with PuTTY. Only the generated <yourcertificate>.ppk file is needed.
 
-(image - Save private key as)
-
-
-    Now the user can access the VM with putty in the command line:
-
-    putty -i <user>.ppk <user>@<sandboxhost>
-
-
-    or save the corresponding info in a Pageant session with the following four steps: In the session dialog, the "Host Name (or IP address)" field needs to be set to <sandboxhost> (Protocol SSH, Port 22):
-
-    The, <user> must be added to the "Auto-login username" field in the Connection dialog:
-
-and the created private key file needs to be referenced in the "Private key file for authentication" field of the Auth dialog:
-
-Finally, the session can be saved (Session dialog) or just opened (Open button below).
-
-    Make sure that the unencrypted X.509 PEM certificate is deleted (or at least stored in a secure and safe location) after this setup. The X.590 PEM certificate is not used to access the system with putty. Only the generated <user>.ppk file is needed.
-    
-    
 Connecting from iPad
 --------------------
