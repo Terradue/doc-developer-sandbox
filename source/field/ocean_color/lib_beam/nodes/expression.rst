@@ -4,53 +4,53 @@ Node expression
 As the first job in this workflow, the expression processing step implements a streaming executable:
 
 * Defines the parameters to query the catalogue which, in this case is the start and end time (time of interest) of the MERIS Level 1 products.
-* Stages-in the input Envisat MERIS Level 1 products
-* Invokes the ESA BEAM Toolbox BandMaths Operator to apply the provided band arithmetic expression to all input MERIS Level 1 products covering the time of interest 
+* Stages-in the input Envisat MERIS Level 1 products [#f1]_
+* Invokes the ESA BEAM Toolbox BandMaths Operator [#f2]_ to apply the provided band arithmetic expression to all input MERIS Level 1 products covering the time of interest 
 * Stages-out the results in a distributed file system as inputs to the next processing step
 
 The job template includes the path to the streaming executable.
 
-.. code-block:: xml
-
-  <streamingExecutable>/application/expression/run</streamingExecutable>
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 5
   
 The streaming executable source is available here: `/application/expression/run <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/expression/run>`_
   
 The job template defines three parameters:
 
-* expression with a default value defined 
-* startdate of type opensearch and a target time:start
-* enddate of type opensearch and a target time:end
++----------------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| Parameter name | Default value                                                                                                 | Description                                          |
++================+===============================================================================================================+======================================================+
+| expression     | l1_flags.INVALID?0:radiance_13>17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)        | Band arithmetic expression for ESA BEAM Toolbox      |
++----------------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| startdate      | 2012-04-02                                                                                                    | startdate of type opensearch and a target time:start |
++----------------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| enddate        | 2012-04-06                                                                                                    | enddate of type opensearch and a target time:end     |
++----------------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
-.. code-block:: xml
+which translates to:
 
-  <defaultParameters>
-    <parameter id="expression">l1_flags.INVALID?0:radiance_13>17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
-    <parameter type="opensearch" target="time:start" id="startdate"/>
-    <parameter type="opensearch" target="time:end" id="enddate"/>
-  </defaultParameters>
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 6-11
 
 The job template set the property mapred.task.timeout, the wall time between messages in the log:
 
-.. code-block:: xml
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 12-14
 
-  <defaultJobconf>
-  	<property id="mapred.task.timeout">9900000000000</property>
-  </defaultJobconf>
-  	
-Here's the job template including the elements described above.
+Here's the job template including the elements described above:
 
-.. code-block:: xml
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 4-15
 
-  <jobTemplate id="expression">
-    <streamingExecutable>/application/expression/run</streamingExecutable>
-    <defaultParameters>
-  	  <parameter id="expression">l1_flags.INVALID?0:radiance_13>17?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
-      <parameter type="opensearch" target="time:start" id="startdate"/>
-      <parameter type="opensearch" target="time:end" id="enddate"/>
-  	</defaultParameters>
-  	<defaultJobconf>
-      <property id="mapred.task.timeout">9900000000000</property>
-  	</defaultJobconf>
-  </jobTemplate>
+.. rubric:: Footnotes
 
+.. [#f1] `Envisat MERIS  <https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/envisat/instruments/meris>`_
+.. [#f2] `ESA BEAM Toolbox BandMaths <http://www.brockmann-consult.de/beam/doc/help/gpf/org_esa_beam_gpf_operators_standard_BandMathsOp.html>`_ 

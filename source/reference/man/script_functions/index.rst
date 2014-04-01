@@ -1,6 +1,10 @@
 Scripting functions
 ===================
 
-ciop-log
+Contents:
 
-ciop-getparam
+.. toctree::
+   :maxdepth: 1
+   
+   ciop-log <ciop-log>
+   ciop-getparam <ciop-getparam>
