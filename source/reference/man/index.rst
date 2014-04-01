@@ -4,7 +4,7 @@ man pages
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    
    Data management <data>
    Catalogue access and management <catalogue>
