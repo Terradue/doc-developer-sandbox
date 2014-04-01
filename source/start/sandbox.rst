@@ -48,6 +48,10 @@ Download Putty
 If the user wants to login from Windows using putty (a well-known freely available ssh client), the key must be converted into a putty-compatible format first:
 
     The user must download his X.509 certificate from in PEM format [*with unencrypted key*].
+  
+Extract the Private Key from the PEM Certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
     From the file, the private key must be extracted manually (using a text editor): Copy the part
 
 -----BEGIN RSA PRIVATE KEY-----
@@ -56,7 +60,11 @@ MII....
 
 and paste it into a new file named e.g. <user>.private. Make sure this file is in a secure and safe place.
 
+Connect with Putty
+^^^^^^^^^^^^^^^^^^
+
     This private key must now be imported with puttygen either on the command line:
+
 
 puttygen <user>.private
 
@@ -83,3 +91,7 @@ and the created private key file needs to be referenced in the "Private key file
 Finally, the session can be saved (Session dialog) or just opened (Open button below).
 
     Make sure that the unencrypted X.509 PEM certificate is deleted (or at least stored in a secure and safe location) after this setup. The X.590 PEM certificate is not used to access the system with putty. Only the generated <user>.ppk file is needed.
+    
+    
+Connecting from iPad
+--------------------
