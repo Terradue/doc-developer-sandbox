@@ -4,7 +4,7 @@ R functions
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    rciop.log <rciop.log>
    rciop.getparam <rciop.getparam>
