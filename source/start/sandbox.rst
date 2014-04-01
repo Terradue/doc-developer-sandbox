@@ -1,16 +1,14 @@
 Connect to your Sandbox
 ========================
 
+To connect your Sandbox you need a secure connection with the Terradue's infrastructure. Following this guide you will be able to access your Sandbox through the Secure Shell (SSH) network protocol.
+
 Prerequisites
 -------------
 
-- You 
-
-To access your Sandbox, you need a secure connection (via ssh or putty)
-You will make use of your private keys to establish the handshake with the infrastructure.
-
-Your X.509 certificate was generated during your initial Registration step.
-Your Sandbox IP, or <sandboxhost>, was provided in your "First connection" email.
+- You completed successfully the guide *Importing the Terradue's SSL Certificate* :doc:`certificate`,
+- You receveid an email from support@terradue.com where the subject contains "First connection",
+- You have the <username> and the <sandboxhost> information, provided by the "First connection" e-mail.
 
 Download the Certificate in PEM format
 --------------------------------------
