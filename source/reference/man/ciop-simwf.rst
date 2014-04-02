@@ -1,3 +1,5 @@
+.. _workflow:
+
 ciop-simwf (7)
 ==============
 

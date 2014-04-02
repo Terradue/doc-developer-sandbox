@@ -1,9 +1,9 @@
-<header>
+<!-- <header>
 	<div class="container">
 		<a href="http://www.terradue.com" target="_blank"><img id="logo" src="{{ pathto('_static/t2Logo.png',1) }}"></a>
 		<div id="t2-random-slogan">digital earth scalers</div>
 	</div>
-</header>
+</header> -->
 <div id="navbar" class="{{ theme_navbar_class }} navbar-default"><!-- {% if theme_navbar_fixed_top == 'true' -%} navbar-fixed-top{%- endif -%} -->
     <div class="container">
       <div class="navbar-header pull-right">
@@ -13,11 +13,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ pathto(master_doc) }}"><img class="navbar-brand-logo" src="{{ pathto('_static/sandboxLogo.png',1) }}" alt="opennebula-logo"/></a>
+        <a class="navbar-brand" href="{{ pathto(master_doc) }}"><img class="navbar-brand-logo" src="{{ pathto('_static/sandboxLogo.png',1) }}" alt="sandbox-logo"/></a>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
+			<a class="navbar-brand" href="http://www.terradue.com" target="_blank"><img id="logo" src="{{ pathto('_static/t2Logo.png',1) }}"></a>
             <li class="divider-vertical"></li>
             {% include "versions.html" %}
 
@@ -45,4 +46,4 @@
           </ul>
         </div>
     </div>
-  </div>
+</div>
