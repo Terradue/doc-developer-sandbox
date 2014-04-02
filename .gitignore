@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 /__pycache__
 /_build
 /_reports
-=======
-
 build
->>>>>>> FETCH_HEAD
-
 .project
-
 .pydevproject
 /target
+.settings

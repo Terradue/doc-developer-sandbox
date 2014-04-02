@@ -42,6 +42,7 @@
 							<arguments>
 								<argument>clean</argument>
 								<argument>html</argument>
+								<argument>man</argument>
 							</arguments>
 						</configuration>
 					</execution>
@@ -97,6 +98,7 @@
 						<configuration>
 							<descriptors>
 								<descriptor>${basedir}/source/assembly/package-html.xml</descriptor>
+								<descriptor>${basedir}/source/assembly/package-man.xml</descriptor>
 							</descriptors>
 							<appendAssemblyId>true</appendAssemblyId>
 						</configuration>

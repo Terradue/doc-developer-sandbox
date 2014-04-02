@@ -88,6 +88,11 @@ doctest:
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
+man:
+	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(BUILDDIR)/man
+	@echo
+	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
+
 test:
 	mkdir $(REPORTDIR)
 	`which py.test` --tb=line -v --junitxml=$(REPORTDIR)/junit.xml check_sphinx.py
