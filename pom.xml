@@ -10,7 +10,7 @@
 
 	<groupId>com.terradue.tag</groupId>
 	<artifactId>doc-developer-sandbox</artifactId>
-	<packaging>rpm</packaging>
+	<packaging>pom</packaging>
 	<description>Documentation for developer sandbox</description>
 	<version>0.2-SNAPSHOT</version>
 
@@ -174,6 +174,7 @@
 							<releaseName>v${project.version}</releaseName>
 							<tag>v${project.version}</tag>
 							<artifact>${project.build.directory}/${project.artifactId}-${project.version}-html.tar.gz</artifact>
+							<overwriteArtifact>true</overwriteArtifact>
 						</configuration>
 					</execution>
 				</executions>
