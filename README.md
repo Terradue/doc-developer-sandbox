@@ -20,7 +20,7 @@ sudo rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
 # Install sphinx
 sudo yum install python-sphinx10
 sudo yum install python-pip
-pip install sphinx_bootstrap_theme
+sudo pip install sphinx_bootstrap_theme
 
 # Clone the git repository
 git clone git@github.com:Terradue/doc-developer-sandbox.git
@@ -36,6 +36,7 @@ git config --global user.email <email address>
 ## Building
 
 Build the documentation by running ``make html``.
+
 
 ## Publish the documentation
 

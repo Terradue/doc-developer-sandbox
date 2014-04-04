@@ -212,6 +212,28 @@ img.align-center, .figure.align-center, object.align-center {
 	max-width: 100%;
 }
 
+
+/* add the github logo to source link */
+.githubLogo {
+	background-image: url('githubLogo.png');
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-right: 3px;
+	margin-bottom: -2px;
+}
+
+/* add the permalink like github */
+a.headerlink {
+	background-image: url(linkIcon.png);
+	color: rgba(255,255,255,0);
+	background-size: 100%;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	opacity: 0.7;
+	margin-left: 4px;
+}
+
 /*
 body {
     font-family: Verdana, Geneva, sans-serif;
