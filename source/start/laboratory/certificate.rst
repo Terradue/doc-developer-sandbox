@@ -1,3 +1,5 @@
+.. _certificate:
+
 Importing the Terradue's SSL Certificate
 ========================================
 
