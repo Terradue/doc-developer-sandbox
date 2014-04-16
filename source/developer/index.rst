@@ -3,7 +3,7 @@ Hands-on
 
 Contents:
 
-.. toctree::
+..toctree::
    :maxdepth: 2
    
    Hands-on exercise: a single node workflow 
