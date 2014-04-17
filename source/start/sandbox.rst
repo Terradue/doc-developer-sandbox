@@ -32,7 +32,7 @@ Connecting from Unix / Linux / Mac
 
 - Type:
 
-.. code::
+.. code-block:: bash
 
   chmod 600 <yourcertificate.pem>
   ssh -i <yourcertificate.pem> <sandbox_user>@<sandbox_host>
@@ -62,7 +62,7 @@ PuTTY needs a private key file (.ppk). Here the procedure to generate it from a 
 
 - Copy in your clipboard the part:
 
-.. code::
+.. code-block:: bash
 
   -----BEGIN RSA PRIVATE KEY-----
   MII....
@@ -75,7 +75,7 @@ PuTTY needs a private key file (.ppk). Here the procedure to generate it from a 
 
 - Open a Command Prompt and type:
 
-.. code::
+.. code-block:: bash
 
   puttygen <yourcertificate>.private
   
@@ -98,7 +98,7 @@ Connect with PuTTY
 
 - Open a Command Prompt and type:
 
-.. code::
+.. code-block:: bash
 
   putty -i <yourcertificate>.ppk <sandbox_user>@<sandbox_host>
 
