@@ -21,7 +21,7 @@ Working with the Sandbox
  
 The dollar sign ($) at the beginning of each line indicates the Linux shell prompt. The actual prompt will include additional information (e.g. *[user@sb-10-15-10-10.terradue.int]$* ) but it is omitted from these instructions for brevity. 
 
-* You can install the software you need by using the *yum* command since the user *<sandbox_user>* has sudo privileges:
+* You can install the software you need by using the *yum* command since the user *<sandbox_user>* has sudo privileges for *yum*:
 
 .. code-block:: bash
 
