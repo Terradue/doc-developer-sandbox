@@ -1,6 +1,6 @@
 .. _single_node:
 
-Hands-on exercise: a single node workflow
+Hands-On Exercise: a single node workflow
 ##########################################
 
 Install the BEAM Toolbox
@@ -24,7 +24,7 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
 
  $ cd /application
  
-* Create a file named application.xml:
+* Create a file named *application.xml*:
 
 .. code-block:: bash
 
@@ -46,9 +46,37 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
 Prepare the streaming executable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+In the *application.xml* we defined a workflow with a single node and the related streaming executable:
 
-Run a test workflow
-^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: src/application-sn.xml
+  :language: xml
+  :tab-width: 2
+  :lines: 5-5
+
+Actually the streaming executable *executes* your application in a node of a cluster. So, we have to create this file:
+
+* Go to the application default path and create the executable directory:
+
+.. code-block:: bash
+
+ $ cd /application
+ $ mkdir expression
+ $ cd expression
+ 
+* Create a file named *run*:
+
+.. code-block:: bash
+
+ $ touch run
+ 
+* Open it with a text editor (e.g. vi) and paste the following code in the file just created:
+
+.. literalinclude:: src/expression.sh
+  :language: bash
+  :tab-width: 2
+
+Run the workflow
+^^^^^^^^^^^^^^^^
 
 
 .. rubric:: Footnotes
