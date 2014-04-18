@@ -1,5 +1,5 @@
-Hands-On Excercises
-===================
+Hands-On Exercises
+==================
 
 Contents:
 
