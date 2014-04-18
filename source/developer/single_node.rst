@@ -6,13 +6,24 @@ Hands-on exercise: a single node workflow
 Install the BEAM Toolbox
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-BEAM is an open-source toolbox and development platform for viewing, analyzing and processing of remote sensing raster data. Originally developed to facilitate the utilization of image data from Envisat's optical instruments, BEAM now supports a growing number of other raster data formats such as GeoTIFF and NetCDF as well as data formats of other EO sensors such as MODIS, AVHRR, AVNIR, PRISM and CHRIS/Proba. Various data and algorithms are supported by dedicated extension plug-ins.
-Step 2
-^^^^^^
+BEAM is an open-source toolbox and development platform for viewing, analyzing and processing of remote sensing raster data. We will use it in our Hand-ons exercises. To install it simply type:
+
+.. code-block:: bash
+
+ sudo yum install esa-beam-4.11
 
 
-Step 3
-^^^^^^
+Prepare a workflow
+^^^^^^^^^^^^^^^^^^
+
+
+
+Prepare the streaming executable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Run a test workflow
+^^^^^^^^^^^^^^^^^^^
 
 
 
