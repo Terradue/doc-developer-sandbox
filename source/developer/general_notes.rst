@@ -8,20 +8,20 @@ The Terradue's Developer Cloud Sandbox, for brevity only Sandbox, is a Virtual M
 Getting started
 ^^^^^^^^^^^^^^^^
 
-# The Sandbox is set to automatically login as the user *<your_username>*. Please refer to the section, to connect to your Sandbox.
+* The Sandbox is set to automatically login as the user *<your_username>*. Please refer to the section, to connect to your Sandbox.
 
 Working with the Sandbox
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-# In some command-line steps in the exercises, you will see lines like this:
+* In some command-line steps in the exercises, you will see lines like this:
 
 .. code-block:: bash
 
  $ ciop-simjob -n node_expression
-
+ 
 The dollar sign ($) at the beginning of each line indicates the Linux shell prompt. The actual prompt will include additional information (e.g. *[user@sb-10-15-10-10.terradue.int]$* ) but it is omitted from these instructions for brevity. 
 
-# You can install the software you need by using the *yum* command since the user *<your username>* has sudo privileges:
+* You can install the software you need by using the *yum* command since the user *<your username>* has sudo privileges:
 
 .. code-block:: bash
 
