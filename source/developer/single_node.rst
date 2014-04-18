@@ -22,19 +22,19 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
 
 .. code-block:: bash
 
- cd /application
+ $ cd /application
  
 * Create a file named application.xml:
 
 .. code-block:: bash
 
- touch application.xml
+ $ touch application.xml
  
 * Give to your user/group the read/write permissions:
 
 .. code-block:: bash
 
- chmod 664 application.xml
+ $ chmod 664 application.xml
  
 * Open it with a text editor (e.g. vi) and paste the following code in the file just created:
 
