@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="beam_arithm">
+	<jobTemplates>
+		<jobTemplate id="expression">
+			<streamingExecutable>/application/expression/run</streamingExecutable>
+		</jobTemplate>
+	</jobTemplates>
+  <workflow id="beam_arithm">
+		<workflowVersion>1.0</workflowVersion>
+		<node id="node_expression">
+			<job id="expression"/>
+		</node>
+	</workflow>
+</application>
