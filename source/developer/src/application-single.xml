@@ -5,7 +5,7 @@
 			<streamingExecutable>/application/expression/run</streamingExecutable>
 		</jobTemplate>
 	</jobTemplates>
-  <workflow id="beam_arithm">
+  	<workflow id="beam_arithm">
 		<workflowVersion>1.0</workflowVersion>
 		<node id="node_expression">
 			<job id="expression"/>
