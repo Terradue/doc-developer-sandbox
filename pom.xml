@@ -10,7 +10,7 @@
 
 	<groupId>com.terradue.tag</groupId>
 	<artifactId>doc-developer-sandbox</artifactId>
-	<packaging>pom</packaging>
+	<packaging>rpm</packaging>
 	<description>Documentation for developer sandbox</description>
 	<version>0.2-SNAPSHOT</version>
 
