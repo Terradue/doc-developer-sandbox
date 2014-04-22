@@ -7,6 +7,8 @@ This section explains what can be don within a processing node.
 
 The processing node can be executed as several processing tasks or a single processing task.
 
+While the single processing task doesn't change the understanding of the workflow where a node will process a single task, an example of a node breaking down into several processing tasks is show below.
+
 Several processing tasks
 ************************
 
@@ -34,7 +36,9 @@ In the previous workflow example:
 
   stop
 
-Let's say Node A breaks-down into several processing tasks: 
+Let's say Node A and Node C break-down into several processing task.
+
+Node A is executed as:
 
 .. uml::
 
@@ -46,16 +50,16 @@ Let's say Node A breaks-down into several processing tasks:
   skinparam componentStyle uml2
    
   fork
-    :Task 1;
+    :Task A.1;
   fork again
-    :Task 2;
+    :Task A.2;
   fork again
-    :Task ...;
+    :...;
   fork again
-    :Task n;
+    :Task A.n;
   end fork
 
-The workflow would be executed as:
+The complete workflow is executed as:
 
 .. uml::
 
@@ -69,24 +73,29 @@ The workflow would be executed as:
   start
 
   fork
-    :Task 1;
+    :Task A.1;
   fork again
-    :Task 2;
+    :Task A.2;
   fork again
-    :Task ...;
+    :...;
   fork again
-    :Task n;
+    :Task A.n;
   end fork
 
   fork
-    :Node B;
+    :Task B;
   fork again
-    :Node C;
+    fork
+      :Task C.1;
+    fork again
+      :Task C.2;
+    fork again
+      :...;
+    fork again
+      :Task C.n;
+    end fork
   end fork
-    :Node D;
+    :Task D;
 
   stop
     
-Single processing task
-**********************
-
