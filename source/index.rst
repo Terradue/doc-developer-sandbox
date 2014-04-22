@@ -16,3 +16,9 @@ Contents:
    Design Guide <design/index>
    Field Guide <field/index>
    Developer's Reference Guide <reference/index>
+
+.. uml::
+
+
+   Alice -> Bob: Hi!
+   Alice <- Bob: How are you?

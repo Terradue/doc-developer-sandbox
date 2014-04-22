@@ -14,7 +14,15 @@
 	<description>Documentation for developer sandbox</description>
 	<version>0.2-SNAPSHOT</version>
 
-
+	<dependencies>
+		<dependency>
+			<groupId>com.terradue.infra</groupId>
+			<artifactId>corporate-doc</artifactId>
+			<type>zip</type>
+			<classifier>plantuml</classifier>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 
 	<scm>
 		<connection>scm:git:git@github.com:Terradue/doc-developer-sandbox.git</connection>
