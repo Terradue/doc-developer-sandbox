@@ -31,6 +31,17 @@ As a suggested phase you may continue with the Field Guide. This will drive you 
 
 .. uml::
 
+   !define DIAG_NAME Test
+   
+   !include includes/skins.iuml
+
+   skinparam backgroundColor #FFFFFF
+   skinparam componentStyle uml2
 
    Alice -> Bob: Hi!
    Alice <- Bob: How are you?
+
+   footer 
+	DIAG_NAME
+	(c) Terradue Srl
+	endfooter
