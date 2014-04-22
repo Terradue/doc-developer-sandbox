@@ -53,7 +53,7 @@ In the *application.xml* we defined a workflow with a single node and the relate
   :tab-width: 2
   :lines: 5-5
 
-Actually the streaming executable *executes* your application in a node of a cluster. So, we have to create this file:
+Actually the streaming executable is responsbile for *executing* your application in a node of a cluster. So, we have to create this file:
 
 * Go to the application default path and create the executable directory:
 
