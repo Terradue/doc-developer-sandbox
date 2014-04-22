@@ -54,12 +54,16 @@ The processing nodes can run parallel tasks.
 
   start
 
-  :Node A;
+  partition Node A {
   
   fork
     :Task 1;
+  fork again
     :Task 2;
+  fork again
+    :Task 3;
   end fork
+  }
 
   fork
     :Node B;
