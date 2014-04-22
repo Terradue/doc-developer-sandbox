@@ -1,5 +1,5 @@
 Application Workflow
-####################
+====================
 
 Picture the workflow as a Data Pipeline.
 
