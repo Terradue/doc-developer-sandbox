@@ -147,7 +147,6 @@
 					</provides>
 					<requires>
 						<require>httpd &gt;= 2.0</require>
-						&gt;
 					</requires>
 					<needarch>noarch</needarch>
 				</configuration>
