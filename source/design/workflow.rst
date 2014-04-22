@@ -54,7 +54,7 @@ The processing nodes can run parallel tasks.
 
   start
 
-  partition Node A {
+  partition Node_A {
   
   fork
     :Task 1;
