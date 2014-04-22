@@ -29,7 +29,7 @@ Below an example of a Directed Acyclic Graph depicting
   fork again
     :Node C;
   end fork
-    :Node D
+    :Node D;
   
   stop
 
