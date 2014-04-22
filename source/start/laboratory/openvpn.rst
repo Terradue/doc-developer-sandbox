@@ -45,6 +45,8 @@ Caveats
 
 When the OpenVPN client is installed on a Linux/Unix OS, the OpenVPN Server is unable to alter the DNS settings on the client in question. A typical behaviour in these cases is that you are able to ping your Sandbox through the IPv4 but not through the hostname. To solve this kind of issues it is enough to add manually the Terradue's DNS to your */etc/resolv.conf* file the line:
 
-        `nameserver 10.10.10.1`
+.. code-block:: bash
+
+  nameserver 10.10.10.1
 
 If you are using the NetworkManager (e.g. in the GNOME desktop environment), you should instead statically add the nameserver address 10.10.10.1 through the GUI. 
