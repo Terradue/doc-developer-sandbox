@@ -88,3 +88,11 @@ The typical structure of such a streaming executable is:
 Auxiliary nodes
 ***************
 
+Auxiliary nodes are needed when the output of a node cannot be directly processed by the subsequent nodes (e.g. parallel processing would not be possible).
+
+These nodes usually process the data by reference (no stage-in) and combines or arranges these references and provides those references as outputs.
+
+Typical examples are:
+
+* Group catalogue products by periods of time (e.g. produce daily aggregated products)
+* Couple RADAR SAR master/slave images in the interferometry domain
