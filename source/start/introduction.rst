@@ -27,21 +27,3 @@ The 'must do', but once should be enough :)
 Once you have passed throught these steps, you are ready !
 You have your Cloud Sandbox main controls in hand. You can start integrating an application.
 As a suggested phase you may continue with the Field Guide. This will drive you through hands-on exercises for domain-specific applications, and useful guidance to integrate and test your own applications.
-
-
-.. uml::
-
-   !define DIAG_NAME Test
-   
-   !include includes/skins.iuml
-
-   skinparam backgroundColor #FFFFFF
-   skinparam componentStyle uml2
-
-   Alice -> Bob: Hi!
-   Alice <- Bob: How are you?
-
-   footer 
-	DIAG_NAME
-	(c) Terradue Srl
-	endfooter
