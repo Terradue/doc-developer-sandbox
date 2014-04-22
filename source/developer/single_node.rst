@@ -6,7 +6,7 @@ Hands-On Exercise: a single node workflow
 Install the BEAM Toolbox
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-BEAM is an open-source toolbox and development platform for viewing, analyzing and processing of remote sensing raster data. We will use it in our Hand-ons exercises. To install it simply type:
+BEAM is an open-source toolbox and development platform for viewing, analyzing and processing of remote sensing raster data. We will use it in our Hands-On exercises. To install it simply type:
 
 .. code-block:: bash
 
@@ -36,7 +36,7 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
 
  $ chmod 664 application.xml
  
-* Open it with a text editor (e.g. vi) and paste the following code in the file just created:
+* Open it with a text editor (e.g. vi) and paste the following code:
 
 .. literalinclude:: src/application-sn.xml
   :language: xml
@@ -69,7 +69,7 @@ Actually the streaming executable *executes* your application in a node of a clu
 
  $ touch run
  
-* Open it with a text editor (e.g. vi) and paste the following code in the file just created:
+* Open it with a text editor (e.g. vi) and paste the following code:
 
 .. literalinclude:: src/expression.sh
   :language: bash
