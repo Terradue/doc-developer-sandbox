@@ -4,10 +4,12 @@ Hands-On Exercises
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    General Notes <general_notes>
-   Hands-On Exercise: a single node workflow <single_node>
+   Hands-On Exercise: a basic workflow <basic>
+   Hands-On Exercise: make a robust workflow and debug it <debug>
+..   
    Hands-On Exercise: a multi-node workflow
    Hands-On Exercise: defining parameters
    Hands-On Exercise: using the catalogue 

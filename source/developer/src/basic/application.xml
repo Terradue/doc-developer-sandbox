@@ -9,6 +9,9 @@
 		<workflowVersion>1.0</workflowVersion>
 		<node id="node_expression">
 			<job id="expression"/>
+			<sources>
+				<source refid="file:urls">/application/inputs/list</source>
+			</sources>
 		</node>
 	</workflow>
 </application>

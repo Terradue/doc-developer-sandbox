@@ -27,8 +27,6 @@ The dollar sign ($) at the beginning of each line indicates the Linux shell prom
 
  $ sudo yum install <package name>
  
-Final remark
-^^^^^^^^^^^^
-
-As the exercises progress and you gain more familiarity with the CIOP framework, the Hadoop and the MapReduce, we provide fewer step by step instructions. You feel free to ask to us for explainations or doubts using our Support Site https://support.terradue.com. We'll be happy to help !
+.. NOTE::
+  As the exercises progress and you gain more familiarity with the CIOP framework, the Hadoop and the MapReduce, we provide fewer step by step instructions. You feel free to ask to us for explainations or doubts using our Support Site https://support.terradue.com. We'll be happy to help !
  

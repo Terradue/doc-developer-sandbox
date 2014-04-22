@@ -9,9 +9,7 @@ Contents:
    :maxdepth: 2
 
    Introduction <introduction>
-   Welcome <welcome>
-   Importing the SSL Certificate <certificate>
-   Join your Laboratory <laboratory>
+   Join your Laboratory <laboratory/index>
    Connect to your Sandbox <sandbox>
    Discover the Sandbox services & tools <discover>
    Understand the Developer Cloud Sandbox key principles <principles>
