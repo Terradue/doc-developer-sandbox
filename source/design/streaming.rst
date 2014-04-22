@@ -10,6 +10,7 @@ The streaming executable reads the inputs via the stdin channel as if one would 
  $ echo "file1\nfile2" | myExecutable
  
 This section defines typical design patterns which include:
+
 * sourcing the required libraries (bash, R are available; Python in development)
 * get parameter values
 * reading the stdin
@@ -17,6 +18,7 @@ This section defines typical design patterns which include:
 * apply user processing
 
 There are two standard design patterns:
+
 * Process n inputs to generate n (or m) outputs (parallel)
 * Process n inputs to generate one output (aggregation)
 
@@ -82,3 +84,7 @@ The typical structure of such a streaming executable is:
   :Stage-out result;
     
   stop
+  
+Auxiliary nodes
+***************
+
