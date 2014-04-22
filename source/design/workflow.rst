@@ -39,5 +39,37 @@ Below an example of a Directed Acyclic Graph depicting a classical workflow wher
 
   footer
     DIAG_NAME
-    (c) Terradue Srl
+    endfooter
+
+The processing nodes can run parallel tasks. 
+
+.. uml::
+
+   !define DIAG_NAME Workflow example
+
+   !include includes/skins.iuml
+
+   skinparam backgroundColor #FFFFFF
+   skinparam componentStyle uml2
+
+  start
+
+  :Node A;
+  
+  fork
+    :Task 1;
+    :Task 2;
+  end fork
+
+  fork
+    :Node B;
+  fork again
+    :Node C;
+  end fork
+    :Node D;
+  
+  stop
+
+  footer
+    DIAG_NAME
     endfooter
