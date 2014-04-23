@@ -46,7 +46,7 @@ The typical structure of such a streaming executable is:
   
   :Get parameter values;
   
-  while (read stdin) is (line)
+  while (check stdin?) is (line)
     :Stage-in data;
     :Apply user application;
     :Stage-out result;
@@ -76,7 +76,7 @@ The typical structure of such a streaming executable is:
   
   :Get parameter values;
   
-  while (read stdin) is (line)
+  while (check stdin?) is (line)
     :Stage-in data;
   endwhile (empty)
   
