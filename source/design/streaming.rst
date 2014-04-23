@@ -54,10 +54,11 @@ The typical structure of such a streaming executable is:
   
   stop
 
-Templates
+Below you find templates implementing this design pattern:
 
-:download:`Streaming executable <examples/streaming_executable.sh>`
-
+:download:`Bash streaming executable <examples/streaming_executable.sh>`
+:download:`R streaming executable <examples/streaming_executable.R>`   
+:download:`Python streaming executable <examples/streaming_executable.py>`
 
 Process n inputs to generate one output
 ***************************************
