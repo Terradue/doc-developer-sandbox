@@ -54,6 +54,11 @@ The typical structure of such a streaming executable is:
   
   stop
 
+Templates
+
+:download:`Streaming executable <examples/streaming_executable.sh>`
+
+
 Process n inputs to generate one output
 ***************************************
 
