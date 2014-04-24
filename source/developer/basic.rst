@@ -1,25 +1,21 @@
 .. _basic:
 
-Hands-On Exercise: a basic workflow
-###################################
+Hands-On Exercise 1: a basic workflow
+#####################################
 
-In this hands-on we will prepare a simple workflow and we will execute a first demo run:
+In this Hands-On we will prepare a simple workflow and we will execute a first demo run, using the CIOP tools.
 
+Prepare the workflow
+====================
+
+A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, that defines a workflow. The first step is to create an *application.xml*:
+ 
 * First of all, go to the application default path:
 
 .. code-block:: bash
 
   $ cd $_CIOP_APPLICATION_PATH
 
-.. NOTE::
- If not otherwise specified, all the commands of these hands-on refer to the $_CIOP_APPLICATION_PATH path.  
-
-
-Prepare the workflow
-^^^^^^^^^^^^^^^^^^^^
-
-A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, that defines a workflow. The first step is to create an *application.xml*:
- 
 * Create a file named *application.xml*:
 
 .. code-block:: bash
@@ -39,7 +35,7 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
   :tab-width: 2
 
 Prepare the test inputs
-^^^^^^^^^^^^^^^^^^^^^^^
+=======================
  
 * Create a file named list:
 
@@ -60,9 +56,9 @@ Prepare the test inputs
  
  
 Prepare the streaming executable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+================================
 
-The streaming executable is responsbile for *executing* your application in a node of a cluster. In the *application.xml* we defined a workflow with a single node and the related streaming executable:
+The streaming executable is responsbile for *executing* your application in the Sandbox. In the *application.xml* we defined a workflow with a single node and the related streaming executable:
 
 .. literalinclude:: src/basic/application.xml
   :language: xml
@@ -91,7 +87,7 @@ The streaming executable is responsbile for *executing* your application in a no
   :tab-width: 2
 
 Run the node 
-^^^^^^^^^^^^
+============
 
 We created a workflow with a single node, named *expression*. We can execute it by typing:
 
@@ -126,13 +122,25 @@ The output will be similar to:
  
  14/04/22 17:50:57 INFO The results are available at /share/tmp/sandbox/my_workflow/my_node/data
 
-What we done
-^^^^^^^^^^^^
+.. NOTE::
+      Since the Sandbox has two cores and the node my_node two inputs, they have been executed two tasks in parallel, each one processing a single input.
+
+Recap
+=====
 
 #. We created a simple workflow with a single node,
 #. We prepared a list of two test inputs,
 #. We prepared a simple streaming executable that logs (through the *ciop-log* function) the name of the inputs,
-#. We executed the node with two inputs. Since the Sandbox has two cores, they have been executed in parallel.
+#. We executed the node with two inputs, using two tasks in parallel.
+
+Files used in this Hands-On
+===========================
+
+:download:`application.xml <src/basic/application.xml>`
+
+:download:`inputs/list <src/basic/list>`  
+
+:download:`my_node/run <src/basic/run>`
 
 .. rubric:: Footnotes
 

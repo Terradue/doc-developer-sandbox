@@ -21,6 +21,13 @@ Using the code examples
  
 The dollar sign ($) at the beginning of each line indicates the Linux shell prompt. The actual prompt will include additional information (e.g. *[user@sb-10-15-10-10.terradue.int]$* ) but it is omitted from these instructions for brevity. 
 
+* If not otherwise specified, all the commands of these Hands-On refer to the $_CIOP_APPLICATION_PATH path:
+
+.. code-block:: bash
+
+  $ echo $_CIOP_APPLICATION_PATH
+  /application
+
 Install additional software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
