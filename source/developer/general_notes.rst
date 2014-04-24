@@ -8,7 +8,7 @@ The Terradue's Developer Cloud Sandbox, for brevity only Sandbox, is a Virtual M
 Getting started
 ^^^^^^^^^^^^^^^^
 
-* The Sandbox is set to automatically login as the user *<sandbox_user>*. Please refer to the section :ref:`<../start/sandbox>`, to connect to your Sandbox.
+* The Sandbox is set to automatically login as the user *<sandbox_user>*. Please refer to the section :doc:`Connect to your Sandbox <../start/sandbox>`.
 
 Using the code examples
 ^^^^^^^^^^^^^^^^^^^^^^^^

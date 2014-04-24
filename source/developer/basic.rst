@@ -12,19 +12,19 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
  
 * First of all, go to the application default path:
 
-.. code-block:: bash
+.. code-block:: none
 
   $ cd $_CIOP_APPLICATION_PATH
 
 * Create a file named *application.xml*:
 
-.. code-block:: bash
+.. code-block:: none
 
  $ touch application.xml
  
 * Give to your user/group the read/write permissions:
 
-.. code-block:: bash
+.. code-block:: none
 
  $ chmod 664 application.xml
  
@@ -39,19 +39,19 @@ Prepare the test inputs
  
 * Create a file named list:
 
-.. code-block:: bash
+.. code-block:: none
 
  $ mkdir inputs
  $ touch inputs/list
  
 * Open it with a text editor and paste the following lines:
 
-.. code-block:: bash
+.. code-block:: none
 
  file1
  file2
 
-.. NOTE::
+.. WARNING::
  The file should contain only the two lines, without blank lines at the end or at the beginning. Furthermore, comments are not allowed.
  
  
@@ -67,7 +67,7 @@ The streaming executable is responsbile for *executing* your application in the 
 
 * Go to the application default path and create the executable directory:
 
-.. code-block:: bash
+.. code-block:: none
 
  $ cd /application
  $ mkdir my_node
@@ -75,7 +75,7 @@ The streaming executable is responsbile for *executing* your application in the 
  
 * Create a file named *run* and make it executable:
 
-.. code-block:: bash
+.. code-block:: none
 
  $ touch run
  $ chmod +x run
@@ -91,7 +91,7 @@ Run the node
 
 We created a workflow with a single node, named *expression*. We can execute it by typing:
 
-.. code-block:: bash
+.. code-block:: none
 
  $ ciop-simjob my_node
 
@@ -136,11 +136,9 @@ Recap
 Files used in this Hands-On
 ===========================
 
-:download:`application.xml <src/basic/application.xml>`
-
-:download:`inputs/list <src/basic/list>`  
-
-:download:`my_node/run <src/basic/run>`
+* :download:`application.xml <src/basic/application.xml>`
+* :download:`inputs/list <src/basic/list>`  
+* :download:`my_node/run <src/basic/run>`
 
 .. rubric:: Footnotes
 
