@@ -38,8 +38,6 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
   :language: xml
   :tab-width: 2
 
-We used the id  *beam_arithm* because it will be useful later on.
-
 Prepare the test inputs
 ^^^^^^^^^^^^^^^^^^^^^^^
  
@@ -76,10 +74,8 @@ The streaming executable is responsbile for *executing* your application in a no
 .. code-block:: bash
 
  $ cd /application
- $ mkdir expression
- $ cd expression
-
-We used the name *expression* because it is a step of the BEAM Arithm workflow.
+ $ mkdir my_node
+ $ cd my_node
  
 * Create a file named *run* and make it executable:
 
@@ -101,33 +97,34 @@ We created a workflow with a single node, named *expression*. We can execute it 
 
 .. code-block:: bash
 
- $ ciop-simjob node_expression
+ $ ciop-simjob my_node
 
 The output will be similar to:
 
 .. code-block:: none
+
+ 14/04/22 17:50:30 INFO my_node simulation started
+ 14/04/22 17:50:39 INFO Submitting job 23111 ...
+ 14/04/22 17:50:39 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
+ packageJobJar: [/var/lib/hadoop-0.20/cache/crossi/hadoop-unjar7460568497055080537/] [] /tmp/streamjob6260064869370768639.jar tmpDir=null
+ 14/04/22 17:50:41 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ 14/04/22 17:50:41 WARN snappy.LoadSnappy: Snappy native library not loaded
+ 14/04/22 17:50:41 INFO mapred.FileInputFormat: Total input paths to process : 1
+ 14/04/22 17:50:41 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/crossi/mapred/local]
+ 14/04/22 17:50:41 INFO streaming.StreamJob: Running job: job_201404181621_0003
+ 14/04/22 17:50:41 INFO streaming.StreamJob: To kill this job, run:
+ 14/04/22 17:50:41 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-21.dev.terradue.int:8021 -kill job_201404181621_0003
+ 14/04/22 17:50:41 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-21.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201404181621_0003
+ 14/04/22 17:50:42 INFO streaming.StreamJob:  map 0%  reduce 0%
+ 14/04/22 17:50:46 INFO streaming.StreamJob:  map 100%  reduce 0%
+ 14/04/22 17:50:53 INFO streaming.StreamJob:  map 100%  reduce 33%
+ 14/04/22 17:50:54 INFO streaming.StreamJob:  map 100%  reduce 100%
+ 14/04/22 17:50:56 INFO streaming.StreamJob: Job complete: job_201404181621_0003
+ 14/04/22 17:50:56 INFO streaming.StreamJob: Output: /tmp/sandbox/my_workflow/my_node/output
+ 14/04/22 17:50:57 INFO my_node simulation ended (27 seconds)
+ 14/04/22 17:50:57 INFO my_node published:
  
- 14/04/22 11:07:19 INFO node_expression simulation started
- 14/04/22 11:07:31 INFO Submitting job 18251 ...
- 14/04/22 11:07:31 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
- packageJobJar: [/var/lib/hadoop-0.20/cache/crossi/hadoop-unjar6138465056018141051/] [] /tmp/streamjob8303102846061764954.jar tmpDir=null
- 14/04/22 11:07:33 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
- 14/04/22 11:07:33 WARN snappy.LoadSnappy: Snappy native library not loaded
- 14/04/22 11:07:33 INFO mapred.FileInputFormat: Total input paths to process : 1
- 14/04/22 11:07:35 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/crossi/mapred/local]
- 14/04/22 11:07:35 INFO streaming.StreamJob: Running job: job_201404181621_0001
- 14/04/22 11:07:35 INFO streaming.StreamJob: To kill this job, run:
- 14/04/22 11:07:35 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-21.dev.terradue.int:8021 -kill job_201404181621_0001
- 14/04/22 11:07:35 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-21.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201404181621_0001
- 14/04/22 11:07:36 INFO streaming.StreamJob:  map 0%  reduce 0%
- 14/04/22 11:07:41 INFO streaming.StreamJob:  map 100%  reduce 0%
- 14/04/22 11:07:50 INFO streaming.StreamJob:  map 100%  reduce 100%
- 14/04/22 11:07:52 INFO streaming.StreamJob: Job complete: job_201404181621_0001
- 14/04/22 11:07:52 INFO streaming.StreamJob: Output: /tmp/sandbox/beam_arithm/node_expression/output
- 14/04/22 11:07:52 INFO node_expression simulation ended (33 seconds)
- 14/04/22 11:07:52 INFO node_expression published:
- 
- 14/04/22 11:07:52 INFO The results are available at /share/tmp/sandbox/beam_arithm/node_expression/data
+ 14/04/22 17:50:57 INFO The results are available at /share/tmp/sandbox/my_workflow/my_node/data
 
 What we done
 ^^^^^^^^^^^^

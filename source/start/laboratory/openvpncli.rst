@@ -8,7 +8,7 @@ This can also be used in the case in which you want to automatically start the V
 
 By typing the command:
 
-.. code::
+.. code-block:: bash
 
   man openvpn
 
@@ -30,7 +30,7 @@ This section does not examine the parameters because they are already listed and
 - Put the files client.ovpn and cacert.pem in a same directory (suppose /etc/openvpn/). 
 - Change the current directory to /etc/openvpn/ and exec (with root privileges) the command:
 
-.. code::
+.. code-block:: bash
 
   openvpn --config client.ovpn
 
@@ -48,19 +48,19 @@ How to build OpenVPN
 - Download the OpenVPN's source code from the site http://openvpn.net. Pick the latest stable release that is available (*suppose the release 2.0.9 in the rest of this document*);
 - Extract the files which are stored in the zipped archive that you have downloaded by using the tar command in the following manner:
 
-.. code::
+.. code-block:: bash
 
     tar xvfz openvpn-2.0.9.tar.gz
 
 - Change the current directory to openvpn-2.0.9 with the command:
 
-.. code::
+.. code-block:: bash
 
         cd openvpn-2.0.9
 
 - Check the system and produce the Makefiles by using the following command:
 
-.. code::
+.. code-block:: bash
 
         ./configure --prefix=/usr
         make
@@ -70,17 +70,17 @@ If the ./configure procedure claims that the lzo libraries and headers are not f
 
 - Download the source package of LZO from the site http://www.oberhumer.com/ and extract its content with the command:
 
-.. code:: 
+.. code-block:: bash
 
         tar xvfz lzo-2.02.tar.gz
 
 - Change the current directory to lzo-2.02 and install the LZO software with the commands:
 
-.. code::
+.. code-block:: bash
 
         ./configure --prefix=/usr
         make
         make install
         
-.. NOTE::
+.. WARNING::
   Because the files will be written below the system directory /usr, the *make install* command must be executed with root privileges.

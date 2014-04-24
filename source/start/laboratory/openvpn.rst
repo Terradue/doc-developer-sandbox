@@ -35,7 +35,7 @@ Manual setup on other Platforms
 To download the "OpenVPN Connect" client for installation on another computer, you can access installation material and configuration templates from here https://access.terradue.com/?src=connect
 
 Command Line Interface
----------------------
+----------------------
 
 In some scenarios you need to use the OpenVPN's command line interface, for example in a script to automatically start the VPN connection. So you can execute the OpenVPN client through the "openvpn" command  by using the prompt (Unix Shell or Windows Prompt). 
 The section :ref:`OpenVPN Command Line <openvpncli>` will help you how to build and install OpenVPN for most of the operating systems, and use it via the command line.

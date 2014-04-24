@@ -23,7 +23,7 @@ Run the node and debug the workflow
 
 .. code-block:: bash
 
- $ ciop-simjob node_expression
+ $ ciop-simjob my_node
 
 * From the output of the *ciop-simjob* command we can copy in the clipboard the **Tracking URL**. It will be similar to this:
 
