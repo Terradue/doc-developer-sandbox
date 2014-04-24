@@ -8,18 +8,28 @@ The Terradue's Developer Cloud Sandbox, for brevity only Sandbox, is a Virtual M
 Getting started
 ^^^^^^^^^^^^^^^^
 
-* The Sandbox is set to automatically login as the user *<sandbox_user>*. Please refer to the section :ref:`<../start/sandbox>`, to connect to your Sandbox.
+* The Sandbox is set to automatically login as the user *<sandbox_user>*. Please refer to the section :doc:`Connect to your Sandbox <../start/sandbox>`.
 
-Working with the Sandbox
+Using the code examples
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * In some command-line steps in the exercises, you will see lines like this:
 
 .. code-block:: bash
 
- $ ciop-simjob -n node_expression
+ $ ciop-simjob -n my_node
  
 The dollar sign ($) at the beginning of each line indicates the Linux shell prompt. The actual prompt will include additional information (e.g. *[user@sb-10-15-10-10.terradue.int]$* ) but it is omitted from these instructions for brevity. 
+
+* If not otherwise specified, all the commands of these Hands-On refer to the $_CIOP_APPLICATION_PATH path:
+
+.. code-block:: bash
+
+  $ echo $_CIOP_APPLICATION_PATH
+  /application
+
+Install additional software
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * You can install the software you need by using the *yum* command since the user *<sandbox_user>* has sudo privileges for *yum*:
 
@@ -29,4 +39,3 @@ The dollar sign ($) at the beginning of each line indicates the Linux shell prom
  
 .. NOTE::
   As the exercises progress and you gain more familiarity with the CIOP framework, the Hadoop and the MapReduce, we provide fewer step by step instructions. You feel free to ask to us for explainations or doubts using our Support Site https://support.terradue.com. We'll be happy to help !
- 
