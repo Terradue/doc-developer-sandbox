@@ -1,5 +1,13 @@
 Data preparation and management
-###############################
+===============================
+
+A processing workflow is a data pipeline. How does the data reach the data pipeline? 
+
+There are several appraoches to provide data to the data pipeline
+
+
+
+DELETE AFTER REVISION
 
 Processing edges can have different sources types:
 
