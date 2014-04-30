@@ -3,23 +3,29 @@ Data preparation and management
 
 A processing workflow is a data pipeline. How does the data reach the data pipeline? 
 
-There are several appraoches to provide data to the data pipeline
+There are several approaches to provide data to the data pipeline:
 
+* A local file containing the inputs as references to data or values (one per line)
+* A list of comma-separated values containing the inputs as references to data or values
+* A reference to a catalogue 
 
+Local file 
+**********
 
-DELETE AFTER REVISION
+This approach is very useful during the early stages of the application development where you download a few files to your sandbox and use these data to run the first tests.
+We do not recommend using this method beyond the early stages of the application development.
 
-Processing edges can have different sources types:
+Comma-separated values 
+**********************
 
-* :doc:`catalogue feed <catalogue_feed/index>`
-* comma separated values list <csv_list/index>
-* file <file/index>
-* the output of one or more parent edges of the DAG <parent_edges>
+On the one hand, this approach is very straigh-forward to test the application against a small number of values. 
+On the other, during the exploitation phase with an application exposed as an OGC WPS service, the comma-separated values list is very well managed and allows clients to provide several values to the application.
 
-Passing complex data from a node to another
--------------------------------------------
+Reference to a catalogue
+************************
 
-Sometimes the output of a node is somposed of several set of files.
-The following example shows how to pass a "dim" data.
+This approach allows tapping on large repositories of Earth Observation data exposing an OpenSearch catalogue. 
+It is the preferred 
+
 
 
