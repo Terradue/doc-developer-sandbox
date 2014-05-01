@@ -81,6 +81,8 @@ Application descriptor values and properties
 source refid values
 ^^^^^^^^^^^^^^^^^^^
 
+.. _reference_file:
+
 Reference to a file
 ~~~~~~~~~~~~~~~~~~~
 
@@ -144,6 +146,8 @@ In the example above, the executable manages the inputs (areas of interest defin
 		...
 	done 
 
+.. _reference_csv:
+
 List of comma-separated values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -161,6 +165,7 @@ Passing a list of values to a job follows the same approach as above.
 			</node>
 	</workflow>
 
+.. _reference_catalogue:
 
 Products available in a catalogue 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,7 +190,7 @@ To reference an external catalogue, the workflow node is defined as follows:
 			</node>
 	</workflow>
 
-To reference a dataset series in the sandbox internal 
+To reference a dataset series in the sandbox internal catalogue
 
 .. code-block:: xml
 
