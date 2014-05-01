@@ -1,5 +1,5 @@
-Data preparation and management
-===============================
+Data sources
+============
 
 A processing workflow is a data pipeline. How does the data reach the data pipeline? 
 
