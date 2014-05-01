@@ -50,3 +50,6 @@ Below an example of a Directed Acyclic Graph depicting a classical workflow wher
       * What parameters does each node need?
       * Is my workflow cost-effective in terms of I/O?
       
+Below a few examples of workflows:
+   * :download:`one single node <examples/application_one_node.xml>`
+   * :download:`one single node with parallel processing and one aggregation node <examples/application_two_nodes.xml>`
