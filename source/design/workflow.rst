@@ -48,4 +48,5 @@ Below an example of a Directed Acyclic Graph depicting a classical workflow wher
       * What will each node read as inputs?
       * What will each node write as outputs?
       * What parameters does each node need?
+      * Is my workflow cost-effective in terms of I/O?
       
