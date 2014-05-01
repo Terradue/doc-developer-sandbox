@@ -43,9 +43,9 @@ Below an example of a Directed Acyclic Graph depicting a classical workflow wher
 
 .. tip::
    Take the time to carefully think how to structure the workflow by answering the questions:
-      * how many nodes do I need?
-      * can the node execution be split in several tasks?
-      * what will each node read as inputs?
-      * what will each node write as outputs?
-      * what parameters does each node need?
+      * How many nodes do I need?
+      * Can the node execution be split in several tasks?
+      * What will each node read as inputs?
+      * What will each node write as outputs?
+      * What parameters does each node need?
       
