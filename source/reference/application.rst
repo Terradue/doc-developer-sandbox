@@ -4,21 +4,29 @@ Application descriptor reference
 Purpose
 -------
 
-The application descriptor file contains the definition of the application in terms of:
+The application descriptor file is an XML document containing two blocks.
 
-* job templates including:	
-	* streaming executable
-* default parameters 
-* job default configuration
-	* workflow including the workflow nodes defined with
-	* the source for the inputs (e.g. a previous node, a catalogue series, a local file)  
-	* their parameter values to override the default parameters (defined in the job template above)
+The first defines the job templates that are then instantiated as workflow nodes of the Directed Acyclic Graph.
+
+Each job template contains:
+
+* the path to the streaming executable
+* parameters and optionaly their default value 
+* properties (e.g. maximum number of tasks, wall-time, etc.)
+
+The second block contains the workflow nodes.
+
+The workflow contains the nodes, each defining:
+
+* the source for the inputs (e.g. a previous node, a catalogue series, a local file or a list of values)  
+* their parameter values to override the default parameters (defined in the job template above)
 
 Type
 ----
 
 The application descriptor is an XML file available in $_CIOP_APPLICATION_PATH/application.xml 
-	*Note: the value $_CIOP_APPLICATION_PATH is /application*
+
+.. note:: the value $_CIOP_APPLICATION_PATH is /application
 
 Format
 ------
@@ -63,8 +71,9 @@ The application descriptor file structure is available below:
 |			| 						| 															| parameter default value)		|				|								|					|
 +-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+-------------------+	
 
-**Tip:** *check your application descriptor file with the* **ciop-appcheck** *utility described here: [[ciop-appcheck]]*
-TODO
+
+.. tip:: Check your application descriptor file with the :doc:`ciop-appcheck </reference/man/ciop-appcheck>` utility
+
 
 Application descriptor values and properties
 --------------------------------------------
@@ -72,203 +81,182 @@ Application descriptor values and properties
 source refid values
 ^^^^^^^^^^^^^^^^^^^
 
-Local inputs
-~~~~~~~~~~~~
+Reference to a file
+~~~~~~~~~~~~~~~~~~~
+
+Define a source as a local ASCII file containing one element per line.
+
+The file can contain any value to be processed: references to products, list of areas of interest, etc.
+
+.. note:: this method sould be used in the early stages of the application development and testing.
+	It should be replaced by a comma-separated list of values or a reference to a catalogue.
 
 Local files will use the *file://* protocol and are defined in the workflow as follows:
-	| <workflow id="somename">							
-	| 	<workflowVersion>1.0</workflowVersion>
-	| 	<node id="somenodeid">
-	| 		<job id="ceda-collect"></job>
-	| 		<sources>
-	| 			<source refid="file:urls" >/application/input.urls</source>
-	| 		</sources>
-	| 	</node>
-	| </workflow>
+
+.. code:: xml
+
+	<workflow id="somename">							
+		<workflowVersion>1.0</workflowVersion>
+			<node id="somenodeid">
+				<job id="job_template1"/>
+				<sources>
+	 				<source refid="file:urls" >/application/input.urls</source>
+				</sources>
+			</node>
+	</workflow>
 
 and the file *input.urls* contains the references to the local files:
-	| [ user@sb ~] cat /application/input.urls	
-	| file:///tmp/somefile1						
-	| file:///tmp/somefile2						
-	| file:///tmp/somefile3						
 
-Then the job executable can use ciop-copy to copy the files if needed.
-	| while read inputfile
-	| do
-	|	echo $inputfile | ciop-copy -o ./ - 
-	| done 
+.. code:: bash
 
-Values
-~~~~~~
+	[ user@sb ~] cat /application/input.urls	
+	file:///tmp/somefile1						
+	file:///tmp/somefile2						
+	file:///tmp/somefile3						
 
-Passing values to a job follows the same approach as above. 
-	| <workflow id="somename">							
-	| 	<workflowVersion>1.0</workflowVersion>
-	| 	<node id="somenodeid">
-	|		<job id="ceda-collect"></job>
-	|		<sources>
-	|			<source refid="file:urls" >/application/inputparams</source>
-	|		</sources>
-	| 	</node>
-	| </workflow>
+Then the job streaming executable can use :doc:`ciop-copy </reference/man/ciop-copy>` to copy the files if needed.
+
+.. code:: bash
+
+	while read inputfile
+	do
+		local_url=`echo $inputfile | ciop-copy -o ./ -`
+		# do something with the local_url
+		...
+	done 
+
+To process areas of interest:
   
-and the file *inputparams* contains the list of values:
-	| [ user@sb ~] cat /application/inputparams
-	| -10,-10,10,10
-	| 10,10,20,20
+.. code:: bash
 
-In the example above, the executable manages the parameters (bounding boxes) with:
+	[ user@sb ~] cat /application/aoi.list
+	-10,-10,10,10
+	10,10,20,20
 
-	| while read bbox
-	| do
-	| 	echo "processing bounding box $bbox"
-	| done 
+In the example above, the executable manages the inputs (areas of interest defined as bounding boxes) with:
 
-Products available in the sandbox internal catalogue
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code:: bash
 
-During the sandbox definition and creation you may have selected a list of EO products, the references to these products are available in the sandbox internal catalogue.
-The workflow is defined as follows:
-	| <workflow id="some_workflow">
-	| 	<workflowVersion>1.0</workflowVersion>
-	| 	<node id="some_node">						
-	| 		<job id="some_job_template"></job>					
-	| 		<sources>
-	| 			<source refid="cas:serie">ATS_TOA_1P</source>
-	| 		</sources>
-	| 		<parameters>							
-	| 			<parameter id="some_parameter">some_value</parameter>
-	| 		</parameters>
-	| 	</node>
+	while read bbox
+	do
+		echo "processing bounding box $bbox"
+		# do something with the bbox value
+		...
+	done 
+
+List of comma-separated values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Passing a list of values to a job follows the same approach as above. 
+
+.. code:: xml
+
+	<workflow id="somename">							
+		<workflowVersion>1.0</workflowVersion>
+			<node id="somenodeid">
+				<job id="job_template1"/>
+				<sources>
+	 				<source refid="str:list" >value1,value2</source>
+				</sources>
+			</node>
+	</workflow>
+
+
+Products available in a catalogue 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the products to process are available in a catalogue (either an external catalogue or the sandbox internal catalogue), the source is defined as a reference to 
+the dataset series OpenSearch description document URL.
+
+.. tip:: Check how to copy dataset catalogue entries by reference or by value (the dataset is copied physically to the sandbox storage)
+	to the sandbox internal catalogue with the :doc:`ciop-catcp </reference/man/ciop-catcp>` utility
+
+To reference an external catalogue, the workflow node is defined as follows:
+
+.. code:: xml
+
+	<workflow id="somename">							
+		<workflowVersion>1.0</workflowVersion>
+			<node id="somenodeid">
+				<job id="job_template1"/>
+				<sources>
+	 				<source refid="cas:series">http://catalogue.terradue.int/catalogue/search/MER_FRS_1P/description</source>
+				</sources>
+			</node>
+	</workflow>
+
+To reference a dataset series in the sandbox internal 
+
+.. code:: xml
+
+	<workflow id="somename">							
+		<workflowVersion>1.0</workflowVersion>
+			<node id="somenodeid">
+				<job id="job_template1"/>
+				<sources>
+	 				<source refid="cas:series">http://localhost/catalogue/sandbox/MER_FRS_1P/description</source>
+				</sources>
+			</node>
+	</workflow>
+
 
 As an example, the job executable would contain the lines below to copy the catalogue products locally: 
-	| while read product
-	| do
-	| 		echo $product | ciop-copy -o ./ -
-	| done
 
-outputs from a previous node
+.. code:: bash
+
+	while read inputfile
+	do
+		local_url=`echo $inputfile | ciop-copy -o ./ -`
+		# do something with the local_url
+		...
+	done 
+
+Outputs from a previous node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The methods above are used for the first job of the workflow. The remaining nodes need to refer the precedent job(s) results:
-	| <workflow id="somename">							
-	| 	<workflowVersion>1.0</workflowVersion>
-	| 	<node id="some_node_1">
-	| 		<job id="some_job_template_1"></job>
-	| 		<sources>
-	| 			<source refid="file:urls">/application/inputparams</source>
-	| 		</sources>
-	| 	</node>
-	| 	<node id="some_node_2">
-	| 		<job id="some_job_template_2"></job>
-	| 		<sources>
-	| 			<source refid="wf:node">some_node_1</source>
-	| 		</sources>
-	| 	</node>
-	| </workflow>
+The sources defined above are used in the starting node(s) of the workflow.
+The subsequent nodes will use the outputs produced by the parent nodes.
+
+
+.. code:: xml
+
+<workflow id="somename">							
+	<workflowVersion>1.0</workflowVersion>
+	<node id="some_node_1">
+		<job id="some_job_template_1"></job>
+		<sources>
+			<source refid="file:urls">/application/inputparams</source>
+ 		</sources>
+	</node>
+	<node id="some_node_2">
+		<job id="some_job_template_2"></job>
+			<sources>
+				<source refid="wf:node">some_node_1</source>
+			</sources>
+	</node>
+</workflow>
 
 Job configuration
 ^^^^^^^^^^^^^^^^^
 
-At job template level, the default properties below can be defined:
+At job template level, the properties below can be defined:
 
 +---------------------+-----------+----------------------------------------+
 |	Property		  |   values  |		Description			   		   	   |												
 +=====================+===========+========================================+
-| ciop.job.max.tasks  | integer   | sets the maximum number of jobs (>0)   |
+| ciop.job.max.tasks  | integer   | sets the maximum number of instances   |
+|					  |           | (tasks) to process the inputs 
 +---------------------+-----------+----------------------------------------+												
 | mapred.task.timeout | integer   | number of milliseconds of walltime for |
 |					  |			  | the execution of a job without 		   |
 |					  |			  | reporting via ciop-log				   |
 +---------------------+-----------+----------------------------------------+
 
+.. note:: set the property *ciop.job.max.tasks* to 1 if all inputs have to be processed by a single task (e.g. aggregation).
+	You don't need to set its value if the node instantiates several tasks, the platform knows how many instances it needs/can instantiate
+	
 Example
 -------
 
-The example below is taken from the BEAM Arithm tutorial available here: [[Beam Arithm]] TODO
+Download the file :download:`Ocean Colour Algal Bloom Detection </field/ocean_color/lib_beam/src/application.xml>` field guide applicationto view a complete example of an application descriptor file 
 
-	| <?xml version="1.0" encoding="UTF-8"?>
-	| <application id="beam_arithm">
-	| 	<jobTemplates>
-	| 		<!-- BEAM BandMaths operator job template  -->
-	| 		<jobTemplate id="expression">
-	| 			<streamingExecutable>/application/expression/run</streamingExecutable>
-	| 			<defaultParameters>						
-	| 				<parameter id="expression">l1_flags.INVALID?0:radiance_13>15?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
-	| 			</defaultParameters>
-	| 		</jobTemplate>
-	| 		<!-- BEAM Level 3 processor job template  -->
-	| 		<jobTemplate id="binning">
-	| 			<streamingExecutable>/application/binning/run</streamingExecutable>
-	| 			<defaultParameters>						
-	| 				<parameter id="cellsize">9.28</parameter>
-	| 				<parameter id="bandname">out</parameter>
-	| 				<parameter id="bitmask">l1_flags.INVALID?0:radiance_13>15?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
-	| 				<parameter id="bbox">-180,-90,180,90</parameter>
-	| 				<parameter id="algorithm">Minimum/Maximum</parameter>
-	| 				<parameter id="outputname">binned</parameter>
-	| 				<parameter id="resampling">binning</parameter>
-	| 				<parameter id="palette">#MCI_Palette
-	| color0=0,0,0
-	| color1=0,0,154
-	| color2=54,99,250
-	| color3=110,201,136
-	| color4=166,245,8
-	| color5=222,224,0
-	| color6=234,136,0
-	| color7=245,47,0
-	| color8=255,255,255
-	| numPoints=9
-	| sample0=98.19878118960284
-	| sample1=98.64947122314665
-	| sample2=99.10016125669047
-	| sample3=99.5508512902343
-	| sample4=100.0015413237781
-	| sample5=100.4522313573219
-	| sample6=100.90292139086574
-	| sample7=101.35361142440956
-	| sample8=101.80430145795337</parameter>
-	| 				<parameter id="band">1</parameter>
-	| 				<parameter id="tailor">true</parameter>
-	| 			</defaultParameters>
-	| 			<defaultJobconf>
-	| 		        	<property id="ciop.job.max.tasks">1</property>
-	| 		        </defaultJobconf>
-	| 		</jobTemplate>
-	| 	</jobTemplates>
-	| 	<workflow id="beam_arithm">							
-	| 		<workflowVersion>1.0</workflowVersion>
-	| 		<node id="node_expression">				
-	| 			<job id="expression"></job>			
-	| 			<sources>
-	| 				<!-- <source refid="file:urls">/home/fbrito/meris</source>  -->
-	| 				<source refid="cas:serie">MER_RR__1P</source>
-	| 			</sources>
-	| 			<parameters>					
-	| 			</parameters>
-	| 		</node>
-	| 		<node id="node_binning">				
-	| 			<job id="binning"></job>			
-	| 			<sources>
-	| 				<source refid="wf:node">node_expression</source>				
-	| 			</sources>
-	| 			<parameters>
-	| 				<parameter id="bitmask"/>		
-	| 			</parameters>
-	| 		</node>
-	| 	</workflow>
-	| </application>
-
-
-Properties
-----------
-
-.. _mapred.task.timeout:
-
-mapred.task.timeout
-^^^^^^^^^^^^^^^^^^^
-
-.. _ciop.job.max.tasks:
-
-ciop.job.max.tasks
-^^^^^^^^^^^^^^^^^^
