@@ -12,7 +12,7 @@ While the single processing task doesn't change the understanding of the workflo
 Several processing tasks
 ************************
 
-In the previous workflow example: 
+In the previous :doc:`workflow example <workflow>`: 
 
 .. uml::
 
