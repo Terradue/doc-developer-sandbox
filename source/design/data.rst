@@ -13,7 +13,11 @@ Local file
 **********
 
 This approach is very useful during the early stages of the application development where you download a few files to your sandbox and use these data to run the first tests.
-We do not recommend using this method beyond the early stages of the application development.
+
+.. note:: 
+  We do not recommend using this method beyond the early stages of the application development.
+
+For more details on how to implement this, read :ref:`my-reference-file`
 
 Comma-separated values 
 **********************
@@ -21,11 +25,13 @@ Comma-separated values
 On the one hand, this approach is very straigh-forward to test the application against a small number of values. 
 On the other, during the exploitation phase with an application exposed as an OGC WPS service, the comma-separated values list is very well managed and allows clients to provide several values to the application.
 
+For more details on how to implement this, read :ref:`my-reference-csv`
+
 Reference to a catalogue
 ************************
 
 This approach allows tapping on large repositories of Earth Observation data exposing an OpenSearch catalogue. 
-It is the preferred 
+It is the preferred option to process large datasets and to expose catalogue queriable in the application Web Processing Service interface.
 
-
+For more details on how to implement this, read :ref:`my-reference-catalogue`
 
