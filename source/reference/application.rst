@@ -93,7 +93,7 @@ The file can contain any value to be processed: references to products, list of 
 
 Local files will use the *file://* protocol and are defined in the workflow as follows:
 
-.. code:: xml
+.. code-block:: xml
 
 	<workflow id="somename">							
 		<workflowVersion>1.0</workflowVersion>
@@ -107,7 +107,7 @@ Local files will use the *file://* protocol and are defined in the workflow as f
 
 and the file *input.urls* contains the references to the local files:
 
-.. code:: bash
+.. code-block:: bash
 
 	[ user@sb ~] cat /application/input.urls	
 	file:///tmp/somefile1						
@@ -116,7 +116,7 @@ and the file *input.urls* contains the references to the local files:
 
 Then the job streaming executable can use :doc:`ciop-copy </reference/man/ciop-copy>` to copy the files if needed.
 
-.. code:: bash
+.. code-block:: bash
 
 	while read inputfile
 	do
@@ -127,7 +127,7 @@ Then the job streaming executable can use :doc:`ciop-copy </reference/man/ciop-c
 
 To process areas of interest:
   
-.. code:: bash
+.. code-block:: bash
 
 	[ user@sb ~] cat /application/aoi.list
 	-10,-10,10,10
@@ -135,7 +135,7 @@ To process areas of interest:
 
 In the example above, the executable manages the inputs (areas of interest defined as bounding boxes) with:
 
-.. code:: bash
+.. code-block:: bash
 
 	while read bbox
 	do
@@ -149,7 +149,7 @@ List of comma-separated values
 
 Passing a list of values to a job follows the same approach as above. 
 
-.. code:: xml
+.. code-block:: xml
 
 	<workflow id="somename">							
 		<workflowVersion>1.0</workflowVersion>
@@ -173,7 +173,7 @@ the dataset series OpenSearch description document URL.
 
 To reference an external catalogue, the workflow node is defined as follows:
 
-.. code:: xml
+.. code-block:: xml
 
 	<workflow id="somename">							
 		<workflowVersion>1.0</workflowVersion>
@@ -187,7 +187,7 @@ To reference an external catalogue, the workflow node is defined as follows:
 
 To reference a dataset series in the sandbox internal 
 
-.. code:: xml
+.. code-block:: xml
 
 	<workflow id="somename">							
 		<workflowVersion>1.0</workflowVersion>
@@ -202,7 +202,7 @@ To reference a dataset series in the sandbox internal
 
 As an example, the job executable would contain the lines below to copy the catalogue products locally: 
 
-.. code:: bash
+.. code-block:: bash
 
 	while read inputfile
 	do
@@ -218,23 +218,23 @@ The sources defined above are used in the starting node(s) of the workflow.
 The subsequent nodes will use the outputs produced by the parent nodes.
 
 
-.. code:: xml
+.. code-block:: xml
 
-<workflow id="somename">							
-	<workflowVersion>1.0</workflowVersion>
-	<node id="some_node_1">
-		<job id="some_job_template_1"></job>
-		<sources>
-			<source refid="file:urls">/application/inputparams</source>
- 		</sources>
-	</node>
-	<node id="some_node_2">
-		<job id="some_job_template_2"></job>
+	<workflow id="somename">							
+		<workflowVersion>1.0</workflowVersion>
+		<node id="some_node_1">
+			<job id="some_job_template_1"></job>
+			<sources>
+				<source refid="file:urls">/application/inputparams</source>
+ 			</sources>
+		</node>
+		<node id="some_node_2">
+			<job id="some_job_template_2"></job>
 			<sources>
 				<source refid="wf:node">some_node_1</source>
 			</sources>
-	</node>
-</workflow>
+		</node>
+	</workflow>
 
 Job configuration
 ^^^^^^^^^^^^^^^^^
@@ -242,17 +242,17 @@ Job configuration
 At job template level, the properties below can be defined:
 
 +---------------------+-----------+----------------------------------------+
-|	Property		  |   values  |		Description			   		   	   |												
+|	Property      |   values  | Description                            |												
 +=====================+===========+========================================+
 | ciop.job.max.tasks  | integer   | sets the maximum number of instances   |
-|					  |           | (tasks) to process the inputs 
+|                     |           | (tasks) to process the inputs          |
 +---------------------+-----------+----------------------------------------+												
 | mapred.task.timeout | integer   | number of milliseconds of walltime for |
-|					  |			  | the execution of a job without 		   |
-|					  |			  | reporting via ciop-log				   |
+|                     |           | the execution of a job without         |
+|                     |           | reporting via ciop-log                 |
 +---------------------+-----------+----------------------------------------+
 
-.. note:: set the property *ciop.job.max.tasks* to 1 if all inputs have to be processed by a single task (e.g. aggregation).
+.. note:: Set the property *ciop.job.max.tasks* to 1 if all inputs have to be processed by a single task (e.g. aggregation).
 	You don't need to set its value if the node instantiates several tasks, the platform knows how many instances it needs/can instantiate
 	
 Example
