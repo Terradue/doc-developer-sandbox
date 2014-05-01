@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="beam_arithm">
+  <jobTemplates>
+    <jobTemplate id="template_A">
+      <streamingExecutable>/application/template_a/run.sh</streamingExecutable>
+      <defaultParameters>
+        <parameter id="param1">value1</parameter>
+        <parameter id="param2">value2</parameter>
+      </defaultParameters>
+      <defaultJobconf>
+          <property id="mapred.task.timeout">6000000</property>
+      </defaultJobconf>
+    </jobTemplate>
+    <jobTemplate id="template_B">
+      <streamingExecutable>/application/template_b/run.sh</streamingExecutable>
+      <defaultParameters>
+        <parameter id="param3">value3</parameter>
+        <parameter id="param4">value4</parameter>
+      </defaultParameters>
+      <defaultJobconf>
+          <property id="mapred.task.timeout">120000000</property>
+          <property id="ciop.job.max.tasks">1</property>
+      </defaultJobconf>
+    </jobTemplate>
+  </jobTemplates>
+  <workflow id="myworkflow" title="My workflow" abstract="This is my wrokflow">
+    <workflowVersion>1.0</workflowVersion>
+    <node id="node_A">
+      <job id="template_A"/>
+      <sources>
+        <!--<source refid="file:urls">/tmp/inputs</source>-->
+        <!--<source refid="str:list">input1,input2<source>-->
+        <!--<source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>-->
+      </sources>
+      <parameters>
+        <parameter id="param1">some other value</parameter>
+      </parameters>
+    </node>
+    <node id="node_B">
+      <job id="template_B"/>
+      <sources>
+        <source refid="wf:node">node_A</source>
+      </sources>
+      <parameters>
+        <parameter id="param1">some other value</parameter>
+      </parameters>
+    </node>
+  </workflow>
+</application>
