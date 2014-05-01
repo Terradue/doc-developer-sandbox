@@ -99,3 +99,8 @@ The complete workflow is executed as:
 
   stop
     
+.. tip::
+   There two levels of parallelism:
+      * The first is at workflow level where two nodes can run concurrently (fork and join)
+      * The second is at node level where the execution can be split in several tasks, each processing a subset of the inputs 
+      
