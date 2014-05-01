@@ -258,5 +258,6 @@ At job template level, the properties below can be defined:
 Example
 -------
 
-Download the file :download:`Ocean Colour Algal Bloom Detection </field/ocean_color/lib_beam/src/application.xml>` field guide applicationto view a complete example of an application descriptor file 
+Download the file :download:`Ocean Colour Algal Bloom Detection </field/ocean_color/lib_beam/src/application.xml>` field guide application
+to view a complete example of an application descriptor file 
 
