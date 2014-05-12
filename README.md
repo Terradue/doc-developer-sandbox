@@ -18,9 +18,35 @@ wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 sudo rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
 
 # Install sphinx
-sudo yum install python-sphinx10
-sudo yum install python-pip
-sudo pip install sphinx_bootstrap_theme
+$ sudo yum install python-sphinx10
+$ sudo yum install python-pip
+$ sudo pip install sphinx_bootstrap_theme
+$ sudo ln -s /usr/bin/sphinx-1.0-build /usr/bin/sphinx-build
+```
+
+**Patch:** Open the file */usr/lib/python2.6/site-packages/sphinx_bootstrap_theme/bootstrap/globaltoc.html* and substitute:
+
+```
+maxdepth=theme_globaltoc_depth|toint
+```
+
+with:
+
+```
+maxdepth=theme_globaltoc_depth
+```
+
+```
+# Install plantuml
+$ wget --no-check-certificate https://pypi.python.org/packages/source/s/sphinxcontrib-plantuml/sphinxcontrib-plantuml-0.3.tar.gz
+$ tar xvzf sphinxcontrib-plantuml-0.3.tar.gz 
+$ cd sphinxcontrib-plantuml-0.3
+$ sudo pip install sphinxcontrib-plantuml
+$ cat << EOF > /usr/bin/plantuml
+#!/bin/sh -e
+java -jar /usr/lib/plantuml.7997.jar "$@"
+EOF
+$ chmod +x /usr/bin/plantuml
 
 # Clone the git repository
 git clone git@github.com:Terradue/doc-developer-sandbox.git
