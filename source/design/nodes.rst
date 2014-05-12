@@ -1,5 +1,5 @@
-Processing nodes & parallelisme
-===============================
+Processing nodes & parallelism
+==============================
 
 As introduced in the workflow section, the processing nodes are the edges of a Directed Acyclic Graph and they can be run in parallel.
 
