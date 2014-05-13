@@ -6,8 +6,10 @@ Understand the Developer Cloud Sandbox key principles
 Ten key principles to succeed on the Cloud.
 
 h1. Understanding the Sandbox
++++++++++++++++++++++++++++++
 
 h2. The Sandbox filesystem
+--------------------------
 
 In the context of the application life-cycle, the Sandbox has three filesystems (or directories):
 * /home/<user> that we refer to as *HOME* 
@@ -15,6 +17,7 @@ In the context of the application life-cycle, the Sandbox has three filesystems 
 * /share that we refer to as *SHARE*
 
 h3. HOME directory
+//////////////////
 
 > A user's home directory is intended to contain that user's files; including text documents, music, pictures or videos, etc. It may also include their configuration files of preferred settings for any software they have used there and might have tailored to their liking: web browser bookmarks, favorite desktop wallpaper and themes, passwords to any external services accessed via a given software, etc. The user can install executable software in this directory, but it will only be available to users with permission to this directory. The home directory can be organized further with the use of sub-directories.
 
