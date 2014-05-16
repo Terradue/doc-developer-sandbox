@@ -11,4 +11,5 @@ Contents:
    :maxdepth: 2
    
    Algal bloom detection with Envisat MERIS <lib_beam/index>
+   Fluorescence line height with Envisat MERIS L1b <lib_beam_flh/index>
 
