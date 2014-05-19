@@ -73,15 +73,15 @@ The *APPLICATION* of a workflow with two jobs can then be represented as
 .. code-block:: bash
 
   /application/
-   	application.xml
- 	  /job_template_1
+    application.xml
+    /job_template_1
       run.sh
- 		  /bin
- 		  /etc
- 	  /job_template_2
- 		  run.sh
- 		  /bin
- 		  /lib
+      /bin
+      /etc
+    /job_template_2
+      run.sh
+      /bin
+      /lib
 
 SHARE filesystem
 """"""""""""""""
