@@ -24,6 +24,6 @@ The workflow can be represented as:
   :node_expression;
   :node_arrange;
   :node_binning;
-  :node_dbscan
+  :node_dbscan;
   
   stop
