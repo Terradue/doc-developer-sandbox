@@ -24,7 +24,7 @@ The application's data pipeline activities can be defined as follows:
 
   stop
 
-* Step 2: use an R executable script to arrange by temporal steps (in this case daily) the outputs of the previous step. This step runs as a single task.
+**Step 2** use an R executable script to arrange by temporal steps (in this case daily) the outputs of the previous step. This step runs as a single task.
 
 .. uml::
 
@@ -44,7 +44,7 @@ The application's data pipeline activities can be defined as follows:
   
   stop 
   
-* Step 3: use the ESA BEAM Toolbox Level 3 Binning processor to generated the daily binned products. This step is run with several tasks in parallel, each task dealing with one day of data.
+**Step 3** use the ESA BEAM Toolbox Level 3 Binning processor to generated the daily binned products. This step is run with several tasks in parallel, each task dealing with one day of data.
 
 .. uml::
 
@@ -66,7 +66,7 @@ The application's data pipeline activities can be defined as follows:
 
   stop
 
-* Step 4: use an R executable script to identity the algal bloom geographical areas using the DBSCAN algorithm
+**Step 4** use an R executable script to identity the algal bloom geographical areas using the DBSCAN algorithm
 
 .. uml::
 
@@ -109,3 +109,6 @@ The workflow can be represented as:
   :node_dbscan;
   
   stop
+
+Each node is described in details in :doc:`/field/ocean_color/lib_beam/nodes/index`
+
