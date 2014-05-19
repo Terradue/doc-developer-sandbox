@@ -22,6 +22,7 @@ The application's data pipeline activities can be defined as follows:
 
   stop
 
+
 .. uml::
 
   !define DIAG_NAME Workflow example
@@ -40,7 +41,8 @@ The application's data pipeline activities can be defined as follows:
   
   stop 
   
-  .. uml::
+
+.. uml::
 
   !define DIAG_NAME Workflow example
 
@@ -59,6 +61,7 @@ The application's data pipeline activities can be defined as follows:
   :Stage-out binned product
 
   stop
+
 
 .. uml::
 
