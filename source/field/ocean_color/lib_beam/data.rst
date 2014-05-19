@@ -29,7 +29,7 @@ On the sandbox shell run the command:
 That will copy the Envisat MERIS Level 1 acquisitions available on Terradue catalogue to the local sandbox filesystem and catalogue.
 
 
-To check the registered data and its accessibility go back to the sandbox catalogue web interface and click the Search button. The graphical interface will show the data now available om the sandbox.
+To check the registered data and its accessibility go back to the sandbox catalogue web interface and click the Search button. The graphical interface will show the data now available on the sandbox.
 Click on one product of the list on the left and then on the Access tab below the map. Finally click on the HTTP URL. The download of the select MERIS Level 1 product starts.
 
 Copy the link to the selected MERIS file, go back to the sandbox shell and type
