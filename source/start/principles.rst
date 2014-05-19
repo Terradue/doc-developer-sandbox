@@ -107,6 +107,8 @@ and with the hdfs:// URL:
 
   hdfs://<name_node>/tmp/sandbox/<workflow name>/<node name>
 
+.. TIP:: Use the Web browser to browse the file system at the address http://<sandbox ip>:50075/browseDirectory.jsp?dir=/tmp/sandbox/<workflow name>/<node name>&namenodeInfoPort=50070
+
 A job can be executed several times but the results of a previous execution will be deleted and thus overwritten.
 
 .. TIP:: the workflow and node names are found in the Application Descriptor File
