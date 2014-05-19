@@ -6,8 +6,7 @@ Discover the Sandbox services & tools
 User dashboard
 +++++++++++++++
 
-Accessed from the VPN and with authenticated browsers (user Certificate imported)
-http://<your_sandbox_host>/dashboard 
+Accessed from the VPN at the address: http://<your_sandbox_host>/dashboard 
 
 The Dashboard provides:
 
