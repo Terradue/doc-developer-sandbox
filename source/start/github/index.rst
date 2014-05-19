@@ -104,12 +104,14 @@ At this point you can use ciop-simjob and ciop-simwf to test the application
 Updating files
 ^^^^^^^^^^^^^^
 
-Whilst 
+Whilst editing the files in */application* may seem the most obvious way to change your application it also the way to loose changes.
 
+In fact, you should edit the files in the **source** which has been cloned in your */home* folder and use mvn install to update the build which is in */application* with mvn install
 
+Going further
++++++++++++++
 
-
-
+There are several high quality books 
 
 
 
