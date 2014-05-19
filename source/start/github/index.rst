@@ -108,6 +108,27 @@ Whilst editing the files in */application* may seem the most obvious way to chan
 
 In fact, you should edit the files in the **source** which has been cloned in your */home* folder and use mvn install to update the build which is in */application* with mvn install
 
+Releasing the application
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To create releases of the application on GitHub use *mvn deploy*:
+
+.. code-block:: bash
+
+  cd ~/BEAM-Java-tutorial
+  mvn deploy
+
+Documenting the application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We suggest usingthe GitHub Pages and sphinx to document the application.
+
+The GitHub pages are public webpages freely hosted and easily published through the GitHub site.
+
+.. WARNING:: the GitHub pages of a private repository will be public and thus visible to anybody!
+
+.. TODO:: add process
+
 Going further
 +++++++++++++
 
