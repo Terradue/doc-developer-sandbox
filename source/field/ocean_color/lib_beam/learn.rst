@@ -5,3 +5,8 @@ What you will learn
 2. To create a simple application - you will implement an algal bloom detection application in four processing steps
 3. To test the application - you will execute each of the processing steps individually and inspect the results and will execute complete the workflow
 4. To exploit the application - you will create the Web Processing Service (WPS) interface and invoke it
+
+Where is the code
++++++++++++++++++
+
+The code for this tutorial is available on GitHub repository `BEAM Arithm Tutorial <https://github.com/Terradue/BEAM-Arithm-tutorial>`_
