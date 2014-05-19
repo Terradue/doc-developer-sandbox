@@ -51,7 +51,7 @@ The repository should follow the structure below:
       /resources
       /...
       
-.. SEEALSO:: Have a look at the BEAM Java tutorial which implements the recommended structure: https://github.com/Terradue/BEAM-Java-tutorial
+.. seealso:: Have a look at the BEAM Java tutorial which implements the recommended structure: https://github.com/Terradue/BEAM-Java-tutorial
 
 
 
