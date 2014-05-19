@@ -24,7 +24,7 @@ Inspecting the contents returned by this URL, a query template for the *applicat
 .. literalinclude:: ../src/osd.xml
   :language: xml
   :tab-width: 1
-  :lines: 18
+  :lines: 19
   
 The parameter values of startdate and enddate are mapped to the queryables *start={time:start?}* and *stop={time:end?}* to build the query
 
@@ -34,7 +34,7 @@ The same information is passed to the OpenSearch client available in the sandbox
 
 .. code-block:: bash
 
-  opensearch-client -f Rdf -p time:start=2012-04-04 -p time:end=2012-04-05 http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description 
+  opensearch-client -f Rdf -p time:start=2012-04-04 -p time:end=2012-04-06 http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description 
   
 which returns:
 
