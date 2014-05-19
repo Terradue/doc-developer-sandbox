@@ -59,3 +59,26 @@ The typical application development workflow
 Cloning an existing repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+You'll need the SSH clone URL in the form: git@github.com:Terradue/BEAM-Java-tutorial.git
+
+Log on the sandbox using your key:
+
+.. code-block:: bash
+
+  ssh -A -i ~/.ssh/<name>.pem <sandbox ip> 
+  
+Example:
+
+.. code-block:: bash
+
+  ssh -A -i ~/.ssh/mrossi.pem 10.14.10.20
+
+Run the commands on the shell:
+
+.. code-block:: bash
+
+  cd 
+  git clone git@github.com:Terradue/BEAM-Java-tutorial.git
+
+Creating a new repository on github.com
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
