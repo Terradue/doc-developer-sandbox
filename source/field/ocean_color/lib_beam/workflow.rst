@@ -1,6 +1,85 @@
 Workflow design
 ===============
 
+The application's data pipeline activities can be defined as follows:
+
+.. uml::
+
+  !define DIAG_NAME Workflow example
+
+  !include includes/skins.iuml
+
+  skinparam backgroundColor #FFFFFF
+  skinparam componentStyle uml2
+
+  start
+  
+  while (check stdin?) is (line)
+    :Stage-in data;
+    :Apply ESA BEAM Toolbox BandMaths operator;
+    :Stage-out arithm_result;
+  endwhile (empty)
+
+  stop
+
+.. uml::
+
+  !define DIAG_NAME Workflow example
+
+  !include includes/skins.iuml
+
+  skinparam backgroundColor #FFFFFF
+  skinparam componentStyle uml2
+
+  while (check stdin?) is (arithm_result)
+    :read arithm_result start date metadata;
+  end while (empty)
+  
+  :create daily list of arithm_result;
+  :Stage-out daily_list;
+  
+  stop 
+  
+  .. uml::
+
+  !define DIAG_NAME Workflow example
+
+  !include includes/skins.iuml
+
+  skinparam backgroundColor #FFFFFF
+  skinparam componentStyle uml2
+  
+  start 
+  
+  while (check stdin?) is (daily_list)
+    :Stage-in data referenced in daily_list;
+  end while (empty)
+  
+  :Apply ESA BEAM Toolbox Binning operator
+  :Stage-out binned product
+
+  stop
+
+.. uml::
+
+  !define DIAG_NAME Workflow example
+
+  !include includes/skins.iuml
+
+  skinparam backgroundColor #FFFFFF
+  skinparam componentStyle uml2
+
+  start
+  
+  while (check stdin?) is (binned_product)
+    :Stage-in binned_product;
+    :Apply DBSCAN algorithm;
+    :Stage-out result;
+  endwhile (empty)
+
+  stop  
+
+
 The workflow contains three main processing steps: expression, binning and clustering plus an auxiliary processing step called arrange that arranges the outputs of the expression steps as the inputs for the binning processing step.
 
 * Step 1: use the ESA BEAM Toolbox BandMaths operator to apply the arithmetic expression to all MERIS Level 1 products. This step is run with several tasks in parallel, each task dealing with one input product.
