@@ -15,6 +15,7 @@ The code for this tutorial is available on GitHub repository `BEAM Java Tutorial
 To deploy the tutorial on a Developer Sandbox:
 
 .. code-block:: bash
+
   cd ~
   git clone git@github.com:Terradue/BEAM-Java-tutorial.git
   cd BEAM-Java-tutorial
