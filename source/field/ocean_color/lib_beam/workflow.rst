@@ -3,7 +3,7 @@ Workflow design
 
 The application's data pipeline activities can be defined as follows:
 
-* Step 1: use the ESA BEAM Toolbox BandMaths operator to apply the arithmetic expression to all MERIS Level 1 products. This step is run with several tasks in parallel, each task dealing with one input product.
+**Step 1** use the ESA BEAM Toolbox BandMaths operator to apply the arithmetic expression to all MERIS Level 1 products. This step is run with several tasks in parallel, each task dealing with one input product.
 
 .. uml::
 
