@@ -111,7 +111,8 @@ In fact, you should edit the files in the **source** which has been cloned in yo
 Going further
 +++++++++++++
 
-There are several high quality books 
+There are several high quality free ebooks on the Web (e.g. http://gitbookio.github.io/git/en/) and GitHub provides a comprehensive web-site to get started here: https://help.github.com/
+
 
 
 
