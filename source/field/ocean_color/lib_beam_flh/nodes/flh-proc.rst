@@ -44,7 +44,7 @@ Here's the job template including the elements described above:
   :lines: 25-35
 
 
-The streaming executable source is available here: `/application/binning/run <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/binning/run>`_ and implements the activities:
+The streaming executable source is available here: `/application/flh-proc/run.sh <https://github.com/Terradue/BEAM-Java-tutorial/blob/master/src/main/app-resources/flh-proc/run.sh>`_ and implements the activities:
 
 .. uml::
 
@@ -70,7 +70,3 @@ The streaming executable source is available here: `/application/binning/run <ht
   endwhile (empty)
   
   stop
-
-.. rubric:: Footnotes
-
-.. [#f1] `ESA BEAM Toolbox Binning algorithm <http://www.brockmann-consult.de/beam/doc/help/binning/BinningTool.html>`_
