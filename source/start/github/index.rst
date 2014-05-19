@@ -27,6 +27,34 @@ Created teams can have several levels of priviliedges:
 
 .. TIP:: We recommend managing teams with a reduced number of member within a team with write access. The remaining team members with Read only access are invited to fork the repository and submit pull requests. The owners can then moderate these requests. 
 
+Organizing the repository
++++++++++++++++++++++++++
+
+The repository should follow the structure below:
+
+.. code-block:: bash
+
+  README.md # the markdown file used to generate the html summary seen at the bottom of projects. 
+  .gitignore # Git uses it to determine which files and directories to ignore, before making a commit.
+  pom.xml # the Project Object Model file containing information about the project and configuration details used by Maven to build the project
+  /src # root folder of the application
+    /main
+      /app-resources
+        application.xml
+        /job_template1
+          run.sh
+          /etc
+          /bin
+        /job_template2
+          ...
+      /java # if your application has Java code
+      /resources
+      /...
+      
+.. SEEALSO:: Have a look at the BEAM Java tutorial which implements the recommended structure: https://github.com/Terradue/BEAM-Java-tutorial
+
+
+
 The typical application development workflow
 ++++++++++++++++++++++++++++++++++++++++++++
 
