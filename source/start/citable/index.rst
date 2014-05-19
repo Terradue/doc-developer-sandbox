@@ -7,8 +7,6 @@ This guide will show how to make the application developed using the Developer C
 
 Assign the DOI with:
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
 
