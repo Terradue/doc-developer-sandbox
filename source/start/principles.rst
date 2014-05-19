@@ -1,109 +1,138 @@
 .. _principles:
 
 Understand the Developer Cloud Sandbox key principles
-#####################################################
+=====================================================
 
 Ten key principles to succeed on the Cloud.
 
-h1. Understanding the Sandbox
-+++++++++++++++++++++++++++++
+Understanding the Sandbox
+-------------------------
 
-h2. The Sandbox filesystem
---------------------------
+The Sandbox filesystem
+^^^^^^^^^^^^^^^^^^^^^^
 
 In the context of the application life-cycle, the Sandbox has three filesystems (or directories):
+
 * /home/<user> that we refer to as *HOME* 
 * /application that we refer to as *APPLICATION*
 * /share that we refer to as *SHARE*
 
-h3. HOME directory
-//////////////////
+HOME directory
+""""""""""""""
 
-> A user's home directory is intended to contain that user's files; including text documents, music, pictures or videos, etc. It may also include their configuration files of preferred settings for any software they have used there and might have tailored to their liking: web browser bookmarks, favorite desktop wallpaper and themes, passwords to any external services accessed via a given software, etc. The user can install executable software in this directory, but it will only be available to users with permission to this directory. The home directory can be organized further with the use of sub-directories.
+A user's home directory is intended to contain that user's files; including text documents, music, pictures or videos, etc. It may also include their configuration files of preferred settings for any software they have used there and might have tailored to their liking: web browser bookmarks, favorite desktop wallpaper and themes, passwords to any external services accessed via a given software, etc. The user can install executable software in this directory, but it will only be available to users with permission to this directory. The home directory can be organized further with the use of sub-directories.
 
 As such, the *HOME* is used to store the user's files. It can be used to store source files (the compiled programs would then go *APPLICATION*). 
 
-> At job or workflow execution time, the Sandbox uses a system user to execute the application. This system user cannot read files in *HOME*.  
+.. NOTE:: At job or workflow execution time, the Sandbox uses a system user to execute the application. This system user cannot read files in *HOME*.  
+  When the application is run on the Sandbox Runtime Environment, the *HOME* directory is not available in any of the computing nodes. 
 
-> When the application is run on the Sandbox Runtime Environment, the *HOME* directory is not available in any of the computing nodes. 
-
-h3. APPLICATION filesystem
-//////////////////////////
+APPLICATION filesystem
+""""""""""""""""""""""
 
 The *APPLICATION* filesystem contains all the files required to run the application.
 
 The *APPLICATION* filesystem is available on the Sandbox as /application.
 
-> Whenever an application wrapper script needs to use the *APPLICATION* value (/application) the variable $_CIOP_APPLICATION_PATH, example:
+.. NOTE:: Whenever an application wrapper script needs to use the *APPLICATION* value (/application) the variable $_CIOP_APPLICATION_PATH, example:
 
-<pre>
-export BEAM_HOME=$_CIOP_APPLICATION_PATH/common/beam-4.11
-</pre>
+.. code-block:: bash
+  export BEAM_HOME=$_CIOP_APPLICATION_PATH/common/beam-4.11
+
 
 The *APPLICATION* contains
-* the Application Descriptor File, named _application.xml_ and described here: [[Application descriptor]]
+
+* the Application Descriptor File, named _application.xml_ 
 * a folder for each job template
 
-A *job template* folder contains:
-* the streaming script, a script in your prefered langage (e.g. Shell, R or Python) that deals with the _stdin_ managed by the Sandbox (e.g. EO data URLs to be passed to ciop-copy). 
-There isn't a defined naming convention although it is often called _run_.
+.. seealso:: The Application Descriptor file is described in :doc:`/reference/application`
 
-> Tip: The streaming script will read its inputs via stdin managed by the Hadoop Map Reduce streaming underlying layer 
+A *job template* folder contains:
+
+* the streaming executable script, a script in your prefered language (e.g. bash, R or Python) that deals with the *stdin* managed by the Sandbox (e.g. EO data URLs to be passed to ciop-copy). 
+
+There isn't a defined naming convention although it is often called *run* with an extension:
+
+* run.sh for bash scripting streaming executable
+* run.R for R streaming executable
+* run.py for python streaming executable
+
+.. NOTE:: The streaming executable script will read its inputs via stdin managed by the Hadoop Map Reduce streaming underlying layer 
 
 * a set of folders such as:
-** /application/<job template name>/bin standing for "binaries" and contains certain fundamental job utilities which are in part needed by the job wrapper script.
-** /application/<job template name>/etc containing job-wide configuration files
-** /application/<job template name>/lib containing the job libraries
-** ...
 
-> There aren't any particular rules for the folders in the job template folder
+  * /application/<job template name>/bin standing for "binaries" and contains certain fundamental job utilities which are in part needed by the job wrapper script.
+  * /application/<job template name>/etc containing job-wide configuration files
+  * /application/<job template name>/lib containing the job libraries
+  * ...
+
+.. NOTE:: There aren't any particular rules for the folders in the job template folder
 
 The *APPLICATION* of a workflow with two jobs can then be represented as
 
+.. code-block:: bash
+
   /application/
- 	application.xml
- 	/job_template_1
-    	run
- 		/bin
- 		/etc
- 	/job_template_2
- 		run
- 		/bin
- 		/lib
+   	application.xml
+ 	  /job_template_1
+      run.sh
+ 		  /bin
+ 		  /etc
+ 	  /job_template_2
+ 		  run.sh
+ 		  /bin
+ 		  /lib
 
-h3. SHARE filesystem
-////////////////////
+SHARE filesystem
+""""""""""""""""
 
-The *SHARE* filesystem is the Sandbox distributed filesystem mount point. It is a HDFS filesystem used to store the application's job outputs generated by the execution of ciop-simjob and/or ciop-simwf.
+The *SHARE* filesystem is the Sandbox distributed filesystem mount point. 
+
+It is a HDFS filesystem used to store the application's job outputs generated by the execution of ciop-simjob and/or ciop-simwf.
 
 The *SHARE* filesystem is available on the Sandbox as /share and the HDFS distributed filesystem acces point is /tmp thus, on the Sandbox, /share/tmp is the root of the distributed filesysyem.
 
-h4. SHARE for ciop-simjob
-=========================
+.. WARNING:: During production, the *SHARE* filesystem is not available. Do not use it to reference files avaialable on HDFS but rather use the hdfs:// returned by the ciop-publish utility
+
+
+**SHARE for ciop-simjob**
 
 When the ciop-simjob is invoked to run a node of the workflow, the outputs are found in:
 
-<pre>
-/share/tmp/sandbox/<workflow name>/<node name>
-</pre> 
+.. code-block:: bash
 
-A job can be executed several times but the results of a previous execution will be deleted.
+  /share/tmp/sandbox/<workflow name>/<node name>
+ 
+and with the hdfs:// URL:
 
-> Tip: the workflow and node names are found in the Application Descriptor File, named _application.xml_ 
+.. code-block:: bash
 
-> Tip: ciop-simjob -n will list the workflow node name(s), check the ciop-simjob reference page here: [[ciop-simjob]]
+  hdfs://<name_node>/tmp/sandbox/<workflow name>/<node name>
 
-h4. SHARE for ciop-simwf
-========================
+A job can be executed several times but the results of a previous execution will be deleted and thus overwritten.
+
+.. TIP:: the workflow and node names are found in the Application Descriptor File
+
+.. TIP:: ciop-simjob -n will list the workflow node name(s), check the ciop-simjob reference page here: :doc:`/reference/man/ciop-simjob`
+
+**SHARE for ciop-simwf**
 
 When the ciop-simwf is invoked to run the complete application workflow, the outputs are found in a dedicated folder under *SHARE*:
 
-<pre>
-/share/tmp/sandbox/run/<run identifier>/<node name>/data
-</pre> 
+.. code-block:: bash
 
-Unlikely to ciop-simjob, ciop-simwf is keeping track of all its workflow execution runs. This feature allows to compare the results from different sets of parameters for example.
+  /share/tmp/sandbox/run/<run identifier>/<node name>
+ 
+and with the hdfs:// URL:
 
-> Tip: check the Application descriptor XML file defines the default parameter values and how to override these in the workflow
+.. code-block:: bash
+
+  hdfs://<name_node>/tmp/sandbox/run/<run identifier>/<node name>
+  
+Unlike to ciop-simjob, ciop-simwf is keeping track of all its workflow execution runs. 
+
+This feature allows to compare the results from different sets of parameters for example.
+
+.. TIP:: check the Application descriptor XML file defines the default parameter values and how to override these in the workflow
 
 
