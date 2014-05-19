@@ -48,13 +48,14 @@ The repository should follow the structure below:
         /job_template2
           ...
       /java # if your application has Java code
-      /resources
+      /resources # resources used to build the application
       /...
       
 .. seealso:: Have a look at the BEAM Java tutorial which implements the recommended structure: https://github.com/Terradue/BEAM-Java-tutorial
 
-
-
 The typical application development workflow
 ++++++++++++++++++++++++++++++++++++++++++++
+
+Cloning an existing repository
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
