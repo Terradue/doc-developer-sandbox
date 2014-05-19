@@ -19,6 +19,10 @@ The catalogue OpenSearch description URL is defined in the worflow section of th
   :tab-width: 1
   :lines: 53
 
+.. NOTE::
+
+  Although the application descriptor file refers to the local catalogue, the URLs below use a catalogue available to registered users so that the URLs do not depend on the sandbox IP.
+
 Inspecting the contents returned by this URL, a query template for the *application/rdf+xml* response type is provided:
 
 .. literalinclude:: ../src/osd.xml
