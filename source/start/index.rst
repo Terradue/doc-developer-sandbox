@@ -13,5 +13,6 @@ Contents:
    Connect to your Sandbox <sandbox>
    Discover the Sandbox services & tools <discover>
    Understand the Developer Cloud Sandbox key principles <principles>
-
+   Using GitHub as software repository <github/index>
+   Developing a citable application <citable/index>
 
