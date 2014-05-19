@@ -121,13 +121,61 @@ To create releases of the application on GitHub use *mvn deploy*:
 Documenting the application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We suggest usingthe GitHub Pages and sphinx to document the application.
+We suggest using the GitHub Pages.
 
-The GitHub pages are public webpages freely hosted and easily published through the GitHub site.
+The GitHub pages are public webpages freely hosted and easily published through the GitHub site. 
+
+GitHub pages can be managed manually or using frameworks.
+
+We suggest using Sphinx
 
 .. WARNING:: the GitHub pages of a private repository will be public and thus visible to anybody!
 
-.. TODO:: add process
+To create the GitHub Pages for the project, a new branch and do some one-time setup have to be performed. 
+
+.. WARNING:: You must make sure that any changes to the working copy in your other branches have been committed or reverted!! 
+
+Run the commands on the shell:
+
+.. code-block:: bash
+
+  cd path/to/repo
+  git checkout --orphan gh-pages
+  git rm -rf .
+  echo "Hello World!" > index.html
+  touch .nojekyll
+  git add .
+  git commit -m "Initial commit to gh-pages"
+  git push origin gh-pages
+
+Start the setup on Sphinx with the command:
+
+.. code-block:: bash
+
+  sphinx-quickstart
+  
+Sphinx uses make to generate the documentation, so edit the Makefile provided to add a new variable called GH_PAGES_SOURCES which will contain files and directories that contain the documentation sources. 
+
+.. code-block:: bash
+
+  GH_PAGES_SOURCES = docs/source soccermetrics docs/Makefile
+  
+Now add a target gh-pages and associate the following commands with it:
+
+.. code-block:: bash
+
+  git checkout gh-pages
+  rm -rf build _sources _static _modules
+  git checkout master $(GH_PAGES_SOURCES)
+  git reset HEAD
+  make -f docs/Makefile html
+  mv -fv build/html/* ./
+  rm -rf $(GH_PAGES_SOURCES) build
+  git add -A
+  git commit -m "Generated gh-pages for `git log master -1 --pretty=short \
+  --abbrev-commit`" && git push origin gh-pages ; git checkout master
+
+After a few minutes, open the browser at http://<repo name>.github.io
 
 Going further
 +++++++++++++
