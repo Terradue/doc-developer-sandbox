@@ -1,10 +1,55 @@
 Node expression
 ===============
 
-As the first job in this workflow, the expression processing step implements a streaming executable:
+This is the first node of the workflow. As such, the platform takes cares of providing the inputs to the streaming executable.
 
-* Defines the parameters to query the catalogue which, in this case is the start and end time (time of interest) of the MERIS Level 1 products.
-* Stages-in the input Envisat MERIS Level 1 products [#f1]_
+It defines the parameters to query the catalogue which, in this case is the start and end time (time of interest) of the MERIS Level 1 products.
+
+Two parameters target an OpenSearch query: 
+
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 8-9
+
+The catalogue OpenSearch description URL is defined in the worflow section of the application descriptor file:
+
+.. literalinclude:: ../src/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 62
+
+Inspecting the contents returned by this URL, a query template for the *application/rdf+xml* response type is provided:
+
+.. literalinclude:: ../src/osd.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 18
+  
+The parameter values of startdate and enddate are mapped to the queryables *start={time:start?}* and *stop={time:end?}* to build the query
+
+http://catalogue.terradue.int/catalogue/search/MER_RR__1P/rdf?start=2012-04-04&stop=2012-04-06
+
+The same information is passed to the OpenSearch client available in the sandbox to generate the stdin for the expression node:
+
+.. code-block:: bash
+
+  opensearch-client -f Rdf -p time:start=2012-04-04 -p time:end=2012-04-05 http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description 
+  
+which returns:
+
+.. code-block:: bash
+
+  http://catalogue.terradue.int/catalogue/search/MER_RR__1P/rdf?uid=MER_RR__1PRLRA20120405_192228_000026213113_00229_52829_0120.N1
+  http://catalogue.terradue.int/catalogue/search/MER_RR__1P/rdf?uid=MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1
+  http://catalogue.terradue.int/catalogue/search/MER_RR__1P/rdf?uid=MER_RR__1PRLRA20120405_142147_000026243113_00226_52826_0090.N1
+  http://catalogue.terradue.int/catalogue/search/MER_RR__1P/rdf?uid=MER_RR__1PRLRA20120405_092107_000026213113_00223_52823_0052.N1
+  http://catalogue.terradue.int/catalogue/search/MER_RR__1P/rdf?uid=MER_RR__1PRLRA20120404_131826_000026213113_00211_52811_9783.N1
+  http://catalogue.terradue.int/catalogue/search/MER_RR__1P/rdf?uid=MER_RR__1PRLRA20120404_113812_000026213113_00210_52810_9773.N1
+
+Those URLs are piped to the expression streamining executable that:
+
+* Stages-in the input Envisat MERIS Level 1 products [#f1]_ passed as references to its catalogue entry
 * Invokes the ESA BEAM Toolbox BandMaths Operator [#f2]_ to apply the provided band arithmetic expression to all input MERIS Level 1 products covering the time of interest 
 * Stages-out the results in a distributed file system as inputs to the next processing step
 
