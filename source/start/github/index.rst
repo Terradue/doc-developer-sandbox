@@ -127,7 +127,7 @@ The GitHub pages are public webpages freely hosted and easily published through 
 
 GitHub pages can be managed manually or using frameworks.
 
-We suggest using Sphinx
+We suggest using Sphinx a documentation generator tool that converts marked-up plaintext files into properly formatted HTML, PDF, EPub or other documents. 
 
 .. WARNING:: the GitHub pages of a private repository will be public and thus visible to anybody!
 
