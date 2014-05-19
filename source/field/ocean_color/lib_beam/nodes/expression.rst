@@ -49,7 +49,7 @@ which returns:
 
 Those URLs are piped to the expression streamining executable that:
 
-* Stages-in the input Envisat MERIS Level 1 products [#f1]_ passed as references to its catalogue entry
+* Stages-in the input Envisat MERIS Level 1 products [#f1]_ passed as references to their catalogue entry
 * Invokes the ESA BEAM Toolbox BandMaths Operator [#f2]_ to apply the provided band arithmetic expression to all input MERIS Level 1 products covering the time of interest 
 * Stages-out the results in a distributed file system as inputs to the next processing step
 
