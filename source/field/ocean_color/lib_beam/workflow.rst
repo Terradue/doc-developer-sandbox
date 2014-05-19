@@ -61,8 +61,8 @@ The application's data pipeline activities can be defined as follows:
     :Stage-in data referenced in daily_list;
   end while (empty)
   
-  :Apply ESA BEAM Toolbox Binning operator
-  :Stage-out binned product
+  :Apply ESA BEAM Toolbox Binning operator;
+  :Stage-out binned product;
 
   stop
 
