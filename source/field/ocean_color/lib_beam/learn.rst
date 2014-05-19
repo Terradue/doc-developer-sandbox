@@ -9,4 +9,16 @@ What you will learn
 Where is the code
 +++++++++++++++++
 
-The code for this tutorial is available on GitHub repository `BEAM Arithm Tutorial <https://github.com/Terradue/BEAM-Arithm-tutorial>`_
+The code for this tutorial is available on GitHub repository `BEAM Arithm Tutorial <https://github.com/Terradue/BEAM-Arithm-tutorial>`_.
+
+To deploy the tutorial on a Developer Sandbox:
+
+.. code-block:: bash
+  cd ~
+  git clone git@github.com:Terradue/BEAM-Arithm-tutorial.git
+  cd BEAM-Arithm-tutorial
+  mvn install
+  
+This will build the application on the /application volume.
+
+The code can be forked here: `<https://github.com/Terradue/BEAM-Arithm-tutorial/fork>`_
