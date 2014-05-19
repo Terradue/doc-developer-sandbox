@@ -21,4 +21,4 @@ To deploy the tutorial on a Developer Sandbox:
   
 This will build the application on the /application volume.
 
-The code can be forked here: `<https://github.com/Terradue/BEAM-Arithm-tutorial/fork>`_
+The code can be modified by forking the repository here: `<https://github.com/Terradue/BEAM-Arithm-tutorial/fork>`_
