@@ -143,10 +143,12 @@ This feature allows to compare the results from different sets of parameters for
 .. TIP:: check the Application descriptor XML file defines the default parameter values and how to override these in the workflow
 
 The Application Workflow
-""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Role of the Directed Acyclic Graph (DAG)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""
+
+The DAG helps you to sequence your Application workflow with simple rules. For the Hadoop Map/Reduce programming framework, a workflow is subject to constraints that certain tasks must be performed earlier than others. 
 
 The Nodes of the DAG can be Mappers, Reducers or (starting from ciop v1.2) Map/Reduce Hadoop jobs.
 
@@ -157,7 +159,7 @@ Reducers: if the Node type is a Reducer, the number of task is fixed to 1, indep
 Map/Reduce: if the Node type is Map/Reduce, each parallel task is re-arranging its task outputs according to the program implementing the Reducer.
 
 Hadoop Streaming
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 Hadoop will split (distribute) the standard input to each task created on the cluster from a Job template.
 
@@ -170,7 +172,7 @@ In the Developer Cloud Sandbox environment (pseudo-cluster mode), the cluster di
 In the IaaS Production environment (cluster mode), the cluster dimension is n (the servers provisioned on the cluster) and the number of available tasks slots is n x m (m-Cores CPU of the provisioned server type).
 
 The Application Descriptor file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 
 The application descriptor file contains the definition of the application in terms of:
 
