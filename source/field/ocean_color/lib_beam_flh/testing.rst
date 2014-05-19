@@ -72,6 +72,7 @@ To install the application clone the repository on the sandbox in your home fold
   mvn install
   
 The mvn command will:
+
 * Copy the application resources files from ~/BEAM-Java-tutorial/src/main/app-resources to /application
 * Compile the FLH Operator Java files and resources and place the compiled libraries (BEAM and the FLH operator) in the correct location 
 
