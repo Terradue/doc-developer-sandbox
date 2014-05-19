@@ -82,3 +82,34 @@ Run the commands on the shell:
 
 Creating a new repository on github.com
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The procedure is describe here: https://help.github.com/articles/creating-a-new-repository
+
+.. TIP:: Make sure to create a README.md file to enable cloning as described above
+
+Building the application
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once the repository contains the structure described above, use *maven* to build and install the application for you:
+
+.. code-block:: bash
+
+  cd ~/BEAM-Java-tutorial
+  mvn install
+  
+This will use the information available in the *pom.xml* file to build your application and copy the files to the */application* file system.
+
+At this point you can use ciop-simjob and ciop-simwf to test the application
+
+Updating files
+^^^^^^^^^^^^^^
+
+Whilst 
+
+
+
+
+
+
+
+
