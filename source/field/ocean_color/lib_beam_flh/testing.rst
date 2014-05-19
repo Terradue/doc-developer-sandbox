@@ -5,7 +5,22 @@ Now that the node template has an associated job template, it is now time put it
 
 The workflow is a Directed Acyclic Graphs (DAG) where nodes and their relation(s), the source(s) are defined.
 
-This application's workflow is the simplest case: a workflow with a single node.
+This application's workflow is the simplest case: a workflow with a single node:
+
+.. uml::
+
+  !define DIAG_NAME Workflow example
+
+  !include includes/skins.iuml
+
+  skinparam backgroundColor #FFFFFF
+  skinparam componentStyle uml2
+
+  start
+
+  :node_flh;
+  
+  stop
 
 Each node of DAG has:
 
