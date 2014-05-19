@@ -36,12 +36,14 @@ BEAM Graph Processing Tool (gpt) is a tool used to execute BEAM raster data oper
 
 With this tutorial, you will write your own BEAM operator and apply to MERIS Level 1 data.
 
-This tutorial is based on the tutorials [#f3]_ published by Brockmann Consult [#f4]_. 
+This tutorial is based on the BEAM Tutorial held at the Sentinel-3 OLCI/SLSTR and MERIS/(A)ATSR workshop2012 by Brockmann Consult [#f3]_. 
 
 Implementing the FLH Operator
 -----------------------------
 
+The implementation of the FLH Operator is described in [#f4]_.
+
 .. [#f1] `ESA BEAM Toolbox <http://www.brockmann-consult.de/cms/web/beam/>`_
 .. [#f2] `ESA BEAM Graph Processing Framework (GPF) <http://www.brockmann-consult.de/beam/doc/help/gpf/GpfOverview.html>`_
-.. [#f3] `ESA BEAM Programming tutorial <http://www.brockmann-consult.de/beam-wiki/display/BEAM/BEAM+4+Programming+Tutorial>`_
-.. [#f4] `Brockmann Consult <http://www.brockmann-consult.de/>`_
+.. [#f3] `Brockmann Consult <http://www.brockmann-consult.de/>`_
+.. [#f4] `ESA BEAM Programming tutorial (pdf) <http://www.brockmann-consult.de/beam/tutorials/ESRINWorkshop2012/BEAM_Programming_Tutorial_20121018.pdf>`_
