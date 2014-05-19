@@ -17,14 +17,14 @@ The catalogue OpenSearch description URL is defined in the worflow section of th
 .. literalinclude:: ../src/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 62
+  :lines: 53
 
 Inspecting the contents returned by this URL, a query template for the *application/rdf+xml* response type is provided:
 
 .. literalinclude:: ../src/osd.xml
   :language: xml
   :tab-width: 1
-  :lines: 19
+  :lines: 18
   
 The parameter values of startdate and enddate are mapped to the queryables *start={time:start?}* and *stop={time:end?}* to build the query
 
