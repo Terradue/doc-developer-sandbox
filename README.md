@@ -80,6 +80,4 @@ $ chmod -R g+w developer-sandbox
 
 Open you browser at the address http://127.0.0.1/developer-sandbox
 
-## This documentation is built with sphinx-doc
-
-[More information](http://sphinx-doc.org/).
+#### This documentation is built with [sphinx](http://sphinx-doc.org/).
