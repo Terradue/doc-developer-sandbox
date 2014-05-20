@@ -1,5 +1,5 @@
-Creating citable applications
-=============================
+Developing citable applications
+===============================
 
 Digital Object Identifiers (DOI) are the backbone of the academic reference and metrics system. 
 
