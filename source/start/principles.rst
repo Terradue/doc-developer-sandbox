@@ -19,7 +19,7 @@ A user's home directory is intended to contain the user's files; possibly includ
 As such, the *HOME* is used to store the user's files. It can be used to store source files (the compiled programs would then go *APPLICATION*). 
 
 .. NOTE:: At job or workflow execution time, the Sandbox uses a system user to execute the application. This system user cannot read files in *HOME*.  
-When the application is ran with the Runtime Environment (cluster mode), the *HOME* directory is no longer available in any of the computing nodes. 
+When the application is ran on a Production Environment (cluster mode), the *HOME* directory is no longer available in any of the computing nodes. 
 
 APPLICATION filesystem
 """"""""""""""""""""""
@@ -138,14 +138,17 @@ Unlike to ciop-simjob, ciop-simwf is keeping track of all its workflow execution
 
 This feature allows to compare the results from different sets of parameters for example.
 
-.. TIP:: check the Application descriptor XML file defines the default parameter values and how to override these in the workflow
+.. TIP:: check the Application descriptor XML file defines the default parameter values and how to override these in the workflow.
+
+You have now an understanding of the way your PaaS environment is dealing with datasets and programs, and how it leverages the Hadoop Distributed File System.
+
+.. LEARN MORE:: you can get a deeper insight with these 5 Common Questions About Apache Hadoop http://blog.cloudera.com/blog/2009/05/5-common-questions-about-hadoop/
 
 The Application Workflow
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Role of the Directed Acyclic Graph (DAG)
 """"""""""""""""""""""""""""""""""""""""
-
 The DAG helps you to sequence your Application workflow with simple rules. For the Hadoop Map/Reduce programming framework, a workflow is subject to constraints that certain tasks must be performed earlier than others. 
 
 The Nodes of the DAG can be Mappers, Reducers or (starting from ciop v1.2) Map/Reduce Hadoop jobs.
@@ -160,7 +163,9 @@ Hadoop Streaming
 """"""""""""""""
 The Developer Cloud Sandbox builds on a “shared-nothing” architecture that partitions and distributes each large dataset to the disks attached directly to the nodes of the cluster.
 Hadoop will split (distribute) the standard input of a Job to each task created on the cluster. A task is created from a Job template. The input split depends on the number of available task slots. The number of task slots depends on the cluster dimension. 
+
 In the Developer Cloud Sandbox environment (pseudo-cluster mode), the cluster dimension is 1 and the number of the available task slots is 2 (running on a 2-Cores CPU). 
+
 In the IaaS Production environment (cluster mode), the cluster dimension is n (the servers provisioned on the cluster) and the number of available tasks slots is n x m (m-Cores CPU of the provisioned server type).
 
 The Application Descriptor file
