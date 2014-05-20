@@ -1,7 +1,7 @@
 .. _certificate:
 
-Importing the Terradue's SSL Certificate
-========================================
+Importing your SSL Certificate
+==============================
 
 The Secure Socket Layer (SSL) is the most widely deployed security protocol used today. It is essentially a protocol that provides a secure channel between two machines operating over the Internet or an internal network.
 
