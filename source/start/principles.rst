@@ -1,7 +1,7 @@
 .. _principles:
 
-Understand the Developer Cloud Sandbox key principles
-===========================================
+Understand the Sandbox key principles
+=====================================
 
 The Sandbox filesystems
 ^^^^^^^^^^^^^^^^^^^^^^^^
