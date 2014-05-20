@@ -145,11 +145,9 @@ The DAG helps you to sequence your Application workflow with simple rules. For t
 
 The Nodes of the DAG can be Mappers, Reducers or (starting from ciop v1.2) Map/Reduce Hadoop jobs.
 
-Mappers: if the Node type is a Mapper, the number of tasks is defined by the number of available slots on the cluster.
-
-Reducers: if the Node type is a Reducer, the number of task is fixed to 1, independently from the cluster dimension.
-
-Map/Reduce: if the Node type is Map/Reduce, each parallel task is re-arranging its task outputs according to the program implementing the Reducer.
+* Mappers: if the Node type is a Mapper, the number of tasks is defined by the number of available slots on the cluster.
+* Reducers: if the Node type is a Reducer, the number of task is fixed to 1, independently from the cluster dimension.
+* Map/Reduce: if the Node type is Map/Reduce, each parallel task is re-arranging its task outputs according to the program implementing the Reducer.
 
 Hadoop Streaming
 """"""""""""""""
