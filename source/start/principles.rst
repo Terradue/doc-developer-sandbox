@@ -1,12 +1,12 @@
 .. _principles:
 
 Understand the Developer Cloud Sandbox key principles
-=====================================================
+===========================================
 
 The Sandbox filesystems
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the context of the application life-cycle, the Sandbox has three filesystems (or directories):
+In the context of your application development life-cycle, the Sandbox provides you with three filesystems (or directories):
 
 * /home/<user> that we refer to as *HOME* 
 * /application that we refer to as *APPLICATION*
@@ -14,17 +14,15 @@ In the context of the application life-cycle, the Sandbox has three filesystems 
 
 HOME filesystem
 """""""""""""""
-
-A user's home directory is intended to contain that user's files; including text documents, music, pictures or videos, etc. It may also include their configuration files of preferred settings for any software they have used there and might have tailored to their liking: web browser bookmarks, favorite desktop wallpaper and themes, passwords to any external services accessed via a given software, etc. The user can install executable software in this directory, but it will only be available to users with permission to this directory. The home directory can be organized further with the use of sub-directories.
+A user's home directory is intended to contain the user's files; possibly including text documents, pictures or videos, etc. It may also include the configuration files of preferred settings for any software you have used there, and that you might have tailored to your liking: web browser bookmarks, favorite desktop wallpaper and themes, passwords to any external services accessed via a given software, etc. The user can install executable software in this directory, but it will only be available to users with permission to this directory. The home directory can be organized further with the use of sub-directories.
 
 As such, the *HOME* is used to store the user's files. It can be used to store source files (the compiled programs would then go *APPLICATION*). 
 
 .. NOTE:: At job or workflow execution time, the Sandbox uses a system user to execute the application. This system user cannot read files in *HOME*.  
-  When the application is run on the Sandbox Runtime Environment, the *HOME* directory is not available in any of the computing nodes. 
+When the application is ran with the Runtime Environment (cluster mode), the *HOME* directory is no longer available in any of the computing nodes. 
 
 APPLICATION filesystem
 """"""""""""""""""""""
-
 The *APPLICATION* filesystem contains all the files required to run the application.
 
 The *APPLICATION* filesystem is available on the Sandbox as /application.
@@ -160,20 +158,13 @@ Map/Reduce: if the Node type is Map/Reduce, each parallel task is re-arranging i
 
 Hadoop Streaming
 """"""""""""""""
-
-Hadoop will split (distribute) the standard input to each task created on the cluster from a Job template.
-
-The input split depends on the number of available task slots. 
-
-The number of task slots depends on the cluster dimension. 
-
-In the Developer Cloud Sandbox environment (pseudo-cluster mode), the cluster dimension is 1 and the number of the available task slots is 2 (running on a 2-Cores CPU).
-
+The Developer Cloud Sandbox builds on a “shared-nothing” architecture that partitions and distributes each large dataset to the disks attached directly to the nodes of the cluster.
+Hadoop will split (distribute) the standard input of a Job to each task created on the cluster. A task is created from a Job template. The input split depends on the number of available task slots. The number of task slots depends on the cluster dimension. 
+In the Developer Cloud Sandbox environment (pseudo-cluster mode), the cluster dimension is 1 and the number of the available task slots is 2 (running on a 2-Cores CPU). 
 In the IaaS Production environment (cluster mode), the cluster dimension is n (the servers provisioned on the cluster) and the number of available tasks slots is n x m (m-Cores CPU of the provisioned server type).
 
 The Application Descriptor file
 """""""""""""""""""""""""""""""
-
 The application descriptor file contains the definition of the application in terms of:
 
     job templates including:
@@ -188,12 +179,11 @@ Type
 
 The application descriptor is an XML file available in $_CIOP_APPLICATION_PATH/application.xml
 
-    Note: the value $_CIOP_APPLICATION_PATH is /application
+Note: the value $_CIOP_APPLICATION_PATH is /application
 
 Format
 
 The application descriptor file structure is available below:
-
 
 +-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+--------------------+	
 | Level	    | Tag name              | Descendants                                               | Tag Contents                  | Cardinality   | Attribute name                | Attribute value    |
@@ -233,6 +223,7 @@ The application descriptor file structure is available below:
 |           |                       |                                                           |  the default value)		|               |                               |                    |
 +-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+--------------------+	
 
+.. SEE ALSO:: The Application Descriptor file is described in :doc:`/reference/application`
 
-.. tip:: Check that your application descriptor file is well formed with the :doc:`ciop-appcheck </reference/man/ciop-appcheck>` utility
+.. TIP:: Check that your application descriptor file is well formed with the :doc:`ciop-appcheck </reference/man/ciop-appcheck>` utility
 
