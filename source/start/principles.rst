@@ -181,8 +181,8 @@ Note: the value $_CIOP_APPLICATION_PATH is /application
 Format
 
 The application descriptor file is composed of two sections:
-- A "jobTemplates" section, describing for the application workflow each required Job Template, with its streaming executable file location, default parameters, and default Job configuration.
-- A "workflow" section, describing the sequence of the workflow nodes, with for each node its Job template, and its input source (a file with datasets URLs, a preceding workflow node, a catalogue series, or an input string). 
+* A "jobTemplates" section, describing for the application workflow each required Job Template, with its streaming executable file location, default parameters, and default Job configuration.
+* A "workflow" section, describing the sequence of the workflow nodes, with for each node its Job template, and its input source (a file with datasets URLs, a preceding workflow node, a catalogue series, or an input string). 
 
 .. SEE ALSO:: The Application Descriptor file structure is documented in :doc:`/reference/application`
 
