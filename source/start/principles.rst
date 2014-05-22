@@ -37,7 +37,7 @@ The *APPLICATION* contains
 * the Application Descriptor File, named _application.xml_ 
 * a folder for each job template
 
-.. seealso:: The Application Descriptor file is described in :doc:`/reference/application`
+.. SEEALSO:: The Application Descriptor file is described in :doc:`/reference/application`
 
 A *job template* folder contains:
 
@@ -141,18 +141,18 @@ The Application Workflow
 
 Role of the Directed Acyclic Graph (DAG)
 """"""""""""""""""""""""""""""""""""""""
-The DAG helps you to sequence your Application workflow with simple rules. For the Hadoop Map/Reduce programming framework, a workflow is subject to constraints that certain tasks must be performed earlier than others. 
+The DAG helps you to sequence your Application workflow with simple rules. For the Hadoop Map/Reduce programming framework, a workflow is subject to constraints implying that certain tasks must be performed earlier than others. 
 
-The Nodes of the DAG can be Mappers, Reducers or (starting from ciop v1.2) Map/Reduce Hadoop jobs.
+The application nodes of the DAG can be Mappers, Reducers or (starting from ciop v1.2) Map/Reduce Hadoop jobs.
 
-* Mappers: if the Node type is a Mapper, the number of tasks is defined by the number of available slots on the cluster.
-* Reducers: if the Node type is a Reducer, the number of task is fixed to 1, independently from the cluster dimension.
-* Map/Reduce: if the Node type is Map/Reduce, each parallel task is re-arranging its task outputs according to the program implementing the Reducer.
+* Mappers: if the type of the application node is "Mapper", the number of Hadoop tasks that will run that Job in parallel is defined by the number of available slots on the cluster.
+* Reducers: if the type of the application node is "Reducer", the number of task is fixed to 1, independently from the cluster dimension.
+* Map/Reduce: if the type of the application node is "Map/Reduce", each parallel task is re-arranging its task outputs according to the program implementing the Reducer.
 
 Hadoop Streaming
 """"""""""""""""
-The Developer Cloud Sandbox builds on a “shared-nothing” architecture that partitions and distributes each large dataset to the disks attached directly to the nodes of the cluster.
-Hadoop will split (distribute) the standard input of a Job to each task created on the cluster. A task is created from a Job template. The input split depends on the number of available task slots. The number of task slots depends on the cluster dimension. 
+The Developer Cloud Sandbox environment builds on a “shared-nothing” architecture that partitions and distributes each large dataset to the disks attached directly to the worker nodes of the cluster.
+Hadoop will split (distribute) the standard input of a Job to each task created on the cluster. A task is created from a Job template. The input split depends on the number of available task slots. The number of task slots depends on the cluster dimension (the number of worker nodes). 
 
 In the Developer Cloud Sandbox environment (pseudo-cluster mode), the cluster dimension is 1 and the number of the available task slots is 2 (running on a 2-Cores CPU). 
 
