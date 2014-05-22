@@ -160,28 +160,12 @@ In the IaaS Production environment (cluster mode), the cluster dimension is n (t
 
 The Application Descriptor file
 """""""""""""""""""""""""""""""
-The application descriptor file contains the definition of the application in terms of:
-
-    job templates including:
-        streaming executable
-        default parameters
-        job default configuration
-    workflow including the workflow nodes defined with
-        the source for the inputs (e.g. a previous node, a catalogue series, a local file)
-        their parameter values to override the default parameters (defined in the job template above)
-
-Type
-
-The application descriptor is an XML file available in $_CIOP_APPLICATION_PATH/application.xml
-
-Note: the value $_CIOP_APPLICATION_PATH is /application
-
-Format
-
-The application descriptor file is composed of two sections:
+The application descriptor file contains the definition of the application, and is composed of two sections:
 
 * A "jobTemplates" section, describing for the application workflow each required Job Template, with its streaming executable file location, default parameters, and default Job configuration.
-* A "workflow" section, describing the sequence of the workflow nodes, with for each node its Job template, and its input source (a file with datasets URLs, a preceding workflow node, a catalogue series, or an input string). 
+* A "workflow" section, describing the sequence of the workflow nodes, with for each node its Job template, its source for the inputs (e.g. a file with datasets URLs, a catalogue series, a previous node, or an input string), and its parameter values that might override the default parameters (defined in the job template above).
+
+The application descriptor is an XML file managed on the Sandbox APPLICATION filesystem, and is located as $_CIOP_APPLICATION_PATH/application.xml (the value of $_CIOP_APPLICATION_PATH is "/application")
 
 .. SEE ALSO:: The Application Descriptor file structure is documented in :doc:`/reference/application`
 
