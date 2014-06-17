@@ -14,6 +14,7 @@ The code for this tutorial is available on GitHub repository `BEAM Arithm Tutori
 To deploy the tutorial on a Developer Sandbox:
 
 .. code-block:: bash
+
   cd ~
   git clone git@github.com:Terradue/BEAM-Arithm-tutorial.git
   cd BEAM-Arithm-tutorial
