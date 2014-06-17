@@ -130,6 +130,10 @@ Run your VPN Connection
 - Check that the "OpenVPN Connect" icon in your desktop tray is now featuring a green symbol.
 - That's all :-)
 
+.. CONGRATS::
+You have now completed your setup for accessing your laboratory on Terradue's Cloud Platform.
+What about having now a quick introduction to some Application Development examples ? 
+They are presented in the Developer's Quick Start guide.
 
 Known caveats
 ---------------------
