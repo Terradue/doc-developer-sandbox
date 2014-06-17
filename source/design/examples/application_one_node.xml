@@ -12,7 +12,7 @@
       </defaultJobconf>
     </jobTemplate>
   </jobTemplates>
-  <workflow id="myworkflow" title="My workflow" abstract="This is my wrokflow">
+  <workflow id="myworkflow" title="My workflow" abstract="This is my workflow">
     <workflowVersion>1.0</workflowVersion>
     <node id="node_A">
       <job id="template_A"/>
