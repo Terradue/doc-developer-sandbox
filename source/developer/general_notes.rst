@@ -3,7 +3,7 @@
 General Notes
 #############
 
-The Terradue's Developer Cloud Sandbox, for brevity only Sandbox, is a Virtual Machine (VM) running the CentOS 6.5 Linux distribution. This VM has the complete set of tools of the CIOP framework (the 'ciop' command line tools). Furthermore it has CDH (Cloudera's Distribution of Apache Hadoop) installed in Pseudo-Distributed mode. Pseudo-distributed mode is a method of running Hadoop whereby all Hadoop daemons run on the same machine. It is a cluster consisting of a single machine. It works just like a larger cluster, the only key difference (apart from the speed, of course !) being that the block replication factor is set to 1 (normally in a Hadoop Cluster the blocks on HDFS have a replication factor of 3). 
+The Sandbox, short of *Terradue's Developer Cloud Sandbox*, is a Virtual Machine (VM) running the CentOS 6.5 Linux distribution. This VM has the complete set of tools of the CIOP framework (the 'ciop' command line tools). Furthermore it has CDH (Cloudera's Distribution of Apache Hadoop) installed in Pseudo-Distributed mode. Pseudo-distributed mode is a method of running Hadoop whereby all Hadoop daemons run on the same machine. It is a cluster consisting of a single machine. It works just like a larger cluster, the only key difference (apart from the speed, of course !) being that the block replication factor is set to 1 (normally in a Hadoop Cluster the blocks on HDFS have a replication factor of 3). 
 
 Getting started
 ^^^^^^^^^^^^^^^^
