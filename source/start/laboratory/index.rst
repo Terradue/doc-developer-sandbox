@@ -3,7 +3,7 @@ Join your Laboratory
 
 A Laboratory is a virtual network on Terradue's Cloud Platform dedicated to the hosting of your Cloud services.
 A laboratory and its services are secured by user authentication (using SSL / X.509 certificates) and VPN access.
-The following sections will guide you throught the ocedures related to the Certificate download and VPN Setup.
+The following sections will guide you through the procedures related to the Certificate download and VPN Setup.
 
 Prerequisites
 -------------
@@ -17,13 +17,29 @@ Download your Certificate in PFX format
 --------------------------------------
 
 The Secure Socket Layer (SSL) is the most widely deployed security protocol used today. It is essentially a protocol that provides a secure channel between two machines operating over the Internet or an internal network.
+
 The SSL Certificate issued by the Terradue Certification Authority (CA) is used to access securely the Terradue's infrastructure. It should be imported into a browser in order to use it. This section describes the certificate import procedures for different browsers and platforms.
 
 - Go to *https://ca.terradue.com/gpodcs/cgi/certdown.cgi?U=<your_registration_email@organization.com>&F=Kpfx* (**replace by your registration e-mail**)
 - Type the certificate password that you chose during the registration.
 
-Import your Certificate in a Browser
+Import Terradue's CA certificate in your Browser
+----------------------------------------------------------
+
+Terradue's X.509 Certification Authority (CA) is used to sign the Platform's server certificates. You should have downloaded this file from the registration confirmation email.
+
+Otherwise, to get the CA's X.509 certificate, you only need to click here:
+https://ca.terradue.com/gpodcs/certs/cacert.pem. 
+
+Terradue's "CA cert" must be shows up under the "Authorities" label of your Browser's security tab.
+
+Chrome makes use of the trust store of the operating system.
+Firefox maintains all its CAs.
+
+Import your PFX Certificate in a Browser
 -----------------------------------
+
+The certificate in PFX format (Personal Information Exchange) is used to authorise your access to some Platform's services like the Sandbox user dashboard.
 
 Google Chrome
 ^^^^^^^^^^^^^
@@ -116,10 +132,10 @@ Run your VPN Connection
 
 
 Known caveats
--------------
+---------------------
 
 DNS issues
-^^^^^^^^^^
+^^^^^^^^^^^
 
 When the OpenVPN client is installed on a Linux/Unix OS, the OpenVPN Server is unable to alter the DNS settings on the client in question. 
 A typical behaviour in such cases is that you are able to ping your Sandbox through its IPv4 address, but not through the hostname. 
@@ -159,10 +175,13 @@ The same parameters (not prefixed by --) can also be specified in the configurat
   Except for a few cases, it is better to specify the parameters in a configuration file rather than having them in a too long and heavy to read command line.
 
 
-How to manualy setup OpenVPN on other Platforms
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How to manually setup OpenVPN on other Platforms
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the "OpenVPN Connect" client for installation on another computer, you can access installation material and configuration templates from here https://access.terradue.com/?src=connect
+To download the "OpenVPN Connect" client for installation on another computer, you can access installation material and configuration templates from here:
+
+https://access.terradue.com/?src=connect
+
 You can establish a VPN connexion with Terradue's OpenVPN server by using the command line.
 
 - Go to https://access.terradue.com/?src=login,
