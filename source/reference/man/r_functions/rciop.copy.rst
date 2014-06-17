@@ -4,7 +4,7 @@ rciop.copy {rciop}
 Description
 -----------
 
-
+Copies an URL to a given folder
 
 Usage
 -----
