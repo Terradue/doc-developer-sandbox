@@ -2,8 +2,8 @@ Join your Laboratory
 ####################
 
 A Laboratory is a virtual network on Terradue's Cloud Platform dedicated to the hosting of your Cloud services.
-A laboratory and its services are secured by user authentication (using X.509 certificates) and VPN access.
-The following sections will guide you throught these configuration steps.
+A laboratory and its services are secured by user authentication (using SSL / X.509 certificates) and VPN access.
+The following sections will guide you throught the ocedures related to the Certificate download and VPN Setup.
 
 Prerequisites
 -------------
@@ -11,6 +11,7 @@ Prerequisites
 - You received an e-mail with the subject "Developer Cloud Sandboxes service  -  Invitation to register".
 - You filled a registration form, following the instructions in the invitation e-mail.
 - Your registration was approved, and you received an e-mail from ca@terradue.com with subject "Your Terradue certificate is ready to download".
+- You received an e-mail with subject "Certificate download and VPN Setup procedure".
 
 Download your Certificate in PFX format
 --------------------------------------
@@ -94,8 +95,6 @@ Safari
 
 Install your OpenVPN Client
 ---------------------------
-
-Prerequisites: you received an e-mail with subject "Certificate download and VPN Setup procedure".
 
 Now you can download and install your OpenVPN Client, in order to establish a connection with Terradue's VPN server.
 
