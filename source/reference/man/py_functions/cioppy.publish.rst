@@ -12,7 +12,7 @@ Usage
 .. code-block:: python
 
   import cioppy as ciop
-  ciop.publish (sources, mode="", driver, recursive=False, metalink=False)
+  ciop.publish (sources, mode="", driver="", recursive=False, metalink=False)
 
 Arguments
 ---------
