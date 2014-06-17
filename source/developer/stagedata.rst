@@ -3,7 +3,7 @@
 Hands-On Exercise 3: staging data
 #################################
 
-In this Hands-On we will prepare input data for our workflow (Stage In) and we will publish out data as result of the workflow (Stage Out).   
+In this exercise we will prepare input data for our workflow (Stage In) and we will publish out data as result of the workflow (Stage Out).   
 
 Prepare the application.xml
 ===========================
