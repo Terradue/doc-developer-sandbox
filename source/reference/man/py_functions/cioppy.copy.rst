@@ -12,18 +12,18 @@ Usage
 .. code-block:: python
   
   import cioppy as ciop
-  ciop.copy (urls, target, extract=TRUE)
+  ciop.copy (urls, target, extract=True)
 
 Arguments
 ---------
 
-``url``
+``urls``
   the URL of the product to download or the URL to the OpenSearch catalogue entry in RDF format
   
 ``target``
   the destination folder for the downloaed product
   
-``uncompress``
+``extract``
   if the product is an archive (.tgz, .gz) it is extracted by default
 
 Details
