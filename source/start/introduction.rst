@@ -13,7 +13,8 @@ The 'must do', but once should be enough :)
 1. Register on the infrastructure: 
 
 - you'll need have a valid certificate (get it `here <https://ca.terradue.com/gpodcs/pub/certreq.html>`_)
-- the password for your certificate and for your account are the same  
+
+.. NOTE:: Please remember that the password for your certificate and for your account are the same  
 
 2. Join your laboratory: 
 
