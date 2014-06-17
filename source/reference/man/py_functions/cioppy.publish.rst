@@ -20,18 +20,18 @@ Arguments
 ``sources``
   the path to the result of folder to publish 
   
-``recursive``
-  if set to TRUE will traverse the folder tree and publish all files
-  
-``metalink``
-  if set to TRUE the published results will be an item in the results' metalink
-  
 ``mode``
   if mode is set to "silent", rciop.publish will echo the content of ``path`` as inputs to the subsequent nodes in the workflow
   this mode overrides the ``recursive``, ``metalink`` and ``driver`` options
-  
+
 ``driver``
   set the value to S3 and the results will be published to the Cloud storage
+  
+``recursive``
+  if set to True will traverse the folder tree and publish all files
+  
+``metalink``
+  if set to True the published results will be an item in the results' metalink
   
 Details
 -------
