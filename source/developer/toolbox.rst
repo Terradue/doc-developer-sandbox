@@ -3,7 +3,7 @@
 Hands-On Exercise 4: using a custom toolbox
 #############################################
 
-In this Hands-On we will use a custom toolbox to process the inputs of our workflow and we will publish its results on HDFS.   
+In this exercise we will use a custom toolbox to process the inputs of our workflow and we will publish its results on HDFS.   
 
 Install the ESA BEAM Toolbox
 ============================
