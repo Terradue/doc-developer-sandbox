@@ -1,9 +1,7 @@
 Application Workflow
 ====================
 
-Picture the workflow as a Data Pipeline.
-
-A data pipeline is a data workflow service that helps you process and move data between different processing steps.
+We need to picture the application workflow as a Data Pipeline that helps you process and move data between different processing steps.
 
 The processing steps are the nodes of a Directed Acyclic Graph (DAG). 
 
