@@ -1,6 +1,38 @@
 Application Workflow
 ====================
 
++--------------------------+------------------------------------+----------+----------+
+| Header row, column 1     | Header 2                           | Header 3 | Header 4 |
+| (header rows optional)   |                                    |          |          |
++==========================+====================================+==========+==========+
+| body row 1, column 1     | column 2                           | column 3 | column 4 |
++--------------------------+------------------------------------+----------+----------+
+| .. note:: this is a note | .. uml::                           |          |          |
+|                          |                                    |          |          | 
+|                          | !define DIAG_NAME Workflow example |          |          |
+|                          |                                    |          |          |
+|                          | !include includes/skins.iuml       |          |          |
+|                          |                                    |          |          |
+|                          | skinparam backgroundColor #FFFFFF  |          |          |
+|                          | skinparam componentStyle uml2      |          |          |
+|                          |                                    |          |          |
+|                          | start                              |          |          |
+|                          | :Node A;                           |          |          |
+|                          | fork                               |          |          |
+|                          |    :Node B;                        |          |          |
+|                          | fork again                         |          |          | 
+|                          |    :Node C;                        |          |          |
+|                          | end fork                           |          |          |
+|                          |    :Node D;                        |          |          | 
+|                          | stop                               |          |          |
+|                          |                                    |          |          |
+|                          | footer                             |          |          | 
+|                          |   DIAG_NAME                        |          |          |
+|                          |   endfooter                        | ...      |          |
++--------------------------+------------------------------------+----------+----------+
+
+
+
 We need to picture the application workflow as a Data Pipeline that helps you process and move data between different processing steps.
 
 The processing steps are the nodes of a Directed Acyclic Graph (DAG). 
