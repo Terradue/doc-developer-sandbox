@@ -18,7 +18,7 @@
       <job id="template_A"/>
       <sources>
         <!--<source refid="file:urls">/tmp/inputs</source>-->
-        <!--<source refid="str:list">input1,input2<source>-->
+        <!--<source refid="string:list">input1,input2<source>-->
         <!--<source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>-->
       </sources>
       <parameters>
