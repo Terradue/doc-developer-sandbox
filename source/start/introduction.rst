@@ -18,7 +18,7 @@ The 'must do', but once should be enough :)
 
 2. Join your laboratory: 
 
-- import your certificate in your web browser following this procedure - Import Certificate in web browser
+- import your certificate in your web browser following this procedure - :ref:`Import Certificate in web browser`
 - install your pre-configured OpenVPN client, that shall successfully access Terradue's VPN server - Setup your VPN client
 
 3. Connect to your Sandbox: 
