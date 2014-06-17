@@ -12,8 +12,8 @@ The 'must do', but once should be enough :)
 
 1. Register on the infrastructure: 
 
-- you'll need have a valid certificate (URL to "one time" `registration <https://ca.terradue.com/gpodcs/pub/certreq.html>`_)
-- you have a password for your certificate and for your account, they are the same at registration. You can change your account password via the `self-service password management <https://ldap.terradue.com/>`_ 
+- you'll need have a valid certificate (get it `here <https://ca.terradue.com/gpodcs/pub/certreq.html>`_)
+- the password for your certificate and for your account are the same  
 
 2. Join your laboratory: 
 
