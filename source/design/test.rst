@@ -1,0 +1,3 @@
+.. code:: bash
+
+  echo "hi!"
