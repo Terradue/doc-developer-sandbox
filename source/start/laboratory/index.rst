@@ -132,8 +132,7 @@ Run your VPN Connection
 
 .. CONGRATS::
 You have now completed your setup for accessing your laboratory on Terradue's Cloud Platform.
-What about having now a quick introduction to some Application Development examples ? 
-They are presented in the :ref:`Developer's Quick Start guide <../../developer/index.rst>`.
+Let's try a first :ref:`Connexion to your Sandbox <../sandbox.rst>` now.
 
 Known caveats
 ---------------------
