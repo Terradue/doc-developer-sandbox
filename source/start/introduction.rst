@@ -9,7 +9,9 @@
 | .. note:: this is a note | .. uml::                           |          |          |
 |                          |                                    |          |          | 
 |                          | !define DIAG_NAME Workflow example |          |          |
+|                          |                                    |          |          |
 |                          | !include includes/skins.iuml       |          |          |
+|                          |                                    |          |          |
 |                          | skinparam backgroundColor #FFFFFF  |          |          |
 |                          | skinparam componentStyle uml2      |          |          |
 |                          |                                    |          |          |
@@ -22,9 +24,10 @@
 |                          | end fork                           |          |          |
 |                          |    :Node D;                        |          |          | 
 |                          | stop                               |          |          |
+|                          |                                    |          |          |
 |                          | footer                             |          |          | 
-|                          | DIAG_NAME                          |          |          |
-|                          | endfooter                          | ...      |          |
+|                          |   DIAG_NAME                        |          |          |
+|                          |   endfooter                        | ...      |          |
 +--------------------------+------------------------------------+----------+----------+
 
 
