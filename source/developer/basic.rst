@@ -3,7 +3,7 @@
 Hands-On Exercise 1: a basic workflow
 #####################################
 
-In this Hands-On we will prepare a simple workflow and we will execute a first demo run, using the CIOP tools.
+In this exercise we will prepare a simple workflow and we will execute a first demo run, using the CIOP tools.
 
 Prepare the workflow
 ====================
