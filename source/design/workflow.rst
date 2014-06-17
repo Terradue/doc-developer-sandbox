@@ -9,9 +9,6 @@ A directed graph may be used to represent a network of processing elements; in t
 
 Below an example of a Directed Acyclic Graph depicting a classical workflow where:
 
-+-----------------------------------------------------------------+-------------------------------+
-| Node description                                                | DAG                           |
-
 
 +-----------------------------------------------------------------+-------------------------------+
 | * Node A will process the data coming from the workflow sources | .. include:: uml_workflow.rst |
