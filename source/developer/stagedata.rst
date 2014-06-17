@@ -3,7 +3,7 @@
 Hands-On Exercise 3: staging data
 #################################
 
-In this exercise we will prepare input data for our workflow (Stage In) and we will publish out data as result of the workflow (Stage Out).   
+In this exercise we will prepare input data for our workflow (aka *Stage In*) and we will publish out data as result of the workflow (aka *Stage Out*).   
 
 Prepare the application.xml
 ===========================
@@ -105,8 +105,8 @@ Recap
 =====
 
 #. We downloaded and prepared data from a remote catalogue,
-#. We used it in our workflow (Stage In),
-#. We published it in a distributed location (Stage Out).
+#. We used it in our workflow (*Stage In*),
+#. We published it in a distributed location (*Stage Out*).
 
 Files used in this Hands-On
 ===========================
