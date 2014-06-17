@@ -12,15 +12,16 @@
 |                          | !include includes/skins.iuml       |          |          |
 |                          | skinparam backgroundColor #FFFFFF  |          |          |
 |                          | skinparam componentStyle uml2      |          |          |
+|                          |                                    |          |          |
 |                          | start                              |          |          |
 |                          | :Node A;                           |          |          |
-|                          |   fork                             |          |          |
+|                          | fork                               |          |          |
 |                          |    :Node B;                        |          |          |
-|                          |  fork again                        |          |          | 
+|                          | fork again                         |          |          | 
 |                          |    :Node C;                        |          |          |
-|                          |  end fork                          |          |          |
+|                          | end fork                           |          |          |
 |                          |    :Node D;                        |          |          | 
-|                          |  stop                              |          |          |
+|                          | stop                               |          |          |
 |                          | footer                             |          |          | 
 |                          | DIAG_NAME                          |          |          |
 |                          | endfooter                          | ...      |          |
