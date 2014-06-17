@@ -8,8 +8,8 @@ The following sections will guide you throught these configuration steps.
 Prerequisites
 -------------
 
-- You received an e-mail with subject "Developer Cloud Sandboxes service  -  Invitation to register",
-- You filled a registration form, following the instructions in the invitation e-mail,
+- You received an e-mail with the subject "Developer Cloud Sandboxes service  -  Invitation to register".
+- You filled a registration form, following the instructions in the invitation e-mail.
 - Your registration was approved, and you received an e-mail from ca@terradue.com with subject "Your Terradue certificate is ready to download".
 
 Download your Certificate in PFX format
@@ -27,92 +27,100 @@ Import your Certificate in a Browser
 Google Chrome
 ^^^^^^^^^^^^^
 
-- Open the Google Chrome browser,
+- Open the Google Chrome browser.
 
-- Choose **Preferences** from the **Chrome** menu,
+- Choose **Preferences** from the **Chrome** menu.
 
-- Click the **Show advanced settings...** link,
+- Click the **Show advanced settings...** link.
 
-- Open the **Manage Certificates** button under the **HTTPS/SSL** section,
+- Open the **Manage Certificates** button under the **HTTPS/SSL** section.
 
-- Open the Import window, browse to your downloaded certificate file,
+- Open the Import window, browse to your downloaded certificate file.
 
 - Enter your certificate passphrase when prompted.
 
 Mozilla Firefox
 ^^^^^^^^^^^^^^^
 
-- Open the Firefox browser,
+- Open the Firefox browser.
 
 - Open the Preferences / Options: 
 
-  - *(Linux)* Choose **Preferences** from the **Edit** menu,
-  - *(Windows)* Choose **Options** from the **Tools** menu,
-  - *(Mac)* Choose **Preferences** from the **Firefox** menu
+  - *(Linux)* choose **Preferences** from the **Edit** menu,
+  - *(Windows)* choose **Options** from the **Tools** menu,
+  - *(Mac)* choose **Preferences** from the **Firefox** menu.
 
-- Click the **Advanced** button,
+- Click the **Advanced** button.
 
 - Open the Certificate pane:
 
-  - *(Linux)* Select the **Security** pane,
-  - *(Windows)* Select the **Encryption** (or **Security**) pane,
-  - *(Mac)* Select the **Certificates** pane
+  - *(Linux)* select the **Security** pane,
+  - *(Windows)* select the **Encryption** (or **Security**) pane,
+  - *(Mac)* select the **Certificates** pane.
 
-- Click the **View Certificates** button,
+- Click the **View Certificates** button.
 
-- Click the **Authorities** tab,
+- Click the **Authorities** tab.
 
-- Click the **Import** button at the bottom of the screen,
+- Click the **Import** button at the bottom of the screen.
 
-- Browse to your downloaded certificate file, 
+- Browse to your downloaded certificate file.
 
 - Enter your certificate passphrase when prompted.
 
 Internet Explorer
 ^^^^^^^^^^^^^^^^^
 
-- Open the Internet Explorer browser,
+- Open the Internet Explorer browser.
 
-- Choose **Internet Options** from the **Tools** menu,
+- Choose **Internet Options** from the **Tools** menu.
 
-- Click the **Content** tab,
+- Click the **Content** tab.
 
-- Open the **Certificate** pane,
+- Open the **Certificate** pane.
 
-- Click the **Certificates** (or **Personal**) button,
+- Click the **Certificates** (or **Personal**) button.
 
-- Browse to your downloaded certificate file,
+- Browse to your downloaded certificate file.
 
 - Enter your certificate passphrase when prompted.
 
+Safari
+^^^^^^
+
+- Double-click the downloaded certificate file to launch the Keychain Access application.
+
+- Enter your certificate passphrase when prompted.
 
 Install your OpenVPN Client
 ---------------------------
 
-Now you can download and install your OpenVPN Client, in order to establish a connection with Terradue's VPN server.
+Prerequisites: you received an e-mail with subject "Certificate download and VPN Setup procedure".
 
-Prerequisites:
-- You received an e-mail with subject "Certificate download and VPN Setup procedure".
+Now you can download and install your OpenVPN Client, in order to establish a connection with Terradue's VPN server.
 
 *IMPORTANT NOTICE*: if you have a previously installed VPN client (e.g. Tunnelblick) on your system, such **previously installed client must be disconnected and then be disabled** (we recommend uninstalling it).
 
-- Go to https://access.terradue.com ,
-- Type as Username the email used during the registration,
-- Type as Password the passphrase that you chose during the registration,
+- Go to https://access.terradue.com
+- Type as Username the email used during your registration.
+- Type as Password the passphrase that you chose during the registration.
 - Once logged, all the connection setup is automatic, you must only approve the access by the new client.
 
 Run your VPN Connection
 -----------------------
 
-- In your desktop tray, click on the "OpenVPN Connect" icon,
-- From the dropdown menu, select the entry "Connect to access.terradue.com",
-- Provide your username and password to approve the access, if required,
-- Check that the "OpenVPN Connect" icon in your desktop tray is now featuring a green symbol,
+- In your desktop tray, click on the "OpenVPN Connect" icon.
+- From the dropdown menu, select the entry "Connect to access.terradue.com".
+- Provide your username and password to approve the access, if required.
+- Check that the "OpenVPN Connect" icon in your desktop tray is now featuring a green symbol.
 - That's all :-)
 
 
 Known caveats
 -------------
+
+DNS issues
+^^^^^^^^^^
 
 When the OpenVPN client is installed on a Linux/Unix OS, the OpenVPN Server is unable to alter the DNS settings on the client in question. A typical behaviour in these cases is that you are able to ping your Sandbox through the IPv4 but not through the hostname. To solve this kind of issues it is enough to add manually the Terradue's DNS to your */etc/resolv.conf* file the line:
 
@@ -121,13 +129,6 @@ When the OpenVPN client is installed on a Linux/Unix OS, the OpenVPN Server is u
   nameserver 10.10.10.1
 
 If you are using the NetworkManager (e.g. in the GNOME desktop environment), you should instead statically add the nameserver address 10.10.10.1 through the GUI. 
-
-Safari
-^^^^^^
-
-- Double-click the downloaded certificate file to launch the Keychain Access application,
-
-- Enter your certificate passphrase when prompted.
 
 
 Going further
