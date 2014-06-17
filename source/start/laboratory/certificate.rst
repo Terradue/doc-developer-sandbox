@@ -17,7 +17,7 @@ Prerequisites
 Download the Certificate in PFX format
 --------------------------------------
 
-- Go to https://ca.terradue.com/gpodcs/cgi/certdown.cgi?U=name@organization.com&F=Kpfx (*use your registration e-mail instead of name@organization.com*)
+- Go to *https://ca.terradue.com/gpodcs/cgi/certdown.cgi?U=<your_registration_email@organization.com>&F=Kpfx* (** replace by your registration e-mail**)
 - Type the certificate password that you chose during the registration.
 
 Import the Certificate in a Browser
