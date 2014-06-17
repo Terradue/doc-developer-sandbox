@@ -1,3 +1,1 @@
-.. code:: bash
-
-  echo "hi!"
+.. note:: this is a note
