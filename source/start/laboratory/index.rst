@@ -131,9 +131,10 @@ Run your VPN Connection
 - That's all :-)
 
 .. admonition:: Congrats
+
 You have now completed your setup for accessing your laboratory on Terradue's Cloud Platform.
 You shall be able to access your user dashboard here: http://<xx.xx.xx.xx>/dashboard (give your <Sandbox IP address>)
-So now, let's try a first :doc:`Connexion to your Sandbox <../sandbox>`.
+So now, let's try a first :doc:`Connexion to your Sandbox <../sandbox>` !
 
 Known caveats
 ---------------------
