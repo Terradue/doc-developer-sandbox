@@ -23,7 +23,7 @@ The SSL Certificate issued by the Terradue Certification Authority (CA) is used 
 - Go to *https://ca.terradue.com/gpodcs/cgi/certdown.cgi?U=<your_registration_email@organization.com>&F=Kpfx* (**replace by your registration e-mail**)
 - Type the certificate password that you chose during the registration.
 
-Import Terradue's CA certificate in your Browser
+Import Terradue's CA certificate in a Browser
 ----------------------------------------------------------
 
 Terradue's X.509 Certification Authority (CA) is used to sign the Platform's server certificates. You should have downloaded this file from the registration confirmation email.
