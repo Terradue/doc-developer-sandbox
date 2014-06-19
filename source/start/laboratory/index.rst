@@ -130,10 +130,10 @@ Run your VPN Connection
 - Check that the "OpenVPN Connect" icon in your desktop tray is now featuring a green symbol.
 - That's all :-)
 
-.. CONGRATS::
+.. admonition:: Congrats
 You have now completed your setup for accessing your laboratory on Terradue's Cloud Platform.
 You shall be able to access your user dashboard here: http://<xx.xx.xx.xx>/dashboard (give your <Sandbox IP address>)
-So now, let's try a first :ref:`Connexion to your Sandbox <../sandbox>`.
+So now, let's try a first :doc:`Connexion to your Sandbox <../sandbox>`.
 
 Known caveats
 ---------------------
