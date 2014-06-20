@@ -3,8 +3,8 @@
 Discover the Sandbox services & tools
 #####################################
 
-User dashboard
-+++++++++++++++
+User dashboard Web UI
++++++++++++++++++++++
 
 Accessed from the VPN at the address: http://<your_sandbox_host>/dashboard 
 
@@ -12,11 +12,17 @@ The Dashboard provides:
 
 * The Sandbox status information (name, owner, security, network, disks)
 * An editor for the Application Descriptor XML file
-* A debug wizard presenting the workflow as managed by Hadoop Oozie
+* A debug wizard presenting the workflows launched with the command ciop-simwf, as managed by Hadoop Oozie
 * A processing invocation client, interacting with Hadoop via a Web Processing Service (WPS) interface
 * A Cloud Service health monitoring (CPU consumption, Disk usage, Cluster status)
 * A Ticketing system client to interact with the Platform Support team
  
+Job Tracker Web GUI
++++++++++++++++++++
+
+To view processes launched with the ciop-simjob command you can use the Hadoop Job Tracker.
+Accessed from the VPN at the address: http://<your_sandbox_host>:50030/jobtracker.jsp
+
 Cloud Storage
 +++++++++++++
 
