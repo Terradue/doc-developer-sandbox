@@ -21,6 +21,7 @@ Job Tracker Web GUI
 +++++++++++++++++++
 
 To view processes launched with the ciop-simjob command you can use the Hadoop Job Tracker.
+
 Accessed from the VPN at the address: http://<your_sandbox_host>:50030/jobtracker.jsp
 
 Cloud Storage
