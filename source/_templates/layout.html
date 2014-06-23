@@ -34,7 +34,7 @@
   {%- macro bsidebarNew() %}
       {%- if render_sidebar %}
       <div class="{{ bs_span_prefix }}3">
-        <div id="sidebar" class="bs-sidenavNew well" data-spy="affix">
+        <div id="sidebar" class="bs-sidenavNew well">
           {%- for sidebartemplate in sidebars %}
             {%- include sidebartemplate %}
           {%- endfor %}
