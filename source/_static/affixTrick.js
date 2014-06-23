@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	if ($(".section").first().outerHeight()>($("#sidebar").outerHeight()+60)){
 	console.log("NEW affix");
-		$jqTheme("#sidebar").affix({
+		/*$jqTheme("#sidebar").affix({
 			offset: {
 				top: 0,
 				bottom: function () {
@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 		setInterval(function(){
 			$(".section").first().css("min-height", $("#sidebar").outerHeight()+25);
-		}, 1000);
+		}, 1000);*/
 	}
 	
 });
