@@ -356,7 +356,7 @@ code {
 
 ul.current a.current {
     font-weight: bold;
-    border-left: 2px solid;
+    border-left: 3px solid;
 }
 
 .admonition-congrats {
