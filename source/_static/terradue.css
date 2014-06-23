@@ -370,11 +370,11 @@ li.toctree-l2 > a {
 	font-weight: bold;
 }
 li.toctree-l3 > a {
-	font-size:85%;
+	font-size:85% !important;
 }
 li.toctree-l4 > a {
 	font-style: italic;
-	font-size:85%
+	font-size:85% !important;
 }
 
 .admonition-congrats {
