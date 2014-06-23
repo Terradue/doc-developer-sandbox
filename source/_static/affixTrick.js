@@ -9,7 +9,7 @@ $(document).ready(function(){
 	console.log("NEW affix");
 		$jqTheme("#sidebar").affix({
 			offset: {
-				top: 149,
+				top: 0,
 				bottom: function () {
 					return (this.bottom = $('.footer').outerHeight(true))
 				}
