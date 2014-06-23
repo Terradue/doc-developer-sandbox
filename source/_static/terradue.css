@@ -354,10 +354,14 @@ code {
 }
 */
 
-ul.current a.current {
-    font-weight: bold;
-    border-left: 3px solid;
-    color: black;
+
+
+#sidebar ul.current a.current {
+	color: black;
+	text-decoration: none;
+	background-color: #e5e3e9;
+	border-right: 2px solid !important;
+	/*border-right: 1px solid #dbd8e0;*/
 }
 
 .admonition-congrats {
