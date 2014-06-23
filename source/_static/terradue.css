@@ -355,7 +355,8 @@ code {
 */
 
 .admonition-congrats {
-    color: #b94a48;
+    color: black;
     background-color: green;
+    background-image: none;
     border-color: #eed3d7;
 }
