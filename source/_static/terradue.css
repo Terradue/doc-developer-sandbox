@@ -1,7 +1,7 @@
 
 #sidebar.affix {
   /* position: fixed; already applied in .affix */
-  top: 10px;
+  top: 50px;
   /* might also need e.g. width: 300px; as position: fixed; removes the element from its parent. */
 }
 #sidebar.affix-bottom {
