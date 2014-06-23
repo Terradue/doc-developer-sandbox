@@ -347,8 +347,15 @@ code {
     color: #0098c3;
     background-color: #EBEBED;
 }
-*/
+
 .admonition code {
     color: blue;
     background-color: red;
+}
+*/
+
+.admonition-congrats {
+    color: #b94a48;
+    background-color: green;
+    border-color: #eed3d7;
 }
