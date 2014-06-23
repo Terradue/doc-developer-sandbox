@@ -355,8 +355,9 @@ code {
 */
 
 .admonition-congrats {
-    color: black;
-    background-color: green;
-    background-image: none;
-    border-color: #eed3d7;
+	background-image: -webkit-linear-gradient(top,#dff0d8 0,#c8e5bc 100%);
+	background-image: linear-gradient(to bottom,#dff0d8 0,#c8e5bc 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);
+	border-color: #b2dba1;
 }
