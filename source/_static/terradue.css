@@ -234,7 +234,7 @@ a.headerlink {
 	margin-left: 4px;
 }
 
-/*
+
 body {
     font-family: Verdana, Geneva, sans-serif;
     font-size: 10pt;
@@ -297,9 +297,9 @@ h3 {
 h4 {
     font-size: 14pt;
 }
-*/
+
 /* Center Images */
-/*
+
 .section > p > img:only-child {
     display: block;
     margin-left: auto;
@@ -352,7 +352,7 @@ code {
     color: blue;
     background-color: red;
 }
-*/
+
 
 .admonition-congrats {
 	background-image: -webkit-linear-gradient(top,#dff0d8 0,#c8e5bc 100%);
