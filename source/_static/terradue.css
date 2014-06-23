@@ -364,11 +364,11 @@ code {
 	/*border-right: 1px solid #dbd8e0;*/
 }
 
-li.toctree-l3 > a {
-	font-style: italic;
-}
 li.toctree-l1 > a {
 	font-weight: bold;
+}
+li.toctree-l3 > a, li.toctree-l4 > a {
+	font-style: italic;
 }
 
 .admonition-congrats {
