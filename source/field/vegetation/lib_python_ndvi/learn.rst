@@ -22,7 +22,7 @@ To deploy the tutorial on a Developer Sandbox:
   
 This will:
 
-  * build the python NDVI module
-  * copy the application resources on the /application volume.
+* build the python NDVI module
+* copy the application resources on the /application volume.
 
 The code can be modified (e.g. to support Landsat 8) by forking the repository here: `<https://github.com/Terradue/dcs-python-ndvi/fork>`_
