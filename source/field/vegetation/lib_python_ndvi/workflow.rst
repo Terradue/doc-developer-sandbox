@@ -44,5 +44,5 @@ The simple workflow can be represented as:
   
   stop
 
-The *node_ndvi* is described in details in :doc:`/field/vegetation/lib_python/nodes/index`
+The *node_ndvi* is described in details in :doc:`/field/vegetation/lib_python_ndvi/nodes/index`
 
