@@ -44,6 +44,5 @@ The ciop tools
 ++++++++++++++
 
 The CIOP tools are part of your PaaS development environment.
-They form a set of API to manage the data flows between the nodes of your application workflow.
-They are accessed from within the Streaming scripts declared in your job templates.
+They form a set of API to manage the data flows (stage-in/out) and are accessed from within the Streaming executable scripts declared in your job templates.
 
