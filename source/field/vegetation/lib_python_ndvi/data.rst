@@ -56,7 +56,7 @@ On the Sandbox shell run the command:
 
   s3cmd put *.img s3://<your_laboratory>-private/data/
   
-List the uplaoded files:
+List the uploaded files:
 
 .. code-block:: bash
 
@@ -71,10 +71,16 @@ Copy the contents of the file below into a file named *series.rdf* in your home.
 
 :download:`Landsat series <files/series.rdf>`
 
+For each Landsat product, generate a file containing the dataset metadata.
+
+.. todo:: FABIO!!
+
+Finally go to the Sandbox catalogue Web Interface at the address http://<sandbox IP>/catalogue/search and click search, you will see the Landsat products!
+
 .. admonition:: Congrats!
 
-  There is now test data on the sandbox! 
-
+  There is now Landsat 5&7 data available on the Laboratory S3 storage and registered on the Sandbox catalogue!
+  
 .. rubric:: Footnotes
 
 .. [#f1] `GDAL Virtual format <http://www.gdal.org/gdal_vrttut.html>`_
