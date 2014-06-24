@@ -1,14 +1,25 @@
 Vegetation index
 ================
 
-Ocean colour radiometry is a technology, and a discipline of research, concerning the study of the interaction between the visible electromagnetic radiation coming from the sun and aquatic environments. In general, the term is used in the context of remote-sensing observations, often made from Earth-orbiting satellites. Using sensitive radiometers, such as those on-board satellite platforms, one can measure carefully the wide array of colors emerging out of the ocean. These measurements can be used to infer important information such as phytoplankton biomass or concentrations of other living and non-living material that modify the characteristics of the incoming radiation. Monitoring the spatial and temporal variability of algal blooms from satellite, over large marine regions up to the scale of the global ocean, has been instrumental in characterizing variability of marine ecosystems and is a key tool for research into how marine ecosystems respond to climate change and anthropogenic perturbations.
+Live green plants absorb solar radiation in the photosynthetically active radiation (PAR) spectral region, which they use as a source of energy in the process of photosynthesis. 
 
-Source: `Wikipedia Ocean Color <http://en.wikipedia.org/wiki/Ocean_color>`_
+Leaf cells have also evolved to scatter solar radiation in the near-infrared spectral region (which carries approximately half of the total incoming solar energy), because the energy level per photon in that domain (wavelengths longer than about 700 nanometers) is not sufficient to be useful to synthesize organic molecules. 
+
+A strong absorption at these wavelengths would only result in overheating the plant and possibly damaging the tissues. 
+
+Hence, live green plants appear relatively dark in the PAR and relatively bright in the near-infrared.
+
+By contrast, clouds and snow tend to be rather bright in the red (as well as other visible wavelengths) and quite dark in the near-infrared. 
+
+The pigment in plant leaves, chlorophyll, strongly absorbs visible light (from 0.4 to 0.7 µm) for use in photosynthesis.
+
+The cell structure of the leaves, on the other hand, strongly reflects near-infrared light (from 0.7 to 1.1 µm). 
+
+Source: `Wikipedia Normalized Difference Vegetation Index <http://en.wikipedia.org/wiki/Normalized_Difference_Vegetation_Index>`_
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
    
-   Algal bloom detection with Envisat MERIS <lib_beam/index>
-   Fluorescence line height with Envisat MERIS L1b <lib_beam_flh/index>
+   Landsat 5&7 NDVI <lib_python_ndvi/index>
