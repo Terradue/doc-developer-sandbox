@@ -67,11 +67,11 @@ Registering the ERDAS .img products in the Sandbox local catalogue
 
 To register the Landsat products converted to ERDAS .img format, you need to create a dataset series which is a container for the datasets.
 
-Copy the contents of the file :download:`Landsat series <files/series.rdf>` below into a file named *series.rdf* in your home.
+Copy the contents of the file below into a file named *series.rdf* in your home.
 
 :download:`Landsat series <files/series.rdf>`
 
-.. admonition::Congrats!
+.. admonition:: Congrats!
 
   There is now test data on the sandbox! 
 
