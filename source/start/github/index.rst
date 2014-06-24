@@ -49,9 +49,19 @@ The repository should follow the structure below:
           ...
       /java # if your application has Java code
       /resources # resources used to build the application
+      /R # if you application has R code
+      /python # if you application uses python code
       /...
+      /doc # use this folder to document the application 
       
-.. seealso:: Have a look at the BEAM Java tutorial which implements the recommended structure: https://github.com/Terradue/BEAM-Java-tutorial
+.. seealso::
+  
+  Have a look at the application tutorials which implements the recommended structure: 
+    
+    * MERIS Algal bloom detection https://github.com/Terradue/dcs-beam-algalbloom
+    * BEAM Toolbox Java FLH processor https://github.com/Terradue/dcs-beam-flh-java
+    * Landsat NDVI python module https://github.com/Terradue/dcs-python-ndvi
+    * SST timeseries R package https://github.com/Terradue/dcs-r-gbifsst
 
 The typical application development workflow
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -59,7 +69,7 @@ The typical application development workflow
 Cloning an existing repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You'll need the SSH clone URL in the form: git@github.com:Terradue/BEAM-Java-tutorial.git
+You'll need the SSH clone URL in the form: git@github.com:Terradue/dcs-beam-flh-java.git
 
 Log on the sandbox using your key:
 
@@ -78,7 +88,7 @@ Run the commands on the shell:
 .. code-block:: bash
 
   cd 
-  git clone git@github.com:Terradue/BEAM-Java-tutorial.git
+  git clone git@github.com:Terradue/dcs-beam-flh-java.git
 
 Creating a new repository on github.com
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -94,12 +104,19 @@ Once the repository contains the structure described above, use *maven* to build
 
 .. code-block:: bash
 
-  cd ~/BEAM-Java-tutorial
+  cd ~/dcs-beam-flh-java
   mvn install
   
-This will use the information available in the *pom.xml* file to build your application and copy the files to the */application* file system.
+This will use the information available in the *pom.xml* file to:
 
-At this point you can use ciop-simjob and ciop-simwf to test the application
+* Compile the BEAM Java code and copy the JARs in the right spot 
+* Copy the app-resources files to the */application* file system.
+
+At this point you can use *ciop-simjob* and *ciop-simwf* to test the application
+
+.. tip::
+
+  Do not edit files in /application, do it in the cloned directory and then run mvn install again. This will help you maintain the application repository aligned
 
 Updating files
 ^^^^^^^^^^^^^^
@@ -111,12 +128,16 @@ In fact, you should edit the files in the **source** which has been cloned in yo
 Releasing the application
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The pom.xml also contains information to create releases in GitHub.
+
 To create releases of the application on GitHub use *mvn deploy*:
 
 .. code-block:: bash
 
-  cd ~/BEAM-Java-tutorial
+  cd ~/dcs-beam-flh-java
   mvn deploy
+
+.. tip:: You can create pre-releases of the application by setting the version in the pom.xml with <version>x.y**-SNAPSHOT**</version>
 
 Documenting the application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -125,28 +146,16 @@ We suggest using the GitHub Pages.
 
 The GitHub pages are public webpages freely hosted and easily published through the GitHub site. 
 
-GitHub pages can be managed manually or using frameworks.
-
-We suggest using Sphinx a documentation generator tool that converts marked-up plaintext files into properly formatted HTML, PDF, EPub or other documents. 
+GitHub pages can be managed manually or using frameworks. We suggest using R Gitbook or Sphinx as documentation generator tool that converts marked-up plaintext files into properly formatted HTML, PDF, EPub or other documents. 
 
 .. WARNING:: the GitHub pages of a private repository will be public and thus visible to anybody!
 
 To create the GitHub Pages for the project, a new branch and do some one-time setup have to be performed. 
 
-.. WARNING:: You must make sure that any changes to the working copy in your other branches have been committed or reverted!! 
+The pom.xml file contains the information on how to build the documentation and update the gh-pages repository branch.
 
-Run the commands on the shell:
-
-.. code-block:: bash
-
-  cd path/to/repo
-  git checkout --orphan gh-pages
-  git rm -rf .
-  echo "Hello World!" > index.html
-  touch .nojekyll
-  git add .
-  git commit -m "Initial commit to gh-pages"
-  git push origin gh-pages
+Documenting the application with Sphinx
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Start the setup on Sphinx with the command:
 
@@ -160,22 +169,10 @@ Sphinx uses make to generate the documentation, so edit the Makefile provided to
 
   GH_PAGES_SOURCES = docs/source soccermetrics docs/Makefile
   
-Now add a target gh-pages and associate the following commands with it:
+After a few minutes, open the browser at http://<organisation>.github.io/<repo name>
 
-.. code-block:: bash
-
-  git checkout gh-pages
-  rm -rf build _sources _static _modules
-  git checkout master $(GH_PAGES_SOURCES)
-  git reset HEAD
-  make -f docs/Makefile html
-  mv -fv build/html/* ./
-  rm -rf $(GH_PAGES_SOURCES) build
-  git add -A
-  git commit -m "Generated gh-pages for `git log master -1 --pretty=short \
-  --abbrev-commit`" && git push origin gh-pages ; git checkout master
-
-After a few minutes, open the browser at http://<repo name>.github.io
+Documenting the application with R Gitbook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Going further
 +++++++++++++
