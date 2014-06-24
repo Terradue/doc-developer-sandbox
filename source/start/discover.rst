@@ -36,8 +36,9 @@ A virtual storage available from your Laboratory, accessed via the standard S3 i
 Data Catalogues
 +++++++++++++++
 
-Accessed from the VPN and with authenticated browsers (user Certificate imported)
-http://<your_laboratory>/catalogue/search
+Accessed from the VPN:
+
+* sandbox catalogue http://<your_sandbox_host>/catalogue/search
 
 The ciop tools
 ++++++++++++++
