@@ -27,7 +27,7 @@ The *APPLICATION* filesystem contains all the files required to run the applicat
 
 The *APPLICATION* filesystem is available on the Sandbox as /application.
 
-.. NOTE:: Whenever an application wrapper script needs to use the *APPLICATION* value (/application) the variable $_CIOP_APPLICATION_PATH, example:
+.. NOTE:: Whenever an application wrapper script needs to refer the *APPLICATION* value (/application), use the variable $_CIOP_APPLICATION_PATH, example:
 
 .. code-block:: bash
   export BEAM_HOME=$_CIOP_APPLICATION_PATH/common/beam-4.11
