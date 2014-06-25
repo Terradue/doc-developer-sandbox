@@ -12,36 +12,30 @@ Each node of the DAG has:
 * one or more sources
 * one or more parameters and associated values to overide the default values (if defined in the job template).
 
-The node_expression node
-------------------------
+The node_ndvi node
+------------------
 
-The first node of the DAG with the unique identifer set to *node_expression" instantiates the :doc:`expression <node/expression>` job template.
+This application's workflow has a single node. Its identifer is set to *node_ndvi* and it instantiates the :doc:`py-job <node/ndvi>` job template.
 
-.. literalinclude:: src/application.xml
-  :language: xml
-  :tab-width: 1
-  :lines: 50-51
+Here's how this simple workflow is defined:
 
-As source, this node uses the sandbox catalogue:
+.. code-block:: XML
 
-.. literalinclude:: src/application.xml
-  :language: xml
-  :tab-width: 1
-  :lines: 52-54
+  <workflow id="Landsat_NDVI" title="Process NDVI over Landsat data" abstract="Demos Python to calculate NDVI using Landsat data">
+    <workflowVersion>1.0</workflowVersion>
+    <node id="node_ndvi">
+      <job id="py-ndvi"/>
+      <sources>
+        <source id="landsat" title="Landsat product reference" abstract="Landsat catalogue references" scope="runtime" refid="string:list" >http://catalogue.terradue.int/catalogue/search/LANDSAT_SAMPLES/LT50430331995178XXX03/rdf</source>
+      </sources>
+      <parameters>
+      </parameters>
+    </node>
+  </workflow>
 
-As parameters, it defines the values for the start and enddate and leaves the expression default value.
+As source, this node uses a list of catalogue references, e.g. http://catalogue.terradue.int/catalogue/search/LANDSAT_SAMPLES/LT50430331995178XXX03/rdf
 
-.. literalinclude:: src/application.xml
-  :language: xml
-  :tab-width: 1
-  :lines: 55-58
-
-The complete node *node_expression* definition is:
-
-.. literalinclude:: src/application.xml
-  :language: xml
-  :tab-width: 1
-  :lines: 50-59
+Change this value to one of the Landsat sample products you have in the Sandbox catalogue by going to http://<sandbox ip>/catalogue/search and copying one the dataset RDF URLs.
 
 Testing the application
 -----------------------
@@ -49,7 +43,27 @@ Testing the application
 Application installation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-All the application files are available on a GitHub repository that can be downloaded at the URL `<https://github.com/Terradue/BEAM-Arithm-tutorial/archive/master.zip>`_. 
+All the application files are available on a GitHub repository that can be cloned on the Sandbox with:
+
+.. code-block:: bash
+
+  cd
+  git clone git@github.com:Terradue/dcs-python-ndvi.git
+  cd dcs-python-ndvi
+  
+Install the *tree* utility to inspect the application structure with
+
+.. code-block:: bash
+
+  sudo yum install -y tree
+
+Then do:
+
+.. code-block:: bash
+
+  tree
+  
+
 
 The archive content is extracted to /application:
 
