@@ -35,7 +35,7 @@ It implements the activities:
 
   while (check stdin?) is (line)
     
-    :Stage-in list of expression results of the period 
+    :Stage-in list of expression results of the period;
     
     while (check list?) is (line)
     
@@ -43,11 +43,12 @@ It implements the activities:
       
     endwhile (empty)
     
-    :Apply Binning BEAM processor
+    :Apply Binning BEAM processor;
     
-    :Generate RGB Tif and PNG
+    :Generate RGB Tif and PNG;
     
     :Stage-out Binned, RBG Tif and PNG products;
+  
   endwhile (empty)
   
   stop
