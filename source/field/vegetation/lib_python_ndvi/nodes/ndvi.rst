@@ -24,7 +24,9 @@ A node requires a job template including:
       </jobTemplate>
   </jobTemplates>
 
-.. admonition:: Remember the code for this whole application is available here: https://github.com/Terradue/dcs-python-ndvi
+.. admonition:: Info 
+
+  The code for the whole application is available here: https://github.com/Terradue/dcs-python-ndvi
 
 While this job template doesn't define any parameter, it defines the *mapred.task.timeout* property which is the wall-time in miliseconds between two logging entries.
 
