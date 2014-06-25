@@ -70,7 +70,7 @@ while the Python NDVI package source is under:
   
   src/main/python
   
-To build the application, use maven to:
+To build the application, use maven [#f1]_ to:
 
 * Compile the Python package and copy the package to /application/shared/python
 * Copy the application resources to /application
@@ -107,8 +107,8 @@ Application submission
 
 The application can be tested by:
 
-* Manually submitting every single job of the workflow 
-* Automatically submitting the complete workflow
+* Manually submitting every single job of the workflow with ciop-simjob [#f2]_
+* Automatically submitting the complete workflow with ciop-simwf [#f3]_
 * Submitting a Web Processing Service request
 
 With this application, there's only one node so the first two options are quite similar.
@@ -153,6 +153,7 @@ Go to the Sandbox dashboard (http://<sandbox IP>/dashboard). On the **Invoke** t
 
 .. rubric:: Footnotes
 
-.. [#f1] :doc:`ciop-catcp man page </reference/man/ciop-simjob>`
-.. [#f2] :doc:`ciop-copy man page </reference/man/ciop-simwf>`
-.. [#f3] `Apache maven <http://maven.apache.org/>`_
+.. [#f1] `Apache maven <http://maven.apache.org/>`_
+.. [#f2] :doc:`ciop-catcp man page </reference/man/ciop-simjob>`
+.. [#f3] :doc:`ciop-copy man page </reference/man/ciop-simwf>`
+
