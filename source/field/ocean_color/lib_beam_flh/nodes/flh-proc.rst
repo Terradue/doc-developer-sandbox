@@ -24,21 +24,21 @@ The job template defines three parameters:
 
 which translates to:
 
-.. literalinclude:: ../src/application.xml
+.. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 27-31
 
 The job template set the property mapred.task.timeout, the wall time between messages in the log:
 
-.. literalinclude:: ../src/application.xml
+.. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 32-34
 
 Here's the job template including the elements described above:
 
-.. literalinclude:: ../src/application.xml
+.. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 25-35
