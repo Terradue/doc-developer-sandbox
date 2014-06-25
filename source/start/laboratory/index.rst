@@ -14,7 +14,7 @@ Prerequisites
 - You received an e-mail with subject "Certificate download and VPN Setup procedure".
 
 Download your Certificate in PFX format
---------------------------------------
+---------------------------------------
 
 The Secure Socket Layer (SSL) is the most widely deployed security protocol used today. It is essentially a protocol that provides a secure channel between two machines operating over the Internet or an internal network.
 
@@ -24,7 +24,7 @@ The SSL Certificate issued by the Terradue Certification Authority (CA) is used 
 - Type the certificate password that you chose during the registration.
 
 Import Terradue's CA certificate in a Browser
-----------------------------------------------------------
+---------------------------------------------
 
 Terradue's X.509 Certification Authority (CA) is used to sign the Platform's server certificates. You should have downloaded this file from the registration confirmation email.
 
@@ -37,7 +37,7 @@ Chrome makes use of the trust store of the operating system.
 Firefox maintains all its CAs.
 
 Import your PFX Certificate in a Browser
------------------------------------
+----------------------------------------
 
 The certificate in PFX format (Personal Information Exchange) is used to authorise your access to some Platform's services like the Sandbox user dashboard.
 
@@ -114,7 +114,9 @@ Install your OpenVPN Client
 
 Now you can download and install your OpenVPN Client, in order to establish a connection with Terradue's VPN server.
 
-*IMPORTANT NOTICE*: if you have a previously installed VPN client (e.g. Tunnelblick) on your system, such **previously installed client must be disconnected and then be disabled** (we recommend uninstalling it).
+.. important::
+
+  if you have a previously installed VPN client (e.g. Tunnelblick) on your system, such **previously installed client must be disconnected and then be disabled** (we recommend uninstalling it).
 
 - Go to https://access.terradue.com
 - Type as Username the email used during your registration.
@@ -139,7 +141,7 @@ Run your VPN Connection
 
 
 Known caveats
----------------------
+-------------
 
 DNS issues
 ^^^^^^^^^^^
