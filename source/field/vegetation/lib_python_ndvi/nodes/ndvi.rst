@@ -11,18 +11,10 @@ A node requires a job template including:
 * Default parameters
 * Default configuration 
 
-.. code-block:: XML
-
-  <jobTemplates>
-    <jobTemplate id="py-ndvi">
-      <streamingExecutable>/application/py-ndvi/run.py</streamingExecutable>
-      <defaultParameters>
-      </defaultParameters>
-      <defaultJobconf>
-        <property id="mapred.task.timeout">9900000000000</property>
-      </defaultJobconf>
-      </jobTemplate>
-  </jobTemplates>
+.. literalinclude:: ../src/src/main/app-resources/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 3-12
 
 .. admonition:: Info 
 
