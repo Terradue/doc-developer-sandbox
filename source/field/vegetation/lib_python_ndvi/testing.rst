@@ -19,6 +19,13 @@ This application's workflow has a single node. Its identifer is set to *node_ndv
 
 Here's how this simple workflow is defined:
 
+.. literalinclude:: src/main/app-resources/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 5
+
+And hard-coded:
+
 .. code-block:: XML
 
   <workflow id="Landsat_NDVI" title="Process NDVI over Landsat data" abstract="Demos Python to calculate NDVI using Landsat data">
