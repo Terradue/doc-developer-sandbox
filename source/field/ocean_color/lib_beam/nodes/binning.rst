@@ -9,12 +9,12 @@ The binning job template defines the streaming executable, the wall time and the
 
 The job template includes the path to the streaming executable.
 
-.. literalinclude:: ../src/application.xml
+.. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 26
+  :lines: 30
   
-The streaming executable source is available here: `/application/binning/run <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/binning/run>`_
+The streaming executable source is available here: `/application/binning/run <https://github.com/Terradue/dcs-beam-algalbloom/blob/master/binning/run>`_
   
 The job template defines three parameters:
 
@@ -30,21 +30,21 @@ The job template defines three parameters:
 
 which translates to:
 
-.. literalinclude:: ../src/application.xml
+.. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 27-31
 
 The job template set the property mapred.task.timeout, the wall time between messages in the log:
 
-.. literalinclude:: ../src/application.xml
+.. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 32-34
 
 Here's the job template including the elements described above:
 
-.. literalinclude:: ../src/application.xml
+.. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 25-35
