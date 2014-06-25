@@ -18,8 +18,10 @@ A user's home directory is intended to contain the user's files; possibly includ
 
 As such, the *HOME* is used to store the user's files. It can be used to store source files (the compiled programs would then go *APPLICATION*). 
 
-.. NOTE:: At job or workflow execution time, the Sandbox uses a system user to execute the application. This system user cannot read files in *HOME*.  
-When the application is ran on a Production Environment (cluster mode), the *HOME* directory is no longer available in any of the computing nodes. 
+.. NOTE:: 
+
+  At job or workflow execution time, the Sandbox uses a system user to execute the application. This system user cannot read files in *HOME*.  
+  When the application is ran on a Production Environment (cluster mode), the *HOME* directory is no longer available in any of the computing nodes. 
 
 The APPLICATION filesystem
 """"""""""""""""""""""""""
