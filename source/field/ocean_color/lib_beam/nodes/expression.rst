@@ -97,7 +97,7 @@ Here's the job template including the elements described above:
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 4-15
+  :lines: 5-16
 
 .. rubric:: Footnotes
 
