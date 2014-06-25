@@ -30,5 +30,5 @@ While this job template doesn't define any parameter, it defines the *mapred.tas
 
 .. note::
 
-  Log entries using ciop-log function in bash (or rciop.log in R and cioopy.log in Python) tell the platform the process is alive. If the wall-time is reached the execution is terminated wiht an error
+  Log entries using ciop-log function in bash (or rciop.log in R and cioopy.log in Python) tell the platform the process is alive. If the wall-time is reached the execution is terminated with an error
   
