@@ -81,6 +81,7 @@ All the application files are available on the GitHub repository: https://github
 To install the application clone the repository on the sandbox in your home folder:
 
 .. code-block:: bash
+
   cd ~
   git clone git@github.com:Terradue/BEAM-Java-tutorial.git
   cd BEAM-Java-tutorial
