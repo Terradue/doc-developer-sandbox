@@ -10,14 +10,14 @@ Two parameters target an OpenSearch query:
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 8-9
+  :lines: 8-12
 
 The catalogue OpenSearch description URL is defined in the worflow section of the application descriptor file:
 
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 53
+  :lines: 64
 
 .. NOTE::
 
@@ -62,7 +62,7 @@ The job template includes the path to the streaming executable.
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 5
+  :lines: 16
   
 The streaming executable source is available here: `/application/expression/run <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/expression/run>`_
   
@@ -83,7 +83,7 @@ which translates to:
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 6-11
+  :lines: 8-12
 
 The job template set the property mapred.task.timeout, the wall time between messages in the log:
 
