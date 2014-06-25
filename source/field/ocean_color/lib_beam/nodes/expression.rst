@@ -62,7 +62,7 @@ The job template includes the path to the streaming executable.
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 16
+  :lines: 7
   
 The streaming executable source is available here: `/application/expression/run <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/expression/run>`_
   
@@ -90,7 +90,7 @@ The job template set the property mapred.task.timeout, the wall time between mes
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 12-14
+  :lines: 13-15
 
 Here's the job template including the elements described above:
 
