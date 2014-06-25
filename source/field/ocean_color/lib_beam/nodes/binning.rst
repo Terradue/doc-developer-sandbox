@@ -21,11 +21,15 @@ The job template defines three parameters:
 +----------------+-----------------+------------------------------------------------------------+
 | Parameter name | Default value   | Description                                                | 
 +================+=================+============================================================+
-| cellsize       | 9.28            | Size of the bin for the Binning algorithm [#f1]_           |
+| bandname       | out             | prefix used to name the output BEAM DIMAP files            |
++----------------+-----------------+------------------------------------------------------------+
+| bitmask        |                 | Mask expression to identify valid pixels to bin            |
 +----------------+-----------------+------------------------------------------------------------+
 | bbox           | -180,-90,180,90 | Bounding box of the area of interest (Xmin,Ymin,Xmax,Ymax) |
 +----------------+-----------------+------------------------------------------------------------+
-| algorithm      | Minimum/Maximum | Aggregation methog for the Binning algorithm               |
+| algorithm      | MIN_MAX         | Aggregation methog for the Binning algorithm               |
++----------------+-----------------+------------------------------------------------------------+
+| palette        |                 | BEAM Toolbox palette to generate the RGB results           |
 +----------------+-----------------+------------------------------------------------------------+
 
 which translates to:
@@ -33,21 +37,21 @@ which translates to:
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 27-31
+  :lines: 31-57
 
 The job template set the property mapred.task.timeout, the wall time between messages in the log:
 
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 32-34
+  :lines: 58-60
 
 Here's the job template including the elements described above:
 
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 25-35
+  :lines: 28-61
   
 .. rubric:: Footnotes
 
