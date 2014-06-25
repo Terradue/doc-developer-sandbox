@@ -8,7 +8,7 @@ The job template includes the path to the streaming executable.
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 26
+  :lines: 6
   
 The job template defines three parameters:
 
@@ -27,24 +27,24 @@ which translates to:
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 27-31
+  :lines: 7-13
 
 The job template set the property mapred.task.timeout, the wall time between messages in the log:
 
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 32-34
+  :lines: 14-16
 
 Here's the job template including the elements described above:
 
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 25-35
+  :lines: 4-18
 
 
-The streaming executable source is available here: `/application/flh-proc/run.sh <https://github.com/Terradue/BEAM-Java-tutorial/blob/master/src/main/app-resources/flh-proc/run.sh>`_ and implements the activities:
+The streaming executable source is available here: :download:`/application/flh-proc/run.sh <../src/src/main/app-resources/flh-proc/run.sh>` and implements the activities:
 
 .. uml::
 
