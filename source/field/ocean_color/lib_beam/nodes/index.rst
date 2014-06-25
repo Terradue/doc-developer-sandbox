@@ -15,4 +15,3 @@ Each processing node job template is described below.
    Node expression <expression>
    Node arrange <arrange>
    Node binning <binning>
-   Node clustering <clustering>
