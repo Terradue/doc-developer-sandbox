@@ -17,7 +17,7 @@ The catalogue OpenSearch description URL is defined in the worflow section of th
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 64
+  :lines: 7
 
 .. NOTE::
 
