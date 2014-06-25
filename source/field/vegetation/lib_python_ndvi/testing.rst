@@ -22,27 +22,15 @@ Here's how this simple workflow is defined:
 .. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 5
+  :lines: 13-23
 
-And hard-coded:
+As source, this node uses a comma-separated list of catalogue references, e.g.:
 
-.. code-block:: XML
+.. code-block:: bash
 
-  <workflow id="Landsat_NDVI" title="Process NDVI over Landsat data" abstract="Demos Python to calculate NDVI using Landsat data">
-    <workflowVersion>1.0</workflowVersion>
-    <node id="node_ndvi">
-      <job id="py-ndvi"/>
-      <sources>
-        <source id="landsat" title="Landsat product reference" abstract="Landsat catalogue references" scope="runtime" refid="string:list" >http://catalogue.terradue.int/catalogue/search/LANDSAT_SAMPLES/LT50430331995178XXX03/rdf</source>
-      </sources>
-      <parameters>
-      </parameters>
-    </node>
-  </workflow>
+  http://catalogue.terradue.int/catalogue/search/LANDSAT_SAMPLES/LT50430331995178XXX03/rdf
 
-As source, this node uses a list of catalogue references, e.g. http://catalogue.terradue.int/catalogue/search/LANDSAT_SAMPLES/LT50430331995178XXX03/rdf
-
-Change this value to one of the Landsat sample products you have in the Sandbox catalogue by going to http://<sandbox ip>/catalogue/search and copying one the dataset RDF URLs.
+Change this value to one (or more) of the Landsat sample products you have in the Sandbox catalogue by going to http://<sandbox ip>/catalogue/search and copying one the dataset RDF URLs.
 
 Testing the application
 -----------------------
@@ -64,21 +52,40 @@ Install the *tree* utility to inspect the application structure with
 
   sudo yum install -y tree
 
-Then do:
+Then, do:
 
 .. code-block:: bash
 
   tree
   
+The application resources mentioned so far are under the path:
 
+.. code-block:: bash
+  
+  src/main/app-resources
 
-The archive content is extracted to /application:
+while the Python NDVI package source is under:
+
+.. code-block:: bash
+  
+  src/main/python
+  
+To build the application, use maven to:
+
+* Compile the Python package and copy the package to /application/shared/python
+* Copy the application resources to /application
+
+To do so, from the cloned repository folder where the pom.xml is (typically in ~/dcs-python-ndvi), simply run:
 
 .. code-block:: bash
 
-  unzip BEAM-Arithm-tutorial-master.zip
-  cd BEAM-Arithm-tutorial-master
-  cp -Rv . /application 
+  mvn install
+  
+Check the contest of the installed application with:
+
+.. code-block:: bash
+
+  tree /application
   
 Application check
 ^^^^^^^^^^^^^^^^^
@@ -94,6 +101,19 @@ If the Application Descriptor is valid, the output is:
 .. code-block:: bash
 
   /application/application.xml validates
+
+Application submission
+^^^^^^^^^^^^^^^^^^^^^^
+
+The application can be tested by:
+
+* Manually submitting every single job of the workflow 
+* Automatically submitting the complete workflow
+* Submitting a Web Processing Service request
+
+With this application, there's only one node so the first two options are quite similar.
+
+
   
 Installing the required packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -167,3 +187,4 @@ Wait for the workflow execution.
 
 .. [#f1] :doc:`ciop-catcp man page </reference/man/ciop-simjob>`
 .. [#f2] :doc:`ciop-copy man page </reference/man/ciop-simwf>`
+.. [#f3] `Apache maven <http://maven.apache.org/>`_
