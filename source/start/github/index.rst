@@ -10,7 +10,7 @@ Laboratories and GitHub organizations
 
 Developer Cloud Sanbox laboratories have a one-to-one relationship with GitHub organizations meaning that every laboratory has an equivalent GitHub organization.
 
-.. INFO:: According to your plan, the GitHub organization can host private repositories
+.. tip:: According to your plan, the GitHub organization can host private repositories
 
 Organizing the GitHub teams
 +++++++++++++++++++++++++++
@@ -25,7 +25,7 @@ Created teams can have several levels of priviliedges:
 * Write Access: This team will be able to read its repositories, as well as push to them.
 * Admin Access: This team will be able to push/pull to its repositories, as well as add other collaborators to them.
 
-.. TIP:: We recommend managing teams with a reduced number of member within a team with write access. The remaining team members with Read only access are invited to fork the repository and submit pull requests. The owners can then moderate these requests. 
+.. tip:: We recommend managing teams with a reduced number of member within a team with write access. The remaining team members with Read only access are invited to fork the repository and submit pull requests. The owners can then moderate these requests. 
 
 Organizing the repository
 +++++++++++++++++++++++++
@@ -95,7 +95,9 @@ Creating a new repository on github.com
 
 The procedure is describe here: https://help.github.com/articles/creating-a-new-repository
 
-.. TIP:: Make sure to create a README.md file to enable cloning as described above
+.. tip:: 
+
+  Make sure to create a README.md file to enable cloning as described above
 
 Building the application
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -148,7 +150,7 @@ The GitHub pages are public webpages freely hosted and easily published through 
 
 GitHub pages can be managed manually or using frameworks. We suggest using R Gitbook or Sphinx as documentation generator tool that converts marked-up plaintext files into properly formatted HTML, PDF, EPub or other documents. 
 
-.. WARNING:: the GitHub pages of a private repository will be public and thus visible to anybody!
+.. warning:: the GitHub pages of a private repository will be public and thus visible to anybody!
 
 To create the GitHub Pages for the project, a new branch and do some one-time setup have to be performed. 
 
