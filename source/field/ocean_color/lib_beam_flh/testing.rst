@@ -30,35 +30,35 @@ Each node of DAG has:
 * one or more parameters and associated values to overide the default values (if defined in the job template).
 
 The node_flh node
-------------------------
+-----------------
 
 The first node of the DAG with the unique identifer set to *node_flh* instantiates the :doc:`flh-proc <node/flh-proc>` job template.
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 50-51
+  :lines: 19-32
 
 As source, this node uses the sandbox catalogue:
 
 .. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 52-54
+  :lines: 24-26
 
 As parameters, it defines the values for the start and enddate and leaves the expression default value.
 
 .. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 55-58
+  :lines: 27-30
 
 The complete node *node_flh* definition is:
 
 .. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 50-59
+  :lines: 22-31
 
 Workflow
 --------
@@ -68,7 +68,7 @@ The complete workflow is:
 .. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 48-84
+  :lines: 19-32
 
 Testing the application
 -----------------------
