@@ -19,7 +19,7 @@ The job template includes the path to the streaming executable.
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 17
+  :lines: 19
   
 The streaming executable source is available here: `/application/arrange/run.R <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/arrange/run.R>`_
   
