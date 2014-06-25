@@ -1,0 +1,3 @@
+[submodule "source/field/vegetation/lib_python_ndvi/src"]
+	path = source/field/vegetation/lib_python_ndvi/src
+	url = git@github.com:Terradue/dcs-python-ndvi.git
