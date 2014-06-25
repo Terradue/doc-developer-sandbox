@@ -1,7 +1,7 @@
 .. _debug:
 
 Hands-On Exercise 2: make a robust workflow and debug it
-######################################################
+########################################################
 
 In this exercise we will modify the basic workflow to make it more robust. Also we will learn how to debug the workflow through the Web GUI.
 

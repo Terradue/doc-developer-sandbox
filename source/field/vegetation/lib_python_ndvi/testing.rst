@@ -19,23 +19,18 @@ This application's workflow has a single node. Its identifer is set to *node_ndv
 
 Here's how this simple workflow is defined:
 
-.. code-block:: XML
+.. literalinclude:: ./src/src/main/app-resources/application.xml
+  :language: xml
+  :tab-width: 1
+  :lines: 13-23
 
-  <workflow id="Landsat_NDVI" title="Process NDVI over Landsat data" abstract="Demos Python to calculate NDVI using Landsat data">
-    <workflowVersion>1.0</workflowVersion>
-    <node id="node_ndvi">
-      <job id="py-ndvi"/>
-      <sources>
-        <source id="landsat" title="Landsat product reference" abstract="Landsat catalogue references" scope="runtime" refid="string:list" >http://catalogue.terradue.int/catalogue/search/LANDSAT_SAMPLES/LT50430331995178XXX03/rdf</source>
-      </sources>
-      <parameters>
-      </parameters>
-    </node>
-  </workflow>
+As source, this node uses a comma-separated list of catalogue references, e.g.:
 
-As source, this node uses a list of catalogue references, e.g. http://catalogue.terradue.int/catalogue/search/LANDSAT_SAMPLES/LT50430331995178XXX03/rdf
+.. code-block:: bash
 
-Change this value to one of the Landsat sample products you have in the Sandbox catalogue by going to http://<sandbox ip>/catalogue/search and copying one the dataset RDF URLs.
+  http://catalogue.terradue.int/catalogue/search/LANDSAT_SAMPLES/LT50430331995178XXX03/rdf
+
+Change this value to one (or more) of the Landsat sample products you have in the Sandbox catalogue by going to http://<sandbox ip>/catalogue/search and copying one the dataset RDF URLs.
 
 Testing the application
 -----------------------
@@ -57,21 +52,40 @@ Install the *tree* utility to inspect the application structure with
 
   sudo yum install -y tree
 
-Then do:
+Then, do:
 
 .. code-block:: bash
 
   tree
   
+The application resources mentioned so far are under the path:
 
+.. code-block:: bash
+  
+  src/main/app-resources
 
-The archive content is extracted to /application:
+while the Python NDVI package source is under:
+
+.. code-block:: bash
+  
+  src/main/python
+  
+To build the application, use maven [#f1]_ to:
+
+* Compile the Python package and copy the package to /application/shared/python
+* Copy the application resources to /application
+
+To do so, from the cloned repository folder where the pom.xml is (typically in ~/dcs-python-ndvi), simply run:
 
 .. code-block:: bash
 
-  unzip BEAM-Arithm-tutorial-master.zip
-  cd BEAM-Arithm-tutorial-master
-  cp -Rv . /application 
+  mvn install
+  
+Check the contest of the installed application with:
+
+.. code-block:: bash
+
+  tree /application
   
 Application check
 ^^^^^^^^^^^^^^^^^
@@ -87,65 +101,41 @@ If the Application Descriptor is valid, the output is:
 .. code-block:: bash
 
   /application/application.xml validates
-  
-Installing the required packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The application requires ESA BEAM Toolbox which is available in the sandbox software repository:
+Application submission
+^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: bash
+The application can be tested by:
 
-  sudo yum install esa-beam-4.11
+* Manually submitting every single job of the workflow with ciop-simjob [#f2]_
+* Automatically submitting the complete workflow with ciop-simwf [#f3]_
+* Submitting a Web Processing Service request
 
-R, which is also available in the software repository (it includes several packages and libraries):
-
-.. code-block:: bash
-
-  sudo yum install rciop
-  
-And finally the R fcp package for the R DBSCAN library:
-
-
-Simulating the application execution
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  
-There are two approaches to test an application. 
-
-The first manually invokes each of the nodes with the ciop-simjob [#f1]_ command line utility.
-
-The second triggers the automatic execution of the workflow with the ciop-simwf [#f2]_ command line utility.
-  
-Both approaches are shown below.
+With this application, there's only one node so the first two options are quite similar.
 
 Testing manually the workflow with ciop-simjob
 ----------------------------------------------
 
-Trigger the execution of the node_expression with:
+Get the lists of nodes with: 
 
 .. code-block:: bash
 
-  ciop-simjob -f node_expression
+  ciop-simjob -n
   
-The node_expression will produce one compressed archive with the BEAM-DIMAP product per input Envisat MERIS Level 1 product:
+That will report *node_ndvi*
+
+Trigger its execution with:
 
 .. code-block:: bash
 
-  MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1.dim.tgz
-  MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1.dim.tgz
-  MER_RR__1PRLRA20120405_142147_000026243113_00226_52826_0090.N1.dim.tgz
-  MER_RR__1PRLRA20120405_092107_000026213113_00223_52823_0052.N1.dim.tgz
-  MER_RR__1PRLRA20120404_231946_000026213113_00217_52817_9862.N1.dim.tgz
+  ciop-simjob -f node_ndvi
+  
+The node_ndvi will:
 
-These files are all available in sandbox the distributed filesystem. These are the inputs for the second node of the DAG
-
-Run ciop-simjob for all the nodes of the DAG. 
-
-.. code-block:: bash
-
-  ciop-simjob -n # list the node identifiers 
-  ciop-simjob -f node_arrange
-  ciop-simjob -f node_binning
-  ciop-simjob -f node_clustering
+* Retrieve the Landsat product from the S3 storage using the online resource value found in the Sandbox catalogue
+* Produce the NDVI GeoTIFF file  
+* Copy the NDVI GeoTIFF file to S3 storage
+* Register it in the Sandbox catalogue 
 
 Testing the workflow automatic execution with ciop-simwf
 --------------------------------------------------------
@@ -154,9 +144,16 @@ Testing the workflow automatic execution with ciop-simwf
 
   ciop-simwf
   
-Wait for the workflow execution.
+Wait for the workflow execution, the same results are produced.
+
+Testing the workflow using WPS
+------------------------------
+
+Go to the Sandbox dashboard (http://<sandbox IP>/dashboard). On the **Invoke** tab, you can provide one or more Landsat products catalogue entries and submit the processing request.
 
 .. rubric:: Footnotes
 
-.. [#f1] :doc:`ciop-catcp man page </reference/man/ciop-simjob>`
-.. [#f2] :doc:`ciop-copy man page </reference/man/ciop-simwf>`
+.. [#f1] `Apache maven <http://maven.apache.org/>`_
+.. [#f2] :doc:`ciop-catcp man page </reference/man/ciop-simjob>`
+.. [#f3] :doc:`ciop-copy man page </reference/man/ciop-simwf>`
+
