@@ -66,29 +66,7 @@ The application's data pipeline activities can be defined as follows:
 
   stop
 
-**Step 4** use an R executable script to identity the algal bloom geographical areas using the DBSCAN algorithm
-
-.. uml::
-
-  !define DIAG_NAME Workflow example
-
-  !include includes/skins.iuml
-
-  skinparam backgroundColor #FFFFFF
-  skinparam componentStyle uml2
-
-  start
-  
-  while (check stdin?) is (binned_product)
-    :Stage-in binned_product;
-    :Apply DBSCAN algorithm;
-    :Stage-out result;
-  endwhile (empty)
-
-  stop  
-
-
-This translates into a workflow containing three main processing steps: expression, binning and clustering plus an auxiliary processing step called arrange that arranges the outputs of the expression steps as the inputs for the binning processing step.
+This translates into a workflow containing two main processing steps: expression and binning plus an auxiliary processing step called arrange that arranges the outputs of the expression steps as the inputs for the binning processing step.
 
 The workflow can be represented as:
 
@@ -106,8 +84,7 @@ The workflow can be represented as:
   :node_expression;
   :node_arrange;
   :node_binning;
-  :node_dbscan;
-  
+
   stop
 
 Each node is described in details in :doc:`/field/ocean_color/lib_beam/nodes/index`
