@@ -52,16 +52,4 @@ The term binning refers to the process of distributing the contributions of Leve
 As long as the area of an input pixel is small compared to the area of a bin, a simple binning is sufficient.
 In this case, the geodetic center coordinate of the Level 2 pixel is used to find the bin in the Level 3 grid whose area is intersected by this point. If the area of the contributing pixel is equal or even larger than the bin area, this simple binning will produce composites with insufficient accuracy and visual artefacts such as Moiré effects will dominate the resulting datasets.
 
-R implementation of the DBSCAN algorithm 
-----------------------------------------
-
-R is a language and environment for statistical computing and graphics.
-R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, ...) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity.
-It is one of languages that can be used to implement applications in the framework.
-
-Density-based spatial clustering of applications with noise (DBSCAN) is a data clustering algorithm proposed by Martin Ester, Hans-Peter Kriegel, Jörg Sander and Xiaowei Xu in 1996.
-It is a density-based clustering algorithm because it finds a number of clusters starting from the estimated density distribution of corresponding nodes. DBSCAN is one of the most common clustering algorithms and also most cited in scientific literature.
-
-You will use the R implementation of the DBSCAN algorithm to identify geographical clusters corresponding to algal blooms.
-
 .. [#f1] `ESA BEAM Toolbox <http://www.brockmann-consult.de/cms/web/beam/>`_
