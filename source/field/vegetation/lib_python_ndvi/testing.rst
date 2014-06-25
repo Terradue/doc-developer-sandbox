@@ -19,7 +19,7 @@ This application's workflow has a single node. Its identifer is set to *node_ndv
 
 Here's how this simple workflow is defined:
 
-.. literalinclude:: ./src/main/app-resources/application.xml
+.. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 5
