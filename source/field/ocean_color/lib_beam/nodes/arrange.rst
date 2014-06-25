@@ -43,7 +43,7 @@ The job template sets the :ref:`ciop.job.max.tasks` to one instance since the st
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 23-26
+  :lines: 23-25
   	
 .. NOTE::
   The property :ref:`mapred.task.timeout` is not set and uses the default value (10 minutes).*
@@ -53,7 +53,7 @@ Here's the job template including all the elements described above:
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 16-24 
+  :lines: 18-26 
 
 .. rubric:: Footnotes
 
