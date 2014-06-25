@@ -32,7 +32,7 @@ Each node of DAG has:
 The node_flh node
 ------------------------
 
-The first node of the DAG with the unique identifer set to *node_flh" instantiates the :doc:`flh-proc <node/flh-proc>` job template.
+The first node of the DAG with the unique identifer set to *node_flh* instantiates the :doc:`flh-proc <node/flh-proc>` job template.
 
 .. literalinclude:: src/application.xml
   :language: xml
@@ -41,21 +41,21 @@ The first node of the DAG with the unique identifer set to *node_flh" instantiat
 
 As source, this node uses the sandbox catalogue:
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 52-54
 
 As parameters, it defines the values for the start and enddate and leaves the expression default value.
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 55-58
 
 The complete node *node_flh* definition is:
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 50-59
@@ -65,7 +65,7 @@ Workflow
 
 The complete workflow is:
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 48-84
@@ -83,13 +83,13 @@ To install the application clone the repository on the sandbox in your home fold
 .. code-block:: bash
 
   cd ~
-  git clone git@github.com:Terradue/BEAM-Java-tutorial.git
-  cd BEAM-Java-tutorial
+  git clone git@github.com:Terradue/dcs-beam-flh-java.git
+  cd dcs-beam-flh-java
   mvn install
   
-The mvn command will:
+The maven command will:
 
-* Copy the application resources files from ~/BEAM-Java-tutorial/src/main/app-resources to /application
+* Copy the application resources files from ~/dcs-beam-flh-java/src/main/app-resources to /application
 * Compile the FLH Operator Java files and resources and place the compiled libraries (BEAM and the FLH operator) in the correct location 
 
 Application check
@@ -113,7 +113,6 @@ Installing the required packages
 The application requires ESA BEAM Toolbox to compile and run. 
 
 All dependencies are listed in the pom.xml and downloaded during the mvn install execution
-
 
 Simulating the application execution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
