@@ -49,7 +49,9 @@ Go back to the web interface, and click on Metadata tab, and on the RDF logo. Th
  cd
  ciop-copy -o ./ http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1/rdf
  
-There is now test data on the sandbox! 
+.. admonition:: Congrats!
+
+ There is now test data on the sandbox! 
 
 .. rubric:: Footnotes
 
