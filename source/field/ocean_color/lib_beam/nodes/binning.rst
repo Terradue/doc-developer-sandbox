@@ -14,8 +14,44 @@ The job template includes the path to the streaming executable.
   :tab-width: 1
   :lines: 30
   
-The streaming executable source is available here: `/application/binning/run <https://github.com/Terradue/dcs-beam-algalbloom/blob/master/binning/run>`_
+The streaming executable source is available here: :download:`/application/binning/run.sh <../src/src/main/app-resources/binning/run.sh>` 
+
+It implements the activities:
+
+.. uml::
+
+  !define DIAG_NAME Workflow example
+
+  !include includes/skins.iuml
+
+  skinparam backgroundColor #FFFFFF
+  skinparam componentStyle uml2
+
+  start
+
+  :Source libraries;
   
+  :Get parameter values;
+
+  while (check stdin?) is (line)
+    
+    :Stage-in list of expression results of the period 
+    
+    while (check list?) is (line)
+    
+      :Stage-in MERIS Level 1b product;
+      
+    endwhile (empty)
+    
+    :Apply Binning BEAM processor
+    
+    :Generate RGB Tif and PNG
+    
+    :Stage-out Binned, RBG Tif and PNG products;
+  endwhile (empty)
+  
+  stop
+
 The job template defines three parameters:
 
 +----------------+-----------------+------------------------------------------------------------+
@@ -52,7 +88,7 @@ Here's the job template including the elements described above:
   :language: xml
   :tab-width: 1
   :lines: 28-61
-  
+
 .. rubric:: Footnotes
 
 .. [#f1] `ESA BEAM Toolbox Binning algorithm <http://www.brockmann-consult.de/beam/doc/help/binning/BinningTool.html>`_
