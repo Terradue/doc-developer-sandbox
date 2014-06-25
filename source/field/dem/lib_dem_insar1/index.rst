@@ -1,7 +1,7 @@
-DEM generation for ROI_PAC and GAMMA
-====================================
+DEM generation for ROI_PAC, GAMMA and GMTSAR
+============================================
 
-This guide shows how to generate a Digital Elevation model using SRTM tiles for ROI_PAC and GAMMA InSAR toolboxes.
+This guide shows how to generate a Digital Elevation model using SRTM tiles for ROI_PAC, GAMMA and GMTSAR InSAR toolboxes.
 
 Contents:
 
