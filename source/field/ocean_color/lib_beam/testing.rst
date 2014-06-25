@@ -17,48 +17,41 @@ The node_expression node
 
 The first node of the DAG with the unique identifer set to *node_expression* instantiates the :doc:`expression <node/expression>` job template.
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 50-51
+  :lines: 65-71
 
 As source, this node uses the sandbox catalogue:
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 52-54
-
-As parameters, it defines the values for the start and enddate and leaves the expression default value.
-
-.. literalinclude:: src/application.xml
-  :language: xml
-  :tab-width: 1
-  :lines: 55-58
+  :lines: 67-69
 
 The complete node *node_expression* definition is:
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 50-59
+  :lines: 65-71
 
 The node_arrange node
 ---------------------
 
 The node_arrange instantiates the arrange job template and uses the default value for the period. The node inputs are not a reference to a catalogue as for the expression node, but the references to *node_expression* results:
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 62-64
+  :lines: 74-76
   
 The complete node *node_arrange* definition is:
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 60-67
+  :lines: 72-79
  
 
 The node_binning node
@@ -66,20 +59,10 @@ The node_binning node
 
 The node *node_binning* definition is:
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 68-75
-
-The node_clustering node
-------------------------
-
-The node *node_clustering* definition is:
-
-.. literalinclude:: src/application.xml
-  :language: xml
-  :tab-width: 1
-  :lines: 76-83
+  :lines: 80-88
 
 Workflow
 --------
@@ -89,7 +72,7 @@ The complete workflow is:
 .. literalinclude:: src/application.xml
   :language: xml
   :tab-width: 1
-  :lines: 48-84
+  :lines: 63-89
 
 Testing the application
 -----------------------
@@ -97,7 +80,7 @@ Testing the application
 Application installation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-All the application files are available on a GitHub repository that can be downloaded at the URL `<https://github.com/Terradue/BEAM-Arithm-tutorial/archive/master.zip>`_. 
+All the application files are available on a GitHub repository `https://github.com/Terradue/dcs-beam-algalbloom`_. 
 
 The archive content is extracted to /application:
 
