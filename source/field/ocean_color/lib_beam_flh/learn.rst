@@ -1,6 +1,8 @@
 What you will learn
 ===================
 
+With this field guide application, you will learn:
+
 1. To manage test data in a sandbox - you will copy Envisat MERIS Level 1 Reduced Resolution data to the sandbox
 2. To create a BEAM Toolbox Java processor - you will implement the fluorescence line height processor using the BEAM Java API
 3. To create an application invoking the fluorescence line height processor
