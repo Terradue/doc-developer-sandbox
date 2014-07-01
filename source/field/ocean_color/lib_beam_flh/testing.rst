@@ -76,7 +76,7 @@ Testing the application
 Application installation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-All the application files are available on the GitHub repository: https://github.com/Terradue/BEAM-Java-tutorial
+All the application resources are available on the GitHub repository: https://github.com/Terradue/dcs-beam-flh-java
 
 To install the application clone the repository on the sandbox in your home folder:
 
@@ -90,7 +90,8 @@ To install the application clone the repository on the sandbox in your home fold
 The maven command will:
 
 * Copy the application resources files from ~/dcs-beam-flh-java/src/main/app-resources to /application
-* Compile the FLH Operator Java files and resources and place the compiled libraries (BEAM and the FLH operator) in the correct location 
+* Retrieve from BEAM website all the Java artifacts required to run BEAM
+* Compile the FLH Operator Java files and resources and place the compiled libraries in the correct location 
 
 Application check
 ^^^^^^^^^^^^^^^^^
@@ -112,7 +113,7 @@ Installing the required packages
 
 The application requires ESA BEAM Toolbox to compile and run. 
 
-All dependencies are listed in the pom.xml and downloaded during the mvn install execution
+All dependencies are listed in the pom.xml and downloaded during the mvn install execution.
 
 Simulating the application execution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -136,7 +137,7 @@ Trigger the execution of the node_flh with:
   
 The node_flh will produce one tiff image file per input Envisat MERIS Level 1 product.
 
-These files are all available in sandbox the distributed filesystem.
+These files are all available in sandbox the distributed filesystem and the output of the ciop-simjob execution provides the URLs to explore this filesystem. 
 
 Testing the workflow automatic execution with ciop-simwf
 --------------------------------------------------------
