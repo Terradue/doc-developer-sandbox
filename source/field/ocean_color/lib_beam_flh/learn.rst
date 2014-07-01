@@ -28,5 +28,5 @@ The code can be modified by forking the repository here: `<https://github.com/Te
 Questions, bugs, and suggestions
 ++++++++++++++++++++++++++++++++
 
-Please file any questions, bugs or suggestions as `issues<https://github.com/Terradue/rOpenSearch/issues/new>`_ or send in a pull request.
+Please file any questions, bugs or suggestions as `issues <https://github.com/Terradue/rOpenSearch/issues/new>`_ or send in a pull request.
 
