@@ -71,4 +71,4 @@ The streaming executable implements the activities:
   
   stop
 
-The streaming executable source is available here: `/application/flh-proc/run.sh <../src/src/main/app-resources/flh-proc/run.sh>` 
+The streaming executable source is available here: `/application/flh-proc/run.sh <../src/src/main/app-resources/flh-proc/run.sh>`_ 
