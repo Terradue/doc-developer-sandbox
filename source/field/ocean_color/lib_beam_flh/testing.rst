@@ -129,6 +129,18 @@ Both approaches are shown below.
 Testing manually the workflow with ciop-simjob
 ----------------------------------------------
 
+List the node of a workflow:
+
+.. code-block:: bash
+
+  ciop-simjob -n
+  
+This command returns:
+
+.. code-block:: bash
+
+  node_flh
+
 Trigger the execution of the node_flh with:
 
 .. code-block:: bash
