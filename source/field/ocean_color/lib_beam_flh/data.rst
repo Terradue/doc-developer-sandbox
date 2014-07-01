@@ -20,9 +20,8 @@ A Web interface is available at: http://localhost/catalogue/sandbox
 When initiated the sandbox contains no data so clicking on the Search button will not return results:
 
 .. figure:: assets/catalogue_ui_no_results.png
-  :width: 200px
+  :width: 500px
   :align: center
-  :height: 100px
   :alt: alternate text
   :figclass: align-center
 
@@ -43,9 +42,8 @@ That will copy the Envisat MERIS Level 1 acquisitions available on Terradue cata
 To check the registered data and its accessibility go back to the sandbox catalogue web interface and click the Search button. The graphical interface will show the data now available on the sandbox:
 
 .. figure:: assets/catalogue_ui_with_results.png
-  :width: 200px
+  :width: 500px
   :align: center
-  :height: 100px
   :alt: alternate text
   :figclass: align-center
 
