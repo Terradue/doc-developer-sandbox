@@ -60,8 +60,12 @@ Copy the link to the selected MERIS file, go back to the Sandbox shell and type:
 
 This will copy the MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1 product from the sandbox to the home folder.
 
+.. |logo| image:: assets/rdf_logo.png
+    :width: 20pt
+    :height: 20pt
+
 The ciop-copy [#f2]_ utility does more than simply copying HTTP URLs, it can also consume the catalogue entry RDF URL as input. 
-Go back to the web interface, and click on Metadata tab, and on the RDF logo. This will open the MERIS product catalogue entry in the RDF format. Copy that URL and use it as argument to ciop-copy:
+Go back to the web interface, and click on Metadata tab, and on the RDF logo |logo|. This will open the MERIS product catalogue entry in the RDF format. Copy that URL and use it as argument to ciop-copy:
 
 .. code-block:: bash
 
