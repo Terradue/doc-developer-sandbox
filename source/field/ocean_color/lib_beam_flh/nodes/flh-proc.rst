@@ -71,4 +71,4 @@ The streaming executable implements the activities:
   
   stop
 
-The streaming executable source is available here: `/application/flh-proc/run.sh <../src/src/main/app-resources/flh-proc/run.sh>`_ 
+The streaming executable source is available here: `/application/flh-proc/run.sh <https://github.com/Terradue/dcs-beam-flh-java/blob/master/src/main/app-resources/flh-proc/run.sh>`_
