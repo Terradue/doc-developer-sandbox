@@ -44,7 +44,7 @@ Here's the job template including the elements described above:
   :lines: 4-18
 
 
-The streaming executable source is available here: :download:`/application/flh-proc/run.sh <../src/src/main/app-resources/flh-proc/run.sh>` and implements the activities:
+The streaming executable implements the activities:
 
 .. uml::
 
@@ -70,3 +70,5 @@ The streaming executable source is available here: :download:`/application/flh-p
   endwhile (empty)
   
   stop
+
+The streaming executable source is available here: `/application/flh-proc/run.sh <../src/src/main/app-resources/flh-proc/run.sh>` 
