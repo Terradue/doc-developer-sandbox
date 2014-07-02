@@ -391,3 +391,15 @@ li.toctree-l4 > a {
 	border-color: #b2dba1;
 	color: #3c763d;
 }
+
+.highlight-bash {
+	background-image: url("http://dl.dropboxusercontent.com/u/24368142/t2/codeblockBashHeader.png");
+	background-repeat: no-repeat;
+	padding-top: 22px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.highlight-bash>.highlight>pre {
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
