@@ -48,8 +48,8 @@ Prepare the test inputs
 
 .. code-block:: none
 
- file1
- file2
+ input1
+ input2
 
 .. WARNING::
  The file should contain only the two lines, without blank lines at the end or at the beginning. Furthermore, comments are not allowed.
@@ -134,7 +134,18 @@ The output will be similar to:
  
  14/04/22 17:50:57 INFO The results are available at /share/tmp/sandbox/my_workflow/my_node/data
 
-.. NOTE::
+
+.. admonition:: Note 1
+
+ The log entry with: 
+
+ .. code-block::
+
+  14/04/22 17:50:41 INFO mapred.FileInputFormat: Total input paths to process : 1
+
+ shows 1 input path to process means the framework got one file with input1 and input2
+
+.. admonition:: Note 2
       Since the Sandbox has two cores and the node my_node two inputs, they have been executed two tasks in parallel, each one processing a single input.
 
 Recap
