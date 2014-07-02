@@ -1,8 +1,5 @@
-Application integration and testing
-===================================
-
-Testing the application
------------------------
+Application testing
+===================
 
 Application installation
 ^^^^^^^^^^^^^^^^^^^^^^^^
