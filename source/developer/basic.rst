@@ -89,9 +89,21 @@ The streaming executable is responsbile for *executing* your application in the 
 Run the node 
 ============
 
-We created a workflow with a single node, named *expression*. We can execute it by typing:
+We created a workflow with a single node. List the node(s) with:
 
-.. code-block:: none
+.. code-block:: bash
+
+ $ ciop-simjob -n
+ 
+This returns
+
+.. code-block:: bash
+
+ my-node
+
+We can execute it by typing:
+
+.. code-block:: bash
 
  $ ciop-simjob my_node
 
