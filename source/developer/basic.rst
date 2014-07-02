@@ -143,7 +143,7 @@ The output will be similar to:
 
   14/04/22 17:50:41 INFO mapred.FileInputFormat: Total input paths to process : 1
 
- shows 1 input path to process means the framework got one file with input1 and input2
+  means the framework got one file with input1 and input2
 
 .. admonition:: Note 2
 
