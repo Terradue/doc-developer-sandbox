@@ -1,4 +1,5 @@
 Frequently asked questions
+==========================
 
 **Why are some log entries going to stderr while others go to stdout?**
 
