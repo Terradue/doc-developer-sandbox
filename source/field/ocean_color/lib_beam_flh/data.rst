@@ -72,9 +72,9 @@ Go back to the web interface, and click on Metadata tab, and on the RDF logo |lo
  cd
  ciop-copy -o ./ http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1/rdf
  
-.. admonition::Congrats!
+.. admonition:: Congrats!
 
-  There is now test data on the Sandbox ready to be processed! 
+  There is now Envisat MERIS test data on the Sandbox and registered on the local catalogue ready to be processed! 
 
 .. rubric:: Footnotes
 
