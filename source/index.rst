@@ -16,3 +16,4 @@ Contents:
    Design Guide <design/index>
    Field Guide <field/index>
    Developer's Reference Guide <reference/index>
+   FAQ <faq/index>
