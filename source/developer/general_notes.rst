@@ -26,9 +26,7 @@ The dollar sign ($) at the beginning of each line indicates the Linux shell prom
 .. code-block:: console
 
   echo $_CIOP_APPLICATION_PATH
-  
 ::
-
   /application
 
 .. code-block:: bash
