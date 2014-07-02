@@ -48,7 +48,7 @@ Google Chrome
 
 - Choose **Preferences** from the **Chrome** menu.
 
-- Click the **Show advanced settings...** link.
+- Click the **Show advanced settings...** link:
 
 .. figure:: assets/chrome_advanced_settings_link.png
   :width: 250px
@@ -56,7 +56,7 @@ Google Chrome
   :alt: alternate text
   :figclass: align-center
 
-- Open the **Manage Certificates** button under the **HTTPS/SSL** section.
+- Open the **Manage Certificates** button under the **HTTPS/SSL** section:
 
 .. figure:: assets/chrome_manage_certificates.png
   :width: 250px
