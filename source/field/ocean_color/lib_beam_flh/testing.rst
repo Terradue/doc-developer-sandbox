@@ -76,6 +76,34 @@ Testing the application
 Application installation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+First configure your Sandbox to use Java 7:
+
+.. code-block:: bash
+
+  sudo yum install -y java-1.7.0-openjdk
+
+Select Java 7
+
+.. code-block:: bash
+
+  sudo /usr/sbin/alternatives --config java
+  
+This will show on the terminal window:
+
+.. code-block:: bash
+
+  There are 3 programs which provide 'java'.
+  
+    Selection    Command
+  -----------------------------------------------
+   + 1           /usr/java/jdk1.6.0_35/jre/bin/java
+     2           /usr/lib/jvm/jre-1.5.0-gcj/bin/java
+  *  3           /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java
+  
+  Enter to keep the current selection[+], or type selection number:
+
+Select java 1.7 out of the menu options by typing the correct number (here it's *3*).
+
 All the application resources are available on the GitHub repository: https://github.com/Terradue/dcs-beam-flh-java
 
 To install the application clone the repository on the sandbox in your home folder:
