@@ -38,6 +38,11 @@ On the sandbox shell run the command:
 
 That will copy the Envisat MERIS Level 1 acquisitions available on Terradue catalogue to the local sandbox filesystem and catalogue.
 
+.. tip:: 
+
+ In the URL above, change *rdf* to *html* to see what producst are returned by the search: 
+ 
+ http://catalogue.terradue.int/catalogue/search/MER_RR__1P/html?start=2012-04-05T10:00:00&stop=2012-04-08
 
 To check the registered data and its accessibility go back to the sandbox catalogue web interface and click the Search button. The graphical interface will show the data now available on the sandbox:
 
