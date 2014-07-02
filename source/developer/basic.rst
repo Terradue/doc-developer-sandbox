@@ -10,21 +10,21 @@ Prepare the workflow
 
 A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, that defines a workflow. The first step is to create an *application.xml*:
  
-* First of all, go to the application default path:
+* First of all, go to the application default path (/application):
 
-.. code-block:: none
+.. code-block:: bash
 
   $ cd $_CIOP_APPLICATION_PATH
 
 * Create a file named *application.xml*:
 
-.. code-block:: none
+.. code-block:: bash
 
  $ touch application.xml
  
 * Give to your user/group the read/write permissions:
 
-.. code-block:: none
+.. code-block:: bash
 
  $ chmod 664 application.xml
  
@@ -39,7 +39,7 @@ Prepare the test inputs
  
 * Create a file named list:
 
-.. code-block:: none
+.. code-block:: bash
 
  $ mkdir inputs
  $ touch inputs/list
