@@ -122,7 +122,7 @@ Update the Application descriptor file to use the Sandbox catalogue with the dat
 
 And change the source from:
 
-.. code-block:: XML
+.. code-block:: xml
 
   <sources>
     <source refid="cas:series">http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description</source>
