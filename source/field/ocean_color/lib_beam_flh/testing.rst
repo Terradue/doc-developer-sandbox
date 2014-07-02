@@ -85,6 +85,33 @@ To install the application clone the repository on the sandbox in your home fold
   cd ~
   git clone git@github.com:Terradue/dcs-beam-flh-java.git
   cd dcs-beam-flh-java
+
+Update the Application descriptor file to use the Sandbox catalogue with the data you've copied:
+
+.. code-block:: bash
+
+  vi src/main/app-resources/application.xml
+
+And change the source from:
+
+.. code-block:: XML
+
+  <sources>
+    <source refid="cas:series">http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description</source>
+  </sources>
+
+To:
+
+.. code-block:: xml
+
+  <sources>
+    <source refid="cas:series">http://localhost/catalogue/sandbox/MER_RR__1P/description</source>
+  </sources>
+
+Then build the BEAM FLH Java processor and the application resources with:
+
+.. code-block:: bash
+
   mvn install
   
 The maven command will:
