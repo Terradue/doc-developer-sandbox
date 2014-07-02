@@ -146,7 +146,8 @@ The output will be similar to:
  shows 1 input path to process means the framework got one file with input1 and input2
 
 .. admonition:: Note 2
-      Since the Sandbox has two cores and the node my_node two inputs, they have been executed two tasks in parallel, each one processing a single input.
+
+  Since the Sandbox has two cores and the node my_node two inputs, they have been executed two tasks in parallel, each one processing a single input.
 
 Recap
 =====
