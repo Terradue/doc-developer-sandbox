@@ -5,10 +5,10 @@ This tutorial is based on the ESA BEAM Toolbox FLH Operator tutorial [#f1]_ and 
 
 * Implement a BEAM processor using Java that:
 
-  * Create a new product object from scratch
-  * Add a Fluorescence Line Height (FLH) band object to the product object
-  * Compute FLH pixels for the new band
-  * Write a data product in a specific data format
+  * Creates a new product object from scratch
+  * Adds a Fluorescence Line Height (FLH) band object to the product object
+  * Computes FLH pixels for the new band
+  * Writes a data product in a specific data format
 
 * Implement a Developer Cloud Service application that runs the BEAM FLH processor against Envisat MERIS L1b data. 
 
