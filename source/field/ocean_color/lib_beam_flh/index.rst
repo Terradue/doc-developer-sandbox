@@ -19,7 +19,6 @@ Contents:
    
    What you will learn <learn>
    Addressing a scientific and processing goal <goal>
-   Rationales for the processing chain <rational>
    Workflow design <workflow>
    Processing nodes design <nodes/index>
    Data preparation <data>
