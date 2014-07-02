@@ -50,7 +50,19 @@ Google Chrome
 
 - Click the **Show advanced settings...** link.
 
+.. figure:: assets/chrome_advanced_settings_link.png
+  :width: 250px
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
 - Open the **Manage Certificates** button under the **HTTPS/SSL** section.
+
+.. figure:: assets/chrome_manage_certificates.png
+  :width: 250px
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
 
 - Open the Import window, browse to your downloaded certificate file.
 
