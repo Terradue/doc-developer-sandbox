@@ -15,7 +15,7 @@ This tutorial is based on the ESA BEAM Toolbox FLH Operator tutorial [#f1]_ and 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    What you will learn <learn>
    Addressing a scientific and processing goal <goal>
