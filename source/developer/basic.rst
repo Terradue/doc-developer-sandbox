@@ -139,7 +139,7 @@ The output will be similar to:
 
  The log entry with: 
 
- .. code-block::
+ .. code-block:: none
 
   14/04/22 17:50:41 INFO mapred.FileInputFormat: Total input paths to process : 1
 
