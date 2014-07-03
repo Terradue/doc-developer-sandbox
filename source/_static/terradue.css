@@ -411,7 +411,8 @@ li.toctree-l4 > a {
 .highlight-console-output:before,
 .highlight-xml:before,
 .highlight-bash:before,
-.highlight-phyton:before
+.highlight-phyton:before,
+.highlight-r:before
 {
 	font-size: 10px;
 	border: 1px solid #ccc;
