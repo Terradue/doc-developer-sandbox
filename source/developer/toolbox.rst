@@ -17,6 +17,12 @@ The ESA BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-
 Prepare the application.xml
 ===========================
 
+.. code-block:: bash
+  :linenos:
+  this is a test
+  ok
+  ok
+
 Modify the application.xml in this way:
 
 .. literalinclude:: src/toolbox/application.xml
