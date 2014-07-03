@@ -12,10 +12,10 @@ Contents:
    
    What you will learn <learn>
    Addressing a scientific and processing goal <goal>
-   Rationales for the processing chain <rational>
-   Data preparation <data>
    Workflow design <workflow>
    Processing nodes design <nodes/index>
-   Application integration and testing <testing>
+   Application integration <integration>
+   Application testing <testing>
+   Data preparation <data>
    Application exploitation <exploitation>
    Going further <further>
