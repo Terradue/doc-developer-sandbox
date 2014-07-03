@@ -17,20 +17,22 @@ The ESA BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-
 Prepare the application.xml
 ===========================
 
-.. container:: ciccio
+.. container:: context-run-executable
 
   .. code-block:: bash
 
-    this is a test
-    ok
-    ok
+    # this is a test
+    ls ok
+    cat ok
 
 
 Modify the application.xml in this way:
 
-.. literalinclude:: src/toolbox/application.xml
-     :language: xml
-     :tab-width: 2
+.. container:: context-application-descriptor-file
+
+  .. literalinclude:: src/toolbox/application.xml
+       :language: xml
+       :tab-width: 2
 
 Prepare the streaming executable
 ================================
