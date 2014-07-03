@@ -417,7 +417,7 @@ li.toctree-l4 > a {
 	padding: 0px 5px;
 	display: inline-block;
 	height: 17px;
-	background-color: #eee;
+	background-color: #EBEBED;
 }
 
 .highlight-console:before {
@@ -427,7 +427,7 @@ li.toctree-l4 > a {
 	content: "Console output";
 }
 .highlight-xml:before {
-	content: "XML ";
+	content: "XML document";
 }
 
 .highlight-console pre,
