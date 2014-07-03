@@ -392,6 +392,7 @@ li.toctree-l4 > a {
 	color: #3c763d;
 }
 
+/*
 .highlight-bash {
 	background-image: url("http://dl.dropboxusercontent.com/u/24368142/t2/codeblockBashHeader.png");
 	background-repeat: no-repeat;
@@ -403,3 +404,27 @@ li.toctree-l4 > a {
 	border-top-left-radius: 0px;
 	border-top-right-radius: 0px;
 }
+*/
+
+.highlight-console:before, .highlight-consoleoutput:before {
+content: "";
+font-size: 10px;
+border: 1px solid gray;
+border-radius: 5px 5px 0px 0px;
+border-bottom: none;
+padding: 0px 5px;
+display: inline-block;
+height: 17px;
+}
+
+.highlight-console:before {
+content: "Console command";
+}
+.highlight-consoleoutput:before {
+content: "Console output";
+}
+
+.highlight-console pre,  .highlight-consoleoutput pre {
+border-top-left-radius: 0px;
+}
+
