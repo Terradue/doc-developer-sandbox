@@ -411,7 +411,7 @@ li.toctree-l4 > a {
 .highlight-console-output:before,
 .highlight-xml:before,
 .highlight-bash:before,
-.highlight-phyton:before,
+.highlight-python:before,
 .highlight-r:before
 {
 	font-size: 10px;
@@ -437,8 +437,8 @@ li.toctree-l4 > a {
 .highlight-bash:before {
 	content: "Bash script";
 }
-.highlight-phyton:before {
-	content: "Phyton";
+.highlight-python:before {
+	content: "Python";
 }
 .highlight-r:before {
 	content: "R";
@@ -456,26 +456,19 @@ li.toctree-l4 > a {
 .context-run-executable.container > .highlight-r:before {
 	content: "R run executable";
 }
+.context-run-executable.container > .highlight-python:before {
+	content: "Python run executable";
+}
 .context-application-descriptor-file.container > .highlight-xml:before {
 	content: "Application Descriptor file (XML)";
 }
-/*
-.context-hadoop-streaming-log.container > .highlight-bash:before {
-	content: "";
-}
-.context-.container > .highlight-bash:before {
-	content: "";
-}
-.context-.container > .highlight-bash:before {
-	content: "";
-}*/
 
 /* remove border top left radius when there's the caption element */
 .highlight-console pre,
 .highlight-console-output pre,
 .highlight-xml pre,
 .highlight-bash pre,
-.highlight-phyton pre,
+.highlight-python pre,
 .highlight-r pre
 {
 	border-top-left-radius: 0px;
