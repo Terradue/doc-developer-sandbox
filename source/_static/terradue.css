@@ -430,7 +430,10 @@ li.toctree-l4 > a {
 	content: "XML ";
 }
 
-.highlight-console pre,  .highlight-consoleoutput pre {
+.highlight-console pre,
+.highlight-consoleoutput pre,
+.highlight-xml pre
+{
 	border-top-left-radius: 0px;
 }
 
