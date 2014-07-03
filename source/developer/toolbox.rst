@@ -17,24 +17,6 @@ The ESA BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-
 Prepare the application.xml
 ===========================
 
-.. container:: context-run-executable
-
-  .. code-block:: bash
-
-    # this is a test
-    ls ok
-    cat ok
-
-.. container:: context-custom
-  
-  This is a custom context
-
-  .. code-block:: bash
-
-    # this is a test
-    ls ok
-    cat ok
-
 Modify the application.xml in this way:
 
 .. container:: context-application-descriptor-file
