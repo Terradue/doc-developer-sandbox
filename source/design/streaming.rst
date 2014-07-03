@@ -1,9 +1,9 @@
-Streaming executable design patterns
-====================================
+Run executable design patterns
+==============================
 
-A processing task triggers the execution of a streaming executable.
+A processing task triggers the execution of a *run executable*.
 
-The streaming executable reads the inputs via the stdin channel as if one would do:
+The run executable reads the inputs via the stdin channel as if one would do:
 
 .. code-block:: bash
 
@@ -29,7 +29,7 @@ Process n inputs and generate n (or m) outputs
 
 This design pattern processes inputs independently from one another. There will several processing task processing a number of inputs each.
 
-The typical structure of such a streaming executable is:
+The typical structure of such a run executable is:
 
 .. uml::
 
@@ -67,7 +67,7 @@ Process n inputs to generate one output
 
 This design pattern processes all inputs to generate the result. There will one single processing task processing all the inputs.
 
-The typical structure of such a streaming executable is:
+The typical structure of such a run executable is:
 
 .. uml::
 
