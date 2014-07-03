@@ -25,6 +25,25 @@ Prepare the application.xml
     ls ok
     cat ok
 
+.. container:: context-custom
+  
+  This is a custom context
+
+.. code-block:: bash
+
+  # this is a test
+  ls ok
+  cat ok
+
+.. container:: context-custom
+  
+  This is a custom context
+
+  .. code-block:: bash
+
+    # this is a test
+    ls ok
+    cat ok
 
 Modify the application.xml in this way:
 
