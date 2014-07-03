@@ -12,22 +12,22 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
  
 * First of all, go to the application default path (/application):
 
-.. code-block:: bash
+.. code-block:: console
  :language: custom  
  
- $ cd $_CIOP_APPLICATION_PATH
+ cd $_CIOP_APPLICATION_PATH
 
 * Create a file named *application.xml*:
 
-.. code-block:: bash
+.. code-block:: console
 
- $ touch application.xml
+ touch application.xml
  
 * Give to your user/group the read/write permissions:
 
-.. code-block:: bash
+.. code-block:: console
 
- $ chmod 664 application.xml
+ chmod 664 application.xml
  
 * Open it with a text editor (e.g. vi) and paste the following code:
 
@@ -40,10 +40,10 @@ Prepare the test inputs
  
 * Create a file named list:
 
-.. code-block:: bash
+.. code-block:: console
 
- $ mkdir inputs
- $ touch inputs/list
+ mkdir inputs
+ touch inputs/list
  
 * Open it with a text editor and paste the following lines:
 
@@ -56,10 +56,10 @@ Prepare the test inputs
  The file should contain only the two lines, without blank lines at the end or at the beginning. Furthermore, comments are not allowed.
  
  
-Prepare the streaming executable
+Prepare the run executable
 ================================
 
-The streaming executable is responsbile for *executing* your application in the Sandbox. In the *application.xml* we defined a workflow with a single node and the related streaming executable:
+The run executable is responsbile for *executing* your application in the Sandbox. In the *application.xml* we defined a workflow with a single node and the related run executable:
 
 .. literalinclude:: src/basic/application.xml
   :language: xml
@@ -68,18 +68,18 @@ The streaming executable is responsbile for *executing* your application in the 
 
 * Go to the application default path and create the executable directory:
 
-.. code-block:: none
+.. code-block:: console
 
- $ cd /application
- $ mkdir my_node
- $ cd my_node
+ cd /application
+ mkdir my_node
+ cd my_node
  
 * Create a file named *run* and make it executable:
 
-.. code-block:: none
+.. code-block:: console
 
- $ touch run
- $ chmod +x run
+ touch run
+ chmod +x run
  
 * Open it with a text editor and paste the following code:
 
@@ -92,25 +92,25 @@ Run the node
 
 We created a workflow with a single node. List the node(s) with:
 
-.. code-block:: bash
+.. code-block:: console
 
- $ ciop-simjob -n
+ ciop-simjob -n
  
-This returns
+This returns:
 
-.. code-block:: bash
+.. code-block:: console-output
 
  my-node
 
 We can execute it by typing:
 
-.. code-block:: bash
+.. code-block:: console
 
- $ ciop-simjob my_node
+ ciop-simjob my_node
 
 The output will be similar to:
 
-.. code-block:: none
+.. code-block:: console-output
 
  14/04/22 17:50:30 INFO my_node simulation started
  14/04/22 17:50:39 INFO Submitting job 23111 ...
@@ -155,7 +155,7 @@ Recap
 
 #. We created a simple workflow with a single node,
 #. We prepared a list of two test inputs,
-#. We prepared a simple streaming executable that logs (through the *ciop-log* function) the name of the inputs,
+#. We prepared a simple run executable that logs (through the *ciop-log* function) the name of the inputs,
 #. We executed the node with two inputs, using two tasks in parallel.
 
 Files used in this Hands-On

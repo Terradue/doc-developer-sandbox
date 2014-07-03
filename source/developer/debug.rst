@@ -5,8 +5,8 @@ Hands-On Exercise 2: make a robust workflow and debug it
 
 In this exercise we will modify the basic workflow to make it more robust. Also we will learn how to debug the workflow through the Web GUI.
 
-Modify the streaming executable
-===============================
+Modify the run executable
+==========================
 
 * Open the *my_node/run* executable with a text editor and modify it in the following way:
  
@@ -21,13 +21,13 @@ Run the node and debug the workflow
 
 * Execute the node *my_node*:
 
-.. code-block:: none
+.. code-block:: console
 
- $ ciop-simjob my_node
+ ciop-simjob my_node
 
 * From the output of the *ciop-simjob* command we can copy in the clipboard the **Tracking URL**. It will be similar to this:
 
-.. code-block:: none
+.. code-block:: console-output
  
  14/04/22 11:07:35 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-21.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201404181621_0001
 
@@ -57,7 +57,7 @@ Run the node and debug the workflow
    :scale: 70 %
    :alt: Attempts output
 
-*Here the related piece of code of the run streaming executable:*
+*Here the related piece of code of the run executable:*
 
 .. literalinclude:: src/debug/run
    :language: bash

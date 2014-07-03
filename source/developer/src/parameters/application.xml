@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="beam_arithm">
+	<jobTemplates>
+		<jobTemplate id="expression">
+			<streamingExecutable>/application/expression/run</streamingExecutable>
+			<defaultParameters>
+				<parameter id="expression">l1_flags.INVALID?0:radiance_13>15?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
+			</defaultParameters>
+		</jobTemplate>
+	</jobTemplates>
+  	<workflow id="beam_arithm">
+		<workflowVersion>1.0</workflowVersion>
+		<node id="node_expression">
+			<job id="expression"/>
+			<sources>
+				<source refid="file:urls">/application/inputs/list</source>
+			</sources>
+		</node>
+	</workflow>
+</application>

@@ -1,9 +1,9 @@
 .. _toolbox:
 
-Hands-On Exercise 4: using a custom toolbox
-#############################################
+Hands-On Exercise 4: using a toolbox
+#####################################
 
-In this exercise we will use a custom toolbox to process the inputs of our workflow and we will publish its results on HDFS.   
+In this exercise we will use a toolbox to process the inputs of our workflow and we will publish its results on HDFS.   
 
 
 Install the ESA BEAM Toolbox
@@ -26,10 +26,10 @@ Modify the application.xml in this way:
        :language: xml
        :tab-width: 2
 
-Prepare the streaming executable
+Prepare the run executable
 ================================
 
-* The ESA BEAM Toolbox has to be called in the streaming executable. First of all, we have to prepare the new executable:   
+* The ESA BEAM Toolbox has to be called in the run executable. First of all, we have to prepare the new executable:   
 
 .. code-block:: console
 
@@ -39,7 +39,7 @@ Prepare the streaming executable
   chmod +x expression/run
 
 .. NOTE::
-        If you prefer, you can delete the previous my_node/run streaming executable since it will not be used anymore.
+        If you prefer, you can delete the previous my_node/run executable since it will not be used anymore.
 
 * Open the file *expression/run* and paste the following code:
 
@@ -79,7 +79,8 @@ Recap
 =====
 
 #. We installed the custom toolbox ESA BEAM,
-#. We included it in a streaming executable,
+#. We included it in a run executable,
+
 #. We processed the inputs with the BandMaths Operator provided by the ESA BEAM Toolbox,
 #. We published the results in HDFS.
 
