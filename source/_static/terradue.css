@@ -437,6 +437,13 @@ li.toctree-l4 > a {
 .highlight-phyton:before {
 	content: "Phyton";
 }
+.ciccio.container {
+	width: auto;
+	padding: 0px;
+}
+.ciccio.container > .highlight-bash {
+	content: "ciccio bash!";
+}
 
 .highlight-console pre,
 .highlight-console-output pre,
