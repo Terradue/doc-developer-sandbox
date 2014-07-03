@@ -441,7 +441,7 @@ li.toctree-l4 > a {
 	width: auto;
 	padding: 0px;
 }
-.ciccio.container > .highlight-bash {
+.ciccio.container > .highlight-bash:before {
 	content: "ciccio bash!";
 }
 
