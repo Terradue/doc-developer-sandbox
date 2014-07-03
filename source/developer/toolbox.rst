@@ -48,7 +48,9 @@ Prepare the streaming executable
 
 The ESA BEAM Toolbox is called in:
 
-.. literalinclude:: src/toolbox/expression/run
+.. container:: context-run-executable
+
+  .. literalinclude:: src/toolbox/expression/run
       :language: bash
       :tab-width: 2
       :lines: 105
