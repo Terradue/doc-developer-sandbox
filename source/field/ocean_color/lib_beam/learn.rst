@@ -13,7 +13,7 @@ The code for this tutorial is available on GitHub repository `MERIS Algal bloom 
 
 To deploy the tutorial on a Developer Sandbox:
 
-.. code-block:: bash
+.. code-block:: console
 
   cd ~
   git clone git@github.com:Terradue/dcs-beam-algalbloom.git
