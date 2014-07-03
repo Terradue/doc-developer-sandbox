@@ -34,7 +34,7 @@ Click on one product of the list on the left and then on the Access tab below th
 
 Copy the link to the selected MERIS file, go back to the sandbox shell and type
 
-.. code-block:: bash
+.. code-block:: console
 
  cd 
  ciop-copy -o ./ http://localhost/data/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1
