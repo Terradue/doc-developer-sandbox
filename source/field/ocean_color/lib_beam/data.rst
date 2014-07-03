@@ -22,7 +22,7 @@ The ciop-catcp utility takes an Open Search URL and a few options to optionally 
 
 On the sandbox shell run the command:
 
-.. code-block:: bash
+.. code-block:: console
 
  ciop-catcp -m byval "http://catalogue.terradue.int/catalogue/search/MER_RR__1P/rdf?start=2012-04-05T10:00:00&stop=2012-04-08"
 
@@ -44,7 +44,7 @@ This will copy the MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N
 The ciop-copy [#f2]_ utility does more than simpy copying HTTP URLs, it can also consume the catalogue entry RDF URL as input. 
 Go back to the web interface, and click on Metadata tab, and on the RDF logo. This will open the MERIS product catalogue entry in the RDF format. Copy that URL and use it as argument to ciop-copy:
 
-.. code-block:: bash
+.. code-block:: console
 
  cd
  ciop-copy -o ./ http://localhost/catalogue/sandbox/MER_RR__1P/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1/rdf
