@@ -10,9 +10,10 @@ Contents:
    Hands-On Exercise 1: a basic workflow <basic>
    Hands-On Exercise 2: make a robust workflow and debug it <debug>
    Hands-On Exercise 3: staging data <stagedata>
-   Hands-On Exercise 4: using a custom toolbox <toolbox>
+   Hands-On Exercise 4: using a toolbox <toolbox>
+   Hands-On Exercise 5: using parameters <parameters>
+   Hands-On Exercise 6: a multi-node workflow <multinode>
 ..   
-   Hands-On Exercise: a multi-node workflow
    Hands-On Exercise: defining parameters
    Hands-On Exercise: using the catalogue 
    Hands-On Exercice: publishing results

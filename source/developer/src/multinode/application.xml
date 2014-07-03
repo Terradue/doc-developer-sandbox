@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="beam_arithm">
+	<jobTemplates>
+		<jobTemplate id="expression">
+			<streamingExecutable>/application/expression/run</streamingExecutable>
+			<defaultParameters>
+				<parameter id="expression">l1_flags.INVALID?0:radiance_13>15?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
+			</defaultParameters>
+		</jobTemplate>
+		<jobTemplate id="binning">
+			<streamingExecutable>/application/binning/run</streamingExecutable>
+			<defaultParameters>
+				<parameter id="bandname">out</parameter>
+        			<parameter id="bitmask">l1_flags.INVALID?0:radiance_13>15?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
+        			<parameter id="bbox">-180,-90,180,90</parameter>
+        			<parameter id="algorithm">MIN_MAX</parameter>
+        			<parameter id="outputname">binned</parameter>
+        			<parameter id="palette">#MCI_Palette
+color0=0,0,0
+color1=0,0,154
+color2=54,99,250
+color3=110,201,136
+color4=166,245,8
+color5=222,224,0
+color6=234,136,0
+color7=245,47,0
+color8=255,255,255
+numPoints=9
+sample0=98.19878118960284
+sample1=98.64947122314665
+sample2=99.10016125669047
+sample3=99.5508512902343
+sample4=100.0015413237781
+sample5=100.4522313573219
+sample6=100.90292139086574
+sample7=101.35361142440956
+sample8=101.80430145795337</parameter>	
+			</defaultParameters>
+		</jobTemplate>
+	</jobTemplates>
+  	<workflow id="beam_arithm">
+		<workflowVersion>1.0</workflowVersion>
+		<node id="node_expression">
+			<job id="expression"/>
+			<sources>
+				<source refid="file:urls">/application/inputs/list</source>
+			</sources>
+		</node>
+		<node id="node_binning">
+			<job id="binning"/>
+			<sources>
+				<source refid="wf:node">node_expression</source>
+			</sources>
+		</node>
+	</workflow>
+</application>
