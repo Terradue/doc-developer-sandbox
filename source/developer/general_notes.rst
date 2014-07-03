@@ -31,6 +31,10 @@ The dollar sign ($) at the beginning of each line indicates the Linux shell prom
 
   /application
 
+.. code-block:: xml example
+
+  <id>example</id>
+
 Install additional software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
