@@ -431,6 +431,7 @@ li.toctree-l4 > a {
 .highlight-console pre, .highlight-consoleoutput pre {
 	border-top-left-radius: 0px;
 	background: #444;
+	border-color: #444;
 }
 
 .highlight-console pre, .highlight-consoleoutput pre, .highlight-console pre>span, .highlight-console pre>span.go {
