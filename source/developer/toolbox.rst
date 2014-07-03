@@ -10,9 +10,9 @@ Install the ESA BEAM Toolbox
 
 The ESA BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-source toolbox and development platform for viewing, analyzing and processing of remote sensing raster data. To install it type:
 
-.. code-block:: none
+.. code-block:: console
 
-  $ sudo yum install esa-beam-4.11
+  sudo yum install esa-beam-4.11
 
 Prepare the application.xml
 ===========================
@@ -28,12 +28,12 @@ Prepare the streaming executable
 
 * The ESA BEAM Toolbox has to be called in the streaming executable. First of all, we have to prepare the new executable:   
 
-.. code-block:: none
+.. code-block:: console
 
-  $ cd $_CIOP_APPLICATION_PATH
-  $ mkdir expression
-  $ touch expression/run
-  $ chmod +x expression/run
+  cd $_CIOP_APPLICATION_PATH
+  mkdir expression
+  touch expression/run
+  chmod +x expression/run
 
 .. NOTE::
         If you prefer, you can delete the previous my_node/run streaming executable since it will not be used anymore.
@@ -58,9 +58,9 @@ Run and debug the workflow
 
 * Run the node *node_expression*:
 
-.. code-block:: none
+.. code-block:: console
 
-  $ ciop-simjob node_expression
+  ciop-simjob node_expression
 
 * Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`Hands-On Exercise 2 <debug>`). You will see an output similar to:
 
