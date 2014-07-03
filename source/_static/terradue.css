@@ -407,28 +407,38 @@ li.toctree-l4 > a {
 */
 
 .highlight-console:before, .highlight-consoleoutput:before {
-content: "";
-font-size: 10px;
-border: 1px solid gray;
-border-radius: 5px 5px 0px 0px;
-border-bottom: none;
-padding: 0px 5px;
-display: inline-block;
-height: 17px;
+	font-size: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px 5px 0px 0px;
+	border-bottom: none;
+	padding: 0px 5px;
+	display: inline-block;
+	height: 17px;
+	background-color: #eee;
 }
 
 .highlight-console:before {
-content: "Console command";
+	content: "Console command";
 }
 .highlight-consoleoutput:before {
-content: "Console output";
+	content: "Console output";
+}
+
+.highlight-console pre,  .highlight-consoleoutput pre {
+	border-top-left-radius: 0px;
 }
 
 .highlight-console pre, .highlight-consoleoutput pre {
-border-top-left-radius: 0px;
-background: #444;
+	border-top-left-radius: 0px;
+	background: #444;
 }
 
 .highlight-console pre, .highlight-consoleoutput pre, .highlight-console pre>span, .highlight-console pre>span.go {
+	color: #1BDF00;
+}
+
+.highlight-console pre>span.go:before {
+	content: "$";
+	margin-right: 9px;
 	color: #eee;
 }
