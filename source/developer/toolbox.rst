@@ -42,7 +42,9 @@ Prepare the streaming executable
 
 * Open the file *expression/run* and paste the following code:
 
-.. literalinclude:: src/toolbox/expression/run
+.. container:: context-run-executable
+
+  .. literalinclude:: src/toolbox/expression/run
       :language: bash
       :tab-width: 2
 
