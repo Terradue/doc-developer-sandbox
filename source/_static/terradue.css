@@ -406,6 +406,7 @@ li.toctree-l4 > a {
 }
 */
 
+/* styling caption tip for some code-blocks languages */
 .highlight-console:before,
 .highlight-console-output:before,
 .highlight-xml:before,
@@ -422,6 +423,7 @@ li.toctree-l4 > a {
 	background-color: #f5f5f5;
 }
 
+/* set default text for each code block language previosly defined*/
 .highlight-console:before {
 	content: "Console command";
 }
@@ -437,23 +439,48 @@ li.toctree-l4 > a {
 .highlight-phyton:before {
 	content: "Phyton";
 }
-.ciccio.container {
+.highlight-r:before {
+	content: "R";
+}
+/* resolve sphinx-bootstrap css conflict */
+.container[class^="context-"], .container[class*=" context-"] {
 	width: auto;
 	padding: 0px;
 }
-.ciccio.container > .highlight-bash:before {
-	content: "ciccio bash!";
-}
 
+/* set context texts */
+.context-run-executable.container > .highlight-bash:before {
+	content: "Bash run executable";
+}
+.context-run-executable.container > .highlight-r:before {
+	content: "R run executable";
+}
+.context-application-descriptor-file.container > .highlight-xml:before {
+	content: "Application Descriptor file (XML)";
+}
+/*
+.context-hadoop-streaming-log.container > .highlight-bash:before {
+	content: "";
+}
+.context-.container > .highlight-bash:before {
+	content: "";
+}
+.context-.container > .highlight-bash:before {
+	content: "";
+}*/
+
+/* remove border top left radius when there's the caption element */
 .highlight-console pre,
 .highlight-console-output pre,
 .highlight-xml pre,
 .highlight-bash pre,
-.highlight-phyton pre
+.highlight-phyton pre,
+.highlight-r pre
 {
 	border-top-left-radius: 0px;
 }
 
+/* enphatize console */
 .highlight-console pre, .highlight-console-output pre {
 	border-top-left-radius: 0px;
 	background: #444;
