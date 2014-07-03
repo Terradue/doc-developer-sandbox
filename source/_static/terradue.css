@@ -406,7 +406,10 @@ li.toctree-l4 > a {
 }
 */
 
-.highlight-console:before, .highlight-consoleoutput:before {
+.highlight-console:before,
+.highlight-consoleoutput:before,
+.highlight-xml:before
+{
 	font-size: 10px;
 	border: 1px solid #ccc;
 	border-radius: 5px 5px 0px 0px;
@@ -422,6 +425,9 @@ li.toctree-l4 > a {
 }
 .highlight-consoleoutput:before {
 	content: "Console output";
+}
+.highlight-xml:before {
+	content: "XML ";
 }
 
 .highlight-console pre,  .highlight-consoleoutput pre {
