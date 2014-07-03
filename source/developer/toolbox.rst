@@ -18,7 +18,6 @@ Prepare the application.xml
 ===========================
 
 .. code-block:: bash
-  :linenos:
   this is a test
   ok
   ok
