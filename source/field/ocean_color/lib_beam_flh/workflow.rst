@@ -6,20 +6,11 @@ Data
 
 You will use Envisat MERIS Level 1 Reduced Resolution, a few orbit passes acquired in April 2012.
 
-The list of products used as test data is:
+MERIS was a programmable, medium-spectral resolution, imaging spectrometer operating in the solar reflective spectral range. Fifteen spectral bands can be selected by ground command.
+The instrument scanned the Earth's surface by the so called "push-broom" method. Linear CCD arrays provided spatial sampling in the across-track direction, while the satellite's motion provided scanning in the along-track direction.
+MERIS was designed to acquire data over the Earth whenever illumination conditions were suitable. The instrument's 68.5° field of view around nadir covered a swath width of 1150 km. This wide field of view was shared between five identical optical modules arranged in a fan shape configuration. 
 
-.. code-block:: bash
-
-  MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1
-  MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1
-  MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1
-  MER_RR__1PRLRA20120405_142147_000026243113_00226_52826_0090.N1
-  MER_RR__1PRLRA20120405_092107_000026213113_00223_52823_0052.N1
-  MER_RR__1PRLRA20120404_231946_000026213113_00217_52817_9862.N1
-  MER_RR__1PRLRA20120404_181906_000026213113_00214_52814_9818.N1
-  MER_RR__1PRLRA20120404_131826_000026213113_00211_52811_9783.N1
-  MER_RR__1PRLRA20120404_113812_000026213113_00210_52810_9773.N1
-  MER_RR__1PRLRA20120404_095759_000026213113_00209_52809_9767.N1
+See :doc:`Data preparation <data>` section for details on the MERIS data used in this guide.
 
 Software and COTS
 *****************
@@ -38,10 +29,12 @@ With this tutorial, you will write your own BEAM operator and apply to MERIS Lev
 
 This tutorial is based on the BEAM Tutorial held at the Sentinel-3 OLCI/SLSTR and MERIS/(A)ATSR workshop2012 by Brockmann Consult [#f3]_. 
 
-Implementing the FLH Operator
------------------------------
+The implementation of the BEAM FLH Operator is described in [#f4]_ and summarized here:
 
-The implementation of the FLH Operator is described in [#f4]_.
+* Create a new product object from scratch
+* Add a Fluorescence Line Height (FLH) band object to the product object
+* Compute FLH pixels for the new band
+* Write a data product in a specific data format
 
 Workflow structure
 ------------------
