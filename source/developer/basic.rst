@@ -13,7 +13,7 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
 * First of all, go to the application default path (/application):
 
 .. code-block:: bash
- :container: custom  
+ :language: custom  
  
  $ cd $_CIOP_APPLICATION_PATH
 
