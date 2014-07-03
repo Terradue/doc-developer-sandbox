@@ -16,7 +16,7 @@ The code for this tutorial is available on GitHub repository `BEAM Java Tutorial
 
 To deploy the tutorial on a Developer Sandbox:
 
-.. code-block:: bash
+.. code-block:: console
 
   cd ~
   git clone https://github.com/Terradue/dcs-beam-flh-java
@@ -30,5 +30,5 @@ The code can be modified by forking the repository here: `<https://github.com/Te
 Questions, bugs, and suggestions
 ++++++++++++++++++++++++++++++++
 
-Please file any questions, bugs or suggestions as `issues <https://github.com/Terradue/rOpenSearch/issues/new>`_ or send in a pull request.
+Please file any questions, bugs or suggestions as `issues <https://github.com/Terradue/dcs-beam-flh-java/issues/new>`_ or send in a pull request.
 
