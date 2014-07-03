@@ -407,8 +407,10 @@ li.toctree-l4 > a {
 */
 
 .highlight-console:before,
-.highlight-consoleoutput:before,
-.highlight-xml:before
+.highlight-console-output:before,
+.highlight-xml:before,
+.highlight-bash:before,
+.highlight-phyton:before
 {
 	font-size: 10px;
 	border: 1px solid #ccc;
@@ -423,27 +425,33 @@ li.toctree-l4 > a {
 .highlight-console:before {
 	content: "Console command";
 }
-.highlight-consoleoutput:before {
+.highlight-console-output:before {
 	content: "Console output";
 }
 .highlight-xml:before {
 	content: "XML document";
 }
+.highlight-bash:before {
+	content: "Bash script";
+}
+.highlight-phyton:before {
+	content: "Phyton";
+}
 
 .highlight-console pre,
-.highlight-consoleoutput pre,
+.highlight-console-output pre,
 .highlight-xml pre
 {
 	border-top-left-radius: 0px;
 }
 
-.highlight-console pre, .highlight-consoleoutput pre {
+.highlight-console pre, .highlight-console-output pre {
 	border-top-left-radius: 0px;
 	background: #444;
 	border-color: #444;
 }
 
-.highlight-console pre, .highlight-consoleoutput pre, .highlight-console pre>span, .highlight-console pre>span.go {
+.highlight-console pre, .highlight-console-output pre, .highlight-console pre>span, .highlight-console pre>span.go {
 	color: #1BDF00;
 }
 
