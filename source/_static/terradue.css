@@ -440,7 +440,9 @@ li.toctree-l4 > a {
 
 .highlight-console pre,
 .highlight-console-output pre,
-.highlight-xml pre
+.highlight-xml pre,
+.highlight-bash pre,
+.highlight-phyton pre
 {
 	border-top-left-radius: 0px;
 }
