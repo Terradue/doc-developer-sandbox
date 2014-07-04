@@ -17,7 +17,7 @@ Modify the application.xml in this way:
 Modify the run executable
 ===========================
 
-* Open the file *expression/run* and substitute the line:
+* Open the file *expression/run.sh* and substitute the line:
 
 .. literalinclude:: src/toolbox/expression/run
       :language: bash
@@ -26,10 +26,10 @@ Modify the run executable
 
 with:
 
-.. literalinclude:: src/parameters/expression/run
+.. literalinclude:: src/parameters/expression/run.sh
       :language: bash
       :tab-width: 2
-      :lines: 39-43
+      :lines: 35-39
 
 
 Run and debug the workflow
@@ -58,4 +58,4 @@ Files used in this Hands-On
 
 * :download:`application.xml <src/parameters/application.xml>`
 * :download:`inputs/list <src/stagedata/list>`
-* :download:`expression/run <src/parameters/expression/run>`
+* :download:`expression/run.sh <src/parameters/expression/run.sh>`

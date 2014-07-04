@@ -1,21 +1,25 @@
-<?xml version="1.0" encoding="us-ascii"?>
-<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="beam_arithm">
+<?xml version="1.0" encoding="UTF-8"?>
+<application id="beam_arithm">
 	<jobTemplates>
+		<!-- BEAM BandMaths operator job template  -->
 		<jobTemplate id="expression">
-			<streamingExecutable>/application/expression/run</streamingExecutable>
-			<defaultParameters>
+			<streamingExecutable>/application/expression/run.sh</streamingExecutable>
+			<defaultParameters>						
 				<parameter id="expression">l1_flags.INVALID?0:radiance_13>15?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
 			</defaultParameters>
 		</jobTemplate>
+		<!-- BEAM Level 3 processor job template  -->
 		<jobTemplate id="binning">
-			<streamingExecutable>/application/binning/run</streamingExecutable>
-			<defaultParameters>
+			<streamingExecutable>/application/binning/run.sh</streamingExecutable>
+			<defaultParameters>						
+				<parameter id="cellsize">9.28</parameter>
 				<parameter id="bandname">out</parameter>
-        			<parameter id="bitmask">l1_flags.INVALID?0:radiance_13>15?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
-        			<parameter id="bbox">-180,-90,180,90</parameter>
-        			<parameter id="algorithm">MIN_MAX</parameter>
-        			<parameter id="outputname">binned</parameter>
-        			<parameter id="palette">#MCI_Palette
+				<parameter id="bitmask">l1_flags.INVALID?0:radiance_13>15?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
+				<parameter id="bbox">-180,-90,180,90</parameter>
+				<parameter id="algorithm">Minimum/Maximum</parameter>
+				<parameter id="outputname">binned</parameter>
+				<parameter id="resampling">binning</parameter>
+				<parameter id="palette">#MCI_Palette
 color0=0,0,0
 color1=0,0,154
 color2=54,99,250
@@ -34,23 +38,33 @@ sample4=100.0015413237781
 sample5=100.4522313573219
 sample6=100.90292139086574
 sample7=101.35361142440956
-sample8=101.80430145795337</parameter>	
+sample8=101.80430145795337</parameter>
+				<parameter id="band">1</parameter>
+				<parameter id="tailor">true</parameter>
 			</defaultParameters>
+			<defaultJobconf>
+		        	<property id="ciop.job.max.tasks">1</property>
+		        </defaultJobconf>
 		</jobTemplate>
 	</jobTemplates>
-  	<workflow id="beam_arithm">
+  	<workflow id="beam_arithm">						
 		<workflowVersion>1.0</workflowVersion>
-		<node id="node_expression">
-			<job id="expression"/>
+		<node id="node_expression">				
+			<job id="expression"></job>			
 			<sources>
 				<source refid="file:urls">/application/inputs/list</source>
 			</sources>
+			<parameters>					
+			</parameters>
 		</node>
-		<node id="node_binning">
-			<job id="binning"/>
+		<node id="node_binning">				
+			<job id="binning"></job>			
 			<sources>
-				<source refid="wf:node">node_expression</source>
+				<source refid="wf:node">node_expression</source>				
 			</sources>
+			<parameters>
+				<parameter id="bitmask"/>		
+			</parameters>
 		</node>
 	</workflow>
 </application>
