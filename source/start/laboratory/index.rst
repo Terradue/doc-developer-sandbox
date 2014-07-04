@@ -27,12 +27,12 @@ Terradue's "CA cert" must be shows up under the "Authorities" label of your Brow
 Chrome makes use of the trust store of the operating system.
 Firefox maintains all its CAs.
 
-Download your Certificate in PFX format
+Download your SSL Certificate in PFX format
 ---------------------------------------
 
 The SSL (Secure Socket Layer) is the most widely deployed security protocol used today. It is essentially a protocol that provides a secure channel between two machines operating over the Internet or an internal network.
 
-The SSL Certificate issued by the Terradue Certification Authority (CA) is used to access securely the Terradue's infrastructure. It should be imported into a browser in order to use it. This section describes the certificate import procedures for different browsers and platforms.
+The SSL Certificate issued by the CA should be imported into a browser in order to use it. This section describes the certificate import procedures for different browsers and platforms.
 
 - Go to *https://ca.terradue.com/gpodcs/cgi/certdown.cgi?U=<your_registration_email@organization.com>&F=Kpfx* (**replace by your registration e-mail**)
 - Type the certificate password that you chose during the registration.
