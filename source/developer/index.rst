@@ -14,7 +14,6 @@ Contents:
    Hands-On Exercise 5: using parameters <parameters>
    Hands-On Exercise 6: a multi-node workflow <multinode>
 ..   
-   Hands-On Exercise: defining parameters
-   Hands-On Exercise: using the catalogue 
-   Hands-On Exercice: publishing results
-   Hands-On Exercise: Web Processing Service
+   Hands-On Exercise 7: browse published results
+   Hands-On Exercise 8: using the catalogue 
+   Hands-On Exercise 9: Web Processing Service

@@ -12,21 +12,12 @@ The ESA BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-
 
 .. code-block:: console
 
-  sudo yum install esa-beam-4.11
+  sudo yum install -y esa-beam-4.11
 
 Prepare the application.xml
 ===========================
 
-.. container:: ciccio
-
-  .. code-block:: bash
-
-    this is a test
-    ok
-    ok
-
-
-Modify the application.xml in this way:
+Modify the *application.xml* in this way:
 
 .. literalinclude:: src/toolbox/application.xml
      :language: xml

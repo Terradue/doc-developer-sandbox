@@ -59,7 +59,7 @@ Prepare the test inputs
 Prepare the run executable
 ================================
 
-The run executable is responsbile for *executing* your application in the Sandbox. In the *application.xml* we defined a workflow with a single node and the related run executable:
+The run executable is responsible for *executing* your application in the Sandbox. In the *application.xml* we defined a workflow with a single node and the related run executable:
 
 .. literalinclude:: src/basic/application.xml
   :language: xml
