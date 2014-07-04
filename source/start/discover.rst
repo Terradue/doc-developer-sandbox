@@ -20,7 +20,7 @@ The Dashboard provides:
 
   The Sandbox status information (name, owner, security, network, disks)
 
-**Application descriptior viewer tab**
+**Application descriptor viewer tab**
 
 .. figure:: assets/dashboard_sandbox.png
   :width: 500px
