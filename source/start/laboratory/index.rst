@@ -165,9 +165,9 @@ To solve this kind of issue, add manually Terradue's DNS server as a new line in
 
 .. code-block:: bash
 
-  nameserver 10.10.10.1
+  nameserver 10.16.20.14
 
-If you are using the NetworkManager tool (e.g. in the GNOME desktop environment), you should instead statically add the nameserver address 10.10.10.1 through the GUI. 
+If you are using the NetworkManager tool (e.g. in the GNOME desktop environment), you should instead statically add the nameserver address 10.16.20.14 through the GUI. 
 
 
 Going further
