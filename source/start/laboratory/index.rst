@@ -39,7 +39,7 @@ Firefox maintains all its CAs.
 Import your PFX Certificate in a Browser
 ----------------------------------------
 
-The certificate in PFX format (Personal Information Exchange) is used to authorise your access to some Platform's services like the Sandbox user dashboard.
+The certificate in PFX format (Personal Information Exchange) is used to authorise your access to some Platform's services like the Support site.
 
 Google Chrome
 ^^^^^^^^^^^^^
