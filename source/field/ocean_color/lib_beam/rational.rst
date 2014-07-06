@@ -66,4 +66,6 @@ R
 
 R is used to organize the inputs for the Level 3 Binning Processor.
 
+R is a language and environment for statistical computing and graphics. R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, ...) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity. It is one of languages that can be used to implement applications in the framework.
+
 .. [#f1] `ESA BEAM Toolbox <http://www.brockmann-consult.de/cms/web/beam/>`_
