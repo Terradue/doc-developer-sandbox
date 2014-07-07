@@ -36,7 +36,7 @@ We added a second node named *node_binning* and we declared that its source is t
 Prepare the run executable
 ===========================
 
-* Now we have to prepare the run executable for the node_binning:   
+* Now we have to prepare the run executable for the node_binning. Type the following commands:   
 
 .. code-block:: console
 
@@ -50,6 +50,13 @@ Prepare the run executable
 .. literalinclude:: src/multinode/binning/run.sh
       :language: bash
       :tab-width: 2
+
+Note that the ciop-publish command is called with the option *-m*. This means that it will publish the files as results of the entire workflow. Files are not going to be passed to the next job. They are placed in a persistent shared location common to the whole workflow.
+
+.. literalinclude:: src/multinode/binning/run.sh
+     :language: bash
+     :tab-width: 2
+     :lines: 138
 
 Run and debug the workflow
 ==========================
@@ -145,7 +152,10 @@ You will see:
 Recap
 =====
 
-TBD
+* We added a second node (*node_binning*) to our workflow,
+* We published results as final results of the workflow,
+* We ran the added node using the *ciop-simjob* command,
+* We ran the entire workflow using the *ciop-simwf* command.
 
 Files used in this Hands-On
 ===========================
