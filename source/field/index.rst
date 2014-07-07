@@ -43,7 +43,7 @@ This section provides the guidelines on how to test the workflow nodes individua
 This section describes how to exploit the application with e.g. larger datasets.
 
 Themes and applications addressed in the Field Guide
-----------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. toctree::
    :maxdepth: 2
