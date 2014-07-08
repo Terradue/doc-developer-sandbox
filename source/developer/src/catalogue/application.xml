@@ -7,7 +7,7 @@
 			<defaultParameters>						
 				<parameter id="expression">l1_flags.INVALID?0:radiance_13>15?0:100+radiance_9-(radiance_8+(radiance_10-radiance_8)*27.524/72.570)</parameter>
 				<parameter id="startdate" type="opensearch" target="time:start">2012-04-06T10:24:29.000Z</parameter>
-				<parameter id="enddate" type="opensearch" target="time:end">2012-04-07T12:11:35.000Z</parameter>
+				<parameter id="enddate" type="opensearch" target="time:end">2012-04-07</parameter>
 				<parameter id="qbbox" type="opensearch" target="geo:box">2.99,58.45,0.53,58.26</parameter>
 			</defaultParameters>
 		</jobTemplate>
