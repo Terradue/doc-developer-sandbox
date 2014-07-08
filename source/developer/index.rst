@@ -13,8 +13,8 @@ Contents:
    Hands-On Exercise 4: using a toolbox <toolbox>
    Hands-On Exercise 5: using parameters <parameters>
    Hands-On Exercise 6: a multi-node workflow <multinode>
-   Hands-On Exercise 7: browse published results <browseresults>
-   Hands-On Exercise 8: using an OpenSearch catalogue <catalogue> 
+   Hands-On Exercise 7: debug a multi-node workflow <debug-multinode>
+   Hands-On Exercise 8: browse published results <browseresults>
+   Hands-On Exercise 9: using an OpenSearch catalogue <catalogue> 
+   Hands-On Exercise 10: prepare an OGC Web Processing Service <wps>
 ..   
-   Hands-On Exercise 9: Web Processing Service
-   Hands-On Exercise x: Debug a workflow through Oozie

@@ -1,9 +1,9 @@
-.. _multinode:
+.. _browseresults:
 
-Hands-On Exercise 7: browse published results
+Hands-On Exercise 8: browse published results
 #############################################
 
-In this exercise we will run again the multinode workflow of the :doc:`Hands-On Exercise 6 <multinode>`  and we will broswe its results through the Web GUI.   
+In this exercise we will run again the multinode workflow of the :doc:`Hands-On Exercise 6 <multinode>`  and we will browse its results through the Web GUI.   
 
 Run the workflow 
 ================
@@ -19,11 +19,11 @@ Run the workflow
 Browse the results
 ==================
 
-* Open a browser and type http://<sandbox_host>:50070 ,
+* Open a browser and type http://$HOSTNAME:50070 ,
 
 .. tip::
-  
-  Read how to obtain the value of <sandbox_host> in the :doc:`Connect to your Sandbox <../start/sandbox>` section
+     
+  Read how to obtain the value of $HOSTNAME in the :doc:`General Notes <general_notes>` section
 
 * Click on the link *Browse the filesystem*,
 

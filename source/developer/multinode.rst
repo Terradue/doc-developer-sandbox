@@ -162,7 +162,7 @@ Files used in this Hands-On
 
 * :download:`application.xml <src/multinode/application.xml>`
 * :download:`inputs/list <src/stagedata/list>`
-* :download:`expression/run <src/parameters/expression/run.sh>`
+* :download:`expression/run.sh <src/parameters/expression/run.sh>`
 * :download:`binning/run.sh <src/multinode/binning/run.sh>`
 
 .. rubric:: Footnotes

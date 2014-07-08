@@ -31,6 +31,18 @@ The dollar sign ($) at the beginning of each line indicates the Linux shell prom
 
   /application
 
+* Sometimes the Hands-On refer to the variable *$HOSTNAME*. To obtain its value type:
+
+.. code-block:: console
+
+  echo $HOSTNAME
+
+The output will be similar to:
+
+.. code-block:: console-output
+
+  sb-xx-xx-xx-xx.lab.terradue.int
+
 Install additional software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
