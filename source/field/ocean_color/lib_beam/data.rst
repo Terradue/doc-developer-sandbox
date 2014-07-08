@@ -30,7 +30,26 @@ That will copy the Envisat MERIS Level 1 acquisitions available on Terradue cata
 
 
 To check the registered data and its accessibility go back to the sandbox catalogue web interface and click the Search button. The graphical interface will show the data now available on the sandbox.
-Click on one product of the list on the left and then on the Access tab below the map. Finally click on the HTTP URL. The download of the select MERIS Level 1 product starts.
+
+.. figure:: assets/lib_beam_catui.png
+  :width: 500px
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+  The Sandbox catalogue user interface showing the registered data
+
+Click on one product of the list on the left and then on the Access tab below the map. 
+
+.. figure:: assets/lib_beam_catui_prd.png
+  :width: 500px
+  :align: center
+  :alt: alternate text
+  :figclass: align-center
+
+  The Sandbox catalogue user interface showing the selected prodcut details
+  
+Finally click on the HTTP URL. The download of the select MERIS Level 1 product starts.
 
 Copy the link to the selected MERIS file, go back to the sandbox shell and type
 
