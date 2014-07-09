@@ -2,7 +2,7 @@
 <application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="beam_arithm">
 	<jobTemplates>
 		<jobTemplate id="expression">
-			<streamingExecutable>/application/expression/run</streamingExecutable>
+			<streamingExecutable>/application/expression/run.sh</streamingExecutable>
 		</jobTemplate>
 	</jobTemplates>
   	<workflow id="beam_arithm">

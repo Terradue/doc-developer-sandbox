@@ -3,7 +3,7 @@
 Hands-On Exercise 7: debug a multi-node workflow
 ###############################################
 
-In this exercise we will see how to debug the multi-node workflow described in the :doc:`Hands-On Exercise 6 <multinode>` using a specific Web GUI.   
+In this exercise we will see how to debug the workflow described in the exercise :doc:`a multi-node workflow <multinode>` using a specific Web GUI.   
 
 Run the workflow 
 ================
@@ -37,7 +37,7 @@ Debug the workflow
 
 * Click on the lens image,
 
-* Continue debugging as described in :doc:`Hands-On Exercise 2 <debug>`. 
+* Continue debugging as described in the exercise :doc:`make a robust workflow and debug it <debug>`. 
 
 The following image show the steps that we have just performed:
 
@@ -60,11 +60,11 @@ The following image show the steps that we have just performed:
 Recap
 =====
 
-* We executed a multi-node workflow, 
-* We used the Oozie Web Console to debug it.
+#. We executed a multi-node workflow, 
+#. We used the Oozie Web Console to debug it.
 
 
 Files used in this Hands-On
 ===========================
 
-Refer to files used in the :doc:`Hands-On Exercise 6 <multinode>`
+Refer to files used in the exercise :doc:`a multi-node workflow <multinode>`

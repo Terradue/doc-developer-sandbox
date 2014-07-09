@@ -3,21 +3,25 @@
 Hands-On Exercise 3: staging data
 #################################
 
-In this exercise we will prepare input data for our workflow (aka *Stage In*) and we will publish out data as result of the workflow (aka *Stage Out*).   
+In this exercise we will prepare input data for our workflow (this process is named *Stage In*) and we will publish out data as result of the workflow (this process is named *Stage Out*).   
 
 Prepare the application.xml
 ===========================
 
-The application.xml is the same used in the :doc:`Hands-On Exercise 1 <basic>`:
+The application.xml is the same used in the exercise :doc:`a basic workflow <basic>`:
 
-.. literalinclude:: src/basic/application.xml
-  :language: xml
-  :tab-width: 2
+.. container:: context-application-descriptor-file
+
+  .. literalinclude:: src/basic/application.xml
+    :language: xml
+    :tab-width: 2
 
 Download data from a catalogue
 ==============================
 
-We need a local copy of the data in order to use them in our workflow. We can use the *ciop-copy* tool: 
+We need a local copy of the data in order to use them in our workflow. We can use the *ciop-copy* tool.
+
+* Type the following commands: 
 
 .. code-block:: console
 
@@ -49,11 +53,13 @@ Prepare the file list
 Publish the data
 ================
 
-* Open the file *my_node/run* and paste the following code:
+* Open the file *my_node/run.sh* and paste the following code:
 
-.. literalinclude:: src/stagedata/run
-   :language: bash
-   :tab-width: 2
+.. container:: context-run-executable
+
+  .. literalinclude:: src/stagedata/run.sh
+     :language: bash
+     :tab-width: 2
 
 .. NOTE::
      The command *ciop-publish* will put the input data in the HDFS (the underlying Distributed File System). 
@@ -69,33 +75,35 @@ Run and debug the workflow
 
 The output will be similar to:
 
-.. code-block:: none
-   
- 14/04/24 18:06:38 INFO my_node simulation started
- 14/04/24 18:06:46 INFO Deleted hdfs://sb-10-16-10-21.dev.terradue.int:8020/tmp/sandbox/my_workflow/workflow-params.xml
- 14/04/24 18:06:49 INFO Submitting job 12817 ...
- 14/04/24 18:06:49 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
- packageJobJar: [/var/lib/hadoop-0.20/cache/crossi/hadoop-unjar6012488669445715409/] [] /tmp/streamjob840740301405285441.jar tmpDir=null
- 14/04/24 18:06:51 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
- 14/04/24 18:06:51 WARN snappy.LoadSnappy: Snappy native library not loaded
- 14/04/24 18:06:51 INFO mapred.FileInputFormat: Total input paths to process : 1
- 14/04/24 18:06:52 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/crossi/mapred/local]
- 14/04/24 18:06:52 INFO streaming.StreamJob: Running job: job_201404181621_0005
- 14/04/24 18:06:52 INFO streaming.StreamJob: To kill this job, run:
- 14/04/24 18:06:52 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-21.dev.terradue.int:8021 -kill job_201404181621_0005
- 14/04/24 18:06:52 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-21.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201404181621_0005
- 14/04/24 18:06:53 INFO streaming.StreamJob:  map 0%  reduce 0%
- 14/04/24 18:07:03 INFO streaming.StreamJob:  map 100%  reduce 0%
- 14/04/24 18:09:02 INFO streaming.StreamJob:  map 100%  reduce 100%
- 14/04/24 18:09:05 INFO streaming.StreamJob: Job complete: job_201404181621_0005
- 14/04/24 18:09:05 INFO streaming.StreamJob: Output: /tmp/sandbox/my_workflow/my_node/output
- 14/04/24 18:09:05 INFO my_node simulation ended (147 seconds)
- 14/04/24 18:09:06 INFO my_node published:
- hdfs:///tmp/sandbox/my_workflow/my_node/data/MER_RR__1PRLRA20120406_134456_000026243113_00240_52840_0230.N1    
- hdfs:///tmp/sandbox/my_workflow/my_node/data/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1     
- 14/04/24 18:09:06 INFO The results are available at /share/tmp/sandbox/my_workflow/my_node/data
+.. code-block:: console-output
 
-* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`Hands-On Exercise 2 <debug>`). You will see an output similar to:
+ 14/07/09 14:20:27 INFO my_node simulation started
+ 14/07/09 14:20:34 INFO Submitting job 681 ...
+ 14/07/09 14:20:35 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
+ 14/07/09 14:20:35 INFO streaming.StreamJob: Dir hdfs://sb-10-16-10-33.dev.terradue.int:8020/user/crossi/monitor already exists
+ packageJobJar: [/var/lib/hadoop-0.20/cache/crossi/hadoop-unjar4306638911488716227/] [] /tmp/streamjob3977059005447180662.jar tmpDir=null
+ 14/07/09 14:20:35 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ 14/07/09 14:20:35 WARN snappy.LoadSnappy: Snappy native library not loaded
+ 14/07/09 14:20:35 INFO mapred.FileInputFormat: Total input paths to process : 1
+ 14/07/09 14:20:36 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/crossi/mapred/local]
+ 14/07/09 14:20:36 INFO streaming.StreamJob: Running job: job_201407031504_0054
+ 14/07/09 14:20:36 INFO streaming.StreamJob: To kill this job, run:
+ 14/07/09 14:20:36 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-33.dev.terradue.int:8021 -kill job_201407031504_0054
+ 14/07/09 14:20:36 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-33.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201407031504_0054
+ 14/07/09 14:20:37 INFO streaming.StreamJob:  map 0%  reduce 0%
+ 14/07/09 14:20:46 INFO streaming.StreamJob:  map 100%  reduce 0%
+ 14/07/09 14:21:23 INFO streaming.StreamJob:  map 100%  reduce 33%
+ 14/07/09 14:21:25 INFO streaming.StreamJob:  map 100%  reduce 100%
+ 14/07/09 14:21:26 INFO streaming.StreamJob: Job complete: job_201407031504_0054
+ 14/07/09 14:21:26 INFO streaming.StreamJob: Output: /tmp/sandbox/my_workflow/my_node/output
+ 14/07/09 14:21:26 INFO my_node simulation ended (59 seconds)
+ 14/07/09 14:21:26 INFO my_node published:
+ hdfs://sb-10-16-10-33.dev.terradue.int:8020/tmp/sandbox/my_workflow/my_node/data/MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1        
+ hdfs://sb-10-16-10-33.dev.terradue.int:8020/tmp/sandbox/my_workflow/my_node/data/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1 
+ 14/07/09 14:21:26 INFO The intermediate results are available at http://sb-10-16-10-33.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/my_workflow/my_node%2Fdata&namenodeInfoPort=50070
+ 14/07/09 14:21:26 INFO The published results are available at http://sb-10-16-10-33.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/my_workflow/my_node%2F_results&namenodeInfoPort=50070   
+
+* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/stagedata/gui1.png
    :scale: 70 %
@@ -113,4 +121,4 @@ Files used in this Hands-On
 
 * :download:`application.xml <src/basic/application.xml>`
 * :download:`inputs/list <src/stagedata/list>`
-* :download:`my_node/run <src/stagedata/run>`
+* :download:`my_node/run.sh <src/stagedata/run.sh>`

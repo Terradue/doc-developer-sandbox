@@ -3,7 +3,7 @@
 Hands-On Exercise 8: browse published results
 #############################################
 
-In this exercise we will run again the multinode workflow of the :doc:`Hands-On Exercise 6 <multinode>`  and we will browse its results through the Web GUI.   
+In this exercise we will run again the workflow of the exercise :doc:`a multi-node workflow <multinode>`  and we will browse its results through the Web GUI.   
 
 Run the workflow 
 ================
@@ -14,7 +14,7 @@ Run the workflow
 
   ciop-simwf
 
-* Wait until the workflow is completed
+* Wait until the workflow is completed (it will take approximately five minutes).
 
 Browse the results
 ==================
@@ -39,7 +39,7 @@ Browse the results
   
 * To see intermediate results, click on *node_expression* and then click on *data*. 
 
-The following image show the steps that we have just performed:
+The following images show the steps that we have just performed:
 
 .. figure:: includes/browseresults/gui1.png
    :scale: 80 %
@@ -72,11 +72,11 @@ The following image show the steps that we have just performed:
 Recap
 =====
 
-* We executed a multinode workflow, 
-* We browsed either final or intermediate results through the Web GUI.
+#. We executed a multinode workflow, 
+#. We browsed either final or intermediate results through the Web GUI.
 
 
 Files used in this Hands-On
 ===========================
 
-Refer to files used in the :doc:`Hands-On Exercise 6 <multinode>`
+Refer to files used in the exercise :doc:`a multi-node workflow <multinode>`

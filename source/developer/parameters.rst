@@ -8,28 +8,34 @@ In this exercise we will see the usage of parameters in the workflow.
 Prepare the application.xml
 ===========================
 
-Modify the application.xml in this way:
+Modify the *application.xml* in this way:
 
-.. literalinclude:: src/parameters/application.xml
-     :language: xml
-     :tab-width: 2
+.. container:: context-application-descriptor-file
+
+  .. literalinclude:: src/parameters/application.xml
+       :language: xml
+       :tab-width: 2
 
 Modify the run executable
 ===========================
 
 * Open the file *expression/run.sh* and substitute the line:
 
-.. literalinclude:: src/toolbox/expression/run
-      :language: bash
-      :tab-width: 2
-      :lines: 39
+.. container:: context-run-executable
+
+  .. literalinclude:: src/toolbox/expression/run.sh
+        :language: bash
+        :tab-width: 2
+        :lines: 39
 
 with:
 
-.. literalinclude:: src/parameters/expression/run.sh
-      :language: bash
-      :tab-width: 2
-      :lines: 35-39
+.. container:: context-run-executable
+
+  .. literalinclude:: src/parameters/expression/run.sh
+        :language: bash
+        :tab-width: 2
+        :lines: 35-39
 
 
 Run and debug the workflow
@@ -41,7 +47,7 @@ Run and debug the workflow
 
   ciop-simjob node_expression
 
-* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`Hands-On Exercise 2 <debug>`). You will see an output similar to:
+* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/parameters/gui1.png
      :scale: 70 %
