@@ -22,16 +22,20 @@ Prepare the application.xml
 
 * Modify the *application.xml* in this way:
 
-.. literalinclude:: src/multinode/application.xml
-     :language: xml
-     :tab-width: 2
+.. container:: context-application-descriptor-file
+
+  .. literalinclude:: src/multinode/application.xml
+       :language: xml
+       :tab-width: 2
 
 We added a second node named *node_binning* and we declared that its source is the node_expression. Actually we concatenated the two nodes:  
 
-.. literalinclude:: src/multinode/application.xml
-     :language: xml
-     :tab-width: 2
-     :lines: 60-68
+.. container:: context-application-descriptor-file
+
+  .. literalinclude:: src/multinode/application.xml
+       :language: xml
+       :tab-width: 2
+       :lines: 60-68
 
 Prepare the run executable
 ===========================
@@ -47,16 +51,20 @@ Prepare the run executable
 
 * Open the file *binning/run.sh* and paste the following code:
 
-.. literalinclude:: src/multinode/binning/run.sh
-      :language: bash
-      :tab-width: 2
+.. container:: context-run-executable
 
-Note that the ciop-publish command is called with the option *-m*. This means that it will publish the files as results of the entire workflow. Files are not going to be passed to the next job. They are placed in a persistent shared location common to the whole workflow.
+  .. literalinclude:: src/multinode/binning/run.sh
+        :language: bash
+        :tab-width: 2
 
-.. literalinclude:: src/multinode/binning/run.sh
-     :language: bash
-     :tab-width: 2
-     :lines: 138
+Note that the *ciop-publish* command is called with the option *-m*. This means that it will publish the files as results of the entire workflow. Files are not going to be passed to the next job. They are placed in a persistent shared location common to the whole workflow.
+
+.. container:: context-run-executable
+
+  .. literalinclude:: src/multinode/binning/run.sh
+       :language: bash
+       :tab-width: 2
+       :lines: 138
 
 Run and debug the workflow
 ==========================
@@ -80,7 +88,7 @@ You will see:
 
   ciop-simjob node_binning
 
-* Check the output of the command *ciop-simjob node_binning*. It will be similar to:
+The output will be similar to:
 
 .. code-block:: console-output
 
@@ -114,6 +122,8 @@ You will see:
 .. code-block:: console
 
   ciop-simwf
+
+* Follow the execution until it ends (approximately five minutes),
 
 * Check the output of the command *ciop-simwf*. It will be similar to:
 
@@ -152,10 +162,10 @@ You will see:
 Recap
 =====
 
-* We added a second node (*node_binning*) to our workflow,
-* We published results as final results of the workflow,
-* We ran the added node using the *ciop-simjob* command,
-* We ran the entire workflow using the *ciop-simwf* command.
+#. We added a second node (*node_binning*) to our workflow,
+#. We published results as final results of the workflow,
+#. We ran the added node using the *ciop-simjob* command,
+#. We ran the entire workflow using the *ciop-simwf* command.
 
 Files used in this Hands-On
 ===========================

@@ -35,17 +35,17 @@ Prepare the run executable
 
   cd $_CIOP_APPLICATION_PATH
   mkdir expression
-  touch expression/run
-  chmod +x expression/run
+  touch expression/run.sh
+  chmod +x expression/run.sh
 
 .. NOTE::
-        If you prefer, you can delete the previous my_node/run executable since it will not be used anymore.
+        If you prefer, you can delete the previous my_node/run.sh executable since it will not be used anymore.
 
-* Open the file *expression/run* and paste the following code:
+* Open the file *expression/run.sh* and paste the following code:
 
 .. container:: context-run-executable
 
-  .. literalinclude:: src/toolbox/expression/run
+  .. literalinclude:: src/toolbox/expression/run.sh
       :language: bash
       :tab-width: 2
 
@@ -53,7 +53,7 @@ The ESA BEAM Toolbox is called in:
 
 .. container:: context-run-executable
 
-  .. literalinclude:: src/toolbox/expression/run
+  .. literalinclude:: src/toolbox/expression/run.sh
       :language: bash
       :tab-width: 2
       :lines: 105
@@ -69,7 +69,7 @@ Run and debug the workflow
 
   ciop-simjob node_expression
 
-* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`Hands-On Exercise 2 <debug>`). You will see an output similar to:
+* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/toolbox/gui1.png
      :scale: 70 %
@@ -80,7 +80,6 @@ Recap
 
 #. We installed the custom toolbox ESA BEAM,
 #. We included it in a run executable,
-
 #. We processed the inputs with the BandMaths Operator provided by the ESA BEAM Toolbox,
 #. We published the results in HDFS.
 
@@ -89,7 +88,7 @@ Files used in this Hands-On
 
 * :download:`application.xml <src/toolbox/application.xml>`
 * :download:`inputs/list <src/stagedata/list>`
-* :download:`expression/run <src/toolbox/expression/run>`
+* :download:`expression/run.sh <src/toolbox/expression/run.sh>`
 
 .. rubric:: Footnotes
 

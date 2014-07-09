@@ -8,11 +8,13 @@ In this exercise we will modify the basic workflow to make it more robust. Also 
 Modify the run executable
 ==========================
 
-* Open the *my_node/run* executable with a text editor and modify it in the following way:
+* Open the *my_node/run.sh* executable with a text editor and modify it in the following way:
+
+.. container:: context-run-executable
  
-.. literalinclude:: src/debug/run
-  :language: bash
-  :tab-width: 2
+  .. literalinclude:: src/debug/run.sh
+    :language: bash
+    :tab-width: 2
 
 We added the *cleanExit()* function. It will be useful to trace our workflow and make it more robust.
 
@@ -28,8 +30,8 @@ Run the node and debug the workflow
 * From the output of the *ciop-simjob* command we can copy in the clipboard the **Tracking URL**. It will be similar to this:
 
 .. code-block:: console-output
- 
- 14/04/22 11:07:35 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-21.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201404181621_0001
+
+ 14/07/09 12:43:53 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-33.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201407031504_0052 
 
 * Open a browser and paste the Tracking URL just copied,
 
@@ -78,4 +80,4 @@ Files used in this Hands-On
 
 * :download:`application.xml <src/basic/application.xml>`
 * :download:`inputs/list <src/basic/list>`
-* :download:`my_node/run <src/debug/run>`
+* :download:`my_node/run.sh <src/debug/run.sh>`
