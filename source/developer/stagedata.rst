@@ -62,7 +62,7 @@ Publish the data
      :tab-width: 2
 
 .. NOTE::
-     The command *ciop-publish* will put the input data in the HDFS (the underlying Distributed File System). 
+     The command *ciop-publish* will put the input data in the HDFS (the underlying Distributed File System) and it will pass its references to the subsequent node. 
 
 Run and debug the workflow
 ==========================
