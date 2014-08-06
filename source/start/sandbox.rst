@@ -106,6 +106,3 @@ That's all :-)
 
 .. NOTE::
   The PEM certificate is not used to access the system with PuTTY. Only the generated <yourcertificate>.ppk file is needed.
-
-Connecting from iPad
---------------------
