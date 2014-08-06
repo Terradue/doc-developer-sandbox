@@ -4,11 +4,12 @@ Application descriptor reference
 Purpose
 -------
 
-The application descriptor file is an XML document that describes an Application Workflow (see :doc:`Application Workflow </design/workflow>`).
+The application descriptor file is an XML document that describes an Application Workflow (see :doc:`Application Workflow </design/workflow>`) and it contains two blocks:
 
-It contains two blocks:
+#. jobTemplates
+#. workflow
 
-#. The **first block** defines the job templates that are then instantiated as workflow nodes of the Directed Acyclic Graph.
+The **first block** defines the job templates that are then instantiated as workflow nodes of the Directed Acyclic Graph.
 
 Each job template contains:
 
@@ -16,7 +17,7 @@ Each job template contains:
 * parameters and optionaly their default value 
 * properties (e.g. maximum number of tasks, wall-time, etc.)
 
-#. The **second block** contains the workflow nodes.
+The **second block** contains the workflow nodes.
 
 The workflow contains the nodes, each defining:
 
