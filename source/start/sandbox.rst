@@ -10,7 +10,7 @@ Prerequisites
 
 - You receveid an email from support@terradue.com where the subject contains "First connection",
 - You have the <sandbox_user> and the <sandbox_host> information, provided by the "First connection" e-mail,
-- You are connected to the Terradue's VPN (see :ref:`<laboratory>`).
+- You are connected to the Terradue's VPN (see :doc:`Run your VPN Connection <laboratory/index#run-your-vpn-connection>`).
 
 Download the Certificate in PEM format
 --------------------------------------
