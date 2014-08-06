@@ -1,5 +1,5 @@
 Bash commands and functions
-==========================
+===========================
 
 Contents:
 
@@ -10,4 +10,4 @@ Contents:
    Catalogue access and management <catalogue/index>
    Simulation <simulation/index>
    Scripting functions <script_functions/index>
-   Miscellaneous <miscellaneous>
+   Miscellaneous <miscellaneous/index>

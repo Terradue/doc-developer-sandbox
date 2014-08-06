@@ -6,6 +6,6 @@ Contents:
 .. toctree::
    :maxdepth: 3
    
-   Application descriptor reference <application>
+   Application Descriptor reference <application/index>
    Developer Sandbox command reference <man/index>
    
