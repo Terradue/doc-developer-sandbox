@@ -206,9 +206,9 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('reference/man/ciop-appcheck', 'ciop-appcheck', 'Application Validity Checker', ['Terradue Team <support@terradue.com>'], 7),
-    ('reference/man/ciop-casmeta', 'ciop-casmeta', 'Catalogue metadata', ['Terradue Team <support@terradue.com>'], 7),
-    ('reference/man/ciop-catcp', 'ciop-catcp', 'Catalogue metadata copy', ['Terradue Team <support@terradue.com>'], 7),
+    ('reference/man/bash_commands_functions/miscellaneous/ciop-appcheck', 'ciop-appcheck', 'Application Validity Checker', ['Terradue Team <support@terradue.com>'], 7),
+    ('reference/man/bash_commands_functions/miscellaneous/catalogue/ciop-casmeta', 'ciop-casmeta', 'Catalogue metadata', ['Terradue Team <support@terradue.com>'], 7),
+    ('reference/man/bash_commands_functions/miscellaneous/catalogue/ciop-catcp', 'ciop-catcp', 'Catalogue metadata copy', ['Terradue Team <support@terradue.com>'], 7),
 ]
 
 # If true, show URL addresses after external links.
