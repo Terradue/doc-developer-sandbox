@@ -138,6 +138,8 @@ Now you can download and install your OpenVPN Client, in order to establish a co
 - Type as Password the passphrase that you chose during the registration.
 - Once logged, all the connection setup is automatic, you must only approve the access by the new client.
 
+.. _run-your-vpn-connection:
+
 Run your VPN Connection
 -----------------------
 
