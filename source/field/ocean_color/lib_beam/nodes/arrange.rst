@@ -38,7 +38,7 @@ which translates to the XML code in the node arrange job template:
   :tab-width: 1
   :lines: 20-22
 
-The job template sets the :ref:`ciop.job.max.tasks` to one instance since the streaming executable has to process all inputs at once:
+The job template sets the *ciop.job.max.tasks* to one instance since the streaming executable has to process all inputs at once:
 
 .. literalinclude:: ../src/src/main/app-resources/application.xml
   :language: xml
@@ -46,7 +46,7 @@ The job template sets the :ref:`ciop.job.max.tasks` to one instance since the st
   :lines: 23-25
   	
 .. NOTE::
-  The property :ref:`mapred.task.timeout` is not set and uses the default value (10 minutes).*
+  The property *mapred.task.timeout* is not set and uses the default value (10 minutes).*
 
 Here's the job template including all the elements described above:
 
