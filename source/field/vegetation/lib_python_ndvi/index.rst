@@ -14,8 +14,8 @@ Contents:
    Addressing a scientific and processing goal <goal>
    Workflow design <workflow>
    Processing nodes design <nodes/index>
-..   Application integration <integration>
    Application testing <testing>
    Data preparation <data>
+..   Application integration <integration>
 ..   Application exploitation <exploitation>
 ..   Going further <further>
