@@ -31,5 +31,4 @@ It is the preferred option to process large datasets and to expose catalogue que
 
 
 .. tip:: 
-  For details on how to implement this, read :doc:`Application descriptor reference </reference/application>`
-
+  For details on how to implement this, read :doc:`Application descriptor reference </reference/application/index>`

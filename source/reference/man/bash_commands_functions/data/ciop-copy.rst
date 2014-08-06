@@ -71,7 +71,7 @@ Following runs of a given node (deletes the results of a previous run)
 See Also
 --------
 
-:doc:`ciop-catcp <ciop-catcp>`
+:doc:`ciop-catcp <../catalogue/ciop-catcp>`
 
 Author
 ------

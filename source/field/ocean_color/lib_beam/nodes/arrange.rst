@@ -57,5 +57,5 @@ Here's the job template including all the elements described above:
 
 .. rubric:: Footnotes
 
-.. [#f1] The application file descriptor reference is found :doc:`here </reference/application>` and the entire Algal Bloom detection application descriptor file here: `/application/application.xml  <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/application.xml>`_  
+.. [#f1] The application file descriptor reference is found :doc:`here </reference/application/index>` and the entire Algal Bloom detection application descriptor file here: `/application/application.xml  <https://github.com/Terradue/BEAM-Arithm-tutorial/blob/master/application.xml>`_  
 .. [#f2] `R data frames <http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html>`_ 

@@ -187,5 +187,5 @@ The application descriptor is an XML file managed on the Sandbox APPLICATION fil
 
 .. tip:: 
 
-  Check that your application descriptor file is well formed with the :doc:`ciop-appcheck </reference/man/ciop-appcheck>` utility
+  Check that your application descriptor file is well formed with the :doc:`ciop-appcheck </reference/man/bash_commands_functions/miscellaneous/ciop-appcheck>` utility
 
