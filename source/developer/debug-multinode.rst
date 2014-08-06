@@ -1,7 +1,7 @@
 .. _debug-multinode:
 
 Hands-On Exercise 7: debug a multi-node workflow
-###############################################
+################################################
 
 In this exercise we will see how to debug the workflow described in the exercise :doc:`a multi-node workflow <multinode>` using a specific Web GUI.   
 
