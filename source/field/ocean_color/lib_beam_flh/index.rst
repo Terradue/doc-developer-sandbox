@@ -25,6 +25,6 @@ Contents:
    Data preparation <data>
    Application testing <testing>
    Application exploitation <exploitation>
-   Going further <further>
+..   Going further <further>
 
 .. [#f1] `ESA BEAM Programming tutorial (pdf) <http://www.brockmann-consult.de/beam/tutorials/ESRINWorkshop2012/BEAM_Programming_Tutorial_20121018.pdf>`_
