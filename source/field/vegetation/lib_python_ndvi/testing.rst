@@ -15,7 +15,7 @@ Each node of the DAG has:
 The node_ndvi node
 ------------------
 
-This application's workflow has a single node. Its identifer is set to *node_ndvi* and it instantiates the :doc:`py-job <node/ndvi>` job template.
+This application's workflow has a single node. Its identifer is set to *node_ndvi* and it instantiates the :doc:`py-job <nodes/ndvi>` job template.
 
 Here's how this simple workflow is defined:
 

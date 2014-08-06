@@ -32,7 +32,7 @@ Each node of DAG has:
 The node_flh node
 -----------------
 
-The first node of the DAG with the unique identifer set to *node_flh* instantiates the :doc:`flh-proc <node/flh-proc>` job template.
+The first node of the DAG with the unique identifer set to *node_flh* instantiates the :doc:`flh-proc <nodes/flh-proc>` job template.
 
 .. literalinclude:: ./src/src/main/app-resources/application.xml
   :language: xml

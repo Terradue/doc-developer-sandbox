@@ -1,3 +1,5 @@
+.. _laboratory:
+
 Join your Laboratory
 ####################
 

@@ -15,7 +15,7 @@ Each node of DAG has:
 The node_expression node
 ------------------------
 
-The first node of the DAG with the unique identifer set to *node_expression* instantiates the :doc:`expression <node/expression>` job template.
+The first node of the DAG with the unique identifer set to *node_expression* instantiates the :doc:`expression <nodes/expression>` job template.
 
 .. literalinclude:: src/src/main/app-resources/application.xml
   :language: xml
