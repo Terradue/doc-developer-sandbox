@@ -80,7 +80,7 @@ Testing the application
 Application installation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-All the application files are available on a GitHub repository `https://github.com/Terradue/dcs-beam-algalbloom`_. 
+All the application files are available on a `GitHub repository <https://github.com/Terradue/dcs-beam-algalbloom>`_. 
 
 The archive content is extracted to /application:
 

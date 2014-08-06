@@ -28,7 +28,7 @@ Chrome makes use of the trust store of the operating system.
 Firefox maintains all its CAs.
 
 Download your SSL Certificate in PFX format
----------------------------------------
+-------------------------------------------
 
 The SSL (Secure Socket Layer) is the most widely deployed security protocol used today. It is essentially a protocol that provides a secure channel between two machines operating over the Internet or an internal network.
 
