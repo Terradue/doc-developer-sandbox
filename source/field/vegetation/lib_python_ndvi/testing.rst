@@ -154,6 +154,6 @@ Go to the Sandbox dashboard (http://<sandbox IP>/dashboard). On the **Invoke** t
 .. rubric:: Footnotes
 
 .. [#f1] `Apache maven <http://maven.apache.org/>`_
-.. [#f2] :doc:`ciop-catcp man page </reference/man/ciop-simjob>`
-.. [#f3] :doc:`ciop-copy man page </reference/man/ciop-simwf>`
+.. [#f2] :doc:`ciop-simjob man page </reference/man/bash_commands_functions/simulation/ciop-simjob>`
+.. [#f3] :doc:`ciop-simwf man page </reference/man/bash_commands_functions/simulation/ciop-simwf>`
 

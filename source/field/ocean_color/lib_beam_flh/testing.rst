@@ -145,5 +145,5 @@ Wait for the workflow execution.
 
 .. rubric:: Footnotes
 
-.. [#f1] :doc:`ciop-catcp man page </reference/man/ciop-simjob>`
-.. [#f2] :doc:`ciop-copy man page </reference/man/ciop-simwf>`
+.. [#f1] :doc:`ciop-simjob man page </reference/man/bash_commands_functions/simulation/ciop-simjob>`
+.. [#f2] :doc:`ciop-simwf man page </reference/man/bash_commands_functions/simulation/ciop-simwf>`

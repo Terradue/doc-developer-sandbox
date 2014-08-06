@@ -87,5 +87,5 @@ Once the download is completed, the MERIS product is available in your /home fol
 
 .. rubric:: Footnotes
 
-.. [#f1] :doc:`ciop-catcp man page <../../../reference/man/ciop-catcp>`
-.. [#f2] :doc:`ciop-copy man page <../../../reference/man/ciop-copy>`
+.. [#f1] :doc:`ciop-catcp man page </reference/man/bash_commands_functions/catalogue/ciop-catcp>`
+.. [#f2] :doc:`ciop-copy man page </reference/man/bash_commands_functions/data/ciop-copy>`

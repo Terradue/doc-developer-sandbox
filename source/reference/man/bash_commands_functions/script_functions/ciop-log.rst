@@ -52,7 +52,7 @@ Examples
 See Also
 --------
 
-:doc:`ciop-getparam <ciop-ciop-getparam>`
+:doc:`ciop-getparam <ciop-getparam>`
 
 Author
 ------

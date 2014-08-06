@@ -83,5 +83,5 @@ Go back to the web interface, and click on Metadata tab, and on the RDF logo |lo
 
 .. rubric:: Footnotes
 
-.. [#f1] :doc:`ciop-catcp man page <../../../reference/man/ciop-catcp>`
-.. [#f2] :doc:`ciop-copy man page <../../../reference/man/ciop-copy>`
+.. [#f1] :doc:`ciop-catcp man page </reference/man/bash_commands_functions/catalogue/ciop-catcp>`
+.. [#f2] :doc:`ciop-copy man page </reference/man/bash_commands_functions/data/ciop-copy>`

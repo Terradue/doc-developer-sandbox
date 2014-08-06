@@ -45,7 +45,7 @@ The *APPLICATION* contains
 
 .. seealso:: 
 
-  The Application Descriptor file is described in :doc:`/reference/application`
+  The Application Descriptor file is described in :doc:`/reference/application/index`
 
 A *job template* folder contains:
 
@@ -123,7 +123,7 @@ and with the hdfs:// URL:
 
 A job can be executed several times, but the results of a previous execution will be overwritten by the new one.
 
-.. TIP:: ciop-simjob -n will list the workflow node name(s), check the ciop-simjob reference page here: :doc:`/reference/man/ciop-simjob`
+.. TIP:: ciop-simjob -n will list the workflow node name(s), check the ciop-simjob reference page here: :doc:`/reference/man/bash_commands_functions/simulation/ciop-simjob`
 
 **SHARE for ciop-simwf**
 
@@ -183,7 +183,7 @@ The application descriptor is an XML file managed on the Sandbox APPLICATION fil
 
 .. seealso:: 
 
-  The Application Descriptor file structure is documented in :doc:`/reference/application`
+  The Application Descriptor file structure is documented in :doc:`/reference/application/index`
 
 .. tip:: 
 

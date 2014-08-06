@@ -72,7 +72,7 @@ The application descriptor file structure is available below:
 +-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+--------------------+	
 
 
-.. tip:: Check your application descriptor file with the :doc:`ciop-appcheck </reference/man/ciop-appcheck>` utility
+.. tip:: Check your application descriptor file with the :doc:`ciop-appcheck </reference/man/bash_commands_functions/miscellaneous/ciop-appcheck>` utility
 
 
 Application descriptor values and properties
@@ -116,7 +116,7 @@ and the file *input.urls* contains the references to the local files:
 	file:///tmp/somefile2						
 	file:///tmp/somefile3						
 
-Then the job streaming executable can use :doc:`ciop-copy </reference/man/ciop-copy>` to copy the files if needed.
+Then the job streaming executable can use :doc:`ciop-copy </reference/man/bash_commands_functions/data/ciop-copy>` to copy the files if needed.
 
 .. code-block:: bash
 
@@ -174,7 +174,7 @@ If the products to process are available in a catalogue (either an external cata
 the dataset series OpenSearch description document URL.
 
 .. tip:: Check how to copy dataset catalogue entries by reference or by value (the dataset is copied physically to the sandbox storage)
-	to the sandbox internal catalogue with the :doc:`ciop-catcp </reference/man/ciop-catcp>` utility
+	to the sandbox internal catalogue with the :doc:`ciop-catcp </reference/man/bash_commands_functions/catalogue/ciop-catcp>` utility
 
 To reference an external catalogue, the workflow node is defined as follows:
 
