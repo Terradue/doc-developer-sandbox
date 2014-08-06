@@ -61,7 +61,7 @@ Run the node and debug the workflow
 
 *Here the related piece of code of the run executable:*
 
-.. literalinclude:: src/debug/run
+.. literalinclude:: src/debug/run.sh
    :language: bash
    :tab-width: 2
    :lines: 31-32
