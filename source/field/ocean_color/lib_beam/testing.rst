@@ -80,28 +80,40 @@ Testing the application
 Application installation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-All the application files are available on a `GitHub repository <https://github.com/Terradue/dcs-beam-algalbloom>`_. 
+All the application files are available on GitHub repository `MERIS Algal bloom detection using BEAM <https://github.com/Terradue/dcs-beam-algalbloom>`_. 
 
-The archive content is extracted to /application:
+To install the application clone the repository on the Sandbox in your home folder:
 
-.. code-block:: bash
+.. code-block:: console
 
-  unzip BEAM-Arithm-tutorial-master.zip
-  cd BEAM-Arithm-tutorial-master
-  cp -Rv . /application 
+  cd ~
+  git clone git@github.com:Terradue/dcs-beam-algalbloom.git
+  cd dcs-beam-algalbloom
+  mvn install
+
+Then build the BEAM processor and the application resources with:
+
+.. code-block:: console
+
+  mvn install
+
+The maven command will:
+
+* Copy the application resources files from ~/dcs-beam-flh-java/src/main/app-resources to /application,
+* Retrieve from BEAM website all the Java artifacts required to run BEAM.
   
 Application check
 ^^^^^^^^^^^^^^^^^
   
 The Application Descriptor file can be checked with:
 
-.. code-block:: bash
+.. code-block:: console
 
   ciop-appcheck
   
 If the Application Descriptor is valid, the output is:
 
-.. code-block:: bash
+.. code-block:: console-output
 
   /application/application.xml validates
   
@@ -110,13 +122,13 @@ Installing the required packages
 
 The application requires ESA BEAM Toolbox which is available in the sandbox software repository:
 
-.. code-block:: bash
+.. code-block:: console
 
   sudo yum install esa-beam-4.11
 
 R, which is also available in the software repository (it includes several packages and libraries):
 
-.. code-block:: bash
+.. code-block:: console
 
   sudo yum install rciop
   
@@ -139,13 +151,13 @@ Testing manually the workflow with ciop-simjob
 
 Trigger the execution of the node_expression with:
 
-.. code-block:: bash
+.. code-block:: console
 
   ciop-simjob -f node_expression
   
 The node_expression will produce one compressed archive with the BEAM-DIMAP product per input Envisat MERIS Level 1 product:
 
-.. code-block:: bash
+.. code-block:: console-output
 
   MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1.dim.tgz
   MER_RR__1PRLRA20120405_174214_000026213113_00228_52828_0110.N1.dim.tgz
@@ -157,7 +169,7 @@ These files are all available in sandbox the distributed filesystem. These are t
 
 Run ciop-simjob for all the nodes of the DAG. 
 
-.. code-block:: bash
+.. code-block:: console
 
   ciop-simjob -n # list the node identifiers 
   ciop-simjob -f node_arrange
@@ -167,7 +179,7 @@ Run ciop-simjob for all the nodes of the DAG.
 Testing the workflow automatic execution with ciop-simwf
 --------------------------------------------------------
 
-.. code-block:: bash
+.. code-block:: console
 
   ciop-simwf
   
