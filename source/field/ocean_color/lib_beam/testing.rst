@@ -69,7 +69,7 @@ Workflow
 
 The complete workflow is:
 
-.. literalinclude:: src/application.xml
+.. literalinclude:: src/src/main/app-resources/application.xml
   :language: xml
   :tab-width: 1
   :lines: 63-89
