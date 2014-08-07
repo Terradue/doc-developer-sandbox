@@ -1,4 +1,4 @@
-Application Workflow
+Application workflow
 ====================
 
 We need to picture the application workflow as a Data Pipeline that helps you process and move data between different processing steps.
