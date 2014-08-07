@@ -25,7 +25,7 @@ The catalogue OpenSearch description URL is defined in the worflow section of th
 
 Inspecting the contents returned by this URL, a query template for the *application/rdf+xml* response type is provided:
 
-.. literalinclude:: ../src/osd.xml
+.. literalinclude:: ../assets/osd.xml
   :language: xml
   :tab-width: 1
   :lines: 18
