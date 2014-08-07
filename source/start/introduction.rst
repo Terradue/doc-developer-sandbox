@@ -12,7 +12,7 @@ The 'must do', but once should be enough :)
 
 1. Register on the infrastructure: 
 
-- you'll need have a valid certificate (get it `here <https://ca.terradue.com/gpodcs/pub/certreq.html>`_)
+- you'll need have a valid certificate (see :ref:`laboratory-prerequisites`)
 
 .. NOTE:: Please remember that the password for your certificate and for your account are the same  
 
@@ -23,7 +23,7 @@ The 'must do', but once should be enough :)
 
 3. Connect to your Sandbox: 
 
-- follow the instructions provided in SSH Connexion.
+- follow the instructions provided in SSH Connexion (see :ref:`connecting_from_unix_linux_mac` or :ref:`connecting_from_windows` ).
 
 4. Have a quick tour of the main features: 
 

@@ -25,6 +25,8 @@ Download the Certificate in PEM format
 
 - Store securely the PEM Certificate in your filesystem, especially if you chose the PEM (Unencrypted key) format.
 
+.. _connecting_from_unix_linux_mac:
+
 Connecting from Unix / Linux / Mac
 ----------------------------------
 
@@ -40,6 +42,8 @@ Connecting from Unix / Linux / Mac
 - If you chose PEM format when you downloaded the Certificate, provide the passphrase when prompted.
 
 That's all :-)
+
+.. _connecting_from_windows:
 
 Connecting from Windows
 ------------------------

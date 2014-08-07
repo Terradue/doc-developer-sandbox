@@ -7,6 +7,8 @@ A Laboratory is a virtual network on Terradue's Cloud Platform dedicated to the 
 A laboratory and its services are secured by user authentication (using SSL / X.509 certificates) and VPN access.
 The following sections will guide you through the procedures related to the Certificate download and VPN Setup.
 
+.. _laboratory-prerequisites:
+
 Prerequisites
 -------------
 
