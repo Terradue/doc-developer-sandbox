@@ -4,7 +4,7 @@ Application descriptor reference
 Purpose
 -------
 
-The application descriptor file is an XML document that describes an Application Workflow (see :doc:`Application Workflow </design/workflow>`) and it contains two blocks:
+The Application descriptor file is an XML document that describes an Application workflow (see :doc:`Application workflow </design/workflow>`) and it contains two blocks:
 
 #. jobTemplates
 #. workflow
