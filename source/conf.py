@@ -62,8 +62,6 @@ release = '1.0'
 # Else, today_fmt is used as the format for a strftime call.
 #today_fmt = '%B %d, %Y'
 
-exclude_patterns = 'design/uml_workflow.rst'
-
 # List of documents that shouldn't be included in the build.
 unused_docs = []
 
