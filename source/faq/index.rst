@@ -1,7 +1,7 @@
 Frequently asked questions
 ##########################
 
-* **Why are some log entries going to stderr while others go to stdout?**
+**Why are some log entries going to stderr while others go to stdout?**
 
 The framework log entries (e.g. using ciop-log or ciop-copy) all go to stderr.
 
