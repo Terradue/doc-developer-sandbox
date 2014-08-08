@@ -83,15 +83,6 @@ To view processes launched with the ciop-simjob command you can use the Hadoop J
 
   Accessed from the VPN at the address: http://<your_sandbox_host>:50030/jobtracker.jsp
 
-Cloud Storage
-+++++++++++++
-
-A virtual storage available from your Laboratory, accessed via the standard S3 interface:
-
-* s3://<your_laboratory>-public/ for open data repositories
-* s3://<your_laboratory>-shared/ for shared data repositories accross selected partners
-* s3://<your_laboratory>-private/ for your own and exclusive usage
-
 Data Catalogues
 +++++++++++++++
 
