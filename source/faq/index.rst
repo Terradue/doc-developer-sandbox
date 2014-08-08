@@ -7,6 +7,14 @@ If you are registered to our infrastructure (see :ref:`introduction`) you can us
 
 If you are not yet registered to our infrastructure you can send us an email at support@terradue.com
 
+**I would to compile my own application from source, or an application not available via the yum package manager. How can I do?**
+
+In the Sandbox you can find the APPLICATION filesystem (see :ref:`principles`). You can use that filesystem to compile your source code. If you are using *make*, you can configure the install location with:
+
+.. code-block:: console
+
+  ./configure --prefix=$_CIOP_APPLICATION_PATH/<your-app>
+
 **How can I stop a running job or workflow?**
 
 There are two different cases:
