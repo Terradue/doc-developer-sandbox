@@ -1,6 +1,28 @@
 Frequently asked questions
 ##########################
 
+**How can I get support?**
+
+If you are registered to our infrastructure (see :ref:`introduction`) you can use the Support site, available at https://support.terradue.com.
+
+If you are not yet registered to our infrastructure you can send us an email at support@terradue.com
+
+**How can I stop a running job or workflow?**
+
+There are two different cases:
+
+* If you start a job through the command *ciop-simjob* (i.e. by executing a single node of the workflow), you can stop it with:
+
+.. code-block:: console
+
+  /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=<sandbox_host>:8021 -kill <job_id>
+
+* If you start a workflow through the command *ciop-simwf* (i.e. by executing the entire wokflow)
+
+.. code-block:: console
+
+  oozie job -oozie http://localhost:11000/oozie -kill <workflow_id>
+
 **Why are some log entries going to stderr while others go to stdout?**
 
 The framework log entries (e.g. using ciop-log or ciop-copy) all go to stderr.
