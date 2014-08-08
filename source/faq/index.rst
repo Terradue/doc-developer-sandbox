@@ -15,7 +15,7 @@ There are two different cases:
 
 .. code-block:: console
 
-  /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=<sandbox_host>:8021 -kill <job_id>
+  /usr/lib/hadoop-0.20/bin/hadoop job -Dmapred.job.tracker=<sandbox_host>:8021 -kill <job_id>
 
 * If you start a workflow through the command *ciop-simwf* (i.e. by executing the entire wokflow)
 
