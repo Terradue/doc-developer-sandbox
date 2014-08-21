@@ -12,7 +12,7 @@
 	<artifactId>doc-developer-sandbox</artifactId>
 	<packaging>rpm</packaging>
 	<description>Documentation for developer sandbox</description>
-	<version>0.2-SNAPSHOT</version>
+	<version>1.0</version>
 
 	<dependencies>
 		<dependency>
@@ -28,7 +28,7 @@
 		<connection>scm:git:git@github.com:Terradue/doc-developer-sandbox.git</connection>
 		<developerConnection>scm:git:git@github.com:Terradue/doc-developer-sandbox.git</developerConnection>
 		<url>https://github.com/Terradue/doc-developer-sandbox</url>
-		<tag>HEAD</tag>
+		<tag>doc-developer-sandbox-1.1</tag>
 	</scm>
 
 	<build>
