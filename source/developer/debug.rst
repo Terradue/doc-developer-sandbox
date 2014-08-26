@@ -41,24 +41,28 @@ Run the node and debug the workflow
    :scale: 100 %
    :alt: Job summary
     
-* We have the list of tasks. To see the details about of one of them, just click on the name in the **Task** column (the rounded one):
+* We have the list of tasks. 
+* To see the details about of one of them, just click on the name in the **Task** column (the rounded one):
 
 .. figure:: includes/debug/gui2.png
    :scale: 70 %
    :alt: Tasks details
 
-* Now we have the list of task attempts. To see the output about of one of them (in this case we have just one attempt), just on the **All** link in the **Task Logs** column (the rounded one):
+* Now we have the list of task attempts. 
+* To see the output about of one of them (in this case we have just one attempt), just on the **All** link in the **Task Logs** column (the rounded one):
 
 .. figure:: includes/debug/gui3.png
    :scale: 70 %
    :alt: Attempts details
 
-* Finally we have the output list of the selected task attempt. We can see the output of the ciop-log function:
+* Finally we have the output list of the selected task attempt. 
+* We can see the output of the ciop-log function:
 
 .. figure:: includes/debug/gui4.png
    :scale: 70 %
    :alt: Attempts output
-
+*Congrat !*
+*You have added an Exit function to your run executable, and visualized the associated log message generated from the task completion*
 *Here the related piece of code of the run executable:*
 
 .. literalinclude:: src/debug/run.sh
