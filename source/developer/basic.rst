@@ -152,15 +152,15 @@ The output will be similar to:
 
 .. admonition:: Note 2
 
-  Since the Sandbox has two cores and the node my_node two inputs, they have been executed two tasks in parallel, each one processing a single input.
+  Since the Sandbox used here has two cores, and the node 'my_node' has to process only two inputs, the input1 and input2 lines have been processed in parallel by two tasks (each task processing a single entry of the input file).
 
 Recap
 =====
 
 #. We created a simple workflow with a single node,
-#. We prepared a list of two test inputs,
-#. We prepared a simple run executable that logs (through the *ciop-log* function) the name of the inputs,
-#. We executed the node with two inputs, using two tasks in parallel.
+#. We prepared a list of two data inputs,
+#. We prepared a simple run executable that logs (through the *ciop-log* function) the name of data inputs,
+#. We executed the node with two data inputs, using two tasks in parallel.
 
 Files used in this Hands-On
 ===========================
