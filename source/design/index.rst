@@ -7,7 +7,7 @@ Contents:
    :maxdepth: 2
    
    Application workflow <workflow>
-   Processing nodes & parallelisme <nodes>
+   Processing nodes & parallelism <nodes>
    Streaming executable design patterns <streaming>
    Data sources <data>
    Version management <version>
