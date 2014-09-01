@@ -22,7 +22,7 @@ The Dashboard provides:
 
 **Application descriptor viewer tab**
 
-.. figure:: assets/dashboard_sandbox.png
+.. figure:: assets/dashboard_application.png
   :width: 500px
   :align: center
   :alt: alternate text
