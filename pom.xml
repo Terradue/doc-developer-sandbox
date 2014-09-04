@@ -31,6 +31,10 @@
 		<tag>HEAD</tag>
 	</scm>
 
+	<properties>
+		<redmine.projectID>air-documentation</redmine.projectID>
+	</properties>
+
 	<build>
 		<plugins>
 			<plugin>
