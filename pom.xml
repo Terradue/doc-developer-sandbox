@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.terradue</groupId>
 		<artifactId>t2-parent</artifactId>
-		<version>11</version>
+		<version>12-SNAPSHOT</version>
 	</parent>
 
 	<groupId>com.terradue.tag</groupId>
@@ -23,6 +23,10 @@
 			<version>1.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+
+	<properties>
+		<redmine.projectID>air-documentation</redmine.projectID>
+	</properties>
 
 	<scm>
 		<connection>scm:git:git@github.com:Terradue/doc-developer-sandbox.git</connection>
