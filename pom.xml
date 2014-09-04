@@ -28,7 +28,7 @@
 		<connection>scm:git:git@github.com:Terradue/doc-developer-sandbox.git</connection>
 		<developerConnection>scm:git:git@github.com:Terradue/doc-developer-sandbox.git</developerConnection>
 		<url>https://github.com/Terradue/doc-developer-sandbox</url>
-		<tag>HEAD</tag>
+		<tag>dcs-1.2</tag>
 	</scm>
 
 	<properties>
