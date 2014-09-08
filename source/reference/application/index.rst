@@ -173,8 +173,8 @@ Passing a list of values to a job follows the same approach as above.
 Products available in a catalogue 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the products to process are available in a catalogue (either an external catalogue or the sandbox internal catalogue), the source is defined as a reference to 
-the dataset series OpenSearch description document URL.
+If the products to process are available in a catalogue (either an external catalogue or the sandbox local catalogue), the source is defined as a reference to 
+the dataset series URL for its OpenSearch description document.
 
 .. tip:: Check how to copy dataset catalogue entries by reference or by value (the dataset is copied physically to the sandbox storage)
 	to the sandbox internal catalogue with the :doc:`ciop-catcp </reference/man/bash_commands_functions/catalogue/ciop-catcp>` utility
