@@ -1,6 +1,6 @@
-# Developer Cloud Sandbox Documentation
+# Developer Cloud Sandboxes service
 
-This is the official repository of the Developer Cloud Sandbox. 
+This is the official documentation repository of the Developer Cloud Sandboxes service. 
 
 This documentation is live at:
 [http://docs.terradue.com/developer](http://docs.terradue.com/developer)
