@@ -10,4 +10,4 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   DEM generation for ROI_PAC, GMTSAR and GAMMA <lib_dem_insar1/index>
+   DEM generation for ROI_PAC, GMTSAR and GAMMA <lib_dem_insar1/src/main/doc/fieldguide/index>
