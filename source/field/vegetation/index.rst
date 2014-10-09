@@ -22,4 +22,4 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   Landsat 5&7 NDVI <lib_python_ndvi/index>
+   Landsat 5&7 NDVI <lib_python_ndvi/src/main/doc/fieldguide/index>
