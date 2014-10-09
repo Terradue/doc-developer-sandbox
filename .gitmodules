@@ -7,3 +7,6 @@
 [submodule "source/field/vegetation/lib_python_ndvi"]
 	path = source/field/vegetation/lib_python_ndvi
 	url = git@github.com:Terradue/dcs-python-ndvi.git
+[submodule "source/field/ocean_color/lib_beam"]
+	path = source/field/ocean_color/lib_beam
+	url = git@github.com:Terradue/dcs-beam-algalbloom.git
