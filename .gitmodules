@@ -7,3 +7,6 @@
 [submodule "source/field/ocean_color/lib_beam/src"]
 	path = source/field/ocean_color/lib_beam/src
 	url = git@github.com:Terradue/dcs-beam-algalbloom.git
+[submodule "source/field/dem/lib_dem_insar1"]
+	path = source/field/dem/lib_dem_insar1
+	url = git@github.com:Terradue/srtm-dem.git
