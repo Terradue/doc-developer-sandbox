@@ -163,7 +163,7 @@ Passing a list of values to a job follows the same approach as above.
 			<node id="somenodeid">
 				<job id="job_template1"/>
 				<sources>
-	 				<source refid="str:list" >value1,value2</source>
+	 				<source refid="string:list" >value1,value2</source>
 				</sources>
 			</node>
 	</workflow>
