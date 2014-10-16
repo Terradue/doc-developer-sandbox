@@ -12,5 +12,5 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   Two pass processing with ROI_PAC <tp_roi_pac/index>
+   Two pass processing with ROI_PAC <tp_roi_pac/src/main/doc/fieldguide/index>
    Two pass processing with GMTSAR <tp_gmtsar/index>
