@@ -6,7 +6,7 @@
 </header> -->
 <div id="navbar" class="{{ theme_navbar_class }} navbar-default navbar-fixed-top"><!-- {% if theme_navbar_fixed_top == 'true' -%} navbar-fixed-top{%- endif -%} -->
     <div class="container">
-      <div class="navbar-header pull-left">
+      <div class="navbar-header pull-right">
         <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
@@ -14,13 +14,15 @@
           <span class="icon-bar"></span>
         </button>
         
+        <a class="navbar-t2-brand" href="http://www.terradue.com" target="_blank"><img id="logo" src="{{ pathto('_static/t2Logo.png',1) }}"></a>
+	<a class="navbar-dcs-brand" href="https://www.linkedin.com/company/developer-cloud-sandboxes" target="_blank"><img id="logo" src="{{ pathto('_static/dcs-logo.png',1) }}"></a>
+	    
         <!--<a class="navbar-brand" href="{{ pathto(master_doc) }}"><img class="navbar-brand-logo" src="{{ pathto('_static/sandboxLogo.png',1) }}" alt="sandbox-logo"/></a>-->
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
-            <a class="navbar-t2-brand" href="http://www.terradue.com" target="_blank"><img id="logo" src="{{ pathto('_static/t2Logo.png',1) }}"></a>
-	    <a class="navbar-dcs-brand" href="https://www.linkedin.com/company/developer-cloud-sandboxes" target="_blank"><img id="logo" src="{{ pathto('_static/dcs-logo.png',1) }}"></a>
+         
             <li class="divider-vertical"></li>
 <!--             {% include "versions.html" %} -->
 
