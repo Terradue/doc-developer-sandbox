@@ -12,17 +12,20 @@ If you are not yet a registered user of the Terradue Cloud Platform,
 access can be requested from the ESA Research & Service Support Portal, for ESA registered users (e.g. G-POD related projects),
 or you can send us a request for quotation by email at info@terradue.com.
 
-I would to compile my own application from source, or an application not available via the yum package manager. How can I do?
-----------------------------------------------------
+How shall I compile code on my Developer Cloud Sandbox environment?
+-------------------------------------------------------------------
 
-In the Sandbox you can find the APPLICATION filesystem (see :ref:`principles`). You can use that filesystem to compile your source code. If you are using *make*, you can configure the install location with:
+If you need to compile your own application from source, or an application that is not available via a yum repository, you can work from the APPLICATION filesystem (see :ref:`principles`) on your Hadoop Sandbox VM. 
+Use that filesystem to compile your source code. 
+
+For example, if you are using *make*, you can configure the install location with:
 
 .. code-block:: console
 
   ./configure --prefix=$_CIOP_APPLICATION_PATH/<your-app>
 
 How can I stop a running job or workflow?
--------------------------------------------------------
+------------------------------------------
 
 There are two different cases:
 
