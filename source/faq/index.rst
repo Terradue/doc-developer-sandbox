@@ -4,9 +4,13 @@ Frequently asked questions
 How can I get support?
 ------------------------------
 
-If you are registered to our infrastructure (see :ref:`introduction`) you can use the Support site, available at https://support.terradue.com.
+If you are a registered user of the Terradue Cloud Platform (see :ref:`introduction`) you can request support from https://support.terradue.com (login with your credentials).
+This is your collaborative workspace, where you can issue tickets to interact with the Operations Support team at Terradue. 
+The support environment offers tools for reporting bugs, requesting help and sharing experience.
 
-If you are not yet registered to our infrastructure you can send us an email at support@terradue.com
+If you are not yet a registered user of the Terradue Cloud Platform,
+access can be requested from the ESA Research & Service Support Portal, for ESA registered users (e.g. G-POD related projects),
+or you can send us a request for quotation by email at info@terradue.com.
 
 I would to compile my own application from source, or an application not available via the yum package manager. How can I do?
 ----------------------------------------------------
