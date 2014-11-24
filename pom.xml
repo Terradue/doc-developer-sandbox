@@ -12,7 +12,7 @@
 	<artifactId>doc-developer-sandbox</artifactId>
 	<packaging>rpm</packaging>
 	<description>Documentation for developer sandbox</description>
-	<version>1.3-SNAPSHOT</version>
+	<version>1.2.1-SNAPSHOT</version>
 
 	<dependencies>
 		<dependency>
@@ -32,11 +32,20 @@
 		<connection>scm:git:git@github.com:Terradue/doc-developer-sandbox.git</connection>
 		<developerConnection>scm:git:git@github.com:Terradue/doc-developer-sandbox.git</developerConnection>
 		<url>https://github.com/Terradue/doc-developer-sandbox</url>
-		<tag>HEAD</tag>
+		<tag>dcs-1.2</tag>
 	</scm>
+
+	<properties>
+		<redmine.projectID>air-documentation</redmine.projectID>
+	</properties>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.nuiton.jredmine</groupId>
+				<artifactId>jredmine-maven-plugin</artifactId>
+				<inherited>false</inherited>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
