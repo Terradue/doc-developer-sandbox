@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-* Hands-on exercices
+* [Hands-on exercices](hands-on_exercices.md)
 
