@@ -35,10 +35,6 @@
 		<tag>dcs-1.2</tag>
 	</scm>
 
-	<properties>
-		<redmine.projectID>air-documentation</redmine.projectID>
-	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -150,8 +146,8 @@
 				<artifactId>rpm-maven-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<copyright>${inceptionYear}, Terradue</copyright>
-					<distribution>Terradue ${inceptionYear}</distribution>
+					<copyright>${project.inceptionYear}, Terradue</copyright>
+					<distribution>Terradue ${project.inceptionYear}</distribution>
 					<group>tag</group>
 					<packager>Terradue</packager>
 					<name>${project.artifactId}</name>
