@@ -8,7 +8,7 @@ The Sandbox, short of *Terradue's Developer Cloud Sandbox*, is a Virtual Machine
 Getting started
 ^^^^^^^^^^^^^^^^
 
-* The Sandbox is set to automatically login as the user *<sandbox_user>*. Please refer to the section :doc:`Connect to your Sandbox <../start/sandbox>`.
+* The Sandbox is set to automatically login as the user *<sandbox_user>*. Please refer to the section :doc:`Connect to your Sandbox <../start/sandbox>`
 
 Using the code examples
 ^^^^^^^^^^^^^^^^^^^^^^^^
