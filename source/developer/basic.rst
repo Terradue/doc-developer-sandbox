@@ -8,7 +8,7 @@ In this exercise we will prepare a simple workflow and we will execute a first r
 Clone the Hands-On repository
 ==============================
 
-In order to have the code locally available on your Hadoop Sandbox, you have to clone the Hands-On git repository available on Github. To do so just:
+In order to have the code locally available on your Hadoop Sandbox, you have to clone the Hands-On git repository available on `Github <https://github.com>`_. To do so just:
 
 * Log on your Hadoop Sandbox (see :doc:`Connect to your Sandbox <../start/sandbox>`)
 
@@ -26,7 +26,7 @@ In order to have the code locally available on your Hadoop Sandbox, you have to 
 Install the Hands-On Exercise 1
 ===============================
 
-The Hands-On installation is quite forward and it is performed through the Maven tool:
+The Hands-On installation is quite forward and it is performed through the `Maven<http://maven.apache.org/>`_ tool:
 
 .. code-block:: console
  
@@ -71,7 +71,7 @@ Check the inputs
   :language: none
 
 .. WARNING::
- The file should contain only the two lines, without blank lines at the end or at the beginning. Furthermore, comments are not allowed.
+ This file should not contain blank lines at the end or at the beginning and comments are not allowed.
  
 Check the run executable
 ========================
@@ -160,7 +160,7 @@ Recap
 
 #. We installed a simple workflow with a single node,
 #. We passed to the workflow a list of two data inputs,
-#. We executed a simple run that logs (through the *ciop-log* function) the name of data inputs, using two tasks in parallel.
+#. We executed a simple run that logs the name of data inputs, using two tasks in parallel.
 
 .. rubric:: Footnotes
 
