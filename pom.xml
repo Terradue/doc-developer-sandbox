@@ -11,7 +11,7 @@
 	<groupId>com.terradue.tag</groupId>
 	<artifactId>doc-developer-sandbox</artifactId>
 	<packaging>rpm</packaging>
-	<description>Documentation for developer sandbox</description>
+	<description>Documentation for Developer Cloud Sandbox</description>
 	<version>1.3-SNAPSHOT</version>
 
 	<dependencies>
@@ -214,4 +214,3 @@
 		</plugins>
 	</build>
 </project>
-
