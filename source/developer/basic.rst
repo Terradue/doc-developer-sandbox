@@ -8,7 +8,7 @@ In this exercise we will prepare a simple workflow and we will execute a first r
 Clone the Hands-On repository
 ==============================
 
-In order to have the code locally available on your Hadoop Sandbox, you have to clone the Hands-On git repository available on `Github <https://github.com>`_. To do so just:
+In order to have the code locally available on your Hadoop Sandbox, you have to clone the Hands-On git repository available on the `Terradue's Github<https://github.com/Terradue>`_ organization. To do so just:
 
 * Log on your Hadoop Sandbox (see :doc:`Connect to your Sandbox <../start/sandbox>`)
 
