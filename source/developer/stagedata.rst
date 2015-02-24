@@ -5,14 +5,29 @@ Hands-On Exercise 3: staging data
 
 In this exercise we will prepare input data for our workflow (this process is named *Stage In*) and we will publish out data as result of the workflow (this process is named *Stage Out*).   
 
-Prepare the application.xml
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+
+Install the Hands-On Exercise 3
+===============================
+
+To install the Hands-On exercise 3, just type:
+
+.. code-block:: console
+
+  cd dcs-hands-on
+  mvn install -D hands.on=3 -P bash
+
+Inspect the application.xml
 ===========================
 
 The application.xml is the same used in the exercise :doc:`a basic workflow <basic>`:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/basic/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/application.xml
     :language: xml
     :tab-width: 2
 
@@ -42,9 +57,9 @@ The output of the *ls -l* command will be similar to:
 Prepare the file list
 =====================
 
-* Open the file *inputs/list* and paste the following lines:
+* Open the file *inputs/list* and see the following lines:
 
-.. literalinclude:: src/stagedata/list
+.. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/inputs/list
      :language: none
 
 .. WARNING::
@@ -53,16 +68,23 @@ Prepare the file list
 Publish the data
 ================
 
-* Open the file *my_node/run.sh* and paste the following code:
+* Inspect the file *my_node/run* using for example the *more* command:
+
+.. code-block:: console
+
+  more my_node/run
+
+* Note the *ciop-publish* command
 
 .. container:: context-run-executable
 
-  .. literalinclude:: src/stagedata/run.sh
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/my_node/run
      :language: bash
      :tab-width: 2
+     :lines: 5-5
 
 .. NOTE::
-     The command *ciop-publish* will put the input data in the HDFS (the underlying Distributed File System) and it will pass its references to the subsequent node. 
+     The command *ciop-publish* will put the input data in the HDFS (the underlying Distributed File System) and it will pass its references to the subsequent node. Its actual implementation could be different, depending from the language used to implement the run executables. In the above example we used *bash*. 
 
 Run and debug the workflow
 ==========================
@@ -115,10 +137,3 @@ Recap
 #. We downloaded and prepared data from a remote catalogue,
 #. We used it in our workflow (*Stage In*),
 #. We published it in a distributed location (*Stage Out*).
-
-Files used in this Hands-On
-===========================
-
-* :download:`application.xml <src/basic/application.xml>`
-* :download:`inputs/list <src/stagedata/list>`
-* :download:`my_node/run.sh <src/stagedata/run.sh>`
