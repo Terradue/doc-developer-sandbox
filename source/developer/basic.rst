@@ -31,9 +31,9 @@ The Hands-On installation is quite forward and it is performed through the `Mave
 .. code-block:: console
  
  cd dcs-hands-on
- mvn install -D hands-on=1 -P bash
+ mvn install -D hands.on=1 -P bash
 
-With the last command you installed the first Hands-On (option *-D*) using a *bash* profile (option *-P*). The profile represents the programming language used to implements the Hands-On run executables.  
+With the last command you installed the first Hands-On exercise (option *-D*) using a *bash* profile (option *-P*). The profile represents the programming language used to implements the Hands-On run executables.  
 
 Understand the workflow
 =======================
