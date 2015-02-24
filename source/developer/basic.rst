@@ -10,13 +10,14 @@ Prerequisite
 
 * You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
 
-Install the Hands-On Exercise 1
-===============================
+Install the Hands-On
+=====================
 
 The Hands-On installation is quite forward and it is performed through the `Maven <http://maven.apache.org/>`_ tool:
 
 .. code-block:: console
- 
+
+ cd
  cd dcs-hands-on
  mvn install -D hands.on=1 -P bash
 

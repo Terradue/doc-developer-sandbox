@@ -5,34 +5,41 @@ Hands-On Exercise 5: using parameters
 
 In this exercise we will see the usage of parameters in the workflow.   
 
-Prepare the application.xml
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+
+Install the Hands-On
+====================
+
+* Install the Hands-On Exercise 5, just typing:
+
+.. code-block:: console
+
+  cd
+  cd dcs-hands-on
+  mvn install -D hands.on=5 -P bash
+
+Inspect the application.xml
 ===========================
 
-Modify the *application.xml* in this way:
+* Inspect the *application.xml*, you will see now the parameter *expression*:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/parameters/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-5/application.xml
        :language: xml
        :tab-width: 2
 
-Modify the run executable
-===========================
+Inspect the run executable
+==========================
 
-* Open the file *expression/run.sh* and substitute the line:
-
-.. container:: context-run-executable
-
-  .. literalinclude:: src/toolbox/expression/run.sh
-        :language: bash
-        :tab-width: 2
-        :lines: 39
-
-with:
+* Open the file *expression/run* and search for the lines containing the function *ciop-getparam*:
 
 .. container:: context-run-executable
 
-  .. literalinclude:: src/parameters/expression/run.sh
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-5/expression/run
         :language: bash
         :tab-width: 2
         :lines: 35-39
@@ -58,10 +65,3 @@ Recap
 
 #. We added a parameter in the node of our workflow,
 #. We used the value of that parameter in our run executable.
-
-Files used in this Hands-On
-===========================
-
-* :download:`application.xml <src/parameters/application.xml>`
-* :download:`inputs/list <src/stagedata/list>`
-* :download:`expression/run.sh <src/parameters/expression/run.sh>`

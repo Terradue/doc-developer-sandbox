@@ -10,13 +10,14 @@ Prerequisite
 
 * You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
 
-Install the Hands-On Exercise 4
-===============================
+Install the Hands-On
+====================
 
-To install the Hands-On exercise 4, just type:
+* Install the Hands-On Exercise 4, just typing:
 
 .. code-block:: console
 
+  cd
   cd dcs-hands-on
   mvn install -D hands.on=4 -P bash
 

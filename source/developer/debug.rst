@@ -10,16 +10,16 @@ Prerequisite
 
 * You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
 
-Install the Hands-On Exercise 2
-===============================
+Install the Hands-On
+=====================
 
-To install the Hands-On exercise 2, just type:
+* Install the Hands-On Exercise 2, just typing:
 
 .. code-block:: console
 
+  cd
   cd dcs-hands-on
   mvn install -D hands.on=2 -P bash
-
 
 Inspect the run executable
 ==========================
