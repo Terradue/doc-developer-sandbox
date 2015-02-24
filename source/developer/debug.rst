@@ -5,21 +5,26 @@ Hands-On Exercise 2: make a robust workflow and debug it
 
 In this exercise we will install a more robust version of the basic workflow. Also we will learn how to debug the workflow through the Web GUI.
 
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+
 Install the Hands-On Exercise 2
 ===============================
 
-To install the Hands-On, just type:
+To install the Hands-On exercise 2, just type:
 
 .. code-block:: console
 
   cd dcs-hands-on
-  mvn install -D hands-on=2 -P bash
+  mvn install -D hands.on=2 -P bash
 
 
 Inspect the run executable
 ==========================
 
-* Open the *my_node/run* executable with a text editor or using the `more` command:
+* Open the *my_node/run* executable with a text editor or using the *more* command:
 
 .. code-block:: console
  
@@ -76,7 +81,7 @@ Run the node and debug the workflow
 *You have  an Exit function to your run executable, and visualized the associated log message generated from the task completion*
 *Here the related piece of code of the run executable:*
 
-.. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-1/bash/my_node/run
+.. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-2/bash/my_node/run
    :language: bash
    :tab-width: 2
    :lines: 31-32
@@ -87,5 +92,5 @@ Run the node and debug the workflow
 Recap
 =====
 
-#. We added a group of variables representing our exit codes, the *cleanExit* function and finally we used the *$SUCCESS* exit code,
+#. We installed a different version of the run executable that includes some additional features to make it more robust,
 #. We ran the node expression and we debugged the output in the Web GUI.
