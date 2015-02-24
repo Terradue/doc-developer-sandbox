@@ -5,6 +5,20 @@ Hands-On Exercise 4: using a toolbox
 
 In this exercise we will use a toolbox to process the inputs of our workflow and we will publish its results on HDFS.   
 
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+
+Install the Hands-On Exercise 4
+===============================
+
+To install the Hands-On exercise 4, just type:
+
+.. code-block:: console
+
+  cd dcs-hands-on
+  mvn install -D hands.on=4 -P bash
 
 Install the ESA BEAM Toolbox
 ============================
@@ -15,19 +29,19 @@ The ESA BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-
 
   sudo yum install -y esa-beam-4.11
 
-Prepare the application.xml
+Inspect the application.xml
 ===========================
 
-Modify the *application.xml* in this way:
+Inspect the *application.xml*, it looks slightly different:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/toolbox/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-4/application.xml
        :language: xml
        :tab-width: 2
 
 Prepare the run executable
-================================
+===========================
 
 * The ESA BEAM Toolbox has to be called in the run executable. First of all, we have to prepare the new executable:   
 
