@@ -91,6 +91,10 @@ The run executable is responsible for *executing* your application in the Hadoop
 
  cat my_node/run
 
+.. admonition::
+
+  Depending from the profile chosen, the run executable could have different equivalent forms.
+
 Run the node 
 ============
 
