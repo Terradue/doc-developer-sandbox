@@ -52,7 +52,7 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/basic/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-1/application.xml
     :language: xml
     :tab-width: 2
 
@@ -67,7 +67,7 @@ Check the inputs
  
 * It will be similar to:
 
-.. literalinclude:: src/basic/list
+.. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-1/inputs/list
   :language: none
 
 .. WARNING::
@@ -80,7 +80,7 @@ The run executable is responsible for *executing* your application in the Hadoop
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/basic/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-1/application.xml
       :language: xml
       :tab-width: 2
       :lines: 5-5
@@ -89,7 +89,7 @@ The run executable is responsible for *executing* your application in the Hadoop
 
 .. code-block:: console
 
- cat my_node/run.sh
+ cat my_node/run
 
 Run the node 
 ============

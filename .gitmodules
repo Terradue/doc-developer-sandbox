@@ -10,3 +10,6 @@
 [submodule "source/field/insar/tp_roi_pac"]
 	path = source/field/insar/tp_roi_pac
 	url = git@github.com:Terradue/InSAR-ROI_PAC.git
+[submodule "source/developer/src/dcs-hands-on"]
+	path = source/developer/src/dcs-hands-on
+	url = https://github.com/Terradue/dcs-hands-on.git
