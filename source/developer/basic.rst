@@ -5,23 +5,10 @@ Hands-On Exercise 1: a basic workflow
 
 In this exercise we will prepare a simple workflow and we will execute a first run, using the CIOP tools.
 
-Clone the Hands-On repository
-==============================
+Prerequisites
+=============
 
-In order to have the code locally available on your Hadoop Sandbox, you have to clone the Hands-On git repository available on the `Terradue's Github <https://github.com/Terradue>`_ organization. To do so just:
-
-* Log on your Hadoop Sandbox (see :doc:`Connect to your Sandbox <../start/sandbox>`)
-
-* Type:
-
-.. code-block:: console
- 
- cd
- git clone https://github.com/Terradue/dcs-hands-on.git
-
-.. admonition:: Congrats
-
-  You have now the resources needed to complete all the Hands-On !
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
 
 Install the Hands-On Exercise 1
 ===============================
