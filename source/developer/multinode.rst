@@ -3,12 +3,28 @@
 Hands-On Exercise 6: a multi-node workflow
 ##########################################
 
-In this exercise we will use create a workflow with two nodes, passing inputs from first to the second and finally publishing the workflow results on HDFS.   
+In this exercise we will run a workflow with two nodes, passing inputs from first to the second and finally publishing the workflow results on HDFS.   
+
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+
+Install the Hands-On
+====================
+
+* Install the Hands-On Exercise 6, just typing:
+
+.. code-block:: console
+
+  cd
+  cd dcs-hands-on
+  mvn install -D hands.on=6 -P bash
 
 Install the required packages
 =============================
 
-The second node that we will add (*node_binning*) needs convert tools to perform image manipulations. This tool is named ImageMagick [#f1]_.
+The second node that we added (*node_binning*) needs convert tools to perform image manipulations. This tool is named ImageMagick [#f1]_.
 
 * Type the following command:
 
@@ -17,14 +33,14 @@ The second node that we will add (*node_binning*) needs convert tools to perform
   sudo yum install -y ImageMagick
 
 
-Prepare the application.xml
+Inspect the application.xml
 ===========================
 
-* Modify the *application.xml* in this way:
+* Inspect the *application.xml*:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/multinode/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-6/application.xml
        :language: xml
        :tab-width: 2
 
@@ -32,36 +48,26 @@ We added a second node named *node_binning* and we declared that its source is t
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/multinode/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-6/application.xml
        :language: xml
        :tab-width: 2
        :lines: 60-68
 
-Prepare the run executable
+Inspect the run executable
 ===========================
 
-* Now we have to prepare the run executable for the node_binning. Type the following commands:   
+* Now we are going to see how the run executable for node binning looks like. You can use the *more* command:   
 
 .. code-block:: console
 
-  cd $_CIOP_APPLICATION_PATH
-  mkdir binning
-  touch binning/run.sh
-  chmod +x binning/run.sh
-
-* Open the file *binning/run.sh* and paste the following code:
-
-.. container:: context-run-executable
-
-  .. literalinclude:: src/multinode/binning/run.sh
-        :language: bash
-        :tab-width: 2
+  cd $_CIOP_APPLICATION_PATH/binning
+  more run
 
 Note that the *ciop-publish* command is called with the option *-m*. This means that it will publish the files as results of the entire workflow. Files are not going to be passed to the next job. They are placed in a persistent shared location common to the whole workflow.
 
 .. container:: context-run-executable
 
-  .. literalinclude:: src/multinode/binning/run.sh
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-6/bash/binning/run
        :language: bash
        :tab-width: 2
        :lines: 138
@@ -166,14 +172,6 @@ Recap
 #. We published results as final results of the workflow,
 #. We ran the added node using the *ciop-simjob* command,
 #. We ran the entire workflow using the *ciop-simwf* command.
-
-Files used in this Hands-On
-===========================
-
-* :download:`application.xml <src/multinode/application.xml>`
-* :download:`inputs/list <src/stagedata/list>`
-* :download:`expression/run.sh <src/parameters/expression/run.sh>`
-* :download:`binning/run.sh <src/multinode/binning/run.sh>`
 
 .. rubric:: Footnotes
 
