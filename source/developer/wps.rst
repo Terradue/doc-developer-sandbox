@@ -32,7 +32,7 @@ Inspect the application.xml
        :language: xml
        :tab-width: 2
 
-We added informational attributes for the WPS to the *<workflow>* tag:
+Note the informational attributes for the WPS in the *<workflow>* tag:
 
 .. container:: context-application-descriptor-file
 
@@ -41,7 +41,7 @@ We added informational attributes for the WPS to the *<workflow>* tag:
        :tab-width: 2
        :lines: 53
 
-And we added informational attributes to the *<parameter>* tags to be exposed through the WPS. Note the *scope="runtime"* attribute:
+Note the informational attributes in the *<parameter>* tags to be exposed through the WPS. Note the *scope="runtime"* attribute:
 
 .. container:: context-application-descriptor-file
 
