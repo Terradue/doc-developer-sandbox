@@ -5,6 +5,22 @@ Hands-On Exercise 7: debug a multi-node workflow
 
 In this exercise we will see how to debug the workflow described in the exercise :doc:`a multi-node workflow <multinode>` using a specific Web GUI.   
 
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+
+Install the Hands-On
+====================
+
+* Install the Hands-On Exercise 7, just typing:
+
+.. code-block:: console
+
+  cd
+  cd dcs-hands-on
+  mvn install -D hands.on=7 -P bash
+
 Run the workflow 
 ================
 
@@ -62,9 +78,3 @@ Recap
 
 #. We executed a multi-node workflow, 
 #. We used the Oozie Web Console to debug it.
-
-
-Files used in this Hands-On
-===========================
-
-Refer to files used in the exercise :doc:`a multi-node workflow <multinode>`
