@@ -32,7 +32,6 @@ The second node that we added (*node_binning*) needs convert tools to perform im
 
   sudo yum install -y ImageMagick
 
-
 Inspect the application.xml
 ===========================
 

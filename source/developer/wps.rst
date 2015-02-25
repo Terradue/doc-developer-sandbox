@@ -5,14 +5,30 @@ Hands-On Exercise 10: prepare an OGC Web Processing Service
 
 In this exercise we will prepare our workflow to expose an OGC Web Processing Service (WPS) [#f1]_ and we will trigger it through a WPS Client.
 
-Prepare the application.xml
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+
+Install the Hands-On
+====================
+
+* Install the Hands-On Exercise 10, just typing:
+
+.. code-block:: console
+
+  cd
+  cd dcs-hands-on
+  mvn install -D hands.on=10 -P bash
+
+Inspect the application.xml
 ===========================
 
-* Modify the *application.xml* in this way:
+* Inspect the *application.xml*:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/wps/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-10/application.xml
        :language: xml
        :tab-width: 2
 
@@ -20,7 +36,7 @@ We added informational attributes for the WPS to the *<workflow>* tag:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/wps/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-10/application.xml
        :language: xml
        :tab-width: 2
        :lines: 53
@@ -29,7 +45,7 @@ And we added informational attributes to the *<parameter>* tags to be exposed th
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/wps/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-10/application.xml
        :language: xml
        :tab-width: 2
        :lines: 5-13
@@ -84,14 +100,6 @@ Recap
 
 #. We prepared an *application.xml* suitable for the OGC WPS,
 #. We triggered the service through the WPS Client included in the Sandbox Dashboard.
-
-Files used in this Hands-On
-===========================
-
-* :download:`application.xml <src/wps/application.xml>`
-* :download:`expression/run.sh <src/parameters/expression/run.sh>`
-* :download:`binning/run.sh <src/multinode/binning/run.sh>`
-
 
 .. rubric:: Footnotes
 

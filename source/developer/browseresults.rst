@@ -5,6 +5,23 @@ Hands-On Exercise 8: browse published results
 
 In this exercise we will run again the workflow of the exercise :doc:`a multi-node workflow <multinode>`  and we will browse its results through the Web GUI.   
 
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+
+Install the Hands-On
+====================
+
+* Install the Hands-On Exercise 8, just typing:
+
+.. code-block:: console
+
+  cd
+  cd dcs-hands-on
+  mvn install -D hands.on=8 -P bash
+
+
 Run the workflow 
 ================
 
@@ -27,13 +44,11 @@ Browse the results
 
 * Click on the link *Browse the filesystem*,
 
-* Click on the link *tmp*,
-
-* Click on the link *sandbox*,
+* Click on the link *ciop*,
 
 * Click on the link *run*,
 
-* Click on the link representing the workflow id (e.g. *0000000-140703150626955-oozie-oozi-W*),
+* Click on the link representing the workflow id (e.g., *0000000-140703150626955-oozie-oozi-W*),
 
 * Click on the link *_result*,
   
@@ -74,9 +89,3 @@ Recap
 
 #. We executed a multinode workflow, 
 #. We browsed either final or intermediate results through the Web GUI.
-
-
-Files used in this Hands-On
-===========================
-
-Refer to files used in the exercise :doc:`a multi-node workflow <multinode>`
