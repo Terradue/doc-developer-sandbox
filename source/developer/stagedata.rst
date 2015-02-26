@@ -19,7 +19,7 @@ Install the Hands-On
 
   cd
   cd dcs-hands-on
-  mvn install -D hands.on=3 -P bash
+  mvn clean install -D hands.on=3 -P bash
 
 Inspect the application.xml
 ===========================
@@ -41,7 +41,7 @@ We need a local copy of the data in order to use them in our workflow. We can us
 
 .. code-block:: console
 
-  cd $_CIOP_APPLICATION_PATH/inputs
+  cd /tmp
   ciop-copy -o ./ http://catalogue.terradue.int/catalogue/search/MER_RR__1P/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1/rdf
   ciop-copy -o ./ http://catalogue.terradue.int/catalogue/search/MER_RR__1P/MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1/rdf
   ls -l
@@ -55,7 +55,7 @@ The output of the *ls -l* command will be similar to:
  -rw-r--r-- 1 crossi ciop 558118134 Apr 24 17:41 MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1
  -rw-r--r-- 1 crossi ciop 558118134 Apr 24 17:35 MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1
 
-Prepare the file list
+Inspect the file list
 =====================
 
 * Open the file *inputs/list* and see the following lines:
@@ -72,7 +72,8 @@ Publish the data
 * Inspect the file *my_node/run* using for example the *more* command:
 
 .. code-block:: console
-
+  
+  cd $_CIOP_APPLICATION_PATH
   more my_node/run
 
 * Note the *ciop-publish* command

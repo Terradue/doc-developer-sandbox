@@ -19,7 +19,7 @@ Install the Hands-On
 
   cd
   cd dcs-hands-on
-  mvn install -D hands.on=2 -P bash
+  mvn clean install -D hands.on=2 -P bash
 
 Inspect the run executable
 ==========================
