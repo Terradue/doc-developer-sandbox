@@ -8,7 +8,7 @@ In this exercise we will prepare a simple workflow and we will execute a first r
 Prerequisite
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
 
 Install the Hands-On
 =====================

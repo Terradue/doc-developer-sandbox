@@ -8,7 +8,7 @@ In this exercise we will use a toolbox to process the inputs of our workflow and
 Prerequisite
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
 
 Install the Hands-On
 ====================

@@ -8,7 +8,7 @@ In this exercise we will prepare input data for our workflow (this process is na
 Prerequisite
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
 
 Install the Hands-On
 =====================

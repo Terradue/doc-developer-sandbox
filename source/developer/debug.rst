@@ -8,7 +8,7 @@ In this exercise we will install a more robust version of the basic workflow. Al
 Prerequisite
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
 
 Install the Hands-On
 =====================
