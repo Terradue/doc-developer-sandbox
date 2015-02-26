@@ -57,7 +57,7 @@ The output of the *ls -l* command will be similar to:
 Inspect the file list
 =====================
 
-* Open the file *inputs/list* and see the following lines:
+* Open the file */application/inputs/list* and see the following lines:
 
 .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/inputs/list
      :language: none
