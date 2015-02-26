@@ -24,7 +24,7 @@ Install the Hands-On
 Inspect the application.xml
 ===========================
 
-The application.xml is the same used in the exercise :doc:`a basic workflow <basic>`:
+The application.xml is similar to the one used in the exercise :doc:`a basic workflow <basic>`:
 
 .. container:: context-application-descriptor-file
 
