@@ -44,14 +44,13 @@ We need a local copy of the data in order to use them in our workflow. We can us
   cd /tmp
   ciop-copy -o ./ http://catalogue.terradue.int/catalogue/search/MER_RR__1P/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1/rdf
   ciop-copy -o ./ http://catalogue.terradue.int/catalogue/search/MER_RR__1P/MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1/rdf
-  ls -l
+  ls -l | grep MER_RR
 
 The output of the *ls -l* command will be similar to:
 
 .. code-block:: console-output
     
  total 1091164
- -rw-r--r-- 1 crossi ciop        12 Apr 22 10:24 list
  -rw-r--r-- 1 crossi ciop 558118134 Apr 24 17:41 MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1
  -rw-r--r-- 1 crossi ciop 558118134 Apr 24 17:35 MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1
 
