@@ -8,7 +8,7 @@ In this exercise we will run again the workflow of the exercise :doc:`a multi-no
 Prerequisite
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
 
 Install the Hands-On
 ====================

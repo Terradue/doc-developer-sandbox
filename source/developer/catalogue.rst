@@ -8,7 +8,7 @@ In this exercise we will use an OpenSearch [#f1]_ catalogue URL as input source 
 Prerequisite
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
 
 Install the Hands-On
 ====================

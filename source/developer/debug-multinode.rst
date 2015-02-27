@@ -8,7 +8,7 @@ In this exercise we will see how to debug the workflow described in the exercise
 Prerequisite
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
 
 Install the Hands-On
 ====================

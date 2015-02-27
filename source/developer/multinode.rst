@@ -8,7 +8,7 @@ In this exercise we will run a workflow with two nodes, passing inputs from firs
 Prerequisite
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`)
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
 
 Install the Hands-On
 ====================
