@@ -97,30 +97,30 @@ The output will be similar to:
 
 .. code-block:: console-output
 
-  14/07/04 18:03:05 INFO node_binning simulation started
-  14/07/04 18:03:10 INFO Submitting job 14241 ...
-  14/07/04 18:03:11 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
-  14/07/04 18:03:11 INFO streaming.StreamJob: Dir hdfs://sb-10-16-10-33.dev.terradue.int:8020/user/crossi/monitor already exists
-  packageJobJar: [/var/lib/hadoop-0.20/cache/crossi/hadoop-unjar1310853949407034285/] [] /tmp/streamjob5828494070521580741.jar tmpDir=null
-  14/07/04 18:03:12 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-  14/07/04 18:03:12 WARN snappy.LoadSnappy: Snappy native library not loaded
-  14/07/04 18:03:12 INFO mapred.FileInputFormat: Total input paths to process : 1
-  14/07/04 18:03:12 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/crossi/mapred/local]
-  14/07/04 18:03:12 INFO streaming.StreamJob: Running job: job_201407031504_0017
-  14/07/04 18:03:12 INFO streaming.StreamJob: To kill this job, run:
-  14/07/04 18:03:12 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-33.dev.terradue.int:8021 -kill job_201407031504_0017
-  14/07/04 18:03:12 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-33.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201407031504_0017
-  14/07/04 18:03:13 INFO streaming.StreamJob:  map 0%  reduce 0%
-  14/07/04 18:03:15 INFO streaming.StreamJob:  map 100%  reduce 0%
-  14/07/04 18:03:22 INFO streaming.StreamJob:  map 100%  reduce 33%
-  14/07/04 18:03:25 INFO streaming.StreamJob:  map 100%  reduce 100%
-  14/07/04 18:04:20 INFO streaming.StreamJob: Job complete: job_201407031504_0017
-  14/07/04 18:04:20 INFO streaming.StreamJob: Output: /tmp/sandbox/beam_arithm/node_binning/output
-  14/07/04 18:04:21 INFO node_binning simulation ended (76 seconds)
-  14/07/04 18:04:21 INFO node_binning published:
- 
-  14/07/04 18:04:21 INFO The intermediate results are available at http://sb-10-16-10-33.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/beam_arithm/node_binning%2Fdata&namenodeInfoPort=50070
-  14/07/04 18:04:21 INFO The published results are available at http://sb-10-16-10-33.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/beam_arithm/node_binning%2F_results&namenodeInfoPort=50070
+  15/02/27 10:55:30 INFO node_binning simulation started
+  15/02/27 10:55:35 INFO Submitting job 3371 ...
+  15/02/27 10:55:36 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
+  15/02/27 10:55:36 INFO streaming.StreamJob: Dir hdfs://sb-10-16-10-62.dev.terradue.int:8020/user/crossi/monitor already exists
+  packageJobJar: [/var/lib/hadoop-0.20/cache/crossi/hadoop-unjar1734819450932784901/] [] /tmp/streamjob8037491068763603475.jar tmpDir=null
+  15/02/27 10:55:36 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+  15/02/27 10:55:36 WARN snappy.LoadSnappy: Snappy native library not loaded
+  15/02/27 10:55:36 INFO mapred.FileInputFormat: Total input paths to process : 1
+  15/02/27 10:55:37 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/crossi/mapred/local]
+  15/02/27 10:55:37 INFO streaming.StreamJob: Running job: job_201502261731_0007
+  15/02/27 10:55:37 INFO streaming.StreamJob: To kill this job, run:
+  15/02/27 10:55:37 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-62.dev.terradue.int:8021 -kill job_201502261731_0007
+  15/02/27 10:55:37 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-62.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201502261731_0007
+  15/02/27 10:55:38 INFO streaming.StreamJob:  map 0%  reduce 0%
+  15/02/27 10:55:40 INFO streaming.StreamJob:  map 100%  reduce 0%
+  15/02/27 10:55:47 INFO streaming.StreamJob:  map 100%  reduce 33%
+  15/02/27 10:55:50 INFO streaming.StreamJob:  map 100%  reduce 100%
+  15/02/27 10:56:50 INFO streaming.StreamJob: Job complete: job_201502261731_0007
+  15/02/27 10:56:50 INFO streaming.StreamJob: Output: /tmp/sandbox/hands-on-6/node_binning/output
+  15/02/27 10:56:50 INFO node_binning simulation ended (80 seconds)
+  15/02/27 10:56:52 INFO node_binning published:
+
+  15/02/27 10:56:52 INFO The intermediate results are available at http://sb-10-16-10-62.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-6/node_binning%2Fdata&namenodeInfoPort=50070
+  15/02/27 10:56:52 INFO The published results are available at http://sb-10-16-10-62.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-6/node_binning%2F_results&namenodeInfoPort=50070
 
 * Run the entire workflow:
 
