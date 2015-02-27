@@ -5,31 +5,47 @@ Hands-On Exercise 10: prepare an OGC Web Processing Service
 
 In this exercise we will prepare our workflow to expose an OGC Web Processing Service (WPS) [#f1]_ and we will trigger it through a WPS Client.
 
-Prepare the application.xml
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+
+Install the Hands-On
+====================
+
+* Install the Hands-On Exercise 10, just typing:
+
+.. code-block:: console
+
+  cd
+  cd dcs-hands-on
+  mvn clean install -D hands.on=10 -P bash
+
+Inspect the application.xml
 ===========================
 
-* Modify the *application.xml* in this way:
+* Inspect the *application.xml*:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/wps/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-10/application.xml
        :language: xml
        :tab-width: 2
 
-We added informational attributes for the WPS to the *<workflow>* tag:
+Note the informational attributes for the WPS in the *<workflow>* tag:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/wps/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-10/application.xml
        :language: xml
        :tab-width: 2
        :lines: 53
 
-And we added informational attributes to the *<parameter>* tags to be exposed through the WPS. Note the *scope="runtime"* attribute:
+Note the informational attributes in the *<parameter>* tags to be exposed through the WPS. Note the *scope="runtime"* attribute:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/wps/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-10/application.xml
        :language: xml
        :tab-width: 2
        :lines: 5-13
@@ -41,7 +57,7 @@ Trigger the WPS service
 
 * Click on the tab *Invoke*,
 
-* Click on the link *BEAM Algal bloom detection* under **Process List**,
+* Click on the link *Prepare an OGC Web Processing Service* under **Process List**,
 
 * Type in the field *Start date* the value *2012-04-06T10:24:29.000Z*,
 
@@ -75,23 +91,11 @@ The following images show the steps that we have just performed:
    :scale: 80 %
    :alt: WPS Service
 
-.. figure:: includes/wps/gui6.png
-   :scale: 80 %
-   :alt: WPS Service
-
 Recap
 =====
 
 #. We prepared an *application.xml* suitable for the OGC WPS,
 #. We triggered the service through the WPS Client included in the Sandbox Dashboard.
-
-Files used in this Hands-On
-===========================
-
-* :download:`application.xml <src/wps/application.xml>`
-* :download:`expression/run.sh <src/parameters/expression/run.sh>`
-* :download:`binning/run.sh <src/multinode/binning/run.sh>`
-
 
 .. rubric:: Footnotes
 

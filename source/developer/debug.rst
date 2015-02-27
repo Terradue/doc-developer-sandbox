@@ -3,20 +3,35 @@
 Hands-On Exercise 2: make a robust workflow and debug it
 ########################################################
 
-In this exercise we will modify the basic workflow to make it more robust. Also we will learn how to debug the workflow through the Web GUI.
+In this exercise we will install a more robust version of the basic workflow. Also we will learn how to debug the workflow through the Web GUI.
 
-Modify the run executable
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+
+Install the Hands-On
+=====================
+
+* Install the Hands-On Exercise 2, just typing:
+
+.. code-block:: console
+
+  cd
+  cd dcs-hands-on
+  mvn clean install -D hands.on=2 -P bash
+
+Inspect the run executable
 ==========================
 
-* Open the *my_node/run.sh* executable with a text editor and modify it in the following way:
+* Open the *my_node/run* executable with a text editor or using the *more* command:
 
-.. container:: context-run-executable
+.. code-block:: console
  
-  .. literalinclude:: src/debug/run.sh
-    :language: bash
-    :tab-width: 2
+ cd $_CIOP_APPLICATION_PATH
+ more my_node/run
 
-We added the *cleanExit()* function. It will be useful to trace our workflow and make it more robust.
+You will see the *cleanExit()* function. It will be useful to trace our workflow and make it more robust.
 
 Run the node and debug the workflow
 ===================================
@@ -61,11 +76,12 @@ Run the node and debug the workflow
 .. figure:: includes/debug/gui4.png
    :scale: 70 %
    :alt: Attempts output
+
 *Congrat !*
-*You have added an Exit function to your run executable, and visualized the associated log message generated from the task completion*
+*You have  an Exit function to your run executable, and visualized the associated log message generated from the task completion*
 *Here the related piece of code of the run executable:*
 
-.. literalinclude:: src/debug/run.sh
+.. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-2/bash/my_node/run
    :language: bash
    :tab-width: 2
    :lines: 31-32
@@ -76,12 +92,5 @@ Run the node and debug the workflow
 Recap
 =====
 
-#. We added a group of variables representing our exit codes, the *cleanExit* function and finally we used the *$SUCCESS* exit code,
+#. We installed a different version of the run executable that includes some additional features to make it more robust,
 #. We ran the node expression and we debugged the output in the Web GUI.
-
-Files used in this Hands-On
-===========================
-
-* :download:`application.xml <src/basic/application.xml>`
-* :download:`inputs/list <src/basic/list>`
-* :download:`my_node/run.sh <src/debug/run.sh>`
