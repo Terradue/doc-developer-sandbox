@@ -57,7 +57,7 @@ Trigger the WPS service
 
 * Click on the tab *Invoke*,
 
-* Click on the link *BEAM Algal bloom detection* under **Process List**,
+* Click on the link *Prepare an OGC Web Processing Service* under **Process List**,
 
 * Type in the field *Start date* the value *2012-04-06T10:24:29.000Z*,
 
@@ -88,10 +88,6 @@ The following images show the steps that we have just performed:
    :alt: WPS Service
 
 .. figure:: includes/wps/gui5.png
-   :scale: 80 %
-   :alt: WPS Service
-
-.. figure:: includes/wps/gui6.png
    :scale: 80 %
    :alt: WPS Service
 
