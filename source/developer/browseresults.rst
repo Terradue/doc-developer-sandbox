@@ -48,7 +48,7 @@ Browse the results
 
 * Click on the link *run*,
 
-* Click on the link *hands-on8*,
+* Click on the link *hands-on-8*,
 
 * Click on the link representing the workflow id (e.g., *0000000-140703150626955-oozie-oozi-W*),
 
