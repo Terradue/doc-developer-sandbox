@@ -19,7 +19,7 @@ Install the Hands-On
 
   cd
   cd dcs-hands-on
-  mvn install -D hands.on=8 -P bash
+  mvn clean install -D hands.on=8 -P bash
 
 
 Run the workflow 
@@ -47,6 +47,8 @@ Browse the results
 * Click on the link *ciop*,
 
 * Click on the link *run*,
+
+* Click on the link *hands-on8*,
 
 * Click on the link representing the workflow id (e.g., *0000000-140703150626955-oozie-oozi-W*),
 

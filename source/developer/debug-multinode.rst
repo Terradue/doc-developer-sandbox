@@ -19,7 +19,7 @@ Install the Hands-On
 
   cd
   cd dcs-hands-on
-  mvn install -D hands.on=7 -P bash
+  mvn clean install -D hands.on=7 -P bash
 
 Run the workflow 
 ================
