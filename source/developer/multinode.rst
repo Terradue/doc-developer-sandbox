@@ -19,7 +19,7 @@ Install the Hands-On
 
   cd
   cd dcs-hands-on
-  mvn install -D hands.on=6 -P bash
+  mvn clean install -D hands.on=6 -P bash
 
 Install the required packages
 =============================
@@ -61,15 +61,9 @@ Inspect the run executable
 
   cd $_CIOP_APPLICATION_PATH/binning
   more run
+  grep ciop-publish run
 
 Note that the *ciop-publish* command is called with the option *-m*. This means that it will publish the files as results of the entire workflow. Files are not going to be passed to the next job. They are placed in a persistent shared location common to the whole workflow.
-
-.. container:: context-run-executable
-
-  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-6/bash/binning/run
-       :language: bash
-       :tab-width: 2
-       :lines: 138
 
 Run and debug the workflow
 ==========================
@@ -86,6 +80,12 @@ You will see:
 
   node_expression
   node_binning
+
+* Run the node *node_expression*:
+
+.. code-block:: console
+
+  ciop-simjob node_expression
 
 * Run the node *node_binning*:
 
