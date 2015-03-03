@@ -37,7 +37,7 @@ The Hands-On exercises are implemented with 2 different languages: bash and pyth
   
   mvn clean install -D hands.on=1 -P bash
 
-* For example, for the Hands-On 1, to select python type:
+* For the same Hands-On, to select python type:
 
 .. code-block:: console
   
