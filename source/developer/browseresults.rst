@@ -50,7 +50,7 @@ Browse the results
 
 * Click on the link *hands-on-8*,
 
-* Click on the link representing the workflow id (e.g., *0000000-140703150626955-oozie-oozi-W*),
+* Click on the link representing the workflow id (e.g., *0000269-150209145053100-oozie-oozi-W*),
 
 * Click on the link *_result*,
   
