@@ -21,14 +21,14 @@ Install the Hands-On
   cd dcs-hands-on
   mvn clean install -D hands.on=4 -P bash
 
-Install the ESA BEAM Toolbox
-============================
+Install the BEAM Toolbox
+========================
 
-The ESA BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-source toolbox and development platform for viewing, analyzing and processing of remote sensing raster data. To install it type:
+The BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-source toolbox and development platform for viewing, analyzing and processing of remote sensing raster data. To install it type:
 
 .. code-block:: console
 
-  sudo yum install -y esa-beam-4.11
+  sudo yum install -y beam-5.0
 
 Inspect the application.xml
 ===========================
@@ -44,7 +44,7 @@ Inspect the *application.xml*, it looks slightly different:
 Inspect the run executable
 ===========================
 
-* The ESA BEAM Toolbox has to be called in the run executable. We can inspect the run executable and see when and how the ESA BEAM Toolbox is used: 
+* The BEAM Toolbox has to be called in the run executable. We can inspect the run executable and see when and how the BEAM Toolbox is used: 
 
 .. code-block:: console
 
@@ -52,7 +52,7 @@ Inspect the run executable
   more expression/run
 
 .. HINT::
-  The ESA BEAM Toolbox is executed through the *gpt.sh* script
+  The BEAM Toolbox is executed through the *gpt.sh* script
 
 For further explaination see "Bulk Processing with GPT" [#f2]_ and "Creating a GPF Graph" [#f3]_.
 

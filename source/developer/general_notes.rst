@@ -26,6 +26,26 @@ In order to have the code locally available on your Sandbox, you have to clone t
   You have now the resources needed to complete all the Hands-On !
 
 
+Programming language
+^^^^^^^^^^^^^^^^^^^^
+
+The hands-on are available in 2 different versions, bash and python. You can choose which version to use. All the following hands-on relate to bash, but you can choose to use python, the behaviour will not change.
+* Select bash hands-on 1
+.. code-block:: console
+
+  
+  mvn clean install -D hands.on=1 -P bash
+
+.. admonition:: Congrats
+
+* Select python hands-on 1
+.. code-block:: console
+
+  
+  mvn clean install -D hands.on=1 -P python
+
+.. admonition:: Congrats
+
 Using the code examples
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
