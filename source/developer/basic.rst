@@ -3,7 +3,7 @@
 Hands-On Exercise 1: a basic workflow
 #####################################
 
-In this exercise we will prepare a simple workflow, and we will execute a first run using the 'CIOP <http://docs.terradue.com/developer-sandbox/reference/man/bash_commands_functions/index.html>'_ tools.
+In this exercise we will prepare a simple workflow, and we will execute a first run using the `CIOP <http://docs.terradue.com/developer-sandbox/reference/man/bash_commands_functions/index.html>`_ tools.
 
 Prerequisite
 =============
