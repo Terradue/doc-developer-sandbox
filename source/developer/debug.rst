@@ -3,7 +3,7 @@
 Hands-On Exercise 2: make a robust workflow and debug it
 ########################################################
 
-In this exercise we will install a more robust version of the basic workflow. Also we will learn how to debug the workflow through the Web GUI.
+In this exercise we will install a more robust version of the basic workflow. Also we will learn how to debug the workflow through the Hadoop JobTracker Web GUI.
 
 Prerequisite
 =============
@@ -13,7 +13,7 @@ Prerequisite
 Install the Hands-On
 =====================
 
-* Install the Hands-On Exercise 2, just typing:
+* Install the Hands-On Exercise 2, just type:
 
 .. code-block:: console
 
@@ -42,15 +42,15 @@ Run the node and debug the workflow
 
  ciop-simjob my_node
 
-* From the output of the *ciop-simjob* command we can copy in the clipboard the **Tracking URL**. It will be similar to this:
+* From the output of the *ciop-simjob* command, we can copy in the clipboard the **Tracking URL**. It will be similar to this:
 
 .. code-block:: console-output
 
  14/07/09 12:43:53 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-33.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201407031504_0052 
 
-* Open a browser and paste the Tracking URL just copied,
+* Open a browser and paste the Tracking URL just copied.
 
-* You will see the job details in the Web GUI. The red rounded link represents the number of parallel tasks (in a Sandbox the default is 2). Click on this link:
+* You will see the job details in the Web GUI. On the screenshot, the red rounded link represents the number of parallel tasks (in Sandbox mode, the default is 2). Click on this link:
 
 .. figure:: includes/debug/gui1.png
    :scale: 100 %
@@ -64,7 +64,7 @@ Run the node and debug the workflow
    :alt: Tasks details
 
 * Now we have the list of task attempts. 
-* To see the output about of one of them (in this case we have just one attempt), just on the **All** link in the **Task Logs** column (the rounded one):
+* To see the output related to one of them (in this case we have just one attempt), just click on the **All** link in the **Task Logs** column (the rounded one):
 
 .. figure:: includes/debug/gui3.png
    :scale: 70 %
@@ -78,7 +78,7 @@ Run the node and debug the workflow
    :alt: Attempts output
 
 *Congrat !*
-*You have  an Exit function to your run executable, and visualized the associated log message generated from the task completion*
+*You learnt how to insert an Exit function in your run executable, and to visualize the associated log message generated from the task completion*
 *Here the related piece of code of the run executable:*
 
 .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-2/bash/my_node/run
@@ -92,5 +92,5 @@ Run the node and debug the workflow
 Recap
 =====
 
-#. We installed a different version of the run executable that includes some additional features to make it more robust,
-#. We ran the node expression and we debugged the output in the Web GUI.
+#. We installed a different version of the run executable that includes some additional features to make it more robust;
+#. We ran the node 'expression' and we debugged the output in the Hadoop JobTracker Web GUI.
