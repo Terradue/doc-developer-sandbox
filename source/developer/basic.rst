@@ -21,7 +21,7 @@ The Hands-On installation is quite straightforward, and it is performed with the
  cd dcs-hands-on
  mvn clean install -D hands.on=1 -P bash
 
-With the last command you installed the first Hands-On exercise (option *-D*) using a *bash* profile (option *-P*). The profile represents the language used to implement the Hands-On run executables.  
+With the last command you installed the first Hands-On exercise (option *-D*) using a *bash* profile (option *-P*). The profile represents the programming language used to implement the Hands-On run executables.  
 
 Understand the workflow
 =======================
@@ -81,7 +81,7 @@ A run executable is responsible for the *execution* of your application (or a st
 
 .. admonition::
 
-  Depending from the profile chosen (maven's option *-P*), a run executable can be written in different programming languages (currently: python, R, or bash scripts).
+  Depending from the profile chosen (maven's option *-P*), a run executable can be written in different programming or scripting languages including python, R, or bash (the Hands-On exercises are initially available in python and bash).
 
 Run the node 
 ============
