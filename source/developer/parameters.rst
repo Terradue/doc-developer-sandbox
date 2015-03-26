@@ -3,7 +3,7 @@
 Hands-On Exercise 5: using parameters
 #####################################
 
-In this exercise we will see the usage of parameters in the workflow.   
+In this exercise we will study the usage of parameters in the workflow.   
 
 Prerequisite
 =============
@@ -13,7 +13,7 @@ Prerequisite
 Install the Hands-On
 ====================
 
-* Install the Hands-On Exercise 5, just typing:
+* Install the Hands-On Exercise 5, just type:
 
 .. code-block:: console
 
@@ -24,7 +24,7 @@ Install the Hands-On
 Inspect the application.xml
 ===========================
 
-* Inspect the *application.xml*, you will see now the parameter *expression*:
+* Checking the updated *application.xml*, you will see now the parameter *expression*:
 
 .. container:: context-application-descriptor-file
 
@@ -54,7 +54,7 @@ Run and debug the workflow
 
   ciop-simjob node_expression
 
-* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
+* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command, and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/parameters/gui1.png
      :scale: 70 %
@@ -63,5 +63,5 @@ Run and debug the workflow
 Recap
 =====
 
-#. We added a parameter in the node of our workflow,
+#. We added a parameter in the job template of a processing node, defined in the application workflow;
 #. We used the value of that parameter in our run executable.
