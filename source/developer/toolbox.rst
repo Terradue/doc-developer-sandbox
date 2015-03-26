@@ -3,7 +3,7 @@
 Hands-On Exercise 4: using a toolbox
 #####################################
 
-In this exercise we will use a toolbox to process the inputs of our workflow and we will publish its results on HDFS.   
+In this exercise we will use a toolbox to process the inputs of our workflow, and we will publish its results on HDFS.   
 
 Prerequisite
 =============
@@ -24,7 +24,9 @@ Install the Hands-On
 Install the BEAM Toolbox
 ========================
 
-The BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-source toolbox and development platform for viewing, analyzing and processing of remote sensing raster data. To install it type:
+The BEAM Toolbox [#f1]_ is an open-source toolbox and development platform for viewing, analyzing and processing remote sensing raster data. 
+BEAM stands for 'Basic ERS & Envisat (A) ATSR and Meris', the satellite sensor measurements handled by the toolbox.
+To install the BEAM toolbox type:
 
 .. code-block:: console
 
@@ -33,7 +35,7 @@ The BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-sour
 Inspect the application.xml
 ===========================
 
-Inspect the *application.xml*, it looks slightly different:
+Inspect the *application.xml*, it is now slightly different from the one used in the previous hands-on exercise:
 
 .. container:: context-application-descriptor-file
 
@@ -44,7 +46,7 @@ Inspect the *application.xml*, it looks slightly different:
 Inspect the run executable
 ===========================
 
-* The BEAM Toolbox has to be called in the run executable. We can inspect the run executable and see when and how the BEAM Toolbox is used: 
+* The BEAM Toolbox has to be called within the run executable. We can inspect the run executable and see how the BEAM Toolbox is used: 
 
 .. code-block:: console
 
@@ -54,7 +56,7 @@ Inspect the run executable
 .. HINT::
   The BEAM Toolbox is executed through the *gpt.sh* script
 
-For further explaination see "Bulk Processing with GPT" [#f2]_ and "Creating a GPF Graph" [#f3]_.
+For further explainations on the graph processing tool, see "Bulk Processing with GPT" [#f2]_ and "Creating a GPF Graph" [#f3]_.
 
 Run and debug the workflow
 ==========================
@@ -65,7 +67,7 @@ Run and debug the workflow
 
   ciop-simjob node_expression
 
-* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
+* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command, and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/toolbox/gui1.png
      :scale: 70 %
@@ -74,9 +76,9 @@ Run and debug the workflow
 Recap
 =====
 
-#. We installed the custom toolbox ESA BEAM,
-#. We included it in a run executable,
-#. We processed the inputs with the BandMaths Operator provided by the ESA BEAM Toolbox,
+#. We installed the ESA BEAM toolbox;
+#. We called it from our run executable;
+#. We processed the inputs with the BandMaths Operator provided by the ESA BEAM Toolbox;
 #. We published the results in HDFS.
 
 .. rubric:: Footnotes
