@@ -113,7 +113,7 @@ The output will be similar to:
   15/03/03 11:30:58 INFO The intermediate results are available at http://sb-10-16-10-30.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-6/node_binning%2Fdata&namenodeInfoPort=50070
   15/03/03 11:30:58 INFO The published results are available at http://sb-10-16-10-30.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-6/node_binning%2F_results&namenodeInfoPort=50070
 
-Note in these logs how the job definition is ran as a Hadoop Streaming MapReduce task.
+Check in these logs how the job definition is ran as a Hadoop Streaming MapReduce task.
 A MapReduce job usually splits the input source so that independent data chunks are processed by the map tasks in a completely parallel manner.
 The Hadoop framework takes care of tasks scheduling & monitoring, and re-executes the failed tasks.
 
