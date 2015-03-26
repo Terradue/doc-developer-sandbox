@@ -20,6 +20,8 @@ Install the Hands-On
   cd
   cd dcs-hands-on
   mvn clean install -D hands.on=6 -P bash
+  
+Note: this instalation is using the ImageMagick [#f1]_ tools to perform image manipulations. 
 
 Inspect the application.xml
 ===========================
