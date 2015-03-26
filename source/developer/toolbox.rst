@@ -13,7 +13,7 @@ Prerequisite
 Install the Hands-On
 ====================
 
-* Install the Hands-On Exercise 4, just typing:
+* Install the Hands-On Exercise 4, just type:
 
 .. code-block:: console
 
