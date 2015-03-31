@@ -3,7 +3,8 @@
 Hands-On Exercise 10: prepare an OGC Web Processing Service
 ###########################################################
 
-In this exercise we will prepare our workflow to expose an OGC Web Processing Service (WPS) [#f1]_ and we will trigger it through a WPS Client.
+In this exercise we will prepare our workflow in order to expose an OGC Web Processing Service (WPS) [#f1]_ interface, 
+and we will trigger it through a WPS Client.
 
 Prerequisite
 =============
@@ -13,7 +14,7 @@ Prerequisite
 Install the Hands-On
 ====================
 
-* Install the Hands-On Exercise 10, just typing:
+* Install the Hands-On Exercise 10, just type:
 
 .. code-block:: console
 
@@ -41,7 +42,8 @@ Note the informational attributes for the WPS in the *<workflow>* tag:
        :tab-width: 2
        :lines: 53
 
-Note the informational attributes in the *<parameter>* tags to be exposed through the WPS. Note the *scope="runtime"* attribute:
+Note the informational attributes in the *<parameter>* tags, to be exposed through the WPS. 
+Also note the *scope="runtime"* attribute:
 
 .. container:: context-application-descriptor-file
 
@@ -94,7 +96,7 @@ The following images show the steps that we have just performed:
 Recap
 =====
 
-#. We prepared an *application.xml* suitable for the OGC WPS,
+#. We prepared an *application.xml* suitable for the OGC WPS;
 #. We triggered the service through the WPS Client included in the Sandbox Dashboard.
 
 .. rubric:: Footnotes
