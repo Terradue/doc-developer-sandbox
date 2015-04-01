@@ -3,62 +3,60 @@
 Hands-On Exercise 4: using a toolbox
 #####################################
 
-In this exercise we will use a toolbox to process the inputs of our workflow and we will publish its results on HDFS.   
+In this exercise we will use a toolbox to process the inputs of our workflow, and we will publish its results on HDFS.   
 
+Prerequisite
+=============
 
-Install the ESA BEAM Toolbox
-============================
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
 
-The ESA BEAM (Basic ERS & Envisat (A) ATSR and Meris) Toolbox [#f1]_ is an open-source toolbox and development platform for viewing, analyzing and processing of remote sensing raster data. To install it type:
+Install the Hands-On
+====================
+
+* Install the Hands-On Exercise 4, just type:
 
 .. code-block:: console
 
-  sudo yum install -y esa-beam-4.11
+  cd
+  cd dcs-hands-on
+  mvn clean install -D hands.on=4 -P bash
 
-Prepare the application.xml
+Install the BEAM Toolbox
+========================
+
+The BEAM Toolbox [#f1]_ is an open-source toolbox and development platform for viewing, analyzing and processing remote sensing raster data. 
+BEAM stands for 'Basic ERS & Envisat (A) ATSR and Meris', the satellite sensor measurements handled by the toolbox.
+To install the BEAM toolbox type:
+
+.. code-block:: console
+
+  sudo yum install -y beam-5.0
+
+Inspect the application.xml
 ===========================
 
-Modify the *application.xml* in this way:
+Inspect the *application.xml*, it is now slightly different from the one used in the previous hands-on exercise:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/toolbox/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-4/application.xml
        :language: xml
        :tab-width: 2
 
-Prepare the run executable
-================================
+Inspect the run executable
+===========================
 
-* The ESA BEAM Toolbox has to be called in the run executable. First of all, we have to prepare the new executable:   
+* The BEAM Toolbox has to be called within the run executable. We can inspect the run executable and see how the BEAM Toolbox is used: 
 
 .. code-block:: console
 
   cd $_CIOP_APPLICATION_PATH
-  mkdir expression
-  touch expression/run.sh
-  chmod +x expression/run.sh
+  more expression/run
 
-.. NOTE::
-        If you prefer, you can delete the previous my_node/run.sh executable since it will not be used anymore.
+.. HINT::
+  The BEAM Toolbox is executed through the *gpt.sh* script
 
-* Open the file *expression/run.sh* and paste the following code:
-
-.. container:: context-run-executable
-
-  .. literalinclude:: src/toolbox/expression/run.sh
-      :language: bash
-      :tab-width: 2
-
-The ESA BEAM Toolbox is called in:
-
-.. container:: context-run-executable
-
-  .. literalinclude:: src/toolbox/expression/run.sh
-      :language: bash
-      :tab-width: 2
-      :lines: 105
-
-For further explaination see "Bulk Processing with GPT" [#f2]_ and "Creating a GPF Graph" [#f3]_.
+For further explainations on the graph processing tool, see "Bulk Processing with GPT" [#f2]_ and "Creating a GPF Graph" [#f3]_.
 
 Run and debug the workflow
 ==========================
@@ -69,7 +67,7 @@ Run and debug the workflow
 
   ciop-simjob node_expression
 
-* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
+* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command, and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/toolbox/gui1.png
      :scale: 70 %
@@ -78,17 +76,10 @@ Run and debug the workflow
 Recap
 =====
 
-#. We installed the custom toolbox ESA BEAM,
-#. We included it in a run executable,
-#. We processed the inputs with the BandMaths Operator provided by the ESA BEAM Toolbox,
+#. We installed the ESA BEAM toolbox;
+#. We called it from our run executable;
+#. We processed the inputs with the BandMaths Operator provided by the ESA BEAM Toolbox;
 #. We published the results in HDFS.
-
-Files used in this Hands-On
-===========================
-
-* :download:`application.xml <src/toolbox/application.xml>`
-* :download:`inputs/list <src/stagedata/list>`
-* :download:`expression/run.sh <src/toolbox/expression/run.sh>`
 
 .. rubric:: Footnotes
 

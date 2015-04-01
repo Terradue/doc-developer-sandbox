@@ -3,7 +3,24 @@
 Hands-On Exercise 7: debug a multi-node workflow
 ################################################
 
-In this exercise we will see how to debug the workflow described in the exercise :doc:`a multi-node workflow <multinode>` using a specific Web GUI.   
+In this exercise we will see how to debug the workflow described in the exercise :doc:`a multi-node workflow <multinode>`. 
+To do so, we will be using a specific Web GUI, the "Oozie Web Console".
+
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+
+Install the Hands-On
+====================
+
+* Install the Hands-On Exercise 7, just type:
+
+.. code-block:: console
+
+  cd
+  cd dcs-hands-on
+  mvn clean install -D hands.on=7 -P bash
 
 Run the workflow 
 ================
@@ -14,11 +31,11 @@ Run the workflow
 
   ciop-simwf
 
-* Press CTRL+C
+* Press CTRL+C 
 
 .. warning::
   
-  The workflow will continue its execution, despite to the CTRL+C input.
+  The workflow will continue its execution, despite the CTRL+C command.
   
 Debug the workflow
 ==================
@@ -29,7 +46,7 @@ Debug the workflow
 
 .. tip::
   
-  Read how to obtain the value of $HOSTNAME in the :doc:`General Notes <general_notes>` section
+  Read how to obtain the value of your Sandbox $HOSTNAME in the :doc:`General Notes <general_notes>` section
 
 * Click on the *Job Id* value,
 
@@ -39,7 +56,7 @@ Debug the workflow
 
 * Continue debugging as described in the exercise :doc:`make a robust workflow and debug it <debug>`. 
 
-The following image show the steps that we have just performed:
+The following image shows the steps that we have just performed:
 
 .. figure:: includes/multinode-debug/gui1.png
    :scale: 80 %
@@ -60,11 +77,5 @@ The following image show the steps that we have just performed:
 Recap
 =====
 
-#. We executed a multi-node workflow, 
-#. We used the Oozie Web Console to debug it.
-
-
-Files used in this Hands-On
-===========================
-
-Refer to files used in the exercise :doc:`a multi-node workflow <multinode>`
+#. We executed a multi-node workflow;
+#. We accessed the Oozie Web Console to debug it.

@@ -127,11 +127,19 @@ body {
 	height: 50px;
 }
 
-#navbar .navbar-brand > img {
-	width: 150px;	
+#navbar .navbar-t2-brand > img {
+	width: 120px;	
 }
 
-.navbar-brand {
+.navbar-t2-brand {
+	padding: 9px;
+}
+
+#navbar .navbar-dcs-brand > img {
+	width: 120px;	
+}
+
+.navbar-dcs-brand {
 	padding: 9px;
 }
 

@@ -3,49 +3,67 @@
 Hands-On Exercise 3: staging data
 #################################
 
-In this exercise we will prepare input data for our workflow (this process is named *Stage In*) and we will publish out data as result of the workflow (this process is named *Stage Out*).   
+In this exercise we will prepare input data for our workflow (this process is named *Stage In*), and we will publish out data as result of the workflow (this process is named *Stage Out*).   
 
-Prepare the application.xml
+Prerequisite
+=============
+
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+
+Install the Hands-On
+=====================
+
+* Install the Hands-On Exercise 3, just typing:
+
+.. code-block:: console
+
+  cd
+  cd dcs-hands-on
+  mvn clean install -D hands.on=3 -P bash
+
+Inspect the application.xml
 ===========================
 
-The application.xml is the same used in the exercise :doc:`a basic workflow <basic>`:
+The application.xml is similar to the one used in the first hands-on exercise :doc:`a basic workflow <basic>`:
 
 .. container:: context-application-descriptor-file
 
-  .. literalinclude:: src/basic/application.xml
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/application.xml
     :language: xml
     :tab-width: 2
 
-Download data from a catalogue
-==============================
+Download data from a remote server
+==================================
 
-We need a local copy of the data in order to use them in our workflow. We can use the *ciop-copy* tool.
+We need a local copy of the data to be ingested by a run executable. 
+We can use the *ciop-copy* tool to interact with a remote catalogue, retrieve a data source (download link) from its catalogue reference, and download the data locally.
 
 * Type the following commands: 
 
 .. code-block:: console
 
-  cd $_CIOP_APPLICATION_PATH/inputs
+  cd /tmp
   ciop-copy -o ./ http://catalogue.terradue.int/catalogue/search/MER_RR__1P/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1/rdf
   ciop-copy -o ./ http://catalogue.terradue.int/catalogue/search/MER_RR__1P/MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1/rdf
-  ls -l
+  ls -l | grep MER_RR
 
 The output of the *ls -l* command will be similar to:
 
 .. code-block:: console-output
     
  total 1091164
- -rw-r--r-- 1 crossi ciop        12 Apr 22 10:24 list
  -rw-r--r-- 1 crossi ciop 558118134 Apr 24 17:41 MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1
  -rw-r--r-- 1 crossi ciop 558118134 Apr 24 17:35 MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1
 
-Prepare the file list
-=====================
+Inspect the inputs file
+=======================
 
-* Open the file *inputs/list* and paste the following lines:
+* Open the file */application/inputs/list* and check the following lines:
 
-.. literalinclude:: src/stagedata/list
+.. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/inputs/list
      :language: none
+
+These lines define the input data to be ingested by a run executable.
 
 .. WARNING::
    The file *inputs/list* should contain only these two lines (without blank lines or comments).
@@ -53,16 +71,26 @@ Prepare the file list
 Publish the data
 ================
 
-* Open the file *my_node/run.sh* and paste the following code:
+* Inspect the file *my_node/run* using for example the *more* command:
+
+.. code-block:: console
+  
+  cd $_CIOP_APPLICATION_PATH
+  more my_node/run
+  
+Several programming or scripting languages are supported to implement the run executable. In the above example we used *bash*.  
+
+* Note the *ciop-publish* command
 
 .. container:: context-run-executable
 
-  .. literalinclude:: src/stagedata/run.sh
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/my_node/run
      :language: bash
      :tab-width: 2
+     :lines: 5-5
 
 .. NOTE::
-     The command *ciop-publish* will put the input data in the HDFS (the underlying Distributed File System) and it will pass its references to the subsequent node. 
+     The command *ciop-publish* will put the workflow's stage out data on the HDFS (the underlying Hadoop Distributed File System), and it will pass it to the Hadoop framework by reference.  
 
 Run and debug the workflow
 ==========================
@@ -77,33 +105,33 @@ The output will be similar to:
 
 .. code-block:: console-output
 
- 14/07/09 14:20:27 INFO my_node simulation started
- 14/07/09 14:20:34 INFO Submitting job 681 ...
- 14/07/09 14:20:35 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
- 14/07/09 14:20:35 INFO streaming.StreamJob: Dir hdfs://sb-10-16-10-33.dev.terradue.int:8020/user/crossi/monitor already exists
- packageJobJar: [/var/lib/hadoop-0.20/cache/crossi/hadoop-unjar4306638911488716227/] [] /tmp/streamjob3977059005447180662.jar tmpDir=null
- 14/07/09 14:20:35 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
- 14/07/09 14:20:35 WARN snappy.LoadSnappy: Snappy native library not loaded
- 14/07/09 14:20:35 INFO mapred.FileInputFormat: Total input paths to process : 1
- 14/07/09 14:20:36 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/crossi/mapred/local]
- 14/07/09 14:20:36 INFO streaming.StreamJob: Running job: job_201407031504_0054
- 14/07/09 14:20:36 INFO streaming.StreamJob: To kill this job, run:
- 14/07/09 14:20:36 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-33.dev.terradue.int:8021 -kill job_201407031504_0054
- 14/07/09 14:20:36 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-33.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201407031504_0054
- 14/07/09 14:20:37 INFO streaming.StreamJob:  map 0%  reduce 0%
- 14/07/09 14:20:46 INFO streaming.StreamJob:  map 100%  reduce 0%
- 14/07/09 14:21:23 INFO streaming.StreamJob:  map 100%  reduce 33%
- 14/07/09 14:21:25 INFO streaming.StreamJob:  map 100%  reduce 100%
- 14/07/09 14:21:26 INFO streaming.StreamJob: Job complete: job_201407031504_0054
- 14/07/09 14:21:26 INFO streaming.StreamJob: Output: /tmp/sandbox/my_workflow/my_node/output
- 14/07/09 14:21:26 INFO my_node simulation ended (59 seconds)
- 14/07/09 14:21:26 INFO my_node published:
- hdfs://sb-10-16-10-33.dev.terradue.int:8020/tmp/sandbox/my_workflow/my_node/data/MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1        
- hdfs://sb-10-16-10-33.dev.terradue.int:8020/tmp/sandbox/my_workflow/my_node/data/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1 
- 14/07/09 14:21:26 INFO The intermediate results are available at http://sb-10-16-10-33.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/my_workflow/my_node%2Fdata&namenodeInfoPort=50070
- 14/07/09 14:21:26 INFO The published results are available at http://sb-10-16-10-33.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/my_workflow/my_node%2F_results&namenodeInfoPort=50070   
+  15/02/26 17:48:41 INFO my_node simulation started
+  15/02/26 17:48:49 INFO Submitting job 3836 ...
+  15/02/26 17:48:49 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
+  15/02/26 17:48:50 INFO streaming.StreamJob: Dir hdfs://sb-10-16-10-62.dev.terradue.int:8020/user/crossi/monitor already exists
+  packageJobJar: [/var/lib/hadoop-0.20/cache/crossi/hadoop-unjar5728555267094324953/] [] /tmp/streamjob8017142955103520886.jar tmpDir=null
+  15/02/26 17:48:50 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+  15/02/26 17:48:50 WARN snappy.LoadSnappy: Snappy native library not loaded
+  15/02/26 17:48:50 INFO mapred.FileInputFormat: Total input paths to process : 1
+  15/02/26 17:48:51 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/crossi/mapred/local]
+  15/02/26 17:48:51 INFO streaming.StreamJob: Running job: job_201502261731_0001
+  15/02/26 17:48:51 INFO streaming.StreamJob: To kill this job, run:
+  15/02/26 17:48:51 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-62.dev.terradue.int:8021 -kill job_201502261731_0001
+  15/02/26 17:48:51 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-62.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201502261731_0001
+  15/02/26 17:48:52 INFO streaming.StreamJob:  map 0%  reduce 0%
+  15/02/26 17:49:01 INFO streaming.StreamJob:  map 100%  reduce 0%
+  15/02/26 17:49:34 INFO streaming.StreamJob:  map 100%  reduce 33%
+  15/02/26 17:49:36 INFO streaming.StreamJob:  map 100%  reduce 100%
+  15/02/26 17:49:37 INFO streaming.StreamJob: Job complete: job_201502261731_0001
+  15/02/26 17:49:37 INFO streaming.StreamJob: Output: /tmp/sandbox/hands-on-3/my_node/output
+  15/02/26 17:49:38 INFO my_node simulation ended (57 seconds)
+  15/02/26 17:49:38 INFO my_node published:
+   hdfs://sb-10-16-10-62.dev.terradue.int:8020/tmp/sandbox/hands-on-3/my_node/data/MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1
+   hdfs://sb-10-16-10-62.dev.terradue.int:8020/tmp/sandbox/hands-on-3/my_node/data/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1
+   15/02/26 17:49:38 INFO The intermediate results are available at http://sb-10-16-10-62.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-3/my_node%2Fdata&namenodeInfoPort=50070
+   15/02/26 17:49:38 INFO The published results are available at http://sb-10-16-10-62.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-3/my_node%2F_results&namenodeInfoPort=50070
 
-* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
+* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command, and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/stagedata/gui1.png
    :scale: 70 %
@@ -112,13 +140,6 @@ The output will be similar to:
 Recap
 =====
 
-#. We downloaded and prepared data from a remote catalogue,
-#. We used it in our workflow (*Stage In*),
-#. We published it in a distributed location (*Stage Out*).
-
-Files used in this Hands-On
-===========================
-
-* :download:`application.xml <src/basic/application.xml>`
-* :download:`inputs/list <src/stagedata/list>`
-* :download:`my_node/run.sh <src/stagedata/run.sh>`
+#. We downloaded and prepared data from a remote catalogue;
+#. We used it in our workflow (*Stage In*);
+#. We published the workflow results to pass the Stage out data by reference to the Hadoop framework

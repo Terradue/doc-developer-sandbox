@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>com.terradue</groupId>
 		<artifactId>t2-parent</artifactId>
-		<version>12-SNAPSHOT</version>
+		<version>13</version>
 	</parent>
 
 	<groupId>com.terradue.tag</groupId>
 	<artifactId>doc-developer-sandbox</artifactId>
 	<packaging>rpm</packaging>
-	<description>Documentation for developer sandbox</description>
-	<version>1.3-SNAPSHOT</version>
+	<description>Documentation for Developer Cloud Sandbox</description>
+	<version>1.2.1</version>
 
 	<dependencies>
 		<dependency>
@@ -37,6 +37,11 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.nuiton.jredmine</groupId>
+				<artifactId>jredmine-maven-plugin</artifactId>
+				<inherited>false</inherited>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -111,11 +116,6 @@
 					<frameworkVersion>4.0</frameworkVersion>
 				</configuration>
 			</plugin>
-			<!-- <plugin> -->
-			<!-- <groupId>org.nuiton.jredmine</groupId> -->
-			<!-- <artifactId>jredmine-maven-plugin</artifactId> -->
-			<!-- <inherited>false</inherited> -->
-			<!-- </plugin> -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.4</version>
@@ -141,8 +141,8 @@
 				<artifactId>rpm-maven-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<copyright>${inceptionYear}, Terradue</copyright>
-					<distribution>Terradue ${inceptionYear}</distribution>
+					<copyright>${project.inceptionYear}, Terradue</copyright>
+					<distribution>Terradue ${project.inceptionYear}</distribution>
 					<group>tag</group>
 					<packager>Terradue</packager>
 					<name>${project.artifactId}</name>
@@ -193,7 +193,7 @@
 			<plugin>
 				<groupId>de.jutzig</groupId>
 				<artifactId>github-release-plugin</artifactId>
-				<version>1.0.3</version>
+				<version>1.1.1-dns</version>
 				<executions>
 					<execution>
 						<id>github-upload</id>
@@ -213,6 +213,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
-

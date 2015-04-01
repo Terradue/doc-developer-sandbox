@@ -4,5 +4,5 @@
 build
 .project
 .pydevproject
-/target
+target
 .settings

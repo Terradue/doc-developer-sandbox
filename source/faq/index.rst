@@ -1,21 +1,31 @@
 Frequently asked questions
 ##########################
 
-**How can I get support?**
+How can I get support?
+------------------------------
 
-If you are registered to our infrastructure (see :ref:`introduction`) you can use the Support site, available at https://support.terradue.com.
+If you are a registered user of the Terradue Cloud Platform (see :ref:`introduction`) you can request support from https://support.terradue.com (login with your credentials).
+This is your collaborative workspace, where you can issue tickets to interact with the Operations Support team at Terradue. 
+The support environment offers tools for reporting bugs, requesting help and sharing experience.
 
-If you are not yet registered to our infrastructure you can send us an email at support@terradue.com
+If you are not yet a registered user of the Terradue Cloud Platform,
+access can be requested from the ESA Research & Service Support Portal, for ESA registered users (e.g. G-POD related projects),
+or you can send us a request for quotation by email at info@terradue.com.
 
-**I would to compile my own application from source, or an application not available via the yum package manager. How can I do?**
+How shall I compile code on my Developer Cloud Sandbox environment?
+-------------------------------------------------------------------
 
-In the Sandbox you can find the APPLICATION filesystem (see :ref:`principles`). You can use that filesystem to compile your source code. If you are using *make*, you can configure the install location with:
+If you need to compile your own application from source, or an application that is not available via a yum repository, you can work from the APPLICATION filesystem (see :ref:`principles`) on your Hadoop Sandbox VM. 
+Use that filesystem to compile your source code. 
+
+For example, if you are using *make*, you can configure the install location with:
 
 .. code-block:: console
 
   ./configure --prefix=$_CIOP_APPLICATION_PATH/<your-app>
 
-**How can I stop a running job or workflow?**
+How can I stop a running job or workflow?
+------------------------------------------
 
 There are two different cases:
 
@@ -31,7 +41,8 @@ There are two different cases:
 
   oozie job -oozie http://localhost:11000/oozie -kill <workflow_id>
 
-**Why are some log entries going to stderr while others go to stdout?**
+Why are some log entries going to stderr while others go to stdout?
+-----------------------------------------------------------------------------------------
 
 The framework log entries (e.g. using ciop-log or ciop-copy) all go to stderr.
 
