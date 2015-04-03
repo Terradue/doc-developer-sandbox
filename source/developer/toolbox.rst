@@ -31,6 +31,25 @@ To install the BEAM toolbox type:
 .. code-block:: console
 
   sudo yum install -y beam-5.0
+  sudo /usr/sbin/alternatives --config java
+
+This last command will show on the terminal window close to hte subsequent one:
+
+.. code-block:: console-output 
+
+  There are 3 programs which provide 'java'.
+
+   Selection     Command
+  ------------------------------------------------
+   + 1           /usr/java/jdk1.6.0_35/jre/bin/java
+     2           /usr/lib/jvm/jre-1.5.0-gcj/bin/java
+  *  3           /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java
+
+  Enter to keep the current selection[+], or type selection number:
+
+Select java 1.7 out of the menu options by typing the correct number (here it's 3).
+
+
 
 Inspect the application.xml
 ===========================
