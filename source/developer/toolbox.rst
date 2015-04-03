@@ -35,7 +35,7 @@ To install the BEAM toolbox type:
 
 This last command will show on the terminal window close to hte subsequent one:
 
-.. code-block:: console 
+.. code-block:: console-output 
 
   There are 3 programs which provide 'java'.
 
