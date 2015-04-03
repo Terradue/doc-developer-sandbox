@@ -3,7 +3,7 @@
 Hands-On Exercise 6: a multi-node workflow
 ##########################################
 
-In this exercise we will run a workflow with two nodes, passing inputs from first to the second and finally publishing the workflow results on HDFS.   
+In this exercise we will run an application workflow dedined by two nodes, passing outputs from the first as inputs to the second, and finally publishing the workflow results on HDFS.   
 
 Prerequisite
 =============
@@ -13,13 +13,15 @@ Prerequisite
 Install the Hands-On
 ====================
 
-* Install the Hands-On Exercise 6, just typing:
+* Install the Hands-On Exercise 6, just type:
 
 .. code-block:: console
 
   cd
   cd dcs-hands-on
   mvn clean install -D hands.on=6 -P bash
+  
+Note: this instalation is using the ImageMagick [#f1]_ tools to perform image manipulations. 
 
 Inspect the application.xml
 ===========================
@@ -32,7 +34,7 @@ Inspect the application.xml
        :language: xml
        :tab-width: 2
 
-We added a second node named *node_binning* and we declared that its source is the node_expression. Actually we concatenated the two nodes:  
+We added a second processing node, named *node_binning*, and we declared that its source is the *node_expression*.
 
 .. container:: context-application-descriptor-file
 
@@ -44,7 +46,7 @@ We added a second node named *node_binning* and we declared that its source is t
 Inspect the run executable
 ===========================
 
-* Now we are going to see how the run executable for node binning looks like. You can use the *more* command:   
+* Now we are going to see how the run executable for *node binning* looks like. You can use the *more* command:   
 
 .. code-block:: console
 
@@ -52,7 +54,7 @@ Inspect the run executable
   more run
   grep ciop-publish run
 
-Note that the *ciop-publish* command is called with the option *-m*. This means that it will publish the files as results of the entire workflow. Files are not going to be passed to the next job. They are placed in a persistent shared location common to the whole workflow.
+Note that the *ciop-publish* command is called with the option *-m*. This means that it will publish the files as results of the entire workflow. Files are not going to be passed to any subsequent job. They are placed in a persistent shared location common to the whole workflow.
 
 Run and debug the workflow
 ==========================
@@ -111,6 +113,10 @@ The output will be similar to:
   15/03/03 11:30:58 INFO The intermediate results are available at http://sb-10-16-10-30.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-6/node_binning%2Fdata&namenodeInfoPort=50070
   15/03/03 11:30:58 INFO The published results are available at http://sb-10-16-10-30.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-6/node_binning%2F_results&namenodeInfoPort=50070
 
+Check in these logs how the job definition is ran as a Hadoop Streaming MapReduce task.
+A MapReduce job usually splits the input source so that independent data chunks are processed by the map tasks in a completely parallel manner.
+The Hadoop framework takes care of tasks scheduling & monitoring, and re-executes the failed tasks.
+
 * Run the entire workflow:
 
 .. code-block:: console
@@ -154,9 +160,10 @@ The output will be similar to:
 Recap
 =====
 
-#. We added a second node (*node_binning*) to our workflow,
-#. We published results as final results of the workflow,
-#. We ran the added node using the *ciop-simjob* command,
+#. We added a second node (*node_binning*) to our workflow;
+#. We published results as final results of the workflow;
+#. We ran the added node using the *ciop-simjob* command;
+#. We saw how a job is handled by the framework as parallel tasks, during the workflow execution;
 #. We ran the entire workflow using the *ciop-simwf* command.
 
 .. rubric:: Footnotes

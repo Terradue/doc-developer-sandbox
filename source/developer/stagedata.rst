@@ -3,7 +3,7 @@
 Hands-On Exercise 3: staging data
 #################################
 
-In this exercise we will prepare input data for our workflow (this process is named *Stage In*) and we will publish out data as result of the workflow (this process is named *Stage Out*).   
+In this exercise we will prepare input data for our workflow (this process is named *Stage In*), and we will publish out data as result of the workflow (this process is named *Stage Out*).   
 
 Prerequisite
 =============
@@ -24,7 +24,7 @@ Install the Hands-On
 Inspect the application.xml
 ===========================
 
-The application.xml is similar to the one used in the exercise :doc:`a basic workflow <basic>`:
+The application.xml is similar to the one used in the first hands-on exercise :doc:`a basic workflow <basic>`:
 
 .. container:: context-application-descriptor-file
 
@@ -32,10 +32,11 @@ The application.xml is similar to the one used in the exercise :doc:`a basic wor
     :language: xml
     :tab-width: 2
 
-Download data from a catalogue
-==============================
+Download data from a remote server
+==================================
 
-We need a local copy of the data in order to use them in our workflow. We can use the *ciop-copy* tool.
+We need a local copy of the data to be ingested by a run executable. 
+We can use the *ciop-copy* tool to interact with a remote catalogue, retrieve a data source (download link) from its catalogue reference, and download the data locally.
 
 * Type the following commands: 
 
@@ -54,13 +55,15 @@ The output of the *ls -l* command will be similar to:
  -rw-r--r-- 1 crossi ciop 558118134 Apr 24 17:41 MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1
  -rw-r--r-- 1 crossi ciop 558118134 Apr 24 17:35 MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1
 
-Inspect the file list
-=====================
+Inspect the inputs file
+=======================
 
-* Open the file */application/inputs/list* and see the following lines:
+* Open the file */application/inputs/list* and check the following lines:
 
 .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/inputs/list
      :language: none
+
+These lines define the input data to be ingested by a run executable.
 
 .. WARNING::
    The file *inputs/list* should contain only these two lines (without blank lines or comments).
@@ -74,6 +77,8 @@ Publish the data
   
   cd $_CIOP_APPLICATION_PATH
   more my_node/run
+  
+Several programming or scripting languages are supported to implement the run executable. In the above example we used *bash*.  
 
 * Note the *ciop-publish* command
 
@@ -85,7 +90,7 @@ Publish the data
      :lines: 5-5
 
 .. NOTE::
-     The command *ciop-publish* will put the input data in the HDFS (the underlying Distributed File System) and it will pass its references to the subsequent node. Its actual implementation could be different, depending from the language used to implement the run executables. In the above example we used *bash*. 
+     The command *ciop-publish* will put the workflow's stage out data on the HDFS (the underlying Hadoop Distributed File System), and it will pass it to the Hadoop framework by reference.  
 
 Run and debug the workflow
 ==========================
@@ -126,7 +131,7 @@ The output will be similar to:
    15/02/26 17:49:38 INFO The intermediate results are available at http://sb-10-16-10-62.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-3/my_node%2Fdata&namenodeInfoPort=50070
    15/02/26 17:49:38 INFO The published results are available at http://sb-10-16-10-62.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-3/my_node%2F_results&namenodeInfoPort=50070
 
-* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
+* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command, and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/stagedata/gui1.png
    :scale: 70 %
@@ -135,5 +140,6 @@ The output will be similar to:
 Recap
 =====
 
-#. We downloaded and prepared data from a remote catalogue,
-#. We used it in our workflow (*Stage In*),
+#. We downloaded and prepared data from a remote catalogue;
+#. We used it in our workflow (*Stage In*);
+#. We published the workflow results to pass the Stage out data by reference to the Hadoop framework

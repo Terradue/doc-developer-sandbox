@@ -3,7 +3,7 @@
 Hands-On Exercise 1: a basic workflow
 #####################################
 
-In this exercise we will prepare a simple workflow and we will execute a first run, using the CIOP tools.
+In this exercise we will prepare a simple workflow, and we will execute a first run using the `CIOP <http://docs.terradue.com/developer-sandbox/reference/man/bash_commands_functions/index.html>`_ tools.
 
 Prerequisite
 =============
@@ -13,7 +13,7 @@ Prerequisite
 Install the Hands-On
 =====================
 
-The Hands-On installation is quite forward and it is performed through the `Maven <http://maven.apache.org/>`_ tool:
+The Hands-On installation is quite straightforward, and it is performed with the `Maven <http://maven.apache.org/>`_ tool:
 
 .. code-block:: console
 
@@ -21,14 +21,14 @@ The Hands-On installation is quite forward and it is performed through the `Mave
  cd dcs-hands-on
  mvn clean install -D hands.on=1 -P bash
 
-With the last command you installed the first Hands-On exercise (option *-D*) using a *bash* profile (option *-P*). The profile represents the language used to implements the Hands-On run executables.  
+With the last command you installed the first Hands-On exercise (option *-D*) using a *bash* profile (option *-P*). The profile represents the programming language used to implement the Hands-On run executables.  
 
 Understand the workflow
 =======================
 
-A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, that defines a workflow. The first step is to create an *application.xml*:
+A workflow must be defined as a DAG [#f1]_. There is a special file, named *application.xml*, that defines a workflow. The first step is to create an *application.xml*:
  
-* Go to the application default path (/application), by typing:
+* Go to the application's default location (/application), by typing:
 
 .. code-block:: console
  
@@ -36,7 +36,7 @@ A workflow is a DAG [#f1]_. There is a special file, named *application.xml*, th
 
 * Check for a file named *application.xml*
  
-* Open it with a text editor (e.g., vi) and inspect its content. It will be similar to:
+* Open it with a text editor (e.g. vi) and inspect its content. It will be similar to:
 
 .. container:: context-application-descriptor-file
 
@@ -59,12 +59,12 @@ Check the inputs
   :language: none
 
 .. WARNING::
- This file should not contain blank lines at the end or at the beginning and comments are not allowed.
+ Such a file should not contain blank lines at the beginning or at the end, and comments are not allowed.
  
 Check the run executable
 ========================
 
-The run executable is responsible for *executing* your application in the Hadoop Sandbox. In the *application.xml* we defined a workflow with a single node and the related run executable:
+A run executable is responsible for the *execution* of your application (or a step of it) by the Hadoop compute engine. In the *application.xml* we defined a workflow with a single node and the related run executable:
 
 .. container:: context-application-descriptor-file
 
@@ -81,7 +81,7 @@ The run executable is responsible for *executing* your application in the Hadoop
 
 .. admonition::
 
-  Depending from the profile chosen, the run executable could have different equivalent forms.
+  Depending from the profile chosen (maven's option *-P*), a run executable can be written in different programming or scripting languages including python, R, or bash (the Hands-On exercises are initially available in python and bash).
 
 Run the node 
 ============
@@ -141,18 +141,19 @@ The output will be similar to:
 
   15/02/20 15:39:04 INFO mapred.FileInputFormat: Total input paths to process : 1
 
- means the framework got one input file containing the two inputs input1 and input2.
+ means the Hadoop framework got one input file containing the two data input references, input1 and input2.
 
 .. admonition:: Note 2
 
-  Since the Sandbox used here has two cores, and the node 'my_node' has to process only two inputs, the input1 and input2 lines have been processed in parallel by two tasks (each task processing a single entry of the input file).
+  Since the Hadoop Sandbox mode that is used here runs on a Virtual Machine offering two Cores, and the node 'my_node' has to process only two inputs, the input1 and input2 lines have been processed in parallel, by two simultaneous tasks (each task processing a single entry of the input file). 
+  From there, Hadoop deployments in Cluster mode will handle the scaling up of your application to a larger amount of data input and processing nodes.
 
 Recap
 =====
 
-#. We installed a simple workflow with a single node,
-#. We passed to the workflow a list of two data inputs,
-#. We executed a simple run that logs the name of data inputs, using two tasks in parallel.
+#. We installed a simple workflow with a single node;
+#. We passed to the workflow a list of two data inputs;
+#. We executed a simple run that logs the name of data inputs, running two tasks in parallel.
 
 .. rubric:: Footnotes
 

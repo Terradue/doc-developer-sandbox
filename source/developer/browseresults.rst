@@ -3,7 +3,8 @@
 Hands-On Exercise 8: browse published results
 #############################################
 
-In this exercise we will run again the workflow of the exercise :doc:`a multi-node workflow <multinode>`  and we will browse its results through the Web GUI.   
+In this exercise, we will run again the workflow of the exercise :doc:`a multi-node workflow <multinode>`,  
+then we will browse its results through the Oozie Web Console that was previously introduced.   
 
 Prerequisite
 =============
@@ -13,7 +14,7 @@ Prerequisite
 Install the Hands-On
 ====================
 
-* Install the Hands-On Exercise 8, just typing:
+* Install the Hands-On Exercise 8, just type:
 
 .. code-block:: console
 
@@ -40,7 +41,7 @@ Browse the results
 
 .. tip::
      
-  Read how to obtain the value of $HOSTNAME in the :doc:`General Notes <general_notes>` section
+  Read how to obtain the value of your Sandbox $HOSTNAME in the :doc:`General Notes <general_notes>` section
 
 * Click on the link *Browse the filesystem*,
 
@@ -89,5 +90,5 @@ The following images show the steps that we have just performed:
 Recap
 =====
 
-#. We executed a multinode workflow, 
-#. We browsed either final or intermediate results through the Web GUI.
+#. We executed a multinode workflow; 
+#. We browsed either final or intermediate results through the Oozie Web Console.
