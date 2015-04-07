@@ -33,7 +33,7 @@ To install the BEAM toolbox type:
   sudo yum install -y beam-5.0
   sudo /usr/sbin/alternatives --config java
 
-This last command will show on the terminal window close to hte subsequent one:
+This will show on the terminal window:
 
 .. code-block:: console-output 
 
