@@ -11,9 +11,11 @@ Usage
 
 .. code-block:: python
 
-  import cioppy as ciop
+  import cioppy
+  ciop = cioppy.Cioppy()
+
   ciop.getparam (param)
-  
+
 Arguments
 ---------
 
@@ -33,9 +35,9 @@ value of the parameter as character
 Examples
 --------
 
-.. code-block:: bash
+.. code-block:: python
 
-  myvar = ciop.getparam('param1')
+   myvar = ciop.getparam('param1')
 
 Author
 ------
