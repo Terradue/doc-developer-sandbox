@@ -29,9 +29,9 @@ To install cioppy:
 
 To search a python package:
 
-  .. code-block:: bash
+.. code-block:: bash
 
-     sudo conda search <package>
+   sudo conda search <package>
 
 Usage
 -----
@@ -45,13 +45,13 @@ To use the Anaconda's version of python use the following shebang in your Python
 Example
 -------
 
-.. code-block:: bash
+.. code-block:: python
 
    #!/opt/anaconda/bin/python
 
    import cioppy
    ciop = cioppy.Cioppy()
 
-.. NOTE:
+.. NOTE::
 
    For this point, we are working to enable the usage at Runtime of the #!/usr/bin/env python shebang.
