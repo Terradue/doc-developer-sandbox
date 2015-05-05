@@ -54,4 +54,4 @@ Example
 
 .. NOTE::
 
-   For this point, we are working to enable the usage at Runtime of the #!/usr/bin/env python shebang.
+   We are working on enabling the usage of the classical #!/usr/bin/env Python shebang.
