@@ -5,7 +5,8 @@ Contents:
 
 .. toctree::
    :maxdepth: 1
-   
+
+   Getting started <started>
    cioppy.log <cioppy.log>
    cioppy.getparam <cioppy.getparam>
    cioppy.copy <cioppy.copy>

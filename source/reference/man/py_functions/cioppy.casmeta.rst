@@ -11,9 +11,11 @@ Usage
 
 .. code-block:: python
 
-  import cioppy as ciop
-  ciop.casmeta (field, url) 
+  import cioppy
+  ciop = cioppy.Cioppy()
   
+  ciop.casmeta (field, url)
+
 Arguments
 ---------
 
@@ -22,7 +24,7 @@ Arguments
 
 ``url``
   the URL to the OpenSearch catalogue entry in RDF format
-  
+
 Details
 -------
 
@@ -33,16 +35,16 @@ Value
 
 List with:
 
-* exit.code: 0 if succesful, >0 if unsuccessful 
+* exit.code: 0 if succesful, >0 if unsuccessful
 * output: metadata field value
 
 Examples
 --------
 
 .. code-block:: python
-  
+
 	direction = ciop.casmeta("eop:orbitDirection", input)
-  
+
 Author
 ------
 

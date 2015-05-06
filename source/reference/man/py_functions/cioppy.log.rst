@@ -11,7 +11,9 @@ Usage
 
 .. code-block:: python
 
-  import cioppy as ciop
+  import cioppy
+  ciop = cioppy.Cioppy()
+
   ciop.log (type, message, proc='')
 
 Arguments
@@ -22,14 +24,14 @@ Arguments
 
 ``message``
   the message to be displayed
-  
+
 ``process``
   the process name to provide context about the logging entry
 
 Details
 -------
 
-This function echoes logging messages in the application stderr channel and resets the execution wall time clock. 
+This function echoes logging messages in the application stderr channel and resets the execution wall time clock.
 
 Value
 -----
