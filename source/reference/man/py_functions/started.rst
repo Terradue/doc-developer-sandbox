@@ -27,11 +27,18 @@ To install cioppy:
 
    sudo conda install cioppy
 
-To search a python package:
+To search for a Python package:
 
 .. code-block:: bash
 
    sudo conda search <package>
+
+To install a Python package 
+
+.. code-block:: bash
+
+   sudo conda install <package>
+
 
 Usage
 -----
