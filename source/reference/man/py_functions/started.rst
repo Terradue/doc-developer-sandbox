@@ -8,13 +8,13 @@ Hereafter the basic steps needed to install anaconda and cioppy:
 
 To install anaconda:
 
-.. code-block:: bash
+.. code-block:: console
 
   sudo yum install -y miniconda-3.8.3
 
 To see the python version:
 
-.. code-block:: bash
+.. code-block:: console
 
    export PATH=/opt/anaconda/bin/:$PATH
    python -V
@@ -23,19 +23,19 @@ To see the python version:
 
 To install cioppy:
 
-.. code-block:: bash
+.. code-block:: console
 
    sudo conda install cioppy
 
 To search for a Python package:
 
-.. code-block:: bash
+.. code-block:: console
 
    sudo conda search <package>
 
-To install a Python package 
+To install a Python package
 
-.. code-block:: bash
+.. code-block:: console
 
    sudo conda install <package>
 
