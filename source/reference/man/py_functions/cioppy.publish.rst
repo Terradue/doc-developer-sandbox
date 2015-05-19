@@ -4,7 +4,7 @@ ciop.publish
 Description
 -----------
 
-Publishes results to the distributed file system (or Cloud storage), or the results location, or echoes strings as inputs to the subsequent nodes in the workflow
+Publishes results to the distributed file system (or Cloud storage), or the results location, or echoes strings as inputs to the subsequent nodes in the workflow.
 
 Usage
 -----
