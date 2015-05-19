@@ -4,7 +4,7 @@ ciop.casmeta
 Description
 -----------
 
-returns the metadata value of the given field for a given product catalogue RDF URL
+Returns the metadata value of the given field for a given product catalogue RDF URL
 
 Usage
 -----
@@ -28,7 +28,7 @@ Arguments
 Details
 -------
 
-This function returns the value of the metadata field provided given an OpenSearch product URL in the RDF format
+This function returns the value of the metadata field associated to an OpenSearch product URL in RDF format
 
 Value
 -----
