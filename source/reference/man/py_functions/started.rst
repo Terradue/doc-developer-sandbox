@@ -4,7 +4,7 @@ Getting started with Cioppy
 Installation procedure
 ----------------------
 
-Hereafter the basic steps needed to install anaconda and cioppy:
+Hereafter, you will find the basic steps needed to install anaconda (esp. the Conda package manager tool for Python) and cioppy:
 
 To install anaconda:
 
@@ -43,7 +43,7 @@ To install a Python package
 Usage
 -----
 
-To use the Anaconda's version of python use the following shebang in your Python scripts:
+To use the Anaconda's version of Python, use the following shebang in your Python scripts:
 
 .. code-block:: python
 
