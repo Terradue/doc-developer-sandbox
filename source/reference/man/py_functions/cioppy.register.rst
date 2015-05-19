@@ -4,7 +4,7 @@ ciop.register
 Description
 -----------
 
-Registers the metadata of a product in a catalogue (e.g. the sandbox internal catalogue)
+Registers the metadata of a product in a catalogue (e.g. the sandbox internal catalogue).
 
 Usage
 -----
@@ -31,7 +31,7 @@ Arguments
 Details
 -------
 
-This function inserts a catalogue entry
+This function inserts a catalogue entry.
 
 Value
 -----
