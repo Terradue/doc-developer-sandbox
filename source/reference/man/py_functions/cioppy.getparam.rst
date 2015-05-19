@@ -4,7 +4,7 @@ ciop.getparam
 Description
 -----------
 
-Returns the value of the parameter as character
+Returns the value of the parameter as a characters string
 
 Usage
 -----
@@ -25,12 +25,12 @@ Arguments
 Details
 -------
 
-Returns the value defined at job template level for a given parameter name (to retrieve its default value), or defined at workflow level (to override the default value of the jobtemplate). If defined the workflow value has priority over the job template value.
+Returns the value defined at the job template level for a given parameter name (to retrieve its default value), or defined at the workflow level (to override the default value of the jobtemplate). If defined, the workflow value has priority over the job template value.
 
 Value
 -----
 
-value of the parameter as character
+Value of the parameter as a characters string
 
 Examples
 --------
