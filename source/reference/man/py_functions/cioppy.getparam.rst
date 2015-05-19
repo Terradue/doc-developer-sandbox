@@ -1,5 +1,5 @@
-getparam
-========
+ciop.getparam
+============
 
 Description
 -----------
