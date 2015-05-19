@@ -1,4 +1,4 @@
-casmeta
+ciop.casmeta
 =======
 
 Description
