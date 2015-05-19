@@ -4,7 +4,7 @@ ciop.copy
 Description
 -----------
 
-Copies an URL to a local folder
+Copies file from a URL to a local folder
 
 Usage
 -----
@@ -20,10 +20,10 @@ Arguments
 ---------
 
 ``urls``
-  the URL of the product to download or the URL to the OpenSearch catalogue entry in RDF format
+  the URL of the product to download, or the URL to the OpenSearch catalogue entry in RDF format
 
 ``target``
-  the destination folder for the downloaed product
+  the destination folder for the downloaded product
 
 ``extract``
   if the product is an archive (.tgz, .gz) it is extracted by default
