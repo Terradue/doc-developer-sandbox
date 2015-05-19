@@ -4,7 +4,7 @@ ciop.publish
 Description
 -----------
 
-Publishes results to the distributed file system (or CLoud sotorage) or the results location or echoes strings as inputs to the subsequent nodes in the workflow
+Publishes results to the distributed file system (or Cloud storage), or the results location, or echoes strings as inputs to the subsequent nodes in the workflow
 
 Usage
 -----
@@ -42,7 +42,7 @@ Arguments
 Details
 -------
 
-This function stages-out local files to the distributed filesystem or Cloud or allows defining the inputs passed to the next nodes in the workflow.
+This function stages-out local files to the distributed filesystem, or to Cloud storage, or allows defining the inputs passed to the next nodes in the workflow.
 
 Value
 -----
