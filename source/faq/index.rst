@@ -19,7 +19,7 @@ To generate the DCS Application archetype, you have just to:
 
 Logon on a Sandbox, and type:
 
-.. code-block:: bash
+.. code-block:: console
 
 cd
 mvn archetype:generate
