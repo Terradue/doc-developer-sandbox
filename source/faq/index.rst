@@ -21,8 +21,8 @@ Logon on a Sandbox, and type:
 
 .. code-block:: console
 
-cd
-mvn archetype:generate
+  cd
+  mvn archetype:generate
 
 Select the entry relative to the application archetype you want to use (the current available archetypes are python, bash).
 
