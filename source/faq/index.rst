@@ -61,3 +61,21 @@ the message *ls: cannot access missing_file: No such file or directory* will go 
   echo 'Hello World!'
   
 The message *Hello World!* will go to stdout
+
+How to initialize a DCS Application?
+------------------------------------
+
+To generate the DCS Application archetype, you have just to:
+
+Logon on a Sandbox, and type:
+
+.. code-block:: bash
+
+cd
+mvn archetype:generate
+
+Select the entry relative to the application archetype you want to use (the current available archetypes are python, bash).
+
+Set the artifact.id, group.id, version and package.id values for your project.
+After that you will see a folder with the name of the artifact.id.
+You can start building your application from this structure.
