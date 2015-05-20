@@ -15,16 +15,15 @@ or you can send us a request for quotation by email at info@terradue.com.
 How to initialize a DCS Application?
 ------------------------------------
 
-To generate the DCS Application archetype, you have just to:
-
-Logon on a Sandbox, and type:
+To generate a DCS Application archetype, you have just to log on your Cloud  Sandbox, and type:
 
 .. code-block:: console
 
   cd
   mvn archetype:generate
 
-Select the entry relative to the application archetype you want to use (the current available archetypes are python, bash).
+Select the entry relative to the application archetype you want to use.
+Currently, archetypes are available for: python, bash.
 
 Set the artifact.id, group.id, version and package.id values for your project.
 After that you will see a folder with the name of the artifact.id.
