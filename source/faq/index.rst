@@ -51,6 +51,8 @@ You can start building your application from this structure, offering you a powe
 
 In that folder, the resulting maven configuration file 'pom.xml' will have initial tags similar to:
 
+.. code-block:: bash
+
   <groupId>com.terradue</groupId>
   artifactId>myapp</artifactId>
   <packaging>pom</packaging>
