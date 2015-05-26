@@ -54,11 +54,11 @@ In that folder, the resulting maven configuration file 'pom.xml' will have initi
 .. code-block:: bash
 
   <groupId>com.terradue</groupId>
-  artifactId>myapp</artifactId>
+  <artifactId>myapp</artifactId>
   <packaging>pom</packaging>
-  name>dcs-bash</name>
-  description>dcs-bash</description>
-  version>1.0-SNAPSHOT</version>
+  <name>dcs-bash</name>
+  <description>dcs-bash</description>
+  <version>1.0-SNAPSHOT</version>
 
 To learn more: https://maven.apache.org/pom.html#Properties
 
