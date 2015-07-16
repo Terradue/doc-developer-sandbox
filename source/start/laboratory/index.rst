@@ -175,17 +175,17 @@ To solve this kind of issue, add manually Terradue's DNS server as a new line in
 
 If you are using the NetworkManager tool (e.g. in the GNOME desktop environment), you should instead statically add the nameserver address 10.16.20.14 through the GUI.
 
-HTTP Proxy Server
+HTTP proxy server
 ^^^^^^^^^^^^^^^^^
 
-When the OpenVPN client is installed behind a corporate HTTP Proxy server
+When the OpenVPN client is installed behind a corporate HTTP proxy server,
 the connection fails because the proxy server doesn't allow the VPN traffic.
 To solve this kind of issue, you should connect for the first time from a network outside the proxy, to download the *.ovpn* configuration file, and then follow the steps:
 
 * Open your *.ovpn* config file:
 
-  - *(Windows)* It is located under *C:\Program Files\OpenVPN Technologies\OpenVPN Client\etc\profile*,
-  - *(Mac)* It is located under */Library/Application\ Support/OpenVPN/*.
+  - *(Windows)* It is located under *C:\\Program Files\\OpenVPN Technologies\\OpenVPN Client\\etc\\profile*,
+  - *(Mac)* It is located under */Library/Application\\ Support/OpenVPN/*.
 
 * Substitute:
 
@@ -208,9 +208,9 @@ With:
   http-proxy <proxy_address> <proxy_port>
   http-proxy-retry
 
-Check with your Network Administrator the values of *<proxy_address>* *<proxy_port>*.
-
 * Start the OpenVPN connection.
+
+Check with your Network Administrator the values of *<proxy_address>* *<proxy_port>*.
 
 If your corporate policies don't allow the usage of a different network, even if temporarly, you can try with the following procedure:
 
