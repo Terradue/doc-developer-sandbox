@@ -173,8 +173,62 @@ To solve this kind of issue, add manually Terradue's DNS server as a new line in
 
   nameserver 10.16.20.14
 
-If you are using the NetworkManager tool (e.g. in the GNOME desktop environment), you should instead statically add the nameserver address 10.16.20.14 through the GUI. 
+If you are using the NetworkManager tool (e.g. in the GNOME desktop environment), you should instead statically add the nameserver address 10.16.20.14 through the GUI.
 
+HTTP Proxy Server
+^^^^^^^^^^^^^^^^^
+
+When the OpenVPN client is installed behind a corporate HTTP Proxy server
+the connection fails because the proxy server doesn't allow the VPN traffic.
+To solve this kind of issue, you should connect for the first time from a network outside the proxy, to download the *.ovpn* configuration file, and then follow the steps:
+
+* Open your *.ovpn* config file:
+
+  - *(Windows)* It is located under *C:\Program Files\OpenVPN Technologies\OpenVPN Client\etc\profile*,
+  - *(Mac)* It is located under */Library/Application\ Support/OpenVPN/*.
+
+* Substitute:
+
+.. code-block:: bash
+
+  remote access.terradue.com 443 udp
+  remote access.terradue.com 443 udp
+  remote access.terradue.com 443 tcp
+  remote access.terradue.com 443 udp
+  remote access.terradue.com 443 udp
+  remote access.terradue.com 443 udp
+  remote access.terradue.com 443 udp
+  remote access.terradue.com 443 udp
+
+With:
+
+.. code-block:: bash
+
+  remote access.terradue.com 443 tcp
+  http-proxy <proxy_address> <proxy_port>
+  http-proxy-retry
+
+Check with your Network Administrator the values of *<proxy_address>* *<proxy_port>*.
+
+* Start the OpenVPN connection.
+
+If your corporate policies don't allow the usage of a different network, even if temporarly, you can try with the following procedure:
+
+* Download and install the latest OpenVPN client from https://openvpn.net/index.php/open-source/downloads.html,
+
+* Go to https://access.terradue.com/?src=login,
+
+* Type as Username the email used during the registration,
+
+* Type as Password the passphrase that you chose during the registration,
+
+* Download the *client.ovpn* configuration file from the link *"Yourself (user-locked profile)"*,
+
+* Put the *client.ovpn* configuration file under *<installation-dir>/config*,
+
+* Modify the *client.ovpn* as described above,
+
+* Start the OpenVPN connection.
 
 Going further
 -------------
