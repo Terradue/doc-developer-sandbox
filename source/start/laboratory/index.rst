@@ -212,7 +212,7 @@ With:
 
 Check with your Network Administrator the values of *<proxy_address>* *<proxy_port>*.
 
-If your corporate policies don't allow the usage of a different network, even if temporarly, you can try with the following procedure:
+If your corporate policies do not allow the usage of a different network, even if temporarily, you can try with the following procedure:
 
 * Download and install the latest OpenVPN client from https://openvpn.net/index.php/open-source/downloads.html,
 
