@@ -94,7 +94,7 @@ Mozilla Firefox
 
 - Click the **View Certificates** button.
 
-- Click the **Authorities** tab.
+- Click the **Your Certificates** tab.
 
 - Click the **Import** button at the bottom of the screen.
 
