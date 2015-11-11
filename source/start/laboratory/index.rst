@@ -178,10 +178,11 @@ If you are using the NetworkManager tool (e.g. in the GNOME desktop environment)
 HTTP proxy server
 ^^^^^^^^^^^^^^^^^
 
-When the OpenVPN client is installed behind a corporate HTTP proxy server,
-the connection fails because the proxy server doesn't allow the VPN traffic. Thus the *OpenVPN Connect* client is not able to automatically download the *.ovpn* configuration file.
+When the *OpenVPN Connect* client is installed behind a corporate HTTP proxy server, the connection fails because the proxy server doesn't allow the VPN traffic. Thus the *OpenVPN Connect* client is not able to automatically download the *.ovpn* configuration file.
 
-To solve this issue, you can download a different supported OpenVPN client from the official site and then add manually the correct configuration file. Hereafter the procedure:
+Hereafter a procedure to configure your VPN connection in that situation:
+
+* Remove any previous version of the *OpenVPN Connect* client,
 
 * Download and install the latest OpenVPN client from https://openvpn.net/index.php/open-source/downloads.html,
 
