@@ -79,9 +79,9 @@ Tag definition
 
 .. code-block:: xml
 
-<defaultParameters>
-	<parameter></parameter>
-</defaultParameters>	
+	<defaultParameters>
+		<parameter></parameter>
+	</defaultParameters>	
 
 Attributes (for the single parameter)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -93,13 +93,13 @@ Attributes (for the single parameter)
 +----------+----------------------------------+-----------+--------------------+
 | title    | Character String type, not empty | No        | Yes                |
 +----------+----------------------------------+-----------+--------------------+
-| abstract | Character String type, not empty |	No  	  | Yes				   |
+| abstract | Character String type, not empty |	No  	  | Yes                |
 +----------+----------------------------------+-----------+--------------------+
-| scope    | Scope data structure, Table 2    | Yes 	  | Yes			       |
+| scope    | Scope data structure, Table 2    | Yes 	  | Yes                |
 +----------+----------------------------------+-----------+--------------------+
-| type     | Type data structure, Table 3     | No		  | No				   |
+| type     | Type data structure, Table 3     | No        | No                 |
 +----------+----------------------------------+-----------+--------------------+
-| target   | Target data structure, Table 4   | No		  | No			       |
+| target   | Target data structure, Table 4   | No        | No                 |
 +----------+----------------------------------+-----------+--------------------+
 
 	**Table 1: Default Parameters attributes.**
