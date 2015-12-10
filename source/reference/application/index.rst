@@ -47,6 +47,18 @@ Job Templates
 
 Streaming Executable
 ********************
+
+Description
+^^^^^^^^^^^
+
+The local path of the executable script called by this job to process the inputs.
+Supported languages:
+
+* Bash
+* Python
+* R
+
+
 Tag definition
 ^^^^^^^^^^^^^^
 
@@ -58,16 +70,6 @@ Attributes
 ^^^^^^^^^^
 
 None
-
-Description
-^^^^^^^^^^^
-
-The local path of the executable script called by this job to process the inputs.
-Supported languages:
-
-* Bash
-* Python
-* R
 
 Example
 ^^^^^^^
@@ -153,7 +155,7 @@ In the case of type="LiteralData" (or if the "type" is not defined), the paramet
 
 	.. code-block:: xml
 
-	    <parameter id="myparam">My  param value</parameter>
+	    <parameter id="myparam">My param value</parameter>
 	
 * **a list of <options>. e.g.:**
 
@@ -170,13 +172,15 @@ In the case of type="LiteralData" (or if the "type" is not defined), the paramet
 
 	.. code-block:: xml
 
-	    <parameter id="myparam">
-	        <options>
+            <parameter id="myparam">
+                <options>
                     <option>value1</option>
                     <option>value2</option>
                     <default>value1</default>
-            </options>
-        </parameter>
+                </options>
+            </parameter>
+
+|
 
 
 Format
