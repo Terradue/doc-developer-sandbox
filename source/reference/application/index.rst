@@ -50,7 +50,9 @@ Streaming Executable
 Tag definition
 ^^^^^^^^^^^^^^
 
-<streamingExecutable>
+.. code-block:: xml
+
+    <streamingExecutable>
 
 Attributes
 ^^^^^^^^^^
@@ -70,7 +72,10 @@ Supported languages:
 Example
 ^^^^^^^
 
-<streamingExecutable>/application/mynode/run</streamingExecutable>
+.. code-block:: xml
+
+    <streamingExecutable>/application/mynode/run</streamingExecutable>
+
 
 Default Parameters
 ******************
@@ -86,23 +91,90 @@ Tag definition
 Attributes (for the single parameter)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------+----------------------------------+-----------------+--------------+
-| Name     | Data type and values             | Mandatory | If scope = runtime |
-+==========+==================================+===========+====================+
-| id       | Character String type, not empty | Yes       | Yes                |
-+----------+----------------------------------+-----------+--------------------+
-| title    | Character String type, not empty | No        | Yes                |
-+----------+----------------------------------+-----------+--------------------+
-| abstract | Character String type, not empty |	No  	  | Yes                |
-+----------+----------------------------------+-----------+--------------------+
-| scope    | Scope data structure, Table 2    | Yes 	  | Yes                |
-+----------+----------------------------------+-----------+--------------------+
-| type     | Type data structure, Table 3     | No        | No                 |
-+----------+----------------------------------+-----------+--------------------+
-| target   | Target data structure, Table 4   | No        | No                 |
-+----------+----------------------------------+-----------+--------------------+
++----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
+| Name     | Data type and values                                                                                  | Mandatory | If scope = runtime |
++==========+=======================================================================================================+===========+====================+
+| id       | Character String type, not empty                                                                      | Yes       | Yes                |
++----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
+| title    | Character String type, not empty                                                                      | No        | Yes                |
++----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
+| abstract | Character String type, not empty                                                                      | No        | Yes                |
++----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
+| scope    | Scope data structure, Table 2                                                                         | Yes       | Yes                |
++----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
+| type     | Type data structure, Table 3                                                                          | No        | No                 |
++----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
+| target   | Query parameter from the description of the source catalogue (mandatory in case of type="opensearch") | No        | No                 |
++----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
 
-	**Table 1: Default Parameters attributes.**
+**Table 1: Default Parameters attributes.**
+
+
+
++----------+----------------------------------------------------------+
+| Value    | Definition                                               |
++==========+==========================================================+
+| runtime  | The element will be exposed by the WPS interface         |
++----------+----------------------------------------------------------+
+| test     | The element will use as value the one defined in the xml |
++----------+----------------------------------------------------------+
+
+**Table 2: Scope data structure.**
+
+
+
++-----------------+------------------------------------------------------------------------------------------------------------------+
+| Value           | Definition                                                                                                       |
++=================+==================================================================================================================+
+| LiteralData     | Character String type, not empty (default type if not defined)                                                   |
++-----------------+------------------------------------------------------------------------------------------------------------------+
+| BoundingBoxData | Coordinates of the Area Of Interest according to the format urn:ogc:def:crs:EPSG:6.6:4326                        |
++-----------------+------------------------------------------------------------------------------------------------------------------+
+| opensearch      | Character String type, not empty. The value is used to query the source catalogue according to the target value. |
++-----------------+------------------------------------------------------------------------------------------------------------------+
+
+**Table 3: Type data structure.**
+
+
+Possible values (for the single parameter)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the case of type="LiteralData" (or if the "type is not defined), the parameter element can be defined with:
+
+* no values. e.g.: 
+
+.. code-block:: xml
+
+    <parameter id="myparam"/>
+
+* a string value. e.g.: 
+
+.. code-block:: xml
+
+    <parameter id="myparam">My  param value</parameter>
+	
+* a list of <options>. e.g.:
+
+.. code-block:: xml
+
+    <parameter id="myparam">
+        <options>
+            <option>value1</option>
+            <option>value2</option>
+        <options
+    </parameters>
+
+optionally it is possible to add a default value to the option list (to be picked from the list of the options):
+
+.. code-block:: xml
+
+    <parameter id="myparam">
+        <options>
+            <option>value1</option>
+            <option>value2</option>
+            <default>value1</default>
+        <options
+    </parameters>
 
 
 Format
