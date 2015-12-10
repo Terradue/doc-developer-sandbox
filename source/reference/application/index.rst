@@ -74,7 +74,7 @@ Example
 
 .. code-block:: xml
 
-    <streamingExecutable>/application/mynode/run</streamingExecutable>
+    <streamingExecutable>/application/mynode/run.sh</streamingExecutable>
 
 
 Default Parameters
@@ -87,6 +87,8 @@ Tag definition
 	<defaultParameters>
 		<parameter></parameter>
 	</defaultParameters>	
+
+|
 
 Attributes (for the single parameter)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -109,7 +111,7 @@ Attributes (for the single parameter)
 
 **Table 1: Default Parameters attributes.**
 
-
+|
 
 +----------+----------------------------------------------------------+
 | Value    | Definition                                               |
@@ -121,7 +123,7 @@ Attributes (for the single parameter)
 
 **Table 2: Scope data structure.**
 
-
+|
 
 +-----------------+------------------------------------------------------------------------------------------------------------------+
 | Value           | Definition                                                                                                       |
@@ -135,25 +137,26 @@ Attributes (for the single parameter)
 
 **Table 3: Type data structure.**
 
+|
 
 Possible values (for the single parameter)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the case of type="LiteralData" (or if the "type is not defined), the parameter element can be defined with:
 
-* no values. e.g.: 
+* **no values. e.g.:** 
 
 .. code-block:: xml
 
     <parameter id="myparam"/>
 
-* a string value. e.g.: 
+* **a string value. e.g.:**
 
 .. code-block:: xml
 
     <parameter id="myparam">My  param value</parameter>
 	
-* a list of <options>. e.g.:
+* **a list of <options>. e.g.:**
 
 .. code-block:: xml
 
@@ -162,7 +165,7 @@ In the case of type="LiteralData" (or if the "type is not defined), the paramete
             <option>value1</option>
             <option>value2</option>
         <options
-    </parameters>
+    </parameter>
 
 optionally it is possible to add a default value to the option list (to be picked from the list of the options):
 
@@ -174,7 +177,7 @@ optionally it is possible to add a default value to the option list (to be picke
             <option>value2</option>
             <default>value1</default>
         <options
-    </parameters>
+    </parameter>
 
 
 Format
