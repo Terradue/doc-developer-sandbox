@@ -4,32 +4,106 @@ Application descriptor reference
 Purpose
 -------
 
-The Application descriptor file is an XML document that describes an Application workflow (see :doc:`Application workflow </design/workflow>`) and it contains two blocks:
+The Application descriptor file is an XML document that describes an Application workflow (see :doc:`Application workflow </design/workflow>`). Through it you can define in a structured file the steps needed from your application to:
 
-#. jobTemplates
-#. workflow
+* define an interface for the service (using WPS);
+* discover and download input data;
+* process data, producing intermediate and final results;
+* trigger remote processors;
+* publish results.
 
-The **first block** defines the job templates that are then instantiated as workflow nodes of the Directed Acyclic Graph.
-
-Each job template contains:
-
-* the path to the streaming executable
-* parameters and optionaly their default value 
-* properties (e.g. maximum number of tasks, wall-time, etc.)
-
-The **second block** contains the workflow nodes.
-
-The workflow contains the nodes, each defining:
-
-* the source for the inputs (e.g. a previous node, a catalogue series, a local file or a list of values)  
-* their parameter values to override the default parameters (defined in the job template above)
-
-Type
-----
+Descriptor type
+---------------
 
 The application descriptor is an XML file available in $_CIOP_APPLICATION_PATH/application.xml 
 
 .. note:: the value $_CIOP_APPLICATION_PATH is /application
+
+Descriptor structure
+--------------------
+
+The application descriptor structure consists of two separate sections:
+
+#. jobTemplates
+#. workflow
+
+The **first part** defines the job templates that are then instantiated as workflow steps of the Directed Acyclic Graph.
+
+Each job template contains:
+
+* the path to the streaming executable
+* parameters and optionally their allowed and default valus
+* properties (e.g. maximum number of tasks, processin timeout, etc.)
+
+The **second part** contains the workflow steps, here called "nodes".
+
+Each node you contains:
+
+* the source for the inputs (e.g. a previous node, a catalogue series, a local file or a list of values)  
+* their parameter values to override the default parameters (defined in the job template above)
+
+Job Templates
+-------------
+
+Streaming Executable
+********************
+Tag definition
+^^^^^^^^^^^^^^
+
+<streamingExecutable>
+
+Attributes
+^^^^^^^^^^
+
+None
+
+Description
+^^^^^^^^^^^
+
+The local path of the executable script called by this job to process the inputs.
+Supported languages:
+
+* Bash
+* Python
+* R
+
+Example
+^^^^^^^
+
+<streamingExecutable>/application/mynode/run</streamingExecutable>
+
+Default Parameters
+******************
+Tag definition
+^^^^^^^^^^^^^^
+
+.. code-block:: xml
+
+<defaultParameters>
+	<parameter></parameter>
+</defaultParameters>	
+
+Attributes (for the single parameter)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++----------+----------------------------------+-----------------+--------------+
+| Name     | Data type and values             | Mandatory | If scope = runtime |
++==========+==================================+===========+====================+
+| id       | Character String type, not empty | Yes       | Yes                |
++----------+----------------------------------+-----------+--------------------+
+| title    | Character String type, not empty | No        | Yes                |
++----------+----------------------------------+-----------+--------------------+
+| abstract | Character String type, not empty |	No  	  | Yes				   |
++----------+----------------------------------+-----------+--------------------+
+| scope    | Scope data structure, Table 2    | Yes 	  | Yes			       |
++----------+----------------------------------+-----------+--------------------+
+| type     | Type data structure, Table 3     | No		  | No				   |
++----------+----------------------------------+-----------+--------------------+
+| target   | Target data structure, Table 4   | No		  | No			       |
++----------+----------------------------------+-----------+--------------------+
+
+	**Table 1: Default Parameters attributes.**
+
 
 Format
 ------
