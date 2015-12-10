@@ -88,7 +88,6 @@ Tag definition
 		<parameter></parameter>
 	</defaultParameters>	
 
-|
 
 Attributes (for the single parameter)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -142,42 +141,42 @@ Attributes (for the single parameter)
 Possible values (for the single parameter)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the case of type="LiteralData" (or if the "type is not defined), the parameter element can be defined with:
+In the case of type="LiteralData" (or if the "type" is not defined), the parameter element can be defined with:
 
 * **no values. e.g.:** 
 
-.. code-block:: xml
+	.. code-block:: xml
 
-    <parameter id="myparam"/>
+    	<parameter id="myparam"/>
 
 * **a string value. e.g.:**
 
-.. code-block:: xml
+	.. code-block:: xml
 
-    <parameter id="myparam">My  param value</parameter>
+	    <parameter id="myparam">My  param value</parameter>
 	
 * **a list of <options>. e.g.:**
 
-.. code-block:: xml
+	.. code-block:: xml
 
-    <parameter id="myparam">
-        <options>
-            <option>value1</option>
-            <option>value2</option>
-        <options
-    </parameter>
+	    <parameter id="myparam">
+    	        <options>
+                    <option>value1</option>
+                    <option>value2</option>
+                <options>
+   	    </parameter>
 
-optionally it is possible to add a default value to the option list (to be picked from the list of the options):
+	optionally it is possible to add a default value to the option list (to be picked from the list of the options):
 
-.. code-block:: xml
+	.. code-block:: xml
 
-    <parameter id="myparam">
-        <options>
-            <option>value1</option>
-            <option>value2</option>
-            <default>value1</default>
-        <options
-    </parameter>
+	    <parameter id="myparam">
+	        <options>
+                    <option>value1</option>
+                    <option>value2</option>
+                    <default>value1</default>
+            </options>
+        </parameter>
 
 
 Format
