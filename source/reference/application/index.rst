@@ -103,7 +103,7 @@ Attributes (for the single parameter)
 +----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
 | abstract | Character String type, not empty                                                                      | No        | Yes                |
 +----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
-| scope    | Scope data structure, Table 2                                                                         | No        | Yes               |
+| scope    | Scope data structure, Table 2                                                                         | No        | -                  |
 +----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
 | type     | Type data structure, Table 3                                                                          | No        | No                 |
 +----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
@@ -143,7 +143,7 @@ Attributes (for the single parameter)
 Possible values (for the single parameter)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the case of type="LiteralData" (or if the "type" is not defined), the parameter element can be defined with:
+In the case of type="LiteralData" (default "type" if not defined), the parameter element can be defined with:
 
 * **no values. e.g.:** 
 
