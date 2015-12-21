@@ -45,6 +45,39 @@ Each node you contains:
 Job Templates
 -------------
 
+Tag definition
+^^^^^^^^^^^^^^
+
+.. code-block:: xml
+
+    <jobTemplate></jobTemplate>
+ 
+Attributes
+^^^^^^^^^^   
++----------+----------------------------------+-----------+
+| Name     | Data type and values             | Mandatory |
++==========+==================================+===========+
+| id       | Character String type, not empty | Yes       |
++----------+----------------------------------+-----------+
+| jobType  | jobType data structure, Table 2  | No        |
++----------+----------------------------------+-----------+
+
+**Table 1: Job Templates attributes.**
+
+|
+
++-----------------+------------------------------------------------------------------------------------+
+| Value           | Definition                                                                         |
++=================+====================================================================================+
+| mapred_action   | Default job Template type. This type will be used as default if no type is defined.|
++-----------------+------------------------------------------------------------------------------------+
+| wps_client      | A job Type which is a connector for external WPS servers.                          |
++-----------------+------------------------------------------------------------------------------------+
+
+**Table 2: jobType data structure.**
+
+|
+
 Streaming Executable
 ********************
 
@@ -64,7 +97,7 @@ Tag definition
 
 .. code-block:: xml
 
-    <streamingExecutable>
+    <streamingExecutable></streamingExecutable>
 
 Attributes
 ^^^^^^^^^^
@@ -95,7 +128,7 @@ Attributes (for the single parameter)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
-| Name     | Data type and values                                                                                  | Mandatory | If scope = runtime |
+| Name     | Data type and values                                                                                  | Mandatory | If "scope = runtime" |
 +==========+=======================================================================================================+===========+====================+
 | id       | Character String type, not empty                                                                      | Yes       | Yes                |
 +----------+-------------------------------------------------------------------------------------------------------+-----------+--------------------+
@@ -181,6 +214,30 @@ In the case of type="LiteralData" (default "type" if not defined), the parameter
             </parameter>
 
 |
+
+Default Job Configuration
+******************
+Tag definition
+^^^^^^^^^^^^^^
+
+.. code-block:: xml
+
+	<defaultJobconf>
+		<property></property>
+	</defaultJobcon>
+
+Attributes (for the single property)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++----------+----------------------------------+-----------+
+| Name     | Data type and values             | Mandatory |
++==========+==================================+===========+
+| id       | Character String type, not empty | Yes       |
++----------+----------------------------------+-----------+
+
+**Table 4: Default property attributes.**
+
+
 
 
 Format
