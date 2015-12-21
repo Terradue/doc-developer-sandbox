@@ -69,13 +69,13 @@ Attributes
 
 |
 
-+-----------------+------------------------------------------------------------------------------------+
-| Value           | Definition                                                                         |
-+=================+====================================================================================+
-| mapred_action   | Default job Template type. This type will be used as default if no type is defined.|
-+-----------------+------------------------------------------------------------------------------------+
-| wps_client      | A job Type which is a connector for external WPS servers.                          |
-+-----------------+------------------------------------------------------------------------------------+
++-----------------+----------------------------------------------------------------------------------------------------------------------+
+| Value           | Definition                                                                                                           |
++=================+======================================================================================================================+
+| mapred_action   | Default job Template type. This type will be used as default if no type is defined.                                  |
++-----------------+----------------------------------------------------------------------------------------------------------------------+
+| wps_client      | A job Type which is a connector for external WPS servers. A set of default job configuration is needed (see Table 8).|
++-----------------+----------------------------------------------------------------------------------------------------------------------+
 
 **Table 2: jobType data structure.**
 
@@ -139,14 +139,14 @@ Attributes (for the single parameter)
 +----------+-------------------------------------------------------------------------------------------------------+-----------+----------------------+
 | abstract | Character String type, not empty                                                                      | No        | Yes                  |
 +----------+-------------------------------------------------------------------------------------------------------+-----------+----------------------+
-| scope    | Scope data structure, Table 2                                                                         | No        | -                    |
+| scope    | Scope data structure, Table 4                                                                         | No        | -                    |
 +----------+-------------------------------------------------------------------------------------------------------+-----------+----------------------+
-| type     | Type data structure, Table 3                                                                          | No        | No                   |
+| type     | Type data structure, Table 5                                                                          | No        | No                   |
 +----------+-------------------------------------------------------------------------------------------------------+-----------+----------------------+
 | target   | Query parameter from the description of the source catalogue (mandatory in case of type="opensearch") | No        | No                   |
 +----------+-------------------------------------------------------------------------------------------------------+-----------+----------------------+
 
-**Table 1: Default Parameters attributes.**
+**Table 3: Default Parameters attributes.**
 
 |
 
@@ -158,7 +158,7 @@ Attributes (for the single parameter)
 | test     | The element will use as value the one defined in the xml |
 +----------+----------------------------------------------------------+
 
-**Table 2: Scope data structure.**
+**Table 4: Scope data structure.**
 
 |
 
@@ -172,7 +172,7 @@ Attributes (for the single parameter)
 | opensearch      | Character String type, not empty. The value is used to query the source catalogue according to the target value. |
 +-----------------+------------------------------------------------------------------------------------------------------------------+
 
-**Table 3: Type data structure.**
+**Table 5: Type data structure.**
 
 |
 
@@ -238,9 +238,26 @@ Attributes (for the single property)
 | id       | Character String type, not empty | Yes       |
 +----------+----------------------------------+-----------+
 
-**Table 4: Default property attributes.**
+**Table 6: Default property attributes.**
 
+|
 
+Possible IDs and values (for the single property)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------+-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| id                  | Data type and values    | Definition                                                                                                                                |
++=====================+=========================+===========================================================================================================================================+
+| mapred.task.timeout | nonNegativeInteger type | The number of milliseconds before a task will be terminated if it neither reads an input, writes an output, nor updates its status string.|
++---------------------+-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| ciop.job.max.tasks  | nonNegativeInteger type | The number of parallel jobs to be run instantiating the job template. This number should fit the number of node of the cluster.           |
++---------------------+-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+**Table 7: Possible configuration properties.**
+
+|
+
+In case of 
 
 
 Format
