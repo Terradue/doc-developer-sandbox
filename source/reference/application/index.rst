@@ -257,8 +257,23 @@ Possible IDs and values (for the single property)
 
 |
 
-In case of 
+In case of jobType="wps_client" a list of configuration properties has to be defined:
 
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| id                           | Data type and values             | Definition                                                                                                                      |
++==============================+==================================+=================================================================================================================================+
+| ogc.wps.access.point         | Character String type, not empty | The end point of the remote WPS server. e.g.: http://remoteWPS:8080/wps/WebProcessingService                                    |
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| ogc.wps.process.identifier   | Character String type, not empty | The name of the process of the remote WPS server. e.g.: com.terradue.wps_oozie.process.OozieAbstractAlgorithm                   |
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| ogc.wps.storeExecuteResponse | true/false                       | True if the call to WPS has to be asynchronous.                                                                                 |
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| ogc.wps.status               | true/false                       | True if the call to WPS has to be asynchronous.                                                                                 |
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| ciop.job.max.tasks           | nonNegativeInteger type          | The number of parallel jobs to be run instantiating the job template. This number should fit the number of node of the cluster. |
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+**Table 8: Mandatory configuration properties in case of jobType = "wps_client".**
 
 Format
 ------
