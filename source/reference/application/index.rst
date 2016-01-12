@@ -53,9 +53,11 @@ Tag definition
 
 .. code-block:: xml
 	
-	<jobTemplates>
+    <jobTemplates>
     	<jobTemplate></jobTemplate>
     </jobTemplates>
+
+|
  
 Attributes
 ~~~~~~~~~~   
@@ -105,7 +107,7 @@ Tag definition
 	<jobTemplate>
 	    <streamingExecutable></streamingExecutable>
 	</jobTemplate>
-	
+
 |	
 	
 Attributes
@@ -139,6 +141,8 @@ Tag definition
 			<parameter></parameter>
 		</defaultParameters>	
 	</jobTemplate>
+
+|
 
 Attributes (for the single parameter)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -243,7 +247,8 @@ Tag definition
 			<property></property>
 		</defaultJobcon>
 	</jobTemplate>
-	
+
+|
 	
 Attributes (for the single property)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -273,7 +278,7 @@ Possible IDs and values (for the single property)
 
 |
 
-*In case of jobType="wps_client" a list of configuration properties has to be defined:*
+**In case of jobType="wps_client" a list of configuration properties has to be defined:**
 
 +------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | id                           | Data type and values             | Definition                                                                                                                      |
@@ -302,7 +307,11 @@ Parent definition
 Tag definition
 ~~~~~~~~~~~~~~
 
-<workflow></workflow>
+.. code-block:: xml
+
+	<workflow></workflow>
+
+|
 
 Attributes
 ~~~~~~~~~~   
@@ -337,7 +346,8 @@ Tag definition
 	<workflow>
 	    <workflowVersion></workflowVersion>
 	</workflow>
-	
+
+|	
 	
 Attributes
 ~~~~~~~~~~
@@ -370,6 +380,7 @@ Tag definition
 		<node></node>
 	</workflow>
 
+|
 
 Attributes
 ~~~~~~~~~~   
@@ -399,6 +410,8 @@ Tag definition
 	<node>
 		<job></job>
 	</node>
+
+|
 	
 Attributes
 ~~~~~~~~~~   
@@ -427,10 +440,11 @@ Tag definition
 	
 	<node>
 		<sources>
-        	<source></source>
-        </sources>
-    </node>
-    
+			<source></source>
+		</sources>
+	</node>
+
+|    
     
 Attributes
 ~~~~~~~~~~   
@@ -487,6 +501,8 @@ Tag definition
 			<parameter></parameter>
 		</parameters>
 	</node>
+
+|
 	
 Attributes (for the single parameter)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
