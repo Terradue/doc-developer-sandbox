@@ -37,7 +37,7 @@ Each job template contains:
 
 The **second part** contains the workflow steps, here called "nodes".
 
-Each node you contains:
+Each node can contain:
 
 * the source for the inputs (e.g. a previous node, a catalogue series, a local file or a list of values)  
 * their parameter values to override the default parameters (defined in the job template above)
