@@ -544,3 +544,4 @@ The possible values for the single parameter are the same of the Default Paramet
 A complete example
 ------------------
 
+Download the file :download:`Ocean Colour Algal Bloom Detection <./application.xml>` field guide application to view a complete example of an application descriptor file.
