@@ -163,7 +163,7 @@ Attributes (for the single parameter)
 | target    | Query parameter from the description of the source catalogue (mandatory in case of type="opensearch")      | No        | No                   |
 +-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
 | minOccurs | Minimum number of expected instances of the parameter (WPS). By default is 1 (meaning that it's mandatory) | No        | No                   |
-+-----------+-------------------------------------------------------------------------------------------------------------+-----------+----------------------+
++-----------+-------------------------------------------------------------------------------------------------------------+-----------+---------------------+
 | maxOccurs | Maximum number of expected instances of the parameter (WPS). By default is 100                             | No        | No                   |
 +-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
 
@@ -544,4 +544,13 @@ The possible values for the single parameter are the same of the Default Paramet
 A complete example
 ------------------
 
-Download the file :download:`Ocean Colour Algal Bloom Detection <./application.xml>` field guide application to view a complete example of an application descriptor file.
+Download the file :download:`Application.xml complete example <./application.xml>` to view a complete example of an application descriptor file.
+
+Application descriptor schema
+-----------------------------
+
+You can find the schema definition on your Developer Cloud Sandbox under: 
+
+.. code-block:: xml
+
+	/usr/lib/ciop/schemas/application.xsd
