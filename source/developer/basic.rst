@@ -90,7 +90,7 @@ Run the node
 
 .. code-block:: console
 
- ciop-simjob -n
+ ciop-run -n
  
 This returns:
 
@@ -102,48 +102,28 @@ This returns:
 
 .. code-block:: console
 
- ciop-simjob my_node
+ ciop-run my_node
 
 The output will be similar to:
 
 .. code-block:: console-output
 
-  15/02/20 15:38:56 INFO my_node simulation started
-  15/02/20 15:39:03 INFO Submitting job 26207 ...
-  15/02/20 15:39:03 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
-  15/02/20 15:39:03 INFO streaming.StreamJob: Dir hdfs://sb-10-16-10-62.dev.terradue.int:8020/user/crossi/monitor already exists
-  packageJobJar: [/var/lib/hadoop-0.20/cache/crossi/hadoop-unjar4287208780576719330/] [] /tmp/streamjob4077770872494911200.jar tmpDir=null
-  15/02/20 15:39:04 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-  15/02/20 15:39:04 WARN snappy.LoadSnappy: Snappy native library not loaded
-  15/02/20 15:39:04 INFO mapred.FileInputFormat: Total input paths to process : 1
-  15/02/20 15:39:04 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/crossi/mapred/local]
-  15/02/20 15:39:04 INFO streaming.StreamJob: Running job: job_201502201431_0002
-  15/02/20 15:39:04 INFO streaming.StreamJob: To kill this job, run:
-  15/02/20 15:39:04 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-62.dev.terradue.int:8021 -kill job_201502201431_0002
-  15/02/20 15:39:04 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-62.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201502201431_0002
-  15/02/20 15:39:05 INFO streaming.StreamJob:  map 0%  reduce 0%
-  15/02/20 15:39:10 INFO streaming.StreamJob:  map 100%  reduce 0%
-  15/02/20 15:39:18 INFO streaming.StreamJob:  map 100%  reduce 33%
-  15/02/20 15:39:19 INFO streaming.StreamJob:  map 100%  reduce 100%
-  15/02/20 15:39:20 INFO streaming.StreamJob: Job complete: job_201502201431_0002
-  15/02/20 15:39:20 INFO streaming.StreamJob: Output: /tmp/sandbox/hands-on-1/my_node/output
-  15/02/20 15:39:20 INFO my_node simulation ended (24 seconds)
-  15/02/20 15:39:20 INFO my_node published:
+  2016-01-19 12:27:48 [WARN ] -  -- WPS needs at least one input value from your application.xml (source or parameter with scope=runtime);
+  2016-01-19 12:27:51 [INFO ] - Workflow submitted
+  2016-01-19 12:27:51 [INFO ] - Closing this program will not stop the job.
+  2016-01-19 12:27:51 [INFO ] - To kill this job type:
+  2016-01-19 12:27:51 [INFO ] - ciop-stop 0000000-160119102214227-oozie-oozi-W
+  2016-01-19 12:27:51 [INFO ] - Tracking URL:
+  2016-01-19 12:27:51 [INFO ] - http://sb-10-16-10-50.dev.terradue.int:11000/oozie/?job=0000000-160119102214227-oozie-oozi-W
 
-  15/02/20 15:39:20 INFO The intermediate results are available at http://sb-10-16-10-62.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-1/my_node%2Fdata&namenodeInfoPort=50070
-  15/02/20 15:39:20 INFO The published results are available at http://sb-10-16-10-62.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-1/my_node%2F_results&namenodeInfoPort=50070
+  Node Name     :  my_node
+  Status        :  OK
 
-.. admonition:: Note 1
+  Publishing results...
 
- The log entry with:
+  2016-01-19 12:28:31 [INFO ] - Workflow completed.
 
- .. code-block:: none
-
-  15/02/20 15:39:04 INFO mapred.FileInputFormat: Total input paths to process : 1
-
- means the Hadoop framework got one input file containing the two data input references, input1 and input2.
-
-.. admonition:: Note 2
+.. admonition:: Note
 
   Since the Hadoop Sandbox mode that is used here runs on a Virtual Machine offering two Cores, and the node 'my_node' has to process only two inputs, the input1 and input2 lines have been processed in parallel, by two simultaneous tasks (each task processing a single entry of the input file). 
   From there, Hadoop deployments in Cluster mode will handle the scaling up of your application to a larger amount of data input and processing nodes.
