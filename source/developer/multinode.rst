@@ -63,7 +63,7 @@ Run and debug the workflow
 
 .. code-block:: console
 
-  ciop-simjob -n
+  ciop-run -n
 
 You will see:
 
@@ -76,42 +76,33 @@ You will see:
 
 .. code-block:: console
 
-  ciop-simjob node_expression
+  ciop-run node_expression
 
 * Run the node *node_binning*:
 
 .. code-block:: console
 
-  ciop-simjob node_binning
+  ciop-run node_binning
 
 The output will be similar to:
 
 .. code-block:: console-output
 
-  15/03/03 11:29:35 INFO node_binning simulation started
-  15/03/03 11:29:40 INFO Submitting job 28128 ...
-  15/03/03 11:29:40 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
-  15/03/03 11:29:41 INFO streaming.StreamJob: Dir hdfs://sb-10-16-10-30.dev.terradue.int:8020/user/cdangelis/monitor already exists
-  packageJobJar: [/var/lib/hadoop-0.20/cache/cdangelis/hadoop-unjar1829937380881405939/] [] /tmp/streamjob7701460819939999938.jar tmpDir=null
-  15/03/03 11:29:41 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-  15/03/03 11:29:41 WARN snappy.LoadSnappy: Snappy native library not loaded
-  15/03/03 11:29:41 INFO mapred.FileInputFormat: Total input paths to process : 1
-  15/03/03 11:29:41 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/cdangelis/mapred/local]
-  15/03/03 11:29:41 INFO streaming.StreamJob: Running job: job_201502191028_0493
-  15/03/03 11:29:41 INFO streaming.StreamJob: To kill this job, run:
-  15/03/03 11:29:41 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-30.dev.terradue.int:8021 -kill job_201502191028_0493
-  15/03/03 11:29:41 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-30.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201502191028_0493
-  15/03/03 11:29:42 INFO streaming.StreamJob:  map 0%  reduce 0%
-  15/03/03 11:29:44 INFO streaming.StreamJob:  map 100%  reduce 0%
-  15/03/03 11:29:51 INFO streaming.StreamJob:  map 100%  reduce 33%
-  15/03/03 11:29:54 INFO streaming.StreamJob:  map 100%  reduce 100%
-  15/03/03 11:30:58 INFO streaming.StreamJob: Job complete: job_201502191028_0493
-  15/03/03 11:30:58 INFO streaming.StreamJob: Output: /tmp/sandbox/hands-on-6/node_binning/output
-  15/03/03 11:30:58 INFO node_binning simulation ended (83 seconds)
-  15/03/03 11:30:58 INFO node_binning published:
-   
-  15/03/03 11:30:58 INFO The intermediate results are available at http://sb-10-16-10-30.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-6/node_binning%2Fdata&namenodeInfoPort=50070
-  15/03/03 11:30:58 INFO The published results are available at http://sb-10-16-10-30.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-6/node_binning%2F_results&namenodeInfoPort=50070
+  2016-01-19 17:01:03 [WARN ] -  -- WPS needs at least one input value from your application.xml (source or parameter with scope=runtime);
+  2016-01-19 17:01:04 [INFO ] - Workflow submitted
+  2016-01-19 17:01:04 [INFO ] - Closing this program will not stop the job.
+  2016-01-19 17:01:04 [INFO ] - To kill this job type:
+  2016-01-19 17:01:04 [INFO ] - ciop-stop 0000025-160119102214227-oozie-oozi-W
+  2016-01-19 17:01:04 [INFO ] - Tracking URL:
+  2016-01-19 17:01:04 [INFO ] - http://sb-10-16-10-50.dev.terradue.int:11000/oozie/?job=0000025-160119102214227-oozie-oozi-W
+
+  Node Name     :  node_binning
+  Status        :  OK
+
+  Publishing results...
+
+  2016-01-19 17:02:56 [INFO ] - Workflow completed.
+  2016-01-19 17:02:56 [INFO ] - Output Metalink: http://sb-10-16-10-50.dev.terradue.int:50070/webhdfs/v1/ciop/run/hands-on-6/0000025-160119102214227-oozie-oozi-W/results.metalink?op=OPEN
 
 Check in these logs how the job definition is ran as a Hadoop Streaming MapReduce task.
 A MapReduce job usually splits the input source so that independent data chunks are processed by the map tasks in a completely parallel manner.
@@ -121,50 +112,20 @@ The Hadoop framework takes care of tasks scheduling & monitoring, and re-execute
 
 .. code-block:: console
 
-  ciop-simwf
+  ciop-run
 
 * Follow the execution until it ends (approximately five minutes),
 
-* Check the output of the command *ciop-simwf*. It will be similar to:
-
-.. code-block:: console-output
-
-  Job ID : 0000267-150209145053100-oozie-oozi-W
-  ------------------------------------------------------------------------------------------------------------------------------------
-  Workflow Name : hands-on-6
-  App Path      : hdfs://sb-10-16-10-30.dev.terradue.int:8020/tmp/1727a922-5461-48e2-81f3-2f6985654b52hands-on-6/workflow.xml
-  Status        : SUCCEEDED
-  Run           : 0
-  User          : cdangelis
-  Group         : users
-  Created       : 2015-03-03 11:32
-  Started       : 2015-03-03 11:32
-  Last Modified : 2015-03-03 11:34
-  Ended         : 2015-03-03 11:34
-
-  Actions
-  ------------------------------------------------------------------------------------------------------------------------------------
-  ID                                                                            Status    Ext ID                 Ext Status Err Code
-  ------------------------------------------------------------------------------------------------------------------------------------
-  0000267-150209145053100-oozie-oozi-W@hdfscommands                             OK    -                      OK         -
-  ------------------------------------------------------------------------------------------------------------------------------------
-  0000267-150209145053100-oozie-oozi-W@n-node_expression                        OK        job_201502191028_0495  SUCCEEDED  -
-  ------------------------------------------------------------------------------------------------------------------------------------
-  0000267-150209145053100-oozie-oozi-W@n-node_binning                           OK        job_201502191028_0497  SUCCEEDED  -
-  ------------------------------------------------------------------------------------------------------------------------------------
-  0000267-150209145053100-oozie-oozi-W@publish-results                          OK        job_201502191028_0499  SUCCEEDED  -
-  ------------------------------------------------------------------------------------------------------------------------------------
-
-* To close the *ciop-simwf* output page, press CTRL+C.
+* To close the *ciop-run* output page, press CTRL+C.
 
 Recap
 =====
 
 #. We added a second node (*node_binning*) to our workflow;
 #. We published results as final results of the workflow;
-#. We ran the added node using the *ciop-simjob* command;
+#. We ran the added node using the *ciop-run* command;
 #. We saw how a job is handled by the framework as parallel tasks, during the workflow execution;
-#. We ran the entire workflow using the *ciop-simwf* command.
+#. We ran the entire workflow using the *ciop-run* command.
 
 .. rubric:: Footnotes
 
