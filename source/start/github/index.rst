@@ -114,7 +114,7 @@ This will use the information available in the *pom.xml* file to:
 * Compile the BEAM Java code and copy the JARs in the right spot 
 * Copy the app-resources files to the */application* file system.
 
-At this point you can use *ciop-simjob* and *ciop-simwf* to test the application
+At this point you can use *ciop-run* to test the application.
 
 .. tip::
 

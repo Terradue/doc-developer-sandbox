@@ -77,19 +77,19 @@ For example, if you are using *make*, you can configure the install location wit
 How can I stop a running job or workflow?
 ------------------------------------------
 
-There are two different cases:
+There are two different ways:
 
-* If you start a job through the command *ciop-simjob* (i.e. by executing a single node of the workflow), you can stop it with:
-
-.. code-block:: console
-
-  hadoop job -Dmapred.job.tracker=<sandbox_host>:8021 -kill <job_id>
-
-* If you start a workflow through the command *ciop-simwf* (i.e. by executing the entire wokflow)
+* To stop all the running workflows:
 
 .. code-block:: console
 
-  oozie job -oozie http://localhost:11000/oozie -kill <workflow_id>
+  ciop-stop -a
+
+* To stop a specific workflow:
+
+.. code-block:: console
+
+  ciop-stop <workflow_id>
 
 Why are some log entries going to stderr while others go to stdout?
 -----------------------------------------------------------------------------------------

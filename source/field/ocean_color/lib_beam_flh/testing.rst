@@ -101,22 +101,21 @@ All dependencies are listed in the pom.xml and downloaded during the mvn install
 Simulating the application execution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   
-There are two approaches to test an application. 
+There are two approaches to test an application:
 
-The first manually invokes each of the nodes with the ciop-simjob [#f1]_ command line utility.
-
-The second triggers the automatic execution of the workflow with the ciop-simwf [#f2]_ command line utility.
+* The first manually invokes each of the nodes,
+* The second triggers the automatic execution of the workflow.
   
-Both approaches are shown below.
+Both approaches use the command line utility ciop-run [#f1]_.
 
-Testing manually the workflow with ciop-simjob
-----------------------------------------------
+Testing a single node of the workflow
+--------------------------------------
 
-List the node of a workflow:
+List the nodes of a workflow:
 
 .. code-block:: bash
 
-  ciop-simjob -n
+  ciop-run -n
   
 This command returns:
 
@@ -128,22 +127,21 @@ Trigger the execution of the node_flh with:
 
 .. code-block:: bash
 
-  ciop-simjob -f node_flh
+  ciop-run node_flh
   
 The node_flh will produce one tiff image file per input Envisat MERIS Level 1 product.
 
-These files are all available in sandbox the distributed filesystem and the output of the ciop-simjob execution provides the URLs to explore this filesystem. 
+These files are all available in the Sandbox Hadoop distributed filesystem and the output of the ciop-run execution provides the URLs to explore this filesystem. 
 
-Testing the workflow automatic execution with ciop-simwf
---------------------------------------------------------
+Testing the entire workflow execution
+-------------------------------------
 
 .. code-block:: bash
 
-  ciop-simwf
+  ciop-run
   
 Wait for the workflow execution.
 
 .. rubric:: Footnotes
 
-.. [#f1] :doc:`ciop-simjob man page </reference/man/bash_commands_functions/simulation/ciop-simjob>`
-.. [#f2] :doc:`ciop-simwf man page </reference/man/bash_commands_functions/simulation/ciop-simwf>`
+.. [#f1] :doc:`ciop-run man page </reference/man/bash_commands_functions/simulation/ciop-run>`
