@@ -84,7 +84,7 @@ Several programming or scripting languages are supported to implement the run ex
 
 .. container:: context-run-executable
 
-  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/my_node/run
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/bash/my_node/run
      :language: bash
      :tab-width: 2
      :lines: 5-5
@@ -99,39 +99,28 @@ Run and debug the workflow
 
 .. code-block:: console
 
-  ciop-simjob my_node
+  ciop-run my_node
 
 The output will be similar to:
 
 .. code-block:: console-output
 
-  15/02/26 17:48:41 INFO my_node simulation started
-  15/02/26 17:48:49 INFO Submitting job 3836 ...
-  15/02/26 17:48:49 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
-  15/02/26 17:48:50 INFO streaming.StreamJob: Dir hdfs://sb-10-16-10-62.dev.terradue.int:8020/user/crossi/monitor already exists
-  packageJobJar: [/var/lib/hadoop-0.20/cache/crossi/hadoop-unjar5728555267094324953/] [] /tmp/streamjob8017142955103520886.jar tmpDir=null
-  15/02/26 17:48:50 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-  15/02/26 17:48:50 WARN snappy.LoadSnappy: Snappy native library not loaded
-  15/02/26 17:48:50 INFO mapred.FileInputFormat: Total input paths to process : 1
-  15/02/26 17:48:51 INFO streaming.StreamJob: getLocalDirs(): [/var/lib/hadoop-0.20/cache/crossi/mapred/local]
-  15/02/26 17:48:51 INFO streaming.StreamJob: Running job: job_201502261731_0001
-  15/02/26 17:48:51 INFO streaming.StreamJob: To kill this job, run:
-  15/02/26 17:48:51 INFO streaming.StreamJob: /usr/lib/hadoop-0.20/bin/hadoop job  -Dmapred.job.tracker=sb-10-16-10-62.dev.terradue.int:8021 -kill job_201502261731_0001
-  15/02/26 17:48:51 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-62.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201502261731_0001
-  15/02/26 17:48:52 INFO streaming.StreamJob:  map 0%  reduce 0%
-  15/02/26 17:49:01 INFO streaming.StreamJob:  map 100%  reduce 0%
-  15/02/26 17:49:34 INFO streaming.StreamJob:  map 100%  reduce 33%
-  15/02/26 17:49:36 INFO streaming.StreamJob:  map 100%  reduce 100%
-  15/02/26 17:49:37 INFO streaming.StreamJob: Job complete: job_201502261731_0001
-  15/02/26 17:49:37 INFO streaming.StreamJob: Output: /tmp/sandbox/hands-on-3/my_node/output
-  15/02/26 17:49:38 INFO my_node simulation ended (57 seconds)
-  15/02/26 17:49:38 INFO my_node published:
-   hdfs://sb-10-16-10-62.dev.terradue.int:8020/tmp/sandbox/hands-on-3/my_node/data/MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1
-   hdfs://sb-10-16-10-62.dev.terradue.int:8020/tmp/sandbox/hands-on-3/my_node/data/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1
-   15/02/26 17:49:38 INFO The intermediate results are available at http://sb-10-16-10-62.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-3/my_node%2Fdata&namenodeInfoPort=50070
-   15/02/26 17:49:38 INFO The published results are available at http://sb-10-16-10-62.dev.terradue.int:50075/browseDirectory.jsp?dir=/tmp/sandbox/hands-on-3/my_node%2F_results&namenodeInfoPort=50070
+  2016-01-19 12:54:32 [WARN ] -  -- WPS needs at least one input value from your application.xml (source or parameter with scope=runtime);
+  2016-01-19 12:54:33 [INFO ] - Workflow submitted
+  2016-01-19 12:54:33 [INFO ] - Closing this program will not stop the job.
+  2016-01-19 12:54:33 [INFO ] - To kill this job type:
+  2016-01-19 12:54:33 [INFO ] - ciop-stop 0000005-160119102214227-oozie-oozi-W
+  2016-01-19 12:54:33 [INFO ] - Tracking URL:
+  2016-01-19 12:54:33 [INFO ] - http://sb-10-16-10-50.dev.terradue.int:11000/oozie/?job=0000005-160119102214227-oozie-oozi-W
 
-* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command, and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
+  Node Name     :  my_node
+  Status        :  OK
+
+  Publishing results...
+
+  2016-01-19 12:56:12 [INFO ] - Workflow completed.
+
+* Check the output of the application by copying the Tracking URL from the *ciop-run* command, and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/stagedata/gui1.png
    :scale: 70 %
