@@ -6,3 +6,4 @@ build
 .pydevproject
 target
 .settings
+*.ini
