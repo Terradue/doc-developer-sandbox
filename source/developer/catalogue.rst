@@ -58,7 +58,7 @@ Run and debug the workflow
 
 .. code-block:: console
 
-  ciop-simjob node_expression
+  ciop-run node_expression
 
 * Copy the Tracking URL and paste it in a browser,
 
