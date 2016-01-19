@@ -30,7 +30,7 @@ Run the workflow
 
 .. code-block:: console
 
-  ciop-simwf
+  ciop-run
 
 * Wait until the workflow is completed (it will take approximately five minutes).
 
