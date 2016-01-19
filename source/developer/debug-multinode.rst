@@ -29,7 +29,7 @@ Run the workflow
 
 .. code-block:: console
 
-  ciop-simwf
+  ciop-run
 
 * Press CTRL+C 
 
@@ -40,21 +40,19 @@ Run the workflow
 Debug the workflow
 ==================
 
-* Open a browser and type http://$HOSTNAME:11000
-
-  It will present the Oozie Web Console available on the Sandbox. It provides information about the status of the workflows and the access to their logs. 
-
-.. tip::
-  
-  Read how to obtain the value of your Sandbox $HOSTNAME in the :doc:`General Notes <general_notes>` section
-
-* Click on the *Job Id* value,
+* Open the provided Tracking URL
 
 * Click on the *n-node_expression* value under the column *Name*,
 
 * Click on the lens image,
 
-* Continue debugging as described in the exercise :doc:`make a robust workflow and debug it <debug>`. 
+* Continue debugging as described in the exercise :doc:`make a robust workflow and debug it <debug>`,
+
+* Click on the *n-node_binning* value under the column *Name*,
+
+* Click on the lens image,
+
+* Continue debugging as described in the exercise :doc:`make a robust workflow and debug it <debug>`.
 
 The following image shows the steps that we have just performed:
 

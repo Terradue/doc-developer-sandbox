@@ -40,40 +40,51 @@ Run the node and debug the workflow
 
 .. code-block:: console
 
- ciop-simjob my_node
+ ciop-run my_node
 
-* From the output of the *ciop-simjob* command, we can copy in the clipboard the **Tracking URL**. It will be similar to this:
+* From the output of the *ciop-run* command, we can copy in the clipboard the **Tracking URL**. It will be similar to this:
 
 .. code-block:: console-output
 
- 14/07/09 12:43:53 INFO streaming.StreamJob: Tracking URL: http://sb-10-16-10-33.dev.terradue.int:50030/jobdetails.jsp?jobid=job_201407031504_0052 
+ 2016-01-19 12:31:57 [INFO ] - Tracking URL:
+ 2016-01-19 12:31:57 [INFO ] - http://sb-10-16-10-50.dev.terradue.int:11000/oozie/?job=0000001-160119102214227-oozie-oozi-W
 
 * Open a browser and paste the Tracking URL just copied.
 
-* You will see the job details in the Web GUI. On the screenshot, the red rounded link represents the number of parallel tasks (in Sandbox mode, the default is 2). Click on this link:
+* You will see the workflow details in the Web GUI. On the screenshot, the red rounded field represents the node my_node. Click on this field and then in the lens icon:
 
 .. figure:: includes/debug/gui1.png
+   :scale: 100 %
+   :alt: Workflow summary
+   
+.. figure:: includes/debug/gui2.png
+   :scale: 100 %
+   :alt: Node detail
+
+* You will see the job details in the Web GUI. On the screenshot, the red rounded link represents the number of parallel tasks (in Sandbox mode, the default is 2). Click on this link:
+
+.. figure:: includes/debug/gui3.png
    :scale: 100 %
    :alt: Job summary
     
 * We have the list of tasks. 
 * To see the details about of one of them, just click on the name in the **Task** column (the rounded one):
 
-.. figure:: includes/debug/gui2.png
+.. figure:: includes/debug/gui4.png
    :scale: 70 %
    :alt: Tasks details
 
 * Now we have the list of task attempts. 
 * To see the output related to one of them (in this case we have just one attempt), just click on the **All** link in the **Task Logs** column (the rounded one):
 
-.. figure:: includes/debug/gui3.png
+.. figure:: includes/debug/gui5.png
    :scale: 70 %
    :alt: Attempts details
 
 * Finally we have the output list of the selected task attempt. 
 * We can see the output of the ciop-log function:
 
-.. figure:: includes/debug/gui4.png
+.. figure:: includes/debug/gui6.png
    :scale: 70 %
    :alt: Attempts output
 

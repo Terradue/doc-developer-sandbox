@@ -38,7 +38,7 @@ The Dashboard provides:
   :alt: alternate text
   :figclass: align-center
 
-  A debug tab presenting the workflows launched with the command ciop-simwf or submitted using the WPS interface, as managed by Hadoop Oozie
+  A debug tab presenting the workflows launched with the command ciop-run or submitted using the WPS interface, as managed by Hadoop Oozie
 
 **Invoke tab**
 
@@ -70,10 +70,10 @@ The Dashboard provides:
 
   A Ticketing system client to interact with the Platform Support team
  
-Job Tracker Web GUI
+Oozie Web GUI
 +++++++++++++++++++
 
-To view processes launched with the ciop-simjob command you can use the Hadoop Job Tracker.
+To view processes launched with the ciop-run command you can use the Hadoop Job Tracker.
 
 .. figure:: assets/hadoop_console.png
   :width: 500px
@@ -81,7 +81,7 @@ To view processes launched with the ciop-simjob command you can use the Hadoop J
   :alt: alternate text
   :figclass: align-center
 
-  Accessed from the VPN at the address: http://<your_sandbox_host>:50030/jobtracker.jsp
+  Accessed from the VPN at the address: http://<your_sandbox_host>:11000
 
 Data Catalogues
 +++++++++++++++
