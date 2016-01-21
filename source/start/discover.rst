@@ -73,7 +73,7 @@ The Dashboard provides:
 Oozie Web GUI
 +++++++++++++++++++
 
-To view processes launched with the ciop-run command you can use the Hadoop Job Tracker.
+To view processes launched with the ciop-run command you can use the Oozie GUI Web Console.
 
 .. figure:: assets/oozie_console.png
   :width: 500px
