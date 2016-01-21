@@ -42,7 +42,7 @@ Inspect the run executable
   .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-5/bash/expression/run
         :language: bash
         :tab-width: 2
-        :lines: 35-39
+        :lines: 100-104
 
 
 Run and debug the workflow
@@ -57,7 +57,7 @@ Run and debug the workflow
 * Check the output of the application by copying the Tracking URL from the *ciop-run* command, and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/parameters/gui1.png
-     :scale: 70 %
+     :scale: 55 %
      :alt: Attempts output
 
 Recap
