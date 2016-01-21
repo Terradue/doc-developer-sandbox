@@ -87,7 +87,7 @@ Several programming or scripting languages are supported to implement the run ex
   .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-3/bash/my_node/run
      :language: bash
      :tab-width: 2
-     :lines: 5-5
+     :lines: 50
 
 .. NOTE::
      The command *ciop-publish* will put the workflow's stage out data on the HDFS (the underlying Hadoop Distributed File System), and it will pass it to the Hadoop framework by reference.  
