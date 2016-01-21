@@ -62,6 +62,7 @@ Exit Status
 
 * 0 on success
 * 1 an error occured
+* any other exit code is from the executable itself
 
 Examples
 --------

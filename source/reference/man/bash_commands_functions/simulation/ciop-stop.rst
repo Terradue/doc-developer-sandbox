@@ -31,7 +31,7 @@ Exit Status
 
 * 0           Job killed successfully or no RUNNING Job found
 * 255         invalid options are provided
-any other exit code is from the executable itself
+* any other exit code is from the executable itself
 
 Examples
 --------
