@@ -92,7 +92,7 @@ Run the node and debug the workflow
 
   You learnt how to insert an Exit function in your run executable, and to visualize the associated log message generated from the task completion.
   
-Here is the related piece of code of the run executable:*
+Here's the related piece of code of the run executable:
 
 .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-2/bash/my_node/run
    :language: bash
