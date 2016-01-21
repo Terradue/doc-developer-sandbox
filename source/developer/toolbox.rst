@@ -5,10 +5,11 @@ Hands-On Exercise 4: using a toolbox
 
 In this exercise we will use a toolbox to process the inputs of our workflow, and we will publish its results on HDFS.   
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 ====================

@@ -5,10 +5,11 @@ Hands-On Exercise 2: make a robust workflow and debug it
 
 In this exercise we will install a more robust version of the basic workflow. Also we will learn how to debug the workflow through the Hadoop JobTracker Web GUI.
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 =====================

@@ -5,10 +5,11 @@ Hands-On Exercise 3: staging data
 
 In this exercise we will prepare input data for our workflow (this process is named *Stage In*), and we will publish out data as result of the workflow (this process is named *Stage Out*).   
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 =====================

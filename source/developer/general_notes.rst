@@ -26,8 +26,8 @@ In order to have the code locally available on your Sandbox, you have to clone t
   You have now the resources needed to complete all the Hands-On !
 
 
-Programming language
-^^^^^^^^^^^^^^^^^^^^
+Programming languages
+^^^^^^^^^^^^^^^^^^^^^
 
 The Hands-On exercises are implemented with 2 different languages: bash and python. You can choose which language to use. All the Hands-On exercises relate to bash by default, but you can choose to use python, and the behaviour will not change.
 
@@ -42,6 +42,18 @@ The Hands-On exercises are implemented with 2 different languages: bash and pyth
 .. code-block:: console
   
   mvn clean install -D hands.on=1 -P python
+
+.. _python-reqs:
+
+Prerequisites when using python
+*******************************
+
+If you want to select python as programming language for the Hands-On exercises, you have to install the Anaconda distribution and the *cioppy* package. To do that just type:
+
+.. code-block:: console
+
+ sudo yum install -y miniconda-3.8.3
+ sudo conda install -y cioppy
 
 Using the code examples
 ^^^^^^^^^^^^^^^^^^^^^^^^
