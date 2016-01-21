@@ -54,17 +54,17 @@ Run the node and debug the workflow
 * You will see the workflow details in the Web GUI. On the screenshot, the red rounded field represents the node my_node. Click on this field and then in the lens icon:
 
 .. figure:: includes/debug/gui1.png
-   :scale: 100 %
+   :scale: 70 %
    :alt: Workflow summary
    
 .. figure:: includes/debug/gui2.png
-   :scale: 100 %
+   :scale: 70 %
    :alt: Node detail
 
 * You will see the job details in the Web GUI. On the screenshot, the red rounded link represents the number of parallel tasks (in Sandbox mode, the default is 2). Click on this link:
 
 .. figure:: includes/debug/gui3.png
-   :scale: 100 %
+   :scale: 70 %
    :alt: Job summary
     
 * We have the list of tasks. 
@@ -88,14 +88,16 @@ Run the node and debug the workflow
    :scale: 70 %
    :alt: Attempts output
 
-*Congrat !*
-*You learnt how to insert an Exit function in your run executable, and to visualize the associated log message generated from the task completion*
-*Here the related piece of code of the run executable:*
+.. admonition:: Congrats
+
+  You learnt how to insert an Exit function in your run executable, and to visualize the associated log message generated from the task completion.
+  
+Here is the related piece of code of the run executable:*
 
 .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-2/bash/my_node/run
    :language: bash
    :tab-width: 2
-   :lines: 31-32
+   :lines: 30
 
 .. HINT::
  Try to debug the second task to see the output generated. 
