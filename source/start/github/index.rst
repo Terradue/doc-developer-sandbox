@@ -57,11 +57,11 @@ The repository should follow the structure below:
 .. seealso::
   
   Have a look at the application tutorials which implements the recommended structure: 
-    
-    * MERIS Algal bloom detection https://github.com/Terradue/dcs-beam-algalbloom
-    * BEAM Toolbox Java FLH processor https://github.com/Terradue/dcs-beam-flh-java
-    * Landsat NDVI python module https://github.com/Terradue/dcs-python-ndvi
-    * SST timeseries R package https://github.com/Terradue/dcs-r-gbifsst
+  
+  * `MERIS Algal bloom detection <https://github.com/Terradue/dcs-beam-algalbloom>`_
+  * `BEAM Toolbox Java FLH processor <https://github.com/Terradue/dcs-beam-flh-java>`_
+  * `Landsat NDVI python module <https://github.com/Terradue/dcs-python-ndvi>`_
+  * `SST timeseries R package <https://github.com/Terradue/dcs-r-gbifsst>`_
 
 The typical application development workflow
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -179,8 +179,4 @@ Documenting the application with R Gitbook
 Going further
 +++++++++++++
 
-There are several high quality free ebooks on the Web (e.g. http://gitbookio.github.io/git/en/) and GitHub provides a comprehensive web-site to get started here: https://help.github.com/
-
-
-
-
+There are several high quality free ebooks on the Web (e.g., http://gitbookio.github.io/git/en/) and GitHub provides a comprehensive web-site to get started here: https://help.github.com/
