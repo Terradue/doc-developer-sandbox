@@ -39,7 +39,7 @@ To install the application clone the repository on the sandbox in your home fold
 .. code-block:: bash
 
   cd ~
-  git clone git@github.com:Terradue/dcs-beam-flh-java.git
+  git clone https://github.com/Terradue/dcs-beam-flh-java.git
   cd dcs-beam-flh-java
 
 Update the Application descriptor file to use the Sandbox catalogue with the data you've copied:
