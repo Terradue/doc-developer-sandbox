@@ -99,11 +99,9 @@ If the -a option is used, the exit code is set to the error code of the last URL
 
 * 252 no driver available for URL
 
-* 251 an existing file or directory conflicts with the sink for the URL in the output
-directory
+* 251 an existing file or directory conflicts with the sink for the URL in the output directory
 
-* 250 an error occured while unpacking the output file or when packaging/compressing the
-output file (when -z or -Z option is used)
+* 250 an error occured while unpacking the output file or when packaging/compressing the output file (when -z or -Z option is used)
 
 * 128 a timeout occured while fetching an url
 
@@ -116,8 +114,7 @@ output file (when -z or -Z option is used)
 Examples
 --------
 
-**Example 1**. Copy a product from the online resources included in the RDF catalogue entry URL
-       (it requires ESA UM-SSO credentials)
+**Example 1**. Copy a product from the online resources included in the RDF catalogue entry URL (it requires ESA UM-SSO credentials)
 
 .. code-block:: bash
 
