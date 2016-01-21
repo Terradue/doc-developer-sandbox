@@ -9,7 +9,7 @@ Synopsis
 Description
 -----------
 
-ciop-run runs an workflow or a node of a workflow.
+ciop-run runs a workflow or a node of a workflow.
 
 Options
 -------
