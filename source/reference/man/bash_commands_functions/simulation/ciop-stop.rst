@@ -1,5 +1,5 @@
-ciop-stop (3)
-============
+ciop-stop
+=========
 
 Synopsis
 --------

@@ -79,7 +79,7 @@ A run executable is responsible for the *execution* of your application (or a st
 
  cat my_node/run
 
-.. admonition::
+.. admonition:: Note
 
   Depending from the profile chosen (maven's option *-P*), a run executable can be written in different programming or scripting languages including python, R, or bash (the Hands-On exercises are initially available in python and bash).
 

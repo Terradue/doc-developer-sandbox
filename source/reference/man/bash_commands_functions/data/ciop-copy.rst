@@ -125,6 +125,7 @@ Examples
 **Example 2**. simple copy of an URL (master_url), the variable master_local_file will contain the value of the downlaod file local path
 
 .. code-block:: bash
+
     master_local_file=‘echo $master_url | ciop-copy -o $TMPDIR -‘
 
 See Also
