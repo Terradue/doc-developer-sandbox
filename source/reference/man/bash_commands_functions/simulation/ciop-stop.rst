@@ -15,7 +15,7 @@ ciop-stop kills a RUNNING Oozie job.
 Options
 -------
 
-``Job ID Parameter``
+``[Job ID]``
   This must be the ID of the RUNNING Job to be killed. If no Job ID is specified, the last one is killed.
 
 ``[-a]``
