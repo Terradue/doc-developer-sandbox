@@ -87,11 +87,11 @@ Install additional software
  
 * You can also install the Python packages you need by using the *conda* command since the user *<sandbox_user>* has sudo privileges for *conda*:
 
- .. code-block:: console
+.. code-block:: console
 
-  sudo conda install <package name>
+ sudo conda install <package name>
  
 .. NOTE::
   As the exercises progress and you gain more familiarity with the CIOP framework, the Hadoop and the MapReduce, we provide fewer step by step instructions. You feel free to ask to us for explainations or doubts using our Support Site https://support.terradue.com. We'll be happy to help !
 
-.. [#f1] Pseudo-distributed mode is a method of running Hadoop whereby all Hadoop daemons run on the same machine. It is a cluster consisting of a single machine. It works just like a larger cluster, the only key difference (apart from the speed, of course !) being that the block replication factor is set to 1 (normally in a Hadoop Cluster the blocks on HDFS have a replication factor of 3). 
+.. [#f1] Pseudo-distributed mode is a method of running Hadoop whereby all Hadoop daemons run on the same machine. It is a cluster consisting of a single machine. It works just like a larger cluster, the only key difference (apart from the speed, of course !) being that the block replication factor is set to 1 (normally in a Hadoop Cluster the blocks on HDFS have a replication factor of 3).
