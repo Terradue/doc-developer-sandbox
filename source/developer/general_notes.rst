@@ -3,7 +3,7 @@
 General Notes
 #############
 
-The Sandbox, short of *Terradue's Developer Cloud Sandbox*, is a Virtual Machine (VM) running the CentOS 6.5 Linux distribution. This VM has the complete set of tools of the CIOP framework (the 'ciop' command line tools). Furthermore it has CDH (Cloudera's Distribution of Apache Hadoop) installed in Pseudo-Distributed mode [#f1]_. 
+The Sandbox, short of *Terradue's Developer Cloud Sandbox*, is a Virtual Machine (VM) running the CentOS 6.x Linux distribution. This VM has the complete set of tools of the CIOP framework (the 'ciop' command line tools). Furthermore it has CDH (Cloudera's Distribution of Apache Hadoop) installed in Pseudo-Distributed mode [#f1]_. 
 
 .. _hands-on-repo:
 
