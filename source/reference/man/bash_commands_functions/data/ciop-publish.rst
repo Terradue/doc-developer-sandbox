@@ -1,5 +1,5 @@
-ciop-publish
-============
+ciop-publish (7)
+================
 
 Synopsis
 --------
@@ -21,23 +21,23 @@ Options
 The following options are available:
 
 ``-b base_path``
-directory name of the base path to complete relative path (default: ${mapred_local_dir})
+    Directory name of the base path to complete relative path (default: ${mapred_local_dir})
 
 ``-r``
-Turn on recursive finding for directory path. This option is important if the reference to pass must be all file in the dir and not just the dir (default: off)
+    Turn on recursive finding for directory path. This option is important if the reference to pass must be all file in the dir and not just the dir (default: off)
 
 ``-m``
-Publish the files as results of the entire workflow. Files are not going to be passed to the next job. They are placed in a persistent shared location common to the whole workflow. A metalink is generated at the end of the workflow or the job simulation.
+    Publish the files as results of the entire workflow. Files are not going to be passed to the next job. They are placed in a persistent shared location common to the whole workflow. A metalink is generated at the end of the workflow or the job simulation.
 
 ``-d destination``
-Destination of the files when option -m is set. By default the published destination is the local HDFS of the appliance. Other options are:
+    Destination of the files when option -m is set. By default the published destination is the local HDFS of the appliance. Other options are:
 * s3 : to publish results in S3 private server.
 
 ``-a``
-Publish the files on HDFS in an anonymous way (i.e. files are not going to be passed to the next job).
+    Publish the files on HDFS in an anonymous way (i.e. files are not going to be passed to the next job).
 
 ``-s``
-Publish what comes from stdin as it is to the next job. This option desactivates all other options.
+    Publish what comes from stdin as it is to the next job. This option desactivates all other options.
     
 Exit status
 -----------
