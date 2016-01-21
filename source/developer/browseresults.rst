@@ -6,10 +6,11 @@ Hands-On Exercise 8: browse published results
 In this exercise, we will run again the workflow of the exercise :doc:`a multi-node workflow <multinode>`,  
 then we will browse its results through the Oozie Web Console that was previously introduced.   
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 ====================

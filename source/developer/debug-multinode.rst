@@ -6,10 +6,11 @@ Hands-On Exercise 7: debug a multi-node workflow
 In this exercise we will see how to debug the workflow described in the exercise :doc:`a multi-node workflow <multinode>`. 
 To do so, we will be using a specific Web GUI, the "Oozie Web Console".
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 ====================

@@ -6,10 +6,11 @@ Hands-On Exercise 9: using an OpenSearch catalogue
 In this exercise we will use an OpenSearch [#f1]_ catalogue URL as the input source of the workflow, 
 and query the catalogue with OpenSearch parameters to get the input products.   
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 ====================

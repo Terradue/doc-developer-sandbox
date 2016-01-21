@@ -5,10 +5,11 @@ Hands-On Exercise 6: a multi-node workflow
 
 In this exercise we will run an application workflow dedined by two nodes, passing outputs from the first as inputs to the second, and finally publishing the workflow results on HDFS.   
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 ====================
