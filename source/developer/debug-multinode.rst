@@ -68,10 +68,6 @@ The following image shows the steps that we have just performed:
    :scale: 80 %
    :alt: Browse results
 
-.. figure:: includes/multinode-debug/gui4.png
-   :scale: 80 %
-   :alt: Browse results
-
 Recap
 =====
 
