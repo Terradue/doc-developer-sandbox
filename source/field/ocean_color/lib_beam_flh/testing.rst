@@ -131,7 +131,7 @@ Trigger the execution of the node_flh with:
   
 The node_flh will produce one tiff image file per input Envisat MERIS Level 1 product.
 
-These files are all available in the Sandbox Hadoop distributed filesystem. See Hands-on exercise 8 :doc:`browse published results <browseresults>` on how to access the HDFS filesystem through the Web interface.
+These files are all available in the Sandbox Hadoop distributed filesystem. See :doc:`Hands-on Exercise 8 - browse published results <../../../developer/browseresults>` on how to access the HDFS filesystem through the Web interface.
 
 Testing the entire workflow execution
 -------------------------------------
