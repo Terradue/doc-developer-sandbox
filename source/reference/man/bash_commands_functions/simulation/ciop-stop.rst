@@ -9,28 +9,28 @@ Synopsis
 Description
 -----------
 
-ciop-stop kills a RUNNING Oozie job.
+``ciop-stop`` kills a RUNNING Oozie job.
 
 
 Options
 -------
 
 ``[Job ID]``
-  This must be the ID of the RUNNING Job to be killed. If no Job ID is specified, the last one is killed.
+This must be the ID of the RUNNING Job to be killed. If no Job ID is specified, the last one is killed.
 
 ``[-a]``
-  kill all the RUNNING Jobs
+Kill all the RUNNING Jobs
 
 ``[-l]``
-  list all the RUNNING Jobs
+List all the RUNNING Jobs
 
 Exit Status
 -----------
 
 ``ciop-stop`` command exits with
 
-0           Job killed successfully or no RUNNING Job found
-255         invalid options are provided
+* 0           Job killed successfully or no RUNNING Job found
+* 255         invalid options are provided
 any other exit code is from the executable itself
 
 Examples
