@@ -74,23 +74,23 @@ Trigger the WPS service
 The following images show the steps that we have just performed:
 
 .. figure:: includes/wps/gui1.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: WPS Service
 
 .. figure:: includes/wps/gui2.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: WPS Service
 
 .. figure:: includes/wps/gui3.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: WPS Service
 
 .. figure:: includes/wps/gui4.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: WPS Service
 
 .. figure:: includes/wps/gui5.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: WPS Service
 
 Recap
