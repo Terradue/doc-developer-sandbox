@@ -15,14 +15,14 @@ Description
 Options
 -------
 
-``[Job ID]``
-This must be the ID of the RUNNING Job to be killed. If no Job ID is specified, the last one is killed.
+``Job ID``
+    This must be the ID of the RUNNING Job to be killed. If no Job ID is specified, the last one is killed.
 
-``[-a]``
-Kill all the RUNNING Jobs
+``-a``
+    Kill all the RUNNING Jobs
 
-``[-l]``
-List all the RUNNING Jobs
+``-l``
+    List all the RUNNING Jobs
 
 Exit Status
 -----------

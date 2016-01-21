@@ -44,13 +44,13 @@ Exit Status
 
 ``ciop-catcp`` command exits
 
-0 on success, and >0 if an error occurs
+* 0 on success, and >0 if an error occurs
 
-10 if the source catalogue RDF url could not be retrieved
+* 10 if the source catalogue RDF url could not be retrieved
 
-15 if the series could not be inserted in the local catalogue
+* 15 if the series could not be inserted in the local catalogue
 
-20 if the dataset could not be inserted in the local catalogue
+* 20 if the dataset could not be inserted in the local catalogue
 
 Examples
 --------
