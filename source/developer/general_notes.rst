@@ -85,6 +85,12 @@ Install additional software
 
  sudo yum install <package name>
  
+* You can also install the Python packages you need by using the *conda* command since the user *<sandbox_user>* has sudo privileges for *conda*:
+
+ .. code-block:: console
+
+  sudo conda install <package name>
+ 
 .. NOTE::
   As the exercises progress and you gain more familiarity with the CIOP framework, the Hadoop and the MapReduce, we provide fewer step by step instructions. You feel free to ask to us for explainations or doubts using our Support Site https://support.terradue.com. We'll be happy to help !
 
