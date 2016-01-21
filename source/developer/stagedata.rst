@@ -80,7 +80,7 @@ Publish the data
   
 Several programming or scripting languages are supported to implement the run executable. In the above example we used *bash*.  
 
-* Note the *ciop-publish* command
+* Note the *ciop-publish* command:
 
 .. container:: context-run-executable
 
