@@ -1,5 +1,5 @@
-Simulation
-==========
+Worklow simulation and invocation
+=================================
 
 contents:
 
