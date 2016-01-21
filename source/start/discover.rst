@@ -75,7 +75,7 @@ Oozie Web GUI
 
 To view processes launched with the ciop-run command you can use the Hadoop Job Tracker.
 
-.. figure:: assets/hadoop_console.png
+.. figure:: assets/oozie_console.png
   :width: 500px
   :align: center
   :alt: alternate text
