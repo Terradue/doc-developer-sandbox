@@ -65,7 +65,7 @@ Run and debug the workflow
 * Check the log of one of the two Tasks, as described in :doc:`make a robust workflow and debug it <debug>`. It will be similar to: 
 
 .. figure:: includes/catalogue/gui1.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: Task output
 
 Note that the input product is now downloaded from an external repository, resulting from the initial OpenSearch query to the catalogue, and from the way that catalogue references datasets.
