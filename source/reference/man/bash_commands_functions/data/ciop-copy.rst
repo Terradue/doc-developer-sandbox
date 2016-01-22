@@ -9,8 +9,25 @@ Synopsis
 Description
 -----------
 
-``ciop-copy`` copies to a local folder the products associated to the URL passed as argument. ciop-copy supports several drivers such as HTTP, HTTPs, HDFS, etc. ciop-copy can also copy products passed as RDF catalogue entry URLs.
+``ciop-copy`` copies to a local folder the enclosure URL passed as argument. The input may come either from the tool opensearch-client, e.g.:
 
+.. code-block:: bash
+
+	opensearch-client "${MASTER}" enclosure | ciop-copy -f -O ${UUIDTMP}/data/master -
+
+or from the use of the source type "cas:series" in the application.xml, e.g.:
+
+.. code-block:: xml
+
+	<source id="cas_source" refid="cas:series">http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description</source>	
+
+.. code-block:: bash
+
+	while read product
+	do
+		prod=$( echo $product | ciop-copy -U -o ${TMPDIR}/input - )
+	done
+	
 Options
 -------
 
@@ -111,25 +128,6 @@ If the -a option is used, the exit code is set to the error code of the last URL
 
 * 1 resource pointed by input URL does not exist
 
-Examples
---------
-
-**Example 1**. Copy a product from the online resources included in the RDF catalogue entry URL (it requires ESA UM-SSO credentials)
-
-.. code-block:: bash
-
-    ciop-copy -o . http://eo-virtual-archive4.esa.int/search/ASA_IM__0P/ASA_IM__0CNPAM20080706_092427_000000162070_00079_33199_3531.N1/rdf
-
-**Example 2**. simple copy of an URL (master_url), the variable master_local_file will contain the value of the download file local path
-
-.. code-block:: bash
-
-    master_local_file=‘echo $master_url | ciop-copy -o $TMPDIR -‘
-
-See Also
---------
-
-:doc:`ciop-catcp <../catalogue/ciop-catcp>`
 
 Author
 ------
