@@ -9,29 +9,12 @@ Synopsis
 Description
 -----------
 
-``ciop-copy`` copies to a local folder the enclosure URL passed as argument. The input may come either from the tool opensearch-client, e.g.:
+``ciop-copy`` copies to a local folder the enclosure URL (the online resource taken from a catalogue) passed as argument. The inputs may come from:
 
-.. code-block:: bash
+* the tool opensearch-client
+* the use of the source type "cas:series" in the application.xml
 
-	opensearch-client "${MASTER}" enclosure | ciop-copy -f -O ${UUIDTMP}/data/master -
 
-or from the use of the source type "cas:series" in the application.xml, e.g.:
-
-**Application.xml:**
-
-.. code-block:: xml
-
-	<source id="cas_source" refid="cas:series">http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description</source>	
-
-**run.sh:**
-
-.. code-block:: bash
-
-	while read product
-	do
-		prod=$( echo $product | ciop-copy -U -o ${TMPDIR}/input - )
-	done
-	
 Options
 -------
 
@@ -132,6 +115,32 @@ If the -a option is used, the exit code is set to the error code of the last URL
 
 * 1 resource pointed by input URL does not exist
 
+Examples
+--------
+
+Input from opensearch-client:
+
+.. code-block:: bash
+
+	opensearch-client "${MASTER}" enclosure | ciop-copy -f -O ${UUIDTMP}/data/master -
+
+Input from the use of the source type "cas:series" in the application.xml, e.g.:
+
+**Application.xml:**
+
+.. code-block:: xml
+
+	<source id="cas_source" refid="cas:series">http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description</source>	
+
+**run.sh:**
+
+.. code-block:: bash
+
+	while read product
+	do
+		prod=$( echo $product | ciop-copy -U -o ${TMPDIR}/input - )
+	done
+	
 
 Author
 ------
