@@ -17,13 +17,13 @@ Description
 
 or from the use of the source type "cas:series" in the application.xml, e.g.:
 
-Application.xml:
+*Application.xml:*
 
 .. code-block:: xml
 
 	<source id="cas_source" refid="cas:series">http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description</source>	
 
-run.sh
+*run.sh:*
 
 .. code-block:: bash
 
