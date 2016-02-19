@@ -4,25 +4,21 @@ ciop-stop
 Synopsis
 --------
 
-**ciop-stop** [-a] [-l] [Job ID]
+**ciop-stop** [options] [job_ID]
 
 Description
 -----------
 
-``ciop-stop`` kills a RUNNING Oozie job.
-
+``ciop-stop`` kills the most recent RUNNING worflow. If **job_ID** is provided, the RUNNING workflow corresponding at the specified **job_ID** is killed. 
 
 Options
 -------
 
-``Job ID``
-    This must be the ID of the RUNNING Job to be killed. If no Job ID is specified, the last one is killed.
+``-l``
+    Provides the job IDs of all the RUNNING workflows
 
 ``-a``
-    Kill all the RUNNING Jobs
-
-``-l``
-    List all the RUNNING Jobs
+    Kill all the RUNNING workflows
 
 Exit Status
 -----------
