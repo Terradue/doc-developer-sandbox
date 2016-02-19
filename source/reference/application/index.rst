@@ -4,13 +4,13 @@ Application descriptor reference
 Purpose
 -------
 
-The Application descriptor file is an XML document that describes an Application workflow (see :doc:`Application workflow </design/workflow>`). Through it you can define in a structured file the steps needed from your application to:
+The Application descriptor file is an XML document that describes an Application workflow (see :doc:`Application workflow </design/workflow>`). With it you can define in a structured way, the steps needed by your application to:
 
-* define an interface for the service (using WPS);
+* provide a service interface (based on the OGC WPS standard);
 * discover and download input data;
 * process data, producing intermediate and final results;
-* trigger remote processors;
-* publish results.
+* trigger remote web processing services;
+* publish result files.
 
 Descriptor type
 ---------------
@@ -32,7 +32,7 @@ The **first part** defines the job templates that are then instantiated as workf
 Each job template contains:
 
 * the path to the streaming executable
-* parameters and optionally their allowed and default valus
+* parameters and optionally their allowed and default values
 * properties (e.g. maximum number of tasks, processin timeout, etc.)
 
 The **second part** contains the workflow steps, here called "nodes".
@@ -78,7 +78,7 @@ Attributes
 +=================+======================================================================================================================+
 | mapred_action   | Default job Template type. This type will be used as default if no type is defined.                                  |
 +-----------------+----------------------------------------------------------------------------------------------------------------------+
-| wps_client      | A job Type which is a connector for external WPS servers. A set of default job configuration is needed (see Table 8).|
+| wps_client      | A job Type which is a connector for external OGC WPS servers. A set of default job configuration is needed (see Table 8).|
 +-----------------+----------------------------------------------------------------------------------------------------------------------+
 
 **Table 2: jobType data structure.**
@@ -174,7 +174,7 @@ Attributes (for the single parameter)
 +----------+----------------------------------------------------------+
 | Value    | Definition                                               |
 +==========+==========================================================+
-| runtime  | The element will be exposed by the WPS interface         |
+| runtime  | The element will be exposed by the OGC WPS interface     |
 +----------+----------------------------------------------------------+
 | test     | The element will use as value the one defined in the xml |
 +----------+----------------------------------------------------------+
@@ -275,7 +275,7 @@ Possible IDs and values (for the single property)
 +=====================+=========================+===========================================================================================================================================+
 | mapred.task.timeout | nonNegativeInteger type | The number of milliseconds before a task will be terminated if it neither reads an input, writes an output, nor updates its status string.|
 +---------------------+-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| ciop.job.max.tasks  | nonNegativeInteger type | The number of parallel jobs to be run instantiating the job template. This number should fit the number of node of the cluster.           |
+| ciop.job.max.tasks  | nonNegativeInteger type | The number of parallel jobs to be ran, instantiating the job template. This number should fit with the number of available nodes on the cluster.           |
 +---------------------+-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 **Table 7: Possible configuration properties.**
@@ -290,13 +290,13 @@ In case of jobType="wps_client" a list of configuration properties has to be def
 +==============================+==================================+=================================================================================================================================+
 | ogc.wps.access.point         | Character String type, not empty | The end point of the remote WPS server. e.g.: http://remoteWPS:8080/wps/WebProcessingService                                    |
 +------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| ogc.wps.process.identifier   | Character String type, not empty | The name of the process of the remote WPS server. e.g.: com.terradue.wps_oozie.process.OozieAbstractAlgorithm                   |
+| ogc.wps.process.identifier   | Character String type, not empty | The name of the process of the remote OGC WPS server. e.g.: com.terradue.wps_oozie.process.OozieAbstractAlgorithm                   |
 +------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| ogc.wps.storeExecuteResponse | true/false                       | True if the call to WPS has to be asynchronous.                                                                                 |
+| ogc.wps.storeExecuteResponse | true/false                       | True if the call to OGC WPS has to be asynchronous.                                                                                 |
 +------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| ogc.wps.status               | true/false                       | True if the call to WPS has to be asynchronous.                                                                                 |
+| ogc.wps.status               | true/false                       | True if the call to OGC WPS has to be asynchronous.                                                                                 |
 +------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| ciop.job.max.tasks           | nonNegativeInteger type          | The number of parallel jobs to be run instantiating the job template. This number should fit the number of node of the cluster. |
+| ciop.job.max.tasks           | nonNegativeInteger type          | The number of parallel jobs to be ran, instantiating the job template. This number should fit with the number of available nodes on the cluster. |
 +------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
 **Table 8: Mandatory configuration properties in case of jobType = "wps_client".**
@@ -405,7 +405,7 @@ Job
 Description
 ~~~~~~~~~~~~
 
-Every node instantiates a job templates.
+Every node instantiates a job template.
 
 Tag definition
 ~~~~~~~~~~~~~~
@@ -478,7 +478,7 @@ Attributes
 +-------------+----------------------------------+----------------------------------------------------------------------------------------------------+
 | \file:urls  | Character String type, not empty | The full path of a file containing the list of inputs                                              |
 +-------------+----------------------------------+----------------------------------------------------------------------------------------------------+
-| cas:series  | Character String type, not empty | The description URL of a cas catalogue series. Each dataset returned by the query will be an input |
+| cas:series  | Character String type, not empty | The description URL of a catalogue series (cas). Each dataset returned by the query will be an input |
 +-------------+----------------------------------+----------------------------------------------------------------------------------------------------+
 | wf:node     | Character String type, not empty | The id of a previous node from which to take the output                                            |
 +-------------+----------------------------------+----------------------------------------------------------------------------------------------------+
@@ -531,7 +531,7 @@ Attributes (for the single parameter)
 Possible values (for the single parameter)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The possible values for the single parameter are the same of the Default Parameters. So in the case of type="LiteralData" (default "type" if not defined), the parameter element can be defined with:
+The possible values for the single parameter are the same as for the Default Parameters. So in the case of type="LiteralData" (default "type" if not defined), the parameter element can be defined with:
 
 * **no values** 
 
@@ -544,7 +544,7 @@ The possible values for the single parameter are the same of the Default Paramet
 A complete example
 ------------------
 
-Download the file :download:`Application.xml complete example <./application.xml>` to view a complete example of an application descriptor file.
+Download the file :download:`Application.xml complete example <./application.xml>` to view an application descriptor file featuring all the tags and parameters referenced in this guide.
 
 Application descriptor schema
 -----------------------------
