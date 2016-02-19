@@ -4,12 +4,12 @@ ciop-run
 Synopsis
 --------
 
-``ciop-run`` [options] [node id]
+``ciop-run`` [options] [node_id]
 
 Description
 -----------
 
-ciop-run runs a workflow or a node of a workflow.
+ciop-run executes either an application workflow or, if provided the [node_id], a single step of the application workflow.
 
 Options
 -------
@@ -53,7 +53,7 @@ Options
     Default: {}
 
 ``-w, --workflowfId``
-    The previous workflow id to use as input (e.g. 0000001-140613165901451-oozie-oozi-W).
+    The previous workflow id to use as input (e.g., 0000001-140613165901451-oozie-oozi-W).
 
 Exit Status
 -----------
