@@ -9,7 +9,7 @@ Synopsis
 Description
 -----------
 
-``ciop-stop`` kills the most recent RUNNING worflow. If **job_ID** is provided, the RUNNING workflow corresponding at the specified **job_ID** is killed. 
+``ciop-stop`` kills the most recent RUNNING worflow. If job_ID is provided, the RUNNING workflow corresponding at the specified job_ID is killed. 
 
 Options
 -------

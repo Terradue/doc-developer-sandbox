@@ -9,7 +9,7 @@ Synopsis
 Description
 -----------
 
-ciop-run executes either an application workflow or, if provided the [node_id], a single step of the application workflow.
+ciop-run executes either an application workflow or, if the node_id is provided, a single step of the application workflow.
 
 Options
 -------
