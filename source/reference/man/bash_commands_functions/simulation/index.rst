@@ -1,10 +1,10 @@
-Simulation
-==========
+Worklow simulation and invocation
+=================================
 
 contents:
 
 .. toctree::
    :maxdepth: 2
    
-   ciop-simjob <ciop-simjob>
-   ciop-simwf <ciop-simwf>
+   ciop-run <ciop-run>
+   ciop-stop <ciop-stop>

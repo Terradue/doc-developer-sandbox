@@ -33,9 +33,9 @@ Exit Status
 
 ``ciop-casmeta`` command exits
 
-0 when successful
+* 0 when successful
 
-1 in case of error(s)
+* 1 in case of error(s)
 
 Examples
 --------

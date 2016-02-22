@@ -5,10 +5,11 @@ Hands-On Exercise 5: using parameters
 
 In this exercise we will study the usage of parameters in the workflow.   
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 ====================
@@ -39,10 +40,10 @@ Inspect the run executable
 
 .. container:: context-run-executable
 
-  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-5/expression/run
+  .. literalinclude:: src/dcs-hands-on/src/main/app-resources/hands-on-5/bash/expression/run
         :language: bash
         :tab-width: 2
-        :lines: 35-39
+        :lines: 100-104
 
 
 Run and debug the workflow
@@ -52,12 +53,12 @@ Run and debug the workflow
 
 .. code-block:: console
 
-  ciop-simjob node_expression
+  ciop-run node_expression
 
-* Check the output of the application by copying the Tracking URL from the *ciop-simjob* command, and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
+* Check the output of the application by copying the Tracking URL from the *ciop-run* command, and paste it in a browser (see :doc:`make a robust workflow and debug it <debug>`). You will see an output similar to:
 
 .. figure:: includes/parameters/gui1.png
-     :scale: 70 %
+     :scale: 55 %
      :alt: Attempts output
 
 Recap

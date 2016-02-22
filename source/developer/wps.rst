@@ -6,10 +6,11 @@ Hands-On Exercise 10: prepare an OGC Web Processing Service
 In this exercise we will prepare our workflow in order to expose an OGC Web Processing Service (WPS) [#f1]_ interface, 
 and we will trigger it through a WPS Client.
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 ====================
@@ -74,23 +75,23 @@ Trigger the WPS service
 The following images show the steps that we have just performed:
 
 .. figure:: includes/wps/gui1.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: WPS Service
 
 .. figure:: includes/wps/gui2.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: WPS Service
 
 .. figure:: includes/wps/gui3.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: WPS Service
 
 .. figure:: includes/wps/gui4.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: WPS Service
 
 .. figure:: includes/wps/gui5.png
-   :scale: 80 %
+   :scale: 70 %
    :alt: WPS Service
 
 Recap

@@ -4,267 +4,553 @@ Application descriptor reference
 Purpose
 -------
 
-The Application descriptor file is an XML document that describes an Application workflow (see :doc:`Application workflow </design/workflow>`) and it contains two blocks:
+The Application descriptor file is an XML document that describes an Application workflow (see :doc:`Application workflow </design/workflow>`). With it you can define in a structured way, the steps needed by your application to:
 
-#. jobTemplates
-#. workflow
+* provide a service interface (based on the OGC WPS standard);
+* discover and download input data;
+* process data, producing intermediate and final results;
+* trigger remote web processing services;
+* publish result files.
 
-The **first block** defines the job templates that are then instantiated as workflow nodes of the Directed Acyclic Graph.
-
-Each job template contains:
-
-* the path to the streaming executable
-* parameters and optionaly their default value 
-* properties (e.g. maximum number of tasks, wall-time, etc.)
-
-The **second block** contains the workflow nodes.
-
-The workflow contains the nodes, each defining:
-
-* the source for the inputs (e.g. a previous node, a catalogue series, a local file or a list of values)  
-* their parameter values to override the default parameters (defined in the job template above)
-
-Type
-----
+Descriptor type
+---------------
 
 The application descriptor is an XML file available in $_CIOP_APPLICATION_PATH/application.xml 
 
 .. note:: the value $_CIOP_APPLICATION_PATH is /application
 
-Format
-------
+Descriptor structure
+--------------------
 
-The application descriptor file structure is available below:
+The application descriptor structure consists of two separate sections:
 
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-| Level	    | Tag name              | Descendants                                               | Tag Contents                  | Cardinality   | Attribute name                | Attribute value        |
-+===========+=======================+===========================================================+===============================+===============+===============================+========================+
-|>          | application           | All                                                       | -                             | 1..1          | -                             | -                      |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|1          | jobTemplates          | jobTemplate                                               | -                             | 1..1          | -                             | -                      |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|2          | jobTemplate           | streamingExecutable, defaultParameters, defaultJobconf    | -                             | 1..*          | id                            |job template name       |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+
-|3          | streamingExecutable   | none                                                      | path to streaming executable	| 1..1          | -                             | -                      |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|3          | defaultParameters     | parameter                                                 | -                             | 0..1          | -                             | -                      |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|4          | parameter             | -                                                         | parameter default value       | 0..*          | id                            |parameter name          |	
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|3          | defaultJobconf        | -                                                         | -                             | 0..1          | -                             | -                      |		
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|4          | property              | -                                                         | property value                | 0..*          | id                            | property value         |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|1          | workflow              | workflowVersion,node                                      | -                             | 1..1          | id                            | workflow name          |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|2          | workflowVersion       | -                                                         | workflow version              | 1..1          | -                             | -                      |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|2          | node                  | job, sources, parameters                                  | -                             | 1..*          | id                            | node name	         |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|3          | job                   | -                                                         | -                             | 1..1          | id                            |job template name       |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|3          | sources               | source                                                    | -                             | 1..1          | -                             | -                      |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|4          | source                | -                                                         | source value                  | 1..*          | refid                         |file:urls, wf:node,     |
-|           |                       |                                                           |                               |               |                               |cas:series, string:list |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|3          | parameters            | parameter                                                 | -                             | 0..*          | -                             | -                      |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
-|4          | parameter             | -                                                         | parameter value (overrides    | 0..*          | id                            | parameter name         |
-|           |                       |                                                           |  the default value)		|               |                               |                        |
-+-----------+-----------------------+-----------------------------------------------------------+-------------------------------+---------------+-------------------------------+------------------------+	
+#. jobTemplates
+#. workflow
 
-.. tip:: Check your application descriptor file with the :doc:`ciop-appcheck </reference/man/bash_commands_functions/miscellaneous/ciop-appcheck>` utility
+The **first part** defines the job templates that are then instantiated as workflow steps of the Directed Acyclic Graph.
 
+Each job template contains:
 
-Application descriptor values and properties
---------------------------------------------
+* the path to the streaming executable
+* parameters and optionally their allowed and default values
+* properties (e.g. maximum number of tasks, processin timeout, etc.)
 
-source refid values
-^^^^^^^^^^^^^^^^^^^
+The **second part** contains the workflow steps, here called "nodes".
 
-.. _reference_file:
+Each node can contain:
 
-Reference to a file
-~~~~~~~~~~~~~~~~~~~
+* the source for the inputs (e.g. a previous node, a catalogue series, a local file or a list of values)  
+* their parameter values to override the default parameters (defined in the job template above)
 
-Define a source as a local ASCII file containing one element per line.
+Job Templates
+-------------
 
-The file can contain any value to be processed: references to products, list of areas of interest, etc.
-
-.. note:: this method sould be used in the early stages of the application development and testing.
-	It should be replaced by a comma-separated list of values or a reference to a catalogue.
-
-Local files will use the *file://* protocol and are defined in the workflow as follows:
-
-.. code-block:: xml
-
-	<workflow id="somename">							
-		<workflowVersion>1.0</workflowVersion>
-			<node id="somenodeid">
-				<job id="job_template1"/>
-				<sources>
-	 				<source refid="file:urls" >/application/input.urls</source>
-				</sources>
-			</node>
-	</workflow>
-
-and the file *input.urls* contains the references to the local files:
-
-.. code-block:: bash
-
-	[ user@sb ~] cat /application/input.urls	
-	file:///tmp/somefile1						
-	file:///tmp/somefile2						
-	file:///tmp/somefile3						
-
-Then the job streaming executable can use :doc:`ciop-copy </reference/man/bash_commands_functions/data/ciop-copy>` to copy the files if needed.
-
-.. code-block:: bash
-
-	while read inputfile
-	do
-		local_url=`echo $inputfile | ciop-copy -o ./ -`
-		# do something with the local_url
-		...
-	done 
-
-To process areas of interest:
-  
-.. code-block:: bash
-
-	[ user@sb ~] cat /application/aoi.list
-	-10,-10,10,10
-	10,10,20,20
-
-In the example above, the executable manages the inputs (areas of interest defined as bounding boxes) with:
-
-.. code-block:: bash
-
-	while read bbox
-	do
-		echo "processing bounding box $bbox"
-		# do something with the bbox value
-		...
-	done 
-
-.. _reference_csv:
-
-List of comma-separated values
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Passing a list of values to a job follows the same approach as above. 
-
-.. code-block:: xml
-
-	<workflow id="somename">							
-		<workflowVersion>1.0</workflowVersion>
-			<node id="somenodeid">
-				<job id="job_template1"/>
-				<sources>
-	 				<source refid="string:list" >value1,value2</source>
-				</sources>
-			</node>
-	</workflow>
-
-.. _reference_catalogue:
-
-Products available in a catalogue 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If the products to process are available in a catalogue (either an external catalogue or the sandbox local catalogue), the source is defined as a reference to 
-the dataset series URL for its OpenSearch description document.
-
-.. tip:: Check how to copy dataset catalogue entries by reference or by value (the dataset is copied physically to the sandbox storage)
-	to the sandbox internal catalogue with the :doc:`ciop-catcp </reference/man/bash_commands_functions/catalogue/ciop-catcp>` utility
-
-To reference an external catalogue, the workflow node is defined as follows:
-
-.. code-block:: xml
-
-	<workflow id="somename">							
-		<workflowVersion>1.0</workflowVersion>
-			<node id="somenodeid">
-				<job id="job_template1"/>
-				<sources>
-	 				<source refid="cas:series">http://catalogue.terradue.int/catalogue/search/MER_FRS_1P/description</source>
-				</sources>
-			</node>
-	</workflow>
-
-To reference a dataset series in the sandbox internal catalogue
-
-.. code-block:: xml
-
-	<workflow id="somename">							
-		<workflowVersion>1.0</workflowVersion>
-			<node id="somenodeid">
-				<job id="job_template1"/>
-				<sources>
-	 				<source refid="cas:series">http://localhost/catalogue/sandbox/MER_FRS_1P/description</source>
-				</sources>
-			</node>
-	</workflow>
-
-
-As an example, the job executable would contain the lines below to copy the catalogue products locally: 
-
-.. code-block:: bash
-
-	while read inputfile
-	do
-		local_url=`echo $inputfile | ciop-copy -o ./ -`
-		# do something with the local_url
-		...
-	done 
-
-Outputs from a previous node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The sources defined above are used in the starting node(s) of the workflow.
-The subsequent nodes will use the outputs produced by the parent nodes.
-
-
-.. code-block:: xml
-
-	<workflow id="somename">							
-		<workflowVersion>1.0</workflowVersion>
-		<node id="some_node_1">
-			<job id="some_job_template_1"></job>
-			<sources>
-				<source refid="file:urls">/application/inputparams</source>
- 			</sources>
-		</node>
-		<node id="some_node_2">
-			<job id="some_job_template_2"></job>
-			<sources>
-				<source refid="wf:node">some_node_1</source>
-			</sources>
-		</node>
-	</workflow>
-
-Job configuration
+Parent definition
 ^^^^^^^^^^^^^^^^^
 
-At job template level, the properties below can be defined:
+Tag definition
+~~~~~~~~~~~~~~
 
-+---------------------+-----------+----------------------------------------+
-|	Property      |   values  | Description                            |												
-+=====================+===========+========================================+
-| ciop.job.max.tasks  | integer   | sets the maximum number of instances   |
-|                     |           | (tasks) to process the inputs          |
-+---------------------+-----------+----------------------------------------+												
-| mapred.task.timeout | integer   | number of milliseconds of walltime for |
-|                     |           | the execution of a job without         |
-|                     |           | reporting via ciop-log                 |
-+---------------------+-----------+----------------------------------------+
-
-.. note:: Set the property *ciop.job.max.tasks* to 1 if all inputs have to be processed by a single task (e.g. aggregation).
-	You don't need to set its value if the node instantiates several tasks, the platform knows how many instances it needs/can instantiate
+.. code-block:: xml
 	
+    <jobTemplates>
+    	<jobTemplate></jobTemplate>
+    </jobTemplates>
+
+|
+ 
+Attributes
+~~~~~~~~~~   
++----------+----------------------------------+-----------+
+| Name     | Data type and values             | Mandatory |
++==========+==================================+===========+
+| id       | Character String type, not empty | Yes       |
++----------+----------------------------------+-----------+
+| jobType  | jobType data structure, Table 2  | No        |
++----------+----------------------------------+-----------+
+
+**Table 1: Job Templates attributes.**
+
+|
+
++-----------------+----------------------------------------------------------------------------------------------------------------------+
+| Value           | Definition                                                                                                           |
++=================+======================================================================================================================+
+| mapred_action   | Default job Template type. This type will be used as default if no type is defined.                                  |
++-----------------+----------------------------------------------------------------------------------------------------------------------+
+| wps_client      | A job Type which is a connector for external OGC WPS servers. A set of default job configuration is needed (see Table 8).|
++-----------------+----------------------------------------------------------------------------------------------------------------------+
+
+**Table 2: jobType data structure.**
+
+|
+
+Streaming Executable
+^^^^^^^^^^^^^^^^^^^^
+
+Description
+~~~~~~~~~~~~
+
+The local path of the executable script called by this job to process the inputs. In the case of jobType="wps_client" it must be omitted.
+Supported languages:
+
+* Bash
+* Python
+* R
+
+
+Tag definition
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+	
+	<jobTemplate>
+	    <streamingExecutable></streamingExecutable>
+	</jobTemplate>
+
+|	
+	
+Attributes
+~~~~~~~~~~
+
+None
+
 Example
--------
+~~~~~~~
 
-Download the file :download:`Ocean Colour Algal Bloom Detection </field/ocean_color/lib_beam/src/src/main/app-resources/application.xml>` field guide application
-to view a complete example of an application descriptor file 
+.. code-block:: xml
 
+    <streamingExecutable>/application/mynode/run.sh</streamingExecutable>
+
+
+Default Parameters
+^^^^^^^^^^^^^^^^^^
+
+Description
+~~~~~~~~~~~~
+
+The default parameters for the job. You can override their attributes and values by using the parameters section of the workflow.
+
+Tag definition
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+	<jobTemplate>
+		<defaultParameters>
+			<parameter></parameter>
+		</defaultParameters>	
+	</jobTemplate>
+
+|
+
+Attributes (for the single parameter)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
+| Name      | Data type and values                                                                                       | Mandatory | If "scope = runtime" |
++===========+============================================================================================================+===========+======================+
+| id        | Character String type, not empty                                                                           | Yes       | Yes                  |
++-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
+| title     | Character String type, not empty                                                                           | No        | Yes                  |
++-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
+| abstract  | Character String type, not empty                                                                           | No        | Yes                  |
++-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
+| scope     | Scope data structure, Table 4                                                                              | No        | -                    |
++-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
+| type      | Type data structure, Table 5                                                                               | No        | No                   |
++-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
+| target    | Query parameter from the description of the source catalogue (mandatory in case of type="opensearch")      | No        | No                   |
++-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
+| minOccurs | Minimum number of expected instances of the parameter (WPS). By default is 1 (meaning that it's mandatory) | No        | No                   |
++-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
+| maxOccurs | Maximum number of expected instances of the parameter (WPS). By default is 100                             | No        | No                   |
++-----------+------------------------------------------------------------------------------------------------------------+-----------+----------------------+
+
+**Table 3: Default Parameters attributes.**
+
+|
+
++----------+----------------------------------------------------------+
+| Value    | Definition                                               |
++==========+==========================================================+
+| runtime  | The element will be exposed by the OGC WPS interface     |
++----------+----------------------------------------------------------+
+| test     | The element will use as value the one defined in the xml |
++----------+----------------------------------------------------------+
+
+**Table 4: Scope data structure.**
+
+|
+
++-----------------+------------------------------------------------------------------------------------------------------------------+
+| Value           | Definition                                                                                                       |
++=================+==================================================================================================================+
+| LiteralData     | Character String type, not empty (default type if not defined)                                                   |
++-----------------+------------------------------------------------------------------------------------------------------------------+
+| BoundingBoxData | Coordinates of the Area Of Interest according to the format urn:ogc:def:crs:EPSG:6.6:4326                        |
++-----------------+------------------------------------------------------------------------------------------------------------------+
+| opensearch      | Character String type, not empty. The value is used to query the source catalogue according to the target value. |
++-----------------+------------------------------------------------------------------------------------------------------------------+
+
+**Table 5: Type data structure.**
+
+|
+
+Possible values (for the single parameter)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the case of type="LiteralData" (default "type" if not defined), the parameter element can be defined with:
+
+* **no values. e.g.:** 
+
+	.. code-block:: xml
+	
+		<parameter id="myparam"/>
+
+* **a string value. e.g.:**
+
+	.. code-block:: xml
+
+	    <parameter id="myparam">My param value</parameter>
+	
+* **a list of <options>. e.g.:**
+
+	.. code-block:: xml
+
+	    <parameter id="myparam">
+    	        <options>
+                    <option>value1</option>
+                    <option>value2</option>
+                <options>
+   	    </parameter>
+
+	optionally it is possible to add a default value to the option list (to be picked from the list of the options):
+
+	.. code-block:: xml
+
+            <parameter id="myparam">
+                <options>
+                    <option>value1</option>
+                    <option>value2</option>
+                    <default>value1</default>
+                </options>
+            </parameter>
+
+|
+
+Default Job Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Tag definition
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+	<jobTemplate>
+		<defaultJobconf>
+			<property></property>
+		</defaultJobcon>
+	</jobTemplate>
+
+|
+	
+Attributes (for the single property)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------+----------------------------------+-----------+
+| Name     | Data type and values             | Mandatory |
++==========+==================================+===========+
+| id       | Character String type, not empty | Yes       |
++----------+----------------------------------+-----------+
+
+**Table 6: Default property attributes.**
+
+|
+
+Possible IDs and values (for the single property)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------+-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| id                  | Data type and values    | Definition                                                                                                                                |
++=====================+=========================+===========================================================================================================================================+
+| mapred.task.timeout | nonNegativeInteger type | The number of milliseconds before a task will be terminated if it neither reads an input, writes an output, nor updates its status string.|
++---------------------+-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| ciop.job.max.tasks  | nonNegativeInteger type | The number of parallel jobs to be ran, instantiating the job template. This number should fit with the number of available nodes on the cluster.           |
++---------------------+-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+**Table 7: Possible configuration properties.**
+
+|
+
+In case of jobType="wps_client" a list of configuration properties has to be defined:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| id                           | Data type and values             | Definition                                                                                                                      |
++==============================+==================================+=================================================================================================================================+
+| ogc.wps.access.point         | Character String type, not empty | The end point of the remote WPS server. e.g.: http://remoteWPS:8080/wps/WebProcessingService                                    |
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| ogc.wps.process.identifier   | Character String type, not empty | The name of the process of the remote OGC WPS server. e.g.: com.terradue.wps_oozie.process.OozieAbstractAlgorithm                   |
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| ogc.wps.storeExecuteResponse | true/false                       | True if the call to OGC WPS has to be asynchronous.                                                                                 |
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| ogc.wps.status               | true/false                       | True if the call to OGC WPS has to be asynchronous.                                                                                 |
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| ciop.job.max.tasks           | nonNegativeInteger type          | The number of parallel jobs to be ran, instantiating the job template. This number should fit with the number of available nodes on the cluster. |
++------------------------------+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+**Table 8: Mandatory configuration properties in case of jobType = "wps_client".**
+
+|
+
+Workflow
+-------------
+
+Parent definition
+^^^^^^^^^^^^^^^^^
+
+Tag definition
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+	<workflow></workflow>
+
+|
+
+Attributes
+~~~~~~~~~~   
++----------+----------------------------------+-----------+---------+
+| Name     | Data type and values             | Mandatory | For WPS |
++==========+==================================+===========+=========+
+| id       | Character String type, not empty | Yes       | Yes     |
++----------+----------------------------------+-----------+---------+
+| title    | Character String type, not empty | No        | Yes	    |
++----------+----------------------------------+-----------+---------+
+| abstract | Character String type, not empty | No        | Yes	    |
++----------+----------------------------------+-----------+---------+
+
+**Table 9: Workflow attributes.**
+
+|
+
+Workflow version
+^^^^^^^^^^^^^^^^
+
+Description
+~~~~~~~~~~~~
+
+The version number of the Workflow.
+
+
+Tag definition
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+	
+	<workflow>
+	    <workflowVersion></workflowVersion>
+	</workflow>
+
+|	
+	
+Attributes
+~~~~~~~~~~
+
+None
+
+Example
+~~~~~~~
+
+.. code-block:: xml
+
+    <workflowVersion>1.0</workflowVersion>
+
+|
+
+Nodes
+^^^^^
+
+Description
+~~~~~~~~~~~~
+
+Every step of the workflow needs a node section to define the I/O and the sequence of actions.
+
+Tag definition
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+	
+	<workflow>
+		<node></node>
+	</workflow>
+
+|
+
+Attributes
+~~~~~~~~~~   
++----------+----------------------------------+-----------+
+| Name     | Data type and values             | Mandatory |
++==========+==================================+===========+
+| id       | Character String type, not empty | Yes       |
++----------+----------------------------------+-----------+
+
+**Table 10: Node attributes.**
+
+|
+
+Job
+^^^^
+
+Description
+~~~~~~~~~~~~
+
+Every node instantiates a job template.
+
+Tag definition
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+	
+	<node>
+		<job></job>
+	</node>
+
+|
+	
+Attributes
+~~~~~~~~~~   
++----------+-------------------------------------------------------------------------+-----------+
+| Name     | Data type and values                                                    | Mandatory |
++==========+=========================================================================+===========+
+| id       | Character String type, not empty, picked from the job templates section | Yes       |
++----------+-------------------------------------------------------------------------+-----------+
+
+**Table 11: Job attributes.**
+
+| 
+
+Sources
+^^^^^^^
+
+Description
+~~~~~~~~~~~~
+
+Here you can define the inputs of the workflow's step. According to the cardinality of the source, the process will be instantiated in a number of different processes.
+
+Tag definition
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+	
+	<node>
+		<sources>
+			<source></source>
+		</sources>
+	</node>
+
+|    
+    
+Attributes
+~~~~~~~~~~   
++----------+---------------------------------------+-----------+----------------------+
+| Name     | Data type and values                  | Mandatory | If "scope = runtime" |
++==========+=======================================+===========+======================+
+| id       | Character String type, not empty      | No        | Yes                  |
++----------+---------------------------------------+-----------+----------------------+
+| refid    | sourceType data structure, Table 13   | No        | Yes                  |
++----------+---------------------------------------+-----------+----------------------+
+| title    | Character String type, not empty      | No        | Yes	              |
++----------+---------------------------------------+-----------+----------------------+
+| abstract | Character String type, not empty      | No        | Yes	              |
++----------+---------------------------------------+-----------+----------------------+
+| scope    | Scope data structure, Table 4         | No        | -                    |
++----------+---------------------------------------+-----------+----------------------+
+
+**Table 12: Source attributes.**
+
+|
+
++-------------+----------------------------------+----------------------------------------------------------------------------------------------------+
+| id          | Data type and values             | Definition                                                                                         |
++=============+==================================+====================================================================================================+
+| string:list | Character String type, not empty | A list of strings comma separated                                                                  |
++-------------+----------------------------------+----------------------------------------------------------------------------------------------------+
+| \file:urls  | Character String type, not empty | The full path of a file containing the list of inputs                                              |
++-------------+----------------------------------+----------------------------------------------------------------------------------------------------+
+| cas:series  | Character String type, not empty | The description URL of a catalogue series (cas). Each dataset returned by the query will be an input |
++-------------+----------------------------------+----------------------------------------------------------------------------------------------------+
+| wf:node     | Character String type, not empty | The id of a previous node from which to take the output                                            |
++-------------+----------------------------------+----------------------------------------------------------------------------------------------------+
+
+**Table 13: Scope data structure.**
+
+|
+
+Parameters
+^^^^^^^^^^^^^^^^^^
+
+Description
+~~~~~~~~~~~~
+
+The workflow parameters for the node. You can override the attributes and values of the default parameters section of the relative job template. It is not possible to add new parameters in this section.
+
+
+Tag definition
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+	<node>
+		<parameters>
+			<parameter></parameter>
+		</parameters>
+	</node>
+
+|
+	
+Attributes (for the single parameter)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------+-------------------------------------------------------------------------------------------------------+-----------+
+| Name     | Data type and values                                                                                  | Mandatory |
++==========+=======================================================================================================+===========+
+| id       | Character String type, not empty                                                                      | Yes       |
++----------+-------------------------------------------------------------------------------------------------------+-----------+
+| scope    | Scope data structure, Table 4                                                                         | No        |
++----------+-------------------------------------------------------------------------------------------------------+-----------+
+| type     | Type data structure, Table 5                                                                          | No        |
++----------+-------------------------------------------------------------------------------------------------------+-----------+
+| target   | Query parameter from the description of the source catalogue (mandatory in case of type="opensearch") | No        |
++----------+-------------------------------------------------------------------------------------------------------+-----------+
+
+**Table 14: Parameters attributes.**
+
+|
+
+Possible values (for the single parameter)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The possible values for the single parameter are the same as for the Default Parameters. So in the case of type="LiteralData" (default "type" if not defined), the parameter element can be defined with:
+
+* **no values** 
+
+* **a string value**
+	
+* **a list of <options>**
+
+|
+
+A complete example
+------------------
+
+Download the file :download:`Application.xml complete example <./application.xml>` to view an application descriptor file featuring all the tags and parameters referenced in this guide.
+
+Application descriptor schema
+-----------------------------
+
+You can find the schema definition on your Developer Cloud Sandbox under: 
+
+.. code-block:: bash
+
+	/usr/lib/ciop/schemas/application.xsd

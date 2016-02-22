@@ -1,5 +1,5 @@
 ciop-copy (7)
-===============
+=============
 
 Synopsis
 --------
@@ -9,7 +9,11 @@ Synopsis
 Description
 -----------
 
-``ciop-copy`` copies to a local folder the products associated to the URL passed as argument. ciop-copy supports several drivers such as HTTP, HTTPs, HDFS, etc. ciop-copy can also copy products passed as RDF catalogue entry URLs.
+``ciop-copy`` copies to a local folder the enclosure URL (the online resource taken from a catalogue) passed as argument. The inputs may come from:
+
+* the tool opensearch-client
+* the use of the source type "cas:series" in the application.xml
+
 
 Options
 -------
@@ -87,50 +91,56 @@ Exit Status
 
 ``ciop-copy`` command exits
 
-0 all URLs were successfully downloaded
+* 0 all URLs were successfully downloaded
 
-1 an error occured during processing
-255 environment is invalid (e.g. invalid working directory) or invalid options are provided
+* 1 an error occured during processing
 
-254 output directory does not exist or failed creating it (with -c option)
+* 255 environment is invalid (e.g. invalid working directory) or invalid options are provided
+
+* 254 output directory does not exist or failed creating it (with -c option)
 
 If the -a option is used, the exit code is set to the error code of the last URL transfer:
 
-252 no driver available for URL
+* 252 no driver available for URL
 
-251 an existing file or directory conflicts with the sink for the URL in the output
-directory
+* 251 an existing file or directory conflicts with the sink for the URL in the output directory
 
-250 an error occured while unpacking the output file or when packaging/compressing the
-output file (when -z or -Z option is used)
+* 250 an error occured while unpacking the output file or when packaging/compressing the output file (when -z or -Z option is used)
 
-128 a timeout occured while fetching an url
+* 128 a timeout occured while fetching an url
 
-127 a fatal error occured, source of error is not known or not handled by driver
+* 127 a fatal error occured, source of error is not known or not handled by driver
 
-128 error codes specific to the transfer scheme
+* 128 error codes specific to the transfer scheme
 
-1 resource pointed by input URL does not exist
+* 1 resource pointed by input URL does not exist
 
 Examples
 --------
 
-**Example 1**. Copy a product from the online resources included in the RDF catalogue entry URL
-       (it requires ESA UM-SSO credentials)
+Input from opensearch-client:
 
 .. code-block:: bash
 
-    ciop-copy -o . http://eo-virtual-archive4.esa.int/search/ASA_IM__0P/ASA_IM__0CNPAM20080706_092427_000000162070_00079_33199_3531.N1/rdf
+	opensearch-client "${MASTER}" enclosure | ciop-copy -f -O ${UUIDTMP}/data/master -
 
-**Example 2**. simple copy of an URL (master_url), the variable master_local_file will contain the value of the downlaod file local path
+Input from the use of the source type "cas:series" in the application.xml, e.g.:
+
+**Application.xml:**
+
+.. code-block:: xml
+
+	<source id="cas_source" refid="cas:series">http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description</source>	
+
+**run.sh:**
 
 .. code-block:: bash
-    master_local_file=‘echo $master_url | ciop-copy -o $TMPDIR -‘
 
-See Also
---------
-
-:doc:`ciop-catcp <../catalogue/ciop-catcp>`
+	while read product
+	do
+		prod=$( echo $product | ciop-copy -U -o ${TMPDIR}/input - )
+	done
+	
 
 Author
 ------

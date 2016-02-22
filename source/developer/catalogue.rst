@@ -6,10 +6,11 @@ Hands-On Exercise 9: using an OpenSearch catalogue
 In this exercise we will use an OpenSearch [#f1]_ catalogue URL as the input source of the workflow, 
 and query the catalogue with OpenSearch parameters to get the input products.   
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 ====================
@@ -58,14 +59,14 @@ Run and debug the workflow
 
 .. code-block:: console
 
-  ciop-simjob node_expression
+  ciop-run node_expression
 
 * Copy the Tracking URL and paste it in a browser,
 
 * Check the log of one of the two Tasks, as described in :doc:`make a robust workflow and debug it <debug>`. It will be similar to: 
 
 .. figure:: includes/catalogue/gui1.png
-   :scale: 80 %
+   :scale: 60 %
    :alt: Task output
 
 Note that the input product is now downloaded from an external repository, resulting from the initial OpenSearch query to the catalogue, and from the way that catalogue references datasets.

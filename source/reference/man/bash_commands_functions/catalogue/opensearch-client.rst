@@ -40,7 +40,8 @@ Exit Status
 
 ``opensearch-client`` command exits
 
-0 on success, and >0 if an error occurs
+* 0 on success
+* >0 if an error occurs
 
 Examples
 --------

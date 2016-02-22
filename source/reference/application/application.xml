@@ -1,0 +1,72 @@
+<application id="test_app">
+  <jobTemplates>
+    <jobTemplate id="template1">
+      <streamingExecutable>/application/nodes/run1.sh</streamingExecutable>
+      <defaultParameters>
+        <parameter id="dummy" title="Dummy parameter" abstract="Dummy abstract" scope="runtime">test</parameter>
+        <parameter id="dummyOpenSearch" title="opensearch parameter" abstract="Dummy parameter of type opensearch" scope="test" type="opensearch" target="time:start">2002-04-05</parameter>
+      </defaultParameters>
+    </jobTemplate>
+    <jobTemplate id="template2">
+      <streamingExecutable>/application/nodes/run2.sh</streamingExecutable>
+      <defaultParameters>
+      	<parameter id="opt_param" title="Option parameter" abstract="Dummy parameter with options" scope="test">
+      		<options>
+                    <option>value1</option>
+                    <option>value2</option>
+                    <default>value1</default>
+                </options>
+      	</parameter>
+      </defaultParameters>
+    </jobTemplate>
+    <jobTemplate id="template3" jobType="wps_client" >
+	<defaultParameters>
+        	<parameter id="startdate" title="startdate parameter" abstract="startdate abstract" scope="runtime" minOccurs="1" maxOccurs="1">2012-04-06T10:24:29.000Z</parameter>
+		<parameter id="enddate" title="enddate parameter" abstract="startdate abstract" scope="runtime" minOccurs="1" maxOccurs="1">2012-04-07</parameter>
+        	<parameter id="qbbox" title="bbox parameter" abstract="bbox abstract" scope="test" type="BoundingBoxData" minOccurs="1" maxOccurs="1">-9.32,45.21,2.29,52.16</parameter>
+	</defaultParameters>
+	<defaultJobconf>
+    		<property id="ogc.wps.access.point">http://wps_server:8080/wps/WebProcessingService</property>
+        	<property id="ogc.wps.process.identifier">com.terradue.wps_oozie.process.OozieAbstractAlgorithm</property>
+	        <property id="ogc.wps.storeExecuteResponse">true</property>
+	 	<property id="ogc.wps.status">true</property>
+        	<property id="mapred.task.timeout">3600000</property>
+	        <property id="ciop.job.max.tasks">1</property>
+	</defaultJobconf>
+     </jobTemplate>
+  </jobTemplates>
+  <workflow id="test_workflow" title="Test suite" abstract="This test suite is useful to test different functionalities of the Sandbox">
+    <workflowVersion>1.0</workflowVersion>
+    <node id="node1">
+      <job id="template1"></job>
+      <sources>
+ 		<source id="cas_source" refid="cas:series">http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description</source>
+        <source id="simple_strings" refid="string:list">sourceValue1,sourceValue2</source>
+      </sources>
+      <parameters>
+	<parameter id="dummy" scope="test">
+        	<options>
+                    <option>valueA</option>
+                    <option>valueB</option>
+                    <default>valueB</default>
+                </options>
+	</parameter>
+	<parameter id="dummyOpenSearch" scope="runtime" type="opensearch" target="time:start"/>
+      </parameters>
+    </node>
+    <node id="node2">
+      <job id="template2"></job>
+      <sources>
+        <source refid="wf:node">node1</source>
+      </sources>
+      <parameters/>
+    </node>
+    <node id="node3">
+      <job id="template3"></job>
+      <sources>
+        <source refid="wf:node">node2</source>
+      </sources>
+      <parameters/>
+    </node>
+  </workflow>
+</application>

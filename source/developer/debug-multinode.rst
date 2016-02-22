@@ -6,10 +6,11 @@ Hands-On Exercise 7: debug a multi-node workflow
 In this exercise we will see how to debug the workflow described in the exercise :doc:`a multi-node workflow <multinode>`. 
 To do so, we will be using a specific Web GUI, the "Oozie Web Console".
 
-Prerequisite
+Prerequisites
 =============
 
-* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`).
+* You have cloned the Hands-On git repository (see :ref:`hands-on-repo`),
+* *(Only for python)* You have installed the required software (see :ref:`python-reqs`).
 
 Install the Hands-On
 ====================
@@ -29,7 +30,7 @@ Run the workflow
 
 .. code-block:: console
 
-  ciop-simwf
+  ciop-run
 
 * Press CTRL+C 
 
@@ -40,21 +41,19 @@ Run the workflow
 Debug the workflow
 ==================
 
-* Open a browser and type http://$HOSTNAME:11000
-
-  It will present the Oozie Web Console available on the Sandbox. It provides information about the status of the workflows and the access to their logs. 
-
-.. tip::
-  
-  Read how to obtain the value of your Sandbox $HOSTNAME in the :doc:`General Notes <general_notes>` section
-
-* Click on the *Job Id* value,
+* Open the provided Tracking URL
 
 * Click on the *n-node_expression* value under the column *Name*,
 
 * Click on the lens image,
 
-* Continue debugging as described in the exercise :doc:`make a robust workflow and debug it <debug>`. 
+* Continue debugging as described in the exercise :doc:`make a robust workflow and debug it <debug>`,
+
+* Click on the *n-node_binning* value under the column *Name*,
+
+* Click on the lens image,
+
+* Continue debugging as described in the exercise :doc:`make a robust workflow and debug it <debug>`.
 
 The following image shows the steps that we have just performed:
 
@@ -67,10 +66,6 @@ The following image shows the steps that we have just performed:
    :alt: Browse results
 
 .. figure:: includes/multinode-debug/gui3.png
-   :scale: 80 %
-   :alt: Browse results
-
-.. figure:: includes/multinode-debug/gui4.png
    :scale: 80 %
    :alt: Browse results
 

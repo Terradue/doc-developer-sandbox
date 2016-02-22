@@ -8,6 +8,6 @@ Contents:
    
    Data management <data/index>
    Catalogue access and management <catalogue/index>
-   Simulation <simulation/index>
+   Worklow simulation and invocation <simulation/index>
    Scripting functions <script_functions/index>
    Miscellaneous <miscellaneous/index>
