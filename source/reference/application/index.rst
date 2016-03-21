@@ -483,7 +483,7 @@ Attributes
 | wf:node     | Character String type, not empty | The id of a previous node from which to take the output                                              |
 +-------------+----------------------------------+------------------------------------------------------------------------------------------------------+
 
-**Table 13: Scope data structure.**
+**Table 13: refid data structure.**
 
 |
 
