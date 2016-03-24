@@ -97,7 +97,7 @@ This returns:
 
 .. code-block:: console-output
 
- my-node
+ my_node
 
 * Execute it by typing:
 
