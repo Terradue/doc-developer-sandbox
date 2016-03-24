@@ -222,7 +222,7 @@ In the case of type="LiteralData" (default "type" if not defined), the parameter
     	        <options>
                     <option>value1</option>
                     <option>value2</option>
-                <options>
+                </options>
    	    </parameter>
 
 	optionally it is possible to add a default value to the option list (to be picked from the list of the options):
