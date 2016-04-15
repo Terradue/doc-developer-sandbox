@@ -58,7 +58,7 @@ Options
 Exit Status
 -----------
 
-``ciop-stop`` command exits with
+``ciop-run`` command exits with
 
 * 0 on success
 * 1 an error occured
