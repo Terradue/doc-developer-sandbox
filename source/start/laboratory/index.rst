@@ -3,41 +3,40 @@
 Join your Laboratory
 ####################
 
-A Laboratory is a virtual network on Terradue's Cloud Platform dedicated to the hosting of your Cloud services.
+A Laboratory is a virtual network on Terradue Cloud Platform, dedicated to the hosting of your Cloud services.
 A laboratory and its services are secured by user authentication and VPN access.
-The following sections will guide you through the procedure related to the RSA key pair download and VPN Setup.
+The following sections will guide you through the procedure related to user SSH key pair management and VPN setup.
 
 .. _laboratory-prerequisites:
 
 Prerequisites
 -------------
 
-- You received an e-mail with the subject "Developer Cloud Sandboxes service  -  Invitation to register".
-- You filled a registration form, following the instructions in the invitation e-mail,
-- You received an e-mail with subject "SSH key and VPN Setup procedure | Join your Laboratory !".
+- You registered on Terradue's Portal
+- You received an e-mail with subject "SSH key pair and VPN Setup procedure | Join your Laboratory !".
 
 .. _install-ssh-key:
 
-Generate and install the SSH key
----------------------------------
+Generate and install the SSH key pair
+------------------------------------
 
-SSH keys are a way to identify trusted computers without involving passwords. You can generate an SSH key and add the public key to your Terradue Cloud Platform account by following the procedures below.
+SSH key pair is a way to identify trusted computers without involving passwords. You can generate a SSH key pair and add the public key to your account on Terradue Cloud Platform by following the procedures below.
 
-Generate a new SSH key
-^^^^^^^^^^^^^^^^^^^^^^
+Generate a new SSH key pair
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Go to https://www.terradue.com,
-* Type your credentials,
-* Click on the top-right botton showing your username,
+* Type your login credentials,
+* Click on the top-right button showing your username,
 * Click on **Profile**,
 * In the *Personal settings* left panel, click on **SSH keys**,
-* Click on **Generate a new SSH keys pair**,
+* Click on **Generate a new SSH key pair**,
 * Type your password when requested,
 * Download the *Private SSH key*,
 * Download the *Public SSH key*.
 
-Install the generated SSH key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install the generated SSH key pair
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Linux/Unix/Mac users
 ********************
@@ -63,7 +62,7 @@ PuTTY is a well-known freely available SSH client http://www.putty.org/. To down
 * Go to http://the.earth.li/~sgtatham/putty/latest/x86/putty.zip,
 * Unzip the downloaded file in a location of your filesystem that you prefer.
 
-Generate a Private PuTTY Key from the Private SSH key
+Generate a Private PuTTY key from the Private SSH key
 +++++++++++++++++++++++++++++++++++++++++++++++
 
 * Go to the unzipped putty folder,
