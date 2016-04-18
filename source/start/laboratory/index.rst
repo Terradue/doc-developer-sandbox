@@ -4,8 +4,8 @@ Join your Laboratory
 ####################
 
 A Laboratory is a virtual network on Terradue's Cloud Platform dedicated to the hosting of your Cloud services.
-A laboratory and its services are secured by user authentication (using SSL / X.509 certificates) and VPN access.
-The following sections will guide you through the procedures related to the Certificate download and VPN Setup.
+A laboratory and its services are secured by user authentication and VPN access.
+The following sections will guide you through the procedure related to the RSA key pair download and VPN Setup.
 
 .. _laboratory-prerequisites:
 
@@ -13,118 +13,64 @@ Prerequisites
 -------------
 
 - You received an e-mail with the subject "Developer Cloud Sandboxes service  -  Invitation to register".
-- You filled a registration form, following the instructions in the invitation e-mail.
-- Your registration was approved, and you received an e-mail from ca@terradue.com with subject "Your Terradue certificate is ready to download".
-- You received an e-mail with subject "Certificate download and VPN Setup procedure".
+- You filled a registration form, following the instructions in the invitation e-mail,
+- You received an e-mail with subject "SSH key and VPN Setup procedure | Join your Laboratory !".
 
+.. _install-ssh-key:
 
-Import Terradue's CA certificate in a Browser
----------------------------------------------
+Generate and install the SSH key
+---------------------------------
 
-Terradue's X.509 Certification Authority (CA) is used to sign the Platform's server certificates. You should have downloaded this file from the registration confirmation email.
+SSH keys are a way to identify trusted computers without involving passwords. You can generate an SSH key and add the public key to your Terradue Cloud Platform account by following the procedures below.
 
-Otherwise, to get the CA's X.509 certificate, you only need to click here:
-https://ca.terradue.com/gpodcs/certs/cacert.pem. 
+Generate a new SSH key
+^^^^^^^^^^^^^^^^^^^^^^
 
-Terradue's "CA cert" must be shows up under the "Authorities" label of your Browser's security tab.
+* Go to https://www.terradue.com,
+* Type your credentials,
+* Click on the top-right botton showing your username,
+* Click on **Profile**,
+* In the *Personal settings* left panel, click on **SSH keys**,
+* Click on **Generate a new SSH keys pair**,
+* Type your password when requested,
+* Download the *Private SSH key*,
+* Download the *Public SSH key*.
 
-Chrome makes use of the trust store of the operating system.
-Firefox maintains all its CAs.
+Install the generated SSH key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Download your SSL Certificate in PFX format
--------------------------------------------
+Linux/Unix/Mac users
+********************
 
-The SSL (Secure Socket Layer) is the most widely deployed security protocol used today. It is essentially a protocol that provides a secure channel between two machines operating over the Internet or an internal network.
+Store your SSH key pair into the .ssh directory in your HOME directory:
 
-The SSL Certificate issued by the CA should be imported into a browser in order to use it. This section describes the certificate import procedures for different browsers and platforms.
+```
+cd </your/download/directory>
+chmod 400 id_rsa
+cp id_rsa $HOME/.ssh/
+cp id_rsa.pub $HOME/.ssh/
+```
 
-- Go to *https://ca.terradue.com/gpodcs/cgi/certdown.cgi?U=<your_registration_email@organization.com>&F=Kpfx* (**replace by your registration e-mail**)
-- Type the certificate password that you chose during the registration.
+Windows users
+**************
 
-Import your PFX Certificate in a Browser
-----------------------------------------
+Download and install PuTTY
+++++++++++++++++++++++++++
 
-The certificate in PFX format (Personal Information Exchange) is used to authorise your access to some Platform's services like the Support site.
+PuTTY is a well-known freely available SSH client http://www.putty.org/. To download and install it:
 
-Google Chrome
-^^^^^^^^^^^^^
+* Go to http://the.earth.li/~sgtatham/putty/latest/x86/putty.zip,
+* Unzip the downloaded file in a location of your filesystem that you prefer.
 
-- Open the Google Chrome browser.
+Generate a Private PuTTY Key from the Private SSH key
++++++++++++++++++++++++++++++++++++++++++++++++
 
-- Choose **Preferences** from the **Chrome** menu.
-
-- Click the **Show advanced settings...** link:
-
-.. figure:: assets/chrome_advanced_settings_link.png
-  :width: 250px
-  :align: center
-  :alt: alternate text
-  :figclass: align-center
-
-- Open the **Manage Certificates** button under the **HTTPS/SSL** section:
-
-.. figure:: assets/chrome_manage_certificates.png
-  :width: 250px
-  :align: center
-  :alt: alternate text
-  :figclass: align-center
-
-- Open the Import window, browse to your downloaded certificate file.
-
-- Enter your certificate passphrase when prompted.
-
-Mozilla Firefox
-^^^^^^^^^^^^^^^
-
-- Open the Firefox browser.
-
-- Open the Preferences / Options: 
-
-  - *(Linux)* choose **Preferences** from the **Edit** menu,
-  - *(Windows)* choose **Options** from the **Tools** menu,
-  - *(Mac)* choose **Preferences** from the **Firefox** menu.
-
-- Click the **Advanced** button.
-
-- Open the Certificate pane:
-
-  - *(Linux)* select the **Security** pane,
-  - *(Windows)* select the **Encryption** (or **Security**) pane,
-  - *(Mac)* select the **Certificates** pane.
-
-- Click the **View Certificates** button.
-
-- Click the **Your Certificates** tab.
-
-- Click the **Import** button at the bottom of the screen.
-
-- Browse to your downloaded certificate file.
-
-- Enter your certificate passphrase when prompted.
-
-Internet Explorer
-^^^^^^^^^^^^^^^^^
-
-- Open the Internet Explorer browser.
-
-- Choose **Internet Options** from the **Tools** menu.
-
-- Click the **Content** tab.
-
-- Open the **Certificate** pane.
-
-- Click the **Certificates** (or **Personal**) button.
-
-- Browse to your downloaded certificate file.
-
-- Enter your certificate passphrase when prompted.
-
-Safari
-^^^^^^
-
-- Double-click the downloaded certificate file to launch the Keychain Access application.
-
-- Enter your certificate passphrase when prompted.
+* Use the import function in the puttygen GUI:
+* Double-click on the *PUTTYGEN* executable,
+* Click on the *Import key* command from the *Conversions* menu,
+* Select the id_rsa,
+* Click on the *Save private key* button,
+* Store securely in your filesystem the private key generated, naming it in id_rsa.ppk.
 
 Install your OpenVPN Client
 ---------------------------

@@ -8,22 +8,10 @@ To connect your Sandbox you need a secure connection with the Terradue's infrast
 Prerequisites
 -------------
 
-- You receveid an email from support@terradue.com where the subject contains "First connection",
-- You have the <sandbox_user> and the <sandbox_host> information, provided by the "First connection" e-mail,
-- You are connected to the Terradue's VPN (see :ref:`run-your-vpn-connection`).
-
-Download the Certificate in PEM format
---------------------------------------
-
-- Go to https://ca.terradue.com/gpodcs/cgi/certdown.cgi?U=name@organization.com (use your registration e-mail instead of name@organization.com),
-
-- Choose as **Certificate Format** the PEM,
-
-  - *(Alternative)* If you are using Windows (see below) or if you don't want type the passphrase each time you want to access the Sandbox, choose as **Certificate Format** the PEM (Unencrypted key), 
-  
-- Type the certificate passphrase that you chose during the registration, when prompted,
-
-- Store securely the PEM Certificate in your filesystem, especially if you chose the PEM (Unencrypted key) format.
+- You receveid an email from support@terradue.com where the subject contains "Cloud Dashboard access and Sandbox deployment",
+- You have the <cloud_username> and the <sandbox_host> information, provided by the email "Cloud Dashboard access and Sandbox deployment",
+- You are connected to the Terradue's VPN (see :ref:`run-your-vpn-connection`),
+- You installed your SSH key (see :ref:`install-ssh-key`),
 
 .. _connecting_from_unix_linux_mac:
 
@@ -36,10 +24,7 @@ Connecting from Unix / Linux / Mac
 
 .. code-block:: bash
 
-  chmod 600 <yourcertificate.pem>
-  ssh -i <yourcertificate.pem> <sandbox_user>@<sandbox_host>
-
-- If you chose PEM format when you downloaded the Certificate, provide the passphrase when prompted.
+  ssh <cloud_username>@<sandbox host>
 
 That's all :-)
 
@@ -48,65 +33,10 @@ That's all :-)
 Connecting from Windows
 ------------------------
 
-Download and install PuTTY
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-PuTTY is a well-known freely available SSH client http://www.putty.org/. To download and install it:
-
-- Go to http://the.earth.li/~sgtatham/putty/latest/x86/putty.zip,
-
-- Unzip the downloaded file in a location of your filesystem that you prefer.
-  
-Generate a Private Key from the PEM Certificate
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-PuTTY needs a private key file (.ppk). Here the procedure to generate it from a PEM Certificate:
-
-- Open the PEM Certificate **Unencrypted key format** with a text editor (e.g. Notepad), 
-
-- Copy in your clipboard the part:
-
-.. code-block:: bash
-
-  -----BEGIN RSA PRIVATE KEY-----
-  MII....
-  -----END RSA PRIVATE KEY-----
-
-- Create a new empty file named <yourcertificate>.private, open it with a text editor (e.g. Notepad) and paste the part that you copied in the previous point, 
-
-.. NOTE::
-  You should paste also -----BEGIN RSA PRIVATE KEY----- and -----END RSA PRIVATE KEY----- in the file <yourcertificate>.private
-
 - Open a Command Prompt and type:
 
 .. code-block:: bash
 
-  puttygen <yourcertificate>.private
-  
-- Store securely in your filesystem the private key generated, naming it in <yourcertificate>.ppk .
-
-*(Alternative)*
-
-Use the import function in the puttygen GUI:
-
-- Double-click on the puttygen executable,
-  
-- Click on the **Import** command from the **Conversions** menu,
-
-- Click on the **Save private key** button,
-
-- Store securely in your filesystem the private key generated, naming it in <yourcertificate>.ppk .
-
-Connect with PuTTY
-^^^^^^^^^^^^^^^^^^
-
-- Open a Command Prompt and type:
-
-.. code-block:: bash
-
-  putty -i <yourcertificate>.ppk <sandbox_user>@<sandbox_host>
+  putty -i id_rsa.ppk <cloud_username>@<sandbox_host>
 
 That's all :-)
-
-.. NOTE::
-  The PEM certificate is not used to access the system with PuTTY. Only the generated <yourcertificate>.ppk file is needed.
