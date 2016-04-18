@@ -26,6 +26,7 @@ Generate a new SSH key pair
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Go to https://www.terradue.com,
+* Click on the top-right button *Sign-in*,
 * Type your login credentials,
 * Click on the top-right button showing your username,
 * Click on **Profile**,
