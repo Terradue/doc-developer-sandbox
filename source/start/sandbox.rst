@@ -8,8 +8,7 @@ To connect your Sandbox you need a secure connection with the Terradue's infrast
 Prerequisites
 -------------
 
-- You receveid an email from support@terradue.com where the subject contains "Cloud Dashboard access and Sandbox deployment",
-- You have the <cloud_username> and the <sandbox_host> information, provided by the email "Cloud Dashboard access and Sandbox deployment",
+- You receveid an email from support@terradue.com where the subject contains "Cloud Dashboard access and Sandbox deployment" and obtained information on how to get the <cloud_username> and the <sandbox_host> values,
 - You are connected to the Terradue's VPN (see :ref:`run-your-vpn-connection`),
 - You installed your SSH key (see :ref:`install-ssh-key`),
 
@@ -33,10 +32,18 @@ That's all :-)
 Connecting from Windows
 ------------------------
 
-- Open a Command Prompt and type:
+- Open a Command Prompt,
+
+- Change directory to the putty unzipped folder:
+
+.. code-block:: bash
+  
+  cd \path\to\your\putty\folder
+  
+- Type:
 
 .. code-block:: bash
 
-  putty -i id_rsa.ppk <cloud_username>@<sandbox_host>
+  PUTTY.EXE -i id_rsa.ppk <cloud_username>@<sandbox_host>
 
 That's all :-)

@@ -66,13 +66,12 @@ PuTTY is a well-known freely available SSH client http://www.putty.org/. To down
 Generate a Private PuTTY Key from the Private SSH key
 +++++++++++++++++++++++++++++++++++++++++++++++
 
-Use the import function in the puttygen GUI:
-
-* Double-click on the *PUTTYGEN* executable,
+* Go to the unzipped putty folder,
+* Double-click on the *PUTTYGEN.EXE* executable,
 * Click on the *Import key* command from the *Conversions* menu,
-* Select the id_rsa,
+* Select the id_rsa file,
 * Click on the *Save private key* button,
-* Store securely in your filesystem the private key generated, naming it in id_rsa.ppk.
+* Store the private key generated in the unzipped putty folder, naming it in *id_rsa.ppk*.
 
 Install your OpenVPN Client
 ---------------------------
