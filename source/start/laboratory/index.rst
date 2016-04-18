@@ -44,12 +44,13 @@ Linux/Unix/Mac users
 
 Store your SSH key pair into the .ssh directory in your HOME directory:
 
-```
-cd </your/download/directory>
-chmod 400 id_rsa
-cp id_rsa $HOME/.ssh/
-cp id_rsa.pub $HOME/.ssh/
-```
+.. code-block:: bash
+
+  cd </your/download/directory>
+  chmod 400 id_rsa
+  cp id_rsa $HOME/.ssh/
+  cp id_rsa.pub $HOME/.ssh/
+
 
 Windows users
 **************
@@ -65,7 +66,8 @@ PuTTY is a well-known freely available SSH client http://www.putty.org/. To down
 Generate a Private PuTTY Key from the Private SSH key
 +++++++++++++++++++++++++++++++++++++++++++++++
 
-* Use the import function in the puttygen GUI:
+Use the import function in the puttygen GUI:
+
 * Double-click on the *PUTTYGEN* executable,
 * Click on the *Import key* command from the *Conversions* menu,
 * Select the id_rsa,
