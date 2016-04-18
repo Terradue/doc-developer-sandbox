@@ -33,8 +33,7 @@ Generate a new SSH key pair
 * In the *Personal settings* left panel, click on **SSH keys**,
 * Click on **Generate a new SSH key pair**,
 * Type your password when requested,
-* Download the *Private SSH key*,
-* Download the *Public SSH key*.
+* Download the *Private SSH key*.
 
 Install the generated SSH key pair
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -46,10 +45,9 @@ Store your SSH key pair into the .ssh directory in your HOME directory:
 
 .. code-block:: bash
 
-  cd </your/download/directory>
+  cd <your/download/directory>
   chmod 400 id_rsa
   cp id_rsa $HOME/.ssh/
-  cp id_rsa.pub $HOME/.ssh/
 
 
 Windows users
