@@ -11,7 +11,7 @@ Introduces the learnings addressed in the application
 
 **Addressing a scientific and processing goal**
 
-Povides a brief description of the thematic area addressed by the application.
+Provides a brief description of the thematic area addressed by the application.
 
 **Workflow design**
 
