@@ -33,7 +33,7 @@ Each job template contains:
 
 * the path to the streaming executable
 * parameters and optionally their allowed and default values
-* properties (e.g. maximum number of tasks, processin timeout, etc.)
+* properties (e.g. maximum number of tasks, processing timeout, etc.)
 
 The **second part** contains the workflow steps, here called "nodes".
 
