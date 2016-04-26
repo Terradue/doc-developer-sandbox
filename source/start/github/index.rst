@@ -8,7 +8,7 @@ GitHub offers both paid plans for private repositories, and free accounts for op
 Laboratories and GitHub organizations
 +++++++++++++++++++++++++++++++++++++
 
-Developer Cloud Sanbox laboratories have a one-to-one relationship with GitHub organizations meaning that every laboratory has an equivalent GitHub organization.
+Developer Cloud Sandbox laboratories have a one-to-one relationship with GitHub organizations meaning that every laboratory has an equivalent GitHub organization.
 
 .. tip:: According to your plan, the GitHub organization can host private repositories
 
