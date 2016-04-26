@@ -76,7 +76,7 @@ Inspect the run executable
 .. HINT::
   The BEAM Toolbox is executed through the *gpt.sh* script
 
-For further explainations on the graph processing tool, see "Bulk Processing with GPT" [#f2]_ and "Creating a GPF Graph" [#f3]_.
+For further explanations on the graph processing tool, see "Bulk Processing with GPT" [#f2]_ and "Creating a GPF Graph" [#f3]_.
 
 Run and debug the workflow
 ==========================
