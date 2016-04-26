@@ -3,7 +3,7 @@
 Hands-On Exercise 6: a multi-node workflow
 ##########################################
 
-In this exercise we will run an application workflow dedined by two nodes, passing outputs from the first as inputs to the second, and finally publishing the workflow results on HDFS.   
+In this exercise we will run an application workflow defined by two nodes, passing outputs from the first as inputs to the second, and finally publishing the workflow results on HDFS.   
 
 Prerequisites
 =============
