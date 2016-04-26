@@ -20,7 +20,7 @@ This approach is very useful during the early stages of the application developm
 Comma-separated values 
 **********************
 
-On the one hand, this approach is very straigh-forward to test the application against a small number of values. 
+On the one hand, this approach is very straight-forward to test the application against a small number of values. 
 On the other, during the exploitation phase with an application exposed as an OGC WPS service, the comma-separated values list is very well managed and allows clients to provide several values to the application.
 
 Reference to a catalogue
