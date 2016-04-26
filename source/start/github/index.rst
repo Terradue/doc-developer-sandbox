@@ -19,7 +19,7 @@ Whithin a GitHub organization, you can organize as many teams including any numb
 
 Owners have full access to all repositories and have admin rights to the organization. 
 
-Created teams can have several levels of priviliedges:
+Created teams can have several levels of privileges:
 
 * Read Access: This team will be able to view and clone its repositories. 
 * Write Access: This team will be able to read its repositories, as well as push to them.
