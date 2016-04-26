@@ -30,7 +30,7 @@ The 'must do', but once should be enough :)
 - there's Developer's Quick Start just for that !
 
 
-Once you have passed throught these steps, you are ready !
+Once you have passed through these steps, you are ready !
 You have your Cloud Sandbox main controls in hand. You can start integrating an application.
 As a suggested phase you may continue with the Field Guide. This will drive you through hands-on exercises for domain-specific applications, and useful guidance to integrate and test your own applications.
 
