@@ -8,7 +8,7 @@ To connect with your Sandbox, you need a secure connection to our infrastructure
 Prerequisites
 -------------
 
-- You receveid an email from support@terradue.com with the subject "Cloud Dashboard access and Sandbox deployment" and obtained information on how to get the VM <cloud_username> and <sandbox_host> values,
+- You received an email from support@terradue.com with the subject "Cloud Dashboard access and Sandbox deployment" and obtained information on how to get the VM <cloud_username> and <sandbox_host> values,
 - You are connected to our VPN (see :ref:`run-your-vpn-connection`),
 - You installed your SSH keys (see :ref:`install-ssh-key`).
 
