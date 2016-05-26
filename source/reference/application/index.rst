@@ -249,7 +249,7 @@ Tag definition
 	<jobTemplate>
 		<defaultJobconf>
 			<property></property>
-		</defaultJobcon>
+		</defaultJobconf>
 	</jobTemplate>
 
 |
