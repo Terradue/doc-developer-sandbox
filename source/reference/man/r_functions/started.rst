@@ -23,7 +23,7 @@ To install R and rciop:
 .. code-block:: console
 
    sudo conda install -c r  r-essentials
-   sudo conda install -c terradue r-rciop
+   sudo conda install -c r -c terradue r-rciop
 
 To search for an R package:
 
