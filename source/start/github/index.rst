@@ -8,7 +8,7 @@ GitHub offers both paid plans for private repositories, and free accounts for op
 Laboratories and GitHub organizations
 +++++++++++++++++++++++++++++++++++++
 
-Developer Cloud Sanbox laboratories have a one-to-one relationship with GitHub organizations meaning that every laboratory has an equivalent GitHub organization.
+Developer Cloud Sandbox laboratories have a one-to-one relationship with GitHub organizations meaning that every laboratory has an equivalent GitHub organization.
 
 .. tip:: According to your plan, the GitHub organization can host private repositories
 
@@ -19,7 +19,7 @@ Whithin a GitHub organization, you can organize as many teams including any numb
 
 Owners have full access to all repositories and have admin rights to the organization. 
 
-Created teams can have several levels of priviliedges:
+Created teams can have several levels of privileges:
 
 * Read Access: This team will be able to view and clone its repositories. 
 * Write Access: This team will be able to read its repositories, as well as push to them.
