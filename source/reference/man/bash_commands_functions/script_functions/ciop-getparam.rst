@@ -21,25 +21,15 @@ Options
 Output
 ------
 
-ciop-param returns the value of the parameter.
+ciop-getparam returns either the value of the parameter or an empty string.
 
-Exit Status
------------
-
-``ciop-param`` command exits
-
-0 when successful
-
-1 when the provided parameter name is not found in the job template
-section nor in the workflow section the the application descriptor file
-(application.xml)
 
 Examples
 --------
 
 .. code-block:: bash
-
-  ciop-getparam('bbox')
+	
+  local bbox = "$( ciop-getparam bbox )"
                     
 
 Author
