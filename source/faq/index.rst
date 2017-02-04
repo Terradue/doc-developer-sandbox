@@ -90,6 +90,19 @@ There are two different ways:
 .. code-block:: console
 
   ciop-stop <workflow_id>
+  
+
+How can I clean up HDFS storage on my Sandbox?
+----------------------------------------------
+
+If you need to clean up old workflow results from the HDFS storage, you can use the available client on the Sandbox.
+
+* Type this command to clean up the results of a specific *<workflow-id>*:
+
+.. code-block:: console
+
+  hadoop dfs -rmr /ciop/run/<workflow-name>/<workflow-id>
+
 
 Why are some log entries going to stderr while others go to stdout?
 -----------------------------------------------------------------------------------------
