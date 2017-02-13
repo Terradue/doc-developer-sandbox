@@ -39,12 +39,6 @@ Examples
 .. code-block:: bash
 
   ciop-appcheck -f /tmp/test.xml
-                
-
-See Also
---------
-
-:doc:`ciop-package <ciop-package>`
 
 Author
 ------
