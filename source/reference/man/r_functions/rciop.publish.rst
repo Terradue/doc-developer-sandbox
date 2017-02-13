@@ -30,7 +30,7 @@ Arguments
   this mode overrides the ``recursive``, ``metalink`` and ``driver`` options
   
 ``driver``
-  set the value to S3 and the results will be published to the Cloud storage area
+  [DEPRECATED]
   
 Details
 -------
