@@ -10,7 +10,7 @@ To install anaconda:
 
 .. code-block:: console
 
-  sudo yum install -y miniconda-3.8.3
+  sudo yum install -y miniconda
 
 Add anaconda binaries to PATH
 
