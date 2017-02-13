@@ -83,21 +83,6 @@ To view processes launched with the ciop-run command you can use the Oozie GUI W
 
   Accessed from the VPN at the address: http://<your_sandbox_host>:11000
 
-Data Catalogues
-+++++++++++++++
-
-Accessed from the VPN:
-
-* sandbox catalogue http://<your_sandbox_host>/catalogue/sandbox
-
-.. figure:: assets/catalogue_ui_with_results.png
-  :width: 500px
-  :align: center
-  :alt: alternate text
-  :figclass: align-center
-  
-  Sandbox catalogue web interface showing MERIS Level 1 data
-
 The ciop tools
 ++++++++++++++
 
