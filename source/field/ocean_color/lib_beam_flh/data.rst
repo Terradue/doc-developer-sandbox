@@ -40,7 +40,7 @@ That will copy the Envisat MERIS Level 1 acquisitions available on Terradue cata
 
 .. tip:: 
 
- In the URL above, change *rdf* to *html* to see what producst are returned by the search: 
+ In the URL above, change *rdf* to *html* to see what products are returned by the search: 
  
  http://catalogue.terradue.int/catalogue/search/MER_RR__1P/html?start=2012-04-05T10:00:00&stop=2012-04-08
 
