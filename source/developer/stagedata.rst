@@ -44,8 +44,8 @@ We can use the *ciop-copy* tool to interact with a remote catalogue, retrieve a 
 .. code-block:: console
 
   cd /tmp
-  ciop-copy -o ./ http://catalogue.terradue.int/catalogue/search/MER_RR__1P/MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364.N1/rdf
-  ciop-copy -o ./ http://catalogue.terradue.int/catalogue/search/MER_RR__1P/MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211.N1/rdf
+  opensearch-client https://catalog.terradue.com/eo-samples/series/mer_rr__1p/search?uid=MER_RR__1PRLRA20120407_112751_000026243113_00253_52853_0364 enclosure | ciop-copy -o /tmp -
+  opensearch-client https://catalog.terradue.com/eo-samples/series/mer_rr__1p/search?uid=MER_RR__1PRLRA20120406_102429_000026213113_00238_52838_0211 enclosure | ciop-copy -o /tmp -  
   ls -l | grep MER_RR
 
 The output of the *ls -l* command will be similar to:

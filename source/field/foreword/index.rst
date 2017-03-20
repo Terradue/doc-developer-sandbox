@@ -32,7 +32,6 @@ Explains how test data is managed in the Sandbox as a combination of the steps:
 * Copying external data to the Sandbox local storage
 * Copying data available in the platform to the Sandbox local storage
 * Pre-processing the data (e.g. changing the format)
-* Registering the data in the Sandbox local catalogue
 
 **Application testing**
 

@@ -4,7 +4,7 @@ rciop.publish {rciop}
 Description
 -----------
 
-Publishes results to the distributed file system (or Cloud storage area), or publishes the results location, or echoes strings as inputs to the subsequent nodes in the workflow.
+Publishes results to the distributed file system, or publishes the results location, or echoes strings as inputs to the subsequent nodes in the workflow.
 
 Usage
 -----
@@ -30,12 +30,12 @@ Arguments
   this mode overrides the ``recursive``, ``metalink`` and ``driver`` options
   
 ``driver``
-  set the value to S3 and the results will be published to the Cloud storage area
+  [DEPRECATED]
   
 Details
 -------
 
-This function stages-out local files to the distributed filesystem, or to the Cloud storage area, or will define the inputs to be passed to the next nodes in the workflow. 
+This function stages-out local files to the distributed filesystem or will define the inputs to be passed to the next nodes in the workflow. 
 
 Value
 -----

@@ -7,7 +7,7 @@ Field Guide
    :maxdepth: 2
    
    Foreword <foreword/index>
-   Ocean colour <ocean_color/index>
-   Vegetation index <vegetation/index>
    InSAR interferometry <insar/index>
    Digital Elevation Model <dem/index>
+..   Ocean colour <ocean_color/index>
+..   Vegetation index <vegetation/index>

@@ -30,8 +30,7 @@ The following options are available:
     Publish the files as results of the entire workflow. Files are not going to be passed to the next job. They are placed in a persistent shared location common to the whole workflow. A metalink is generated at the end of the workflow or the job simulation.
 
 ``-d destination``
-    Destination of the files when option -m is set. By default the published destination is the local HDFS of the appliance. Other options are:
-* s3 : to publish results in S3 private server.
+    [DEPRECATED]
 
 ``-a``
     Publish the files on HDFS in an anonymous way (i.e. files are not going to be passed to the next job).

@@ -52,7 +52,7 @@ If you want to select python as programming language for the Hands-On exercises,
 
 .. code-block:: console
 
- sudo yum install -y miniconda-3.8.3
+ sudo yum install -y miniconda
  sudo conda install -y cioppy
 
 Using the code examples

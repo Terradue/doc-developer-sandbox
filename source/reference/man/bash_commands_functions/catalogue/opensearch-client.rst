@@ -50,11 +50,6 @@ Examples
 
     opensearch-client -f Rdf -p time:start=2012-04-04 -p time:end=2012-04-06 -p geo:box=-12.66,49.27,5.45,60.15 http://catalogue.terradue.int/catalogue/search/MER_RR__1P/description
 
-See Also
---------
-
-:doc:`ciop-catcp <ciop-catcp>`
-
 Author
 ------
 
