@@ -10,7 +10,7 @@
   <artifactId>doc-developer-sandbox</artifactId>
   <packaging>rpm</packaging>
   <description>Documentation for Developer Cloud Sandbox</description>
-  <version>1.3.4</version>
+  <version>1.3.5-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>com.terradue.infra</groupId>
