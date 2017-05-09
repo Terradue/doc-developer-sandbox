@@ -44,7 +44,7 @@ To install an R package from another channel
 Usage
 -----
 
-To use the Anaconda's R, use the following shebang in your Python scripts:
+To use the Anaconda's R, use the following shebang in your R scripts:
 
 .. code-block:: python
 
@@ -55,6 +55,6 @@ Example
 
 .. code-block:: R
 
-   #!/opt/anaconda/bin/RScript
+   #!/opt/anaconda/bin/Rscript
 
    library('rciop')
