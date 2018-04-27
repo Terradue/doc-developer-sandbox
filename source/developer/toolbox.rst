@@ -22,6 +22,8 @@ Install the Hands-On
   cd dcs-hands-on
   mvn clean install -D hands.on=4 -P bash
 
+.. _toolbox-install:
+  
 Install the BEAM Toolbox
 ========================
 
