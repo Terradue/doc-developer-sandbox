@@ -241,7 +241,33 @@ In the case of type="LiteralData" (default "type" if not defined), the parameter
                 </options>
             </parameter>
 
-|
+* **a defined dataType e.g.:**
+
+	.. code-block:: xml
+
+	    <parameter id="myparam" dataType="date"></parameter>
+	    
+	.. code-block:: xml
+
+	    <parameter id="myparam" dataType="float"></parameter>
+	    
+	The dataType attribute can have one of these values: string, boolean, decimal, float, double, duration, dateTime, time, date, gYearMonth, gYear, gMonthDay, gDay, gMonth, hexBinary, base64Binary, anyURI, QName, integer, nonPositiveInteger, negativeInteger, long, int, short, byte, nonNegativeInteger, unsignedLong, unsignedInt, unsignedShort, unsignedByte, positiveInteger.
+	The default dataType is string, associated when dataType is not specified.
+	See https://www.w3.org/TR/xmlschema-2/#built-in-datatypes for all dataType descriptions.
+	
+* **a defined regular expression, with the metadata attribute, e.g.:**
+
+	.. code-block:: xml
+
+	    <parameter id="myparam" dataType="string" metadata="[a-zA-Z]*"></parameter>
+	    
+	.. code-block:: xml
+
+	    <parameter id="myparam" dataType="string" metadata="^[0-9]{8}$ "></parameter>
+	    
+	
+	
+
 
 Default Job Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -524,10 +550,6 @@ Attributes (for the single parameter)
 | scope    | Scope data structure, Table 4                                                                                                                 | No        |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | type     | Type data structure, Table 5                                                                                                                  | No        |
-+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| dataType | Type data structure. By default is "string" if not defined (see https://www.w3.org/TR/xmlschema-2/#built-in-datatypes for possible data types)| No        |
-+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| metadata | Regular expression, it must be satisfied by the parameter value. Optional, only for literalData type                                          | No        |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | target   | Query parameter from the description of the source catalogue (mandatory in case of type="opensearch")                                         | No        |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+
